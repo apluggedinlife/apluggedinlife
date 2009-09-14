@@ -1,0 +1,112 @@
+{% load blog tagging_tags inlines oembed_tags pygment_tags cache %}
+<article>
+    {% block article %}
+    <header>
+        <div class="datetime">
+            <time datetime="{{ post.publish }}">
+                {{ post.publish|date:"d.m.y" }}
+            </time>
+        </div>
+        {% if post.author %}
+        <div class="entry-author">
+            <a href="" title="{{ post.author.username }}">{{ post.author.username }}</a>
+        </div>
+        {% endif %}
+        {% if post.categories %}
+        <div class="entry-category">
+            <ul>
+                {% for category in post.categories.all %}
+                <li>
+                    <a href="{% url basic.blog.views.category_detail category.slug %}" title="{{ category.slug }}">
+                        {{ category.slug }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        <div class="share">
+            <h1>share</h1>
+            <div class="share-items">
+                <div class="share-right share-diigo">
+                    <span class="count">2</span>
+                    <a href="" title="Partager sous diigo">
+                        <img src="{{ MEDIA_URL }}img/share_diigo.png" alt="Partager sous diigo" />
+                    </a>
+                </div>
+                <div class="share-left share-delicious">
+                    <span class="count">2</span>
+                    <a href="" title="Partager sous delicious">
+                        <img src="{{ MEDIA_URL }}img/share_delicious.png" alt="Partager sous delicious" />
+                    </a>
+                </div>
+                <div class="clear height-10"></div>
+                <div class="share-right share-digg">
+                    <span class="count">2</span>
+                    <a href="" title="Partager sous digg">
+                        <img src="{{ MEDIA_URL }}img/share_digg.png" alt="Partager sous digg" />
+                    </a>
+                </div>
+                <div class="share-left share-facebook">
+                    <span class="count">2</span>
+                    <a href="" title="Partager sous facebook">
+                        <img src="{{ MEDIA_URL }}img/share_facebook.png" alt="Partager sous facebook" />
+                    </a>
+                </div>
+                <div class="clear height-10"></div>
+                <div class="share-right share-friendfeed">
+                    <span class="count">2</span>
+                    <a href="" title="Partager sous friendfeed">
+                        <img src="{{ MEDIA_URL }}img/share_friendfeed.png" alt="Partager sous friendfeed" />
+                    </a>
+                </div>
+                <div class="share-left share-twitter">
+                    <span class="count">2</span>
+                    <a href="" title="Partager sous twitter">
+                        <img src="{{ MEDIA_URL }}img/share_twitter.png" alt="Partager sous twitter" />
+                    </a>
+                </div>
+                <div class="clear height-10"></div>
+                <div class="share-right share-wikio">
+                    <span class="count">2</span>
+                    <a href="" title="Partager sous wikio">
+                        <img src="{{ MEDIA_URL }}img/share_wikio.png" alt="Partager sous wikio" />
+                    </a>
+                </div>
+                <div class="share-left share-technorati">
+                    <span class="count">2</span>
+                    <a href="" title="Partager sous technorati">
+                        <img src="{{ MEDIA_URL }}img/share_technorati.png" alt="Partager sous technorati" />
+                    </a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="count-comment">
+            <a href="" title="Commentaires">6</a>
+        </div>
+    </header>
+    <div class="entry-body">
+        <h1><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></h1>
+        {% cache 300 "blog.post_item.tag_list" post.pk %}
+        {% tags_for_object post as tag_list %}
+        {% if tag_list %}
+        <div class="entry-meta">
+            <ul>
+              {% for tag in tag_list %}
+                <li><a href="/tags/{{ tag }}">{{ tag }}</a></li>
+              {% endfor %}
+             </ul>
+             <div class="clear"></div>
+         </div>
+        {% endif %}
+        {% endcache %}
+        <p class="teaser">{{ post.tease|safe }}</p>
+        {% oembed %}
+            {{ post.body_markup|render_inlines|pygmentize|safe }}
+        {% endoembed %}
+    </div>
+    <div class="clear"></div>
+    {% endblock %}
+</article>

@@ -1,0 +1,509 @@
+@charset "utf-8";
+
+@import "reset.css";
+@import "base.css";
+@import "pygments.css";
+
+/* ---- GENERIC ELEMENT ---- */
+
+p, h1, h2, input[type=text], a, li, span {
+    font-family: Helvetica, "Arial sans-serif";
+    font-weight: normal;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+a > img {
+    border-width: 0;
+}
+
+/* ---- A PLUGGED IN LIFE STYLESHEETS ---- */
+
+div#whole {
+    margin: 0 0;
+    padding: 0 0;
+    width: 100%;
+    border-width: 0;
+}
+
+div.whole-main {
+    background: transparent url('/media/img/header_bg.png') repeat-x  0 0;
+}
+
+div#wrapper {
+    margin: 0 auto;
+    width: 1005px;
+    position: relative;  
+}
+
+    div#wrapper > header {
+        position: relative;
+    }
+
+    header h1.logo {
+        background-image: url('/media/img/header.png');
+        height: 444px;
+        text-indent: -500em;
+    }
+
+    header h1.logo a {
+        height: 444px;
+        display: block; 
+    }
+
+nav ul#nav-menu {
+    padding: 10px 0 0 20px;
+}
+
+    nav ul#nav-menu li.nav-item, 
+    nav ul#nav-menu li.nav-item-current {
+        float: left;
+        margin-left: 25px;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-attachment: scroll;
+    }
+
+    nav ul#nav-menu li.nav-item-current {
+        background-position: 0 -17px !important;
+    }
+
+    nav ul#nav-menu li a {
+        height: 17px;
+        overflow: hidden;
+        text-indent: -500em;
+        display: block;
+        position: relative;
+        z-index: 10;
+    }
+
+    nav ul#nav-menu li.nav-item-home a {
+        background-image: url('/media/img/nav_item_home.png');
+        width: 36px;
+    }
+
+    nav ul#nav-menu li.nav-item-about a {
+        background-image: url('/media/img/nav_item_about.png');
+        width: 38px;
+    }
+
+    nav ul#nav-menu li.nav-item-contact a {
+        background-image: url('/media/img/nav_item_contact.png');
+        width: 48px;
+    }
+
+    nav ul#nav-menu li.nav-item-blogroll a {
+        background-image: url('/media/img/nav_item_blogroll.png');
+        width: 49px;
+    }
+
+    nav ul#nav-menu li.nav-item-archives a {
+        background-image: url('/media/img/nav_item_archives.png');
+        width: 55px;
+    }
+
+    nav ul#nav-menu li.nav-item-tuts a {
+        background-image: url('/media/img/nav_item_tuts.png');
+        width: 26px;
+    }
+
+/* CONTENT */
+
+section#content {
+    float: left;
+    width: 740px;
+    padding: 30px 0 0 0;
+}
+
+    section#content article {
+        margin-bottom: 50px;
+    }
+
+        section#content article header {
+            width: 120px;
+            text-align: right;
+            padding-right: 20px;
+            float: left;
+            position: relative;
+            margin-bottom: 10px;
+        }
+    
+            section#content article header time,
+            section#content article header ul li a,
+            div.entry-author a {
+                background-color: #D5E9DC;
+                color: #34312E;
+                padding: 5px;
+                font-size: 0.9em;
+                font-weight: bold;
+                margin-bottom: 6px;
+                display: inline-block;
+            }
+        
+            section#content article header ul li a:hover,
+            div.entry-author a:hover {
+                background-color: #329A57;
+                color: #34312E;
+            }
+        
+            div.share {
+                background-color: #319755;
+                padding: 4px 8px;
+                display: inline-block;
+                float: right;
+            }
+            
+            div.share h1,
+            div.share {
+                width: 80px;
+            }
+            
+                div.share h1 {
+                    text-align: center;
+                    font-size: 0.9em;
+                    font-weight: bold;
+                    color: #FFFFFF;
+                    margin: 6px 0;
+                    background: transparent url('/media/img/show.png') no-repeat left top;
+                    height: 16px;
+                    cursor: pointer;
+                    vertical-align: bottom;
+                    padding-left: 2px;
+                }
+                
+                div.share-items {
+                    padding: 4px;
+                }
+                
+                span.count {
+                    background: transparent url('/media/img/count.png') no-repeat center center;
+                    font-size: 0.55em;
+                    width: 12px;
+                    height: 12px;
+                    display: block;
+                    text-align: center;
+                    position: absolute;
+                    z-index: 10;
+                    padding-top: 4px;
+                    float: right;
+                    top: -5px;
+                    right: -4px;
+                }
+
+                div.share a {
+                    text-indent: -500em;
+                    display: block;
+                }
+
+                div.share a,
+                div.share-left,
+                div.share-right {
+                    width: 31px;
+                    height: 31px;
+                }
+                
+                div.share img {
+                    position: relative;
+                }
+
+                div.share-left {
+                    margin-right: 10px;
+                }
+
+                div.share-right, div.share-left {
+                    float: right;
+                    position: relative;
+                }
+                
+                div.count-comment {
+                    background-position: top center;
+                    float: right;
+                    margin-top: 6px;
+                }
+                    
+                div.count-comment,
+                div.count-comment:hover {
+                    background-image: url('/media/img/count_comment.png');
+                    background-color: transparent;
+                    background-repeat: no-repeat;
+                }
+                
+                div.count-comment:hover {
+                    background-position: bottom center;
+                }
+                
+                    div.count-comment,
+                    div.count-comment a {
+                        width: 27px;
+                        height: 32px;
+                    }
+                
+                    div.count-comment a {
+                        color: #34312E;
+                        font-weight: bold;
+                        font-size: 1em;
+                        text-align: center;
+                        display: block;
+                        top: 50%;
+                        padding-top: 0.4em;
+                    }
+
+        section#content article div.entry-body {
+            padding-right: 20px;
+        }
+            div.entry-body h1 {
+                font-size: 1.4em;
+                margin-bottom: 5px;
+            }
+            
+            div.entry-body h1 a {
+                color: #41281B;
+                font-weight: bold;
+            }
+        
+            div.entry-body p {
+                text-align: justify;
+                padding: 5px 5px 5px 0;
+                line-height: 16px;
+                font-size: 0.75em;
+                color: #6B605A;
+            }
+            
+            div.entry-body p blockquote {
+                text-indent: -0.8em;
+            }
+            
+            div.entry-body h1 + p {
+                text-indent: 1em;
+            }
+            
+                div.hightlight {
+                    margin: 1em 0;
+                }
+            
+                div.highlight pre {
+                    overflow: auto;
+                    padding: 0;
+                    margin: 0;
+                }
+
+        div.entry-meta {
+            display: inline-block;
+            margin: 10px 0;
+        }
+        
+            div.entry-meta ul li {
+                padding: 4px 10px;
+                display: inline-block;
+                background-color: #34312E;
+                float: left;
+                margin-right: 10px;
+                -moz-border-radius: 8px;
+                -webkit-border-radius: 8px;
+                -opera-border-radius: 8px;
+                border-radius: 8px;
+            }
+
+                div.entry-meta ul li a {
+                    color: #FFFFFF;
+                    font-size: 0.8em;
+                    font-weight: bold;
+                }
+
+/* SIDEBAR */
+
+nav#sidebar {
+    width: 234px;
+    float: right;
+    margin-right: 27px;
+    top: -70px;
+    position: relative;
+    background: transparent url('/media/img/column_head.png') no-repeat center top;
+    min-height: 400px;
+}
+
+section#syndication {
+    background: transparent url('/media/img/feed.png') no-repeat;
+    top: -22px;
+    left: 7px;
+    position: relative;
+}
+
+    section#syndication,
+    section#syndication a {
+        width: 155px;
+        height: 100px;
+    }
+
+    section#syndication a {
+        text-indent: -500em;
+        display: block;
+    }
+
+section#sidebar-content {
+    margin-top: 20px;
+    background-color: #34312E;
+}
+
+ul li.title {
+    margin: 10px 0;
+    padding: 0.5em 0;
+}
+
+    ul li.title h2,
+    ul li.title ul li {
+        font-weight: bold;
+    }
+
+    ul li.title h2,
+    ul.li.title h2.active {
+        background-image: url('/media/img/arrow.png');
+        background-repeat: no-repeat;
+        background-color: transparent;
+    }
+
+    ul li.title h2 {
+        font-size: 0.9em;
+        color: #FFFFFF;
+        background-position: right top;
+        height: 16px;
+        cursor: pointer;
+        width: 205px;
+        padding-left: 14px;
+    }
+    
+    ul li.title h2.active {
+        background-position: right bottom;
+    }
+
+    ul li.title ul {
+        padding: 0.5em 0;
+    }
+
+    ul li.title ul li {
+        padding: 0.5em 0 0.5em 2em;
+        margin-bottom: 0.5em;
+        width: 16em;
+        font-size: 0.81em;
+        cursor: pointer;
+    }
+    
+    ul li.title ul li a {
+        font-weight: bold;
+        color: #319855;
+    }
+
+    ul li.title ul li:hover {
+        background-color: #2B2927;
+    }
+
+section#search {
+    background: transparent url('/media/img/search_container.png') no-repeat center center;
+    width: 177px;
+    height: 24px;
+    margin: 0 0 30px 28px;
+}
+
+div#search-input {
+    float: left;
+}
+
+    div#search-input input[type=text] {
+        border-width: 0;
+        height: 18px;
+        font-size: 0.8em;
+        padding-top: 5px;
+    }
+
+div#search-button {
+    float: left;
+    height: 17px;
+    width: 17px;
+    padding: 2px 3px 0 0;
+}
+
+    div#search-button button[type=submit] {
+        border-width: 0;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+div#search-mentions p {
+    margin-top: 5px;
+    font-size: 0.65em;
+    color: #000000;
+}
+
+section#twitter {
+    padding: 50px 0;
+    background: transparent url('/media/img/twitter.png') no-repeat center top;
+}
+
+    section#twitter ul li {
+        margin-bottom: 20px;
+    }
+
+div.twitter-container {
+    width: 177px;
+    height: 109px;
+    margin: 0 auto;
+    position: relative;
+}
+
+    div.twitter-container h2 {
+        position: absolute;
+        width: 100px;
+        bottom: 0;
+    }
+
+        div.twitter-container h2 a {
+            color: #FFFFFF;
+        }
+
+    div.twitter-container p,
+    div.twitter-container h2 {
+        font-size: 0.65em;
+    }
+
+    div.twitter-container a {
+        text-decoration: none;
+    }
+
+    div.twitter-container p {
+        line-height: 1.35em;
+        padding: 5px;
+    }
+
+        div.twitter-container p a {
+            color: #000000;
+        }
+
+    div.twitter-container-green-0 {
+        background-image: url('/media/img/twitter_container_green_0.png');
+    }
+
+    div.twitter-container-green-1 {
+        background-image: url('/media/img/twitter_container_green_1.png');
+    }
+
+    div.twitter-container-green-2 {
+        background-image: url('/media/img/twitter_container_green_2.png');
+    }
+
+    div.twitter-container-green-3 {
+        background-image: url('/media/img/twitter_container_green_3.png');
+    }
+
+/* ----  GENERIC CLASSES ---- **/
+
+.clear {
+    clear: both;
+}
+
+.height-10 {
+    height: 10px;
+}
