@@ -90,4 +90,26 @@ $(document).ready(function(){
             .stop()
             .animate({color: '#000000'}, {duration: 500});
     })
+    
+    $(".twitter-container").each(function(){
+        var _this = $(this);
+        var username = $(this).attr('id');
+        $.twitter.search.user(username, function(data, textStatus){
+            if(data.results.length > 0){
+                console.log(username);
+                var result = data.results[0];
+                _this
+                    .find('p')
+                    .html(
+                        '<a href="http://twitter.com/'
+                        + username
+                        +'/status/'
+                        + result.id 
+                        +'" title="status '
+                        + result.id +'">'
+                        + result.text + '</a>'
+                    );
+            }
+        });
+    })
 });
