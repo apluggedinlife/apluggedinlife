@@ -91,25 +91,32 @@ $(document).ready(function(){
             .animate({color: '#000000'}, {duration: 500});
     })
     
-    $(".twitter-container").each(function(){
+    /*
+    function updateTwitterContainer(object, results){
+        if(results.length > 0){
+            var result = results[0];
+            object
+                .find('p')
+                .html(
+                    '<a href="http://twitter.com/'
+                    + $(this).attr('id')
+                    +'/status/'
+                    + result.id 
+                    +'" title="status '
+                    + result.id +'">'
+                    + result.text + '</a>'
+                );
+        }
+    }
+    
+    $(".twitter-container-account").each(function(){
         var _this = $(this);
-        var username = $(this).attr('id');
-        $.twitter.search.user(username, function(data, textStatus){
-            if(data.results.length > 0){
-                console.log(username);
-                var result = data.results[0];
-                _this
-                    .find('p')
-                    .html(
-                        '<a href="http://twitter.com/'
-                        + username
-                        +'/status/'
-                        + result.id 
-                        +'" title="status '
-                        + result.id +'">'
-                        + result.text + '</a>'
-                    );
-            }
+        $.twitter.search.user($(this).attr('id'), function(data, textStatus){
+            updateTwitterContainer(_this, data.results);
         });
     })
+    
+    $.twitter.search.hashtag("apluggedinlife", function(data, textStatus){
+        updateTwitterContainer($("#apluggedinlife-hashtag"), data.results);
+    });*/
 });
