@@ -1,6 +1,6 @@
-{% load blog tagging_tags inlines oembed_tags pygment_tags cache %}
+{% load blog tagging_tags inlines oembed_tags cache %}
 <article>
-    {% block article %}
+{% block article %}
     <header>
         <div class="datetime">
             <time datetime="{{ post.publish }}">
@@ -12,6 +12,7 @@
             <a href="" title="{{ post.author.username }}">{{ post.author.username }}</a>
         </div>
         {% endif %}
+        {% cache 3600 "blog.base_post.categories" post.title %}
         {% if post.categories %}
         <div class="entry-category">
             <ul>
@@ -25,6 +26,7 @@
             </ul>
         </div>
         {% endif %}
+        {% endcache %}
         <div class="share">
             <h1>share</h1>
             <div class="share-items">
@@ -94,19 +96,19 @@
         {% if tag_list %}
         <div class="entry-meta">
             <ul>
-              {% for tag in tag_list %}
+            {% for tag in tag_list %}
                 <li><a href="/tags/{{ tag }}">{{ tag }}</a></li>
-              {% endfor %}
-             </ul>
+            {% endfor %}
+            </ul>
              <div class="clear"></div>
          </div>
         {% endif %}
         {% endcache %}
-        <p class="teaser">{{ post.tease|safe }}</p>
+        <p class="entry-teaser">{{ post.tease|safe }}</p>
         {% oembed %}
-            {{ post.body_markup|render_inlines|pygmentize|safe }}
+            {{ post.body_markup|render_inlines|safe }}
         {% endoembed %}
     </div>
     <div class="clear"></div>
-    {% endblock %}
+{% endblock %}
 </article>

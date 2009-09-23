@@ -35,6 +35,7 @@ urlpatterns = patterns('',
 
 urlpatterns += patterns('',
     url(r'^oops/$', 'mingus.core.views.oops', name='raise_exception'),
+    url(r'^comments/', include('mptt_comments.urls')),
     url(r'^quotes/$', 'mingus.core.views.quote_list', name='quote_list'),
     url(r'^quotes/(?P<slug>[-\w]+)/$', 'mingus.core.views.quote_detail', name='quote_detail'),
     url(r'robots.txt$', rules_list, name='robots_rule_list'),

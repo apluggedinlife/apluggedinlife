@@ -24,6 +24,9 @@ TEMPLATE_DIRS = (
   [os.path.join(PROJECT_ROOT, "templates")]
 )
 
+AUTH_PROFILE_MODULE = 'profiles.profile'
+MPTT_COMMENTS_OFFSET = 5
+
 MIDDLEWARE_CLASSES = (
 'django.middleware.common.CommonMiddleware',
 'django.contrib.sessions.middleware.SessionMiddleware',
@@ -55,13 +58,19 @@ INSTALLED_APPS = (
   'django.contrib.sitemaps',
   'django.contrib.flatpages',
   'django.contrib.redirects',
+  'django.contrib.comments',
+  'django.contrib.markup',
+  'template_utils',
+  'mptt',
+  'mptt_comments',
 
   'django_extensions',
   'tagging',
   'djangodblog',
-  'disqus',
+  #'disqus',
   'basic.inlines',
   'basic.blog',
+  'basic.profiles',
   'basic.bookmarks',
   'basic.media',
   'oembed',
