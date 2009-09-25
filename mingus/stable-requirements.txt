@@ -21,6 +21,7 @@ http://www.aeracode.org/releases/south/south-0.6.1.tar.gz
 -e git://github.com/thoas/django-mptt-comments.git@f0f915a29ea42da5abcfe30691588c5cd078919e#egg=django_mptt_comments-0.1-py2.5-f0f915a29ea42da5abcfe30691588c5cd078919e
 -e hg+https://bitbucket.org/ubernostrum/django-contact-form/@tip#egg=django_contact_form-tip
 -e svn+http://django-db-log.googlecode.com/svn/trunk@13#egg=django_db_log-1.0.1-py2.5-dev
+-e svn+http://django-gravatar.googlecode.com/svn/trunk/@13#egg=django_gravatar-0.1.0-py2.5-dev
 -e git://github.com/montylounge/django-disqus.git@35a022f28c50b9f7cdfcdd5deb4ae6f9150f4358#egg=django_disqus-0.1-py2.5-35a022f28c50b9f7cdfcdd5deb4ae6f9150f4358
 -e git://github.com/zerok/django-flatblocks.git@588d49c69e290ba7429559c64105102f88fb6fcd#egg=django_flatblocks-0.3.2-py2.5-588d49c69e290ba7429559c64105102f88fb6fcd
 -e git://github.com/sunlightlabs/django-honeypot.git@825c1cd0fc99491d5f30b976f511a97b56ca9978#egg=django_honeypot-0.1.2-py2.5-825c1cd0fc99491d5f30b976f511a97b56ca9978

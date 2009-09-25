@@ -365,7 +365,153 @@ section#content {
                     font-size: 0.8em;
                     font-weight: bold;
                 }
-
+        
+        div#mptt-comments-tree {
+            padding: 1em 15px 1em 0;
+        }
+        
+            /* comments at the root of the tree */
+        
+            div#mptt-comments-tree > .comment {
+                padding-left: 100px;
+                margin-bottom: 50px;
+            }
+                
+                div#mptt-comments-tree > .comment > .comment-whole > .comment-body {
+                    background: #F0F0F0 url('/media/img/comment_parent_bg.png') no-repeat left top;
+                }
+                
+                div#mptt-comments-tree > .comment > .comment-whole header {
+                    position: absolute;
+                    left: -100px;
+                }
+                
+                div#mptt-comments-tree > .comment > .comment-whole .comment-body-content {
+                    padding-left: 38px !important;
+                }
+        
+            .comment {
+                padding-top: 1.2em;
+                padding-left: 0.5em;
+            }
+            
+            .comment,
+            .comment p {
+                color: #34312E;
+                font-family: "Trebuchet MS",Verdana,"Lucida Grande",Tahoma,Helvetica,Sans-Serif;
+            }
+            
+            .comment h3 {
+                color: #41281B;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            
+            .comment p {
+                font-size: 0.7em;
+                line-height: 18px;
+                font-style: normal;
+                font-weight: normal;
+            }
+            
+            .comment-author,
+            .comment-meta time,
+            .comment-replies {
+                font-size: 0.7em;
+            }
+            
+                .comment-body-content {
+                    padding: 20px 20px 60px;
+                    min-height: 60px;
+                }
+            
+                .comment-reply,
+                .comment-replies {
+                    position: absolute;
+                }
+                
+                div#mptt-comments-tree > .comment > .comment-whole .comment-reply {
+                    left: 20px;
+                }
+                
+                div#mptt-comments-tree > .comment > .comment-whole .comment-replies {
+                    left: 27px;
+                }
+                
+                .comment-reply {
+                    bottom: 10px;
+                }
+                
+                .comment-replies {
+                    bottom: 6px;
+                }
+        
+                .comment-title {
+                    font-size: 0.9em;
+                    font-weight: bold;
+                    margin-bottom: 2px;
+                    background: #eeeeee;
+                    padding: 3px;
+                }
+        
+            .comment-collapsed .comment,
+            .comment-collapsed .comment-body,
+            .comment-collapsed-below {
+                display: none;
+            }
+            
+                .comment-whole {
+                    position: relative;
+                }
+                
+                /* comment which belongs to another */
+        
+                .comment > .comment {
+                    padding-left: 1em;
+                    margin-left: 18px;
+                    border-left: solid 1px #ebebeb;
+                    background: transparent url('/media/img/comment_comment_bg.png') no-repeat 0 50px;
+                }
+                
+                    .comment > .comment > .comment {
+                        margin-left: 0 !important;
+                    }
+                
+                    .comment > .comment > .comment-whole header {
+                        position: absolute;
+                        z-index: 20;
+                        right: 10px;
+                        bottom: 10px;
+                    }
+                    
+                    .comment > .comment > .comment-whole header > * {
+                        float: right;
+                    }
+                    
+                    .comment > .comment > .comment-whole .comment-meta {
+                        padding-top: 8px;
+                        margin-right: 5px;
+                    }
+                
+                        .comment > .comment > .comment-whole header img {
+                            width: 40px;
+                            height: 40px;
+                        }
+                
+                    .comment > .comment .comment-body {
+                        background-color: #E9F4EC;
+                        border: 1px solid #ebebeb;
+                        position: relative;
+                    }
+                    
+                    .comment > .comment > .comment-whole .comment-reply {
+                        left: 10px;
+                    }
+                    
+                    .comment > .comment > .comment-whole .comment-replies {
+                        left: 8px;
+                    }
+        
 /* SIDEBAR */
 
 nav#sidebar {

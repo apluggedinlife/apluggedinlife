@@ -1,40 +1,46 @@
-{% load markup i18n mptt_tags mptt_comments_tags comparison %}
+{% load markup i18n mptt_tags mptt_comments_tags comparison gravatar_tags %}
 
 {% for comment, tree in comments|tree_info %}
 
 {% if not tree.new_level %}</article>{% endif %}
 
-<article class="comment comment-level-{{ comment.level }}{% if_greater comment.level collapse_levels_above %} comment-collapsed{% endif_greater %}" id="comment-{{ comment.pk }}">
-    <header>
-        <p class="comment-title"><a class="comment-expand" href="{% url comment-detail comment.pk %}">{{ comment.title }}</a></p>
-        <p class="comment-meta">
-            <span class="comment-author">{% trans "Commented by" %} {{ comment.name }}</span>
-            <time datetime="{{ comment.submit_date }}">
-                {{ comment.submit_date|date:"l" }}{{ comment.submit_date|date:"j F" }} {% trans "at" %} {{ comment.submit_date|date:"H:i" }}
-            </time>
-        </p>
-    </header>
+<article class="comment comment-level-{{ comment.level }}" id="comment-{{ comment.pk }}">
+    <div class="comment-whole">
+        <header>
+            {% if comment.email %}
+                {% gravatar_img_for_email comment.email %}
+            {% endif %}
+            <div class="comment-meta">
+                <div class="comment-author">{{ comment.name }}</div>
+                <time datetime="{{ comment.submit_date }}">
+                    {{ comment.submit_date|date:"d.m.y" }}
+                </time>
+            </div> 
+        </header>
     
 
-    <div class="comment-body {% if_less comment.level collapse_levels_below %} comment-collapsed-below{% endif_less %}">
-    
-        {{ comment.comment|markdown }}
-
-         <p>
-            {% if comment|children_count %}{% ifequal comment.level cutoff_level %}
+        <div class="comment-body">
+            <div class="comment-body-content">
+                <h3>{{ comment.title }}</h3>
+                {{ comment.comment|markdown }}
+            </div>
+            <span class="comment-reply">
+                <a class="comment-reply" href="{% url comment-reply comment.pk %}" title="{% trans "Reply to the comment" %}">
+                    <img src="/media/img/comment_reply.png" alt="{% trans "Reply to the comment" %}" />
+                </a>
+            </span>
+            {% if comment|children_count %}
+            {% ifequal comment.level cutoff_level %}
                 <a class="comment-replies" href="{% url comments-subtree comment.pk %}">
                     {{ comment|children_count }} {% trans "hidden replies" %}
                 </a>
             {% else %}
+            <span class="comment-replies"> 
                 {{ comment|children_count }} {% trans "replies" %}
-            {% endifequal %} |{% endif %}
-             <a class="comment-post-new" href="#post_new_comment">
-                {% trans "Post a new comment" %}
-            </a> |
-            <a class="comment-reply" href="{% url comment-reply comment.pk %}">
-                {% trans "Reply to this comment" %}
-            </a>
-        </p>
+            </span>
+            {% endifequal %}
+            {% endif %}
+        </div>
     </div>
 
 {% for level in tree.closed_levels %}
