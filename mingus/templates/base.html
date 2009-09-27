@@ -1,4 +1,4 @@
-{% load flatblock_tags profiles cache navbar generic_content blog compress analytics feeds i18n %}
+{% load flatblock_tags profiles cache navbar generic_content blog compress analytics feeds i18n archive %}
 <!DOCTYPE html>
 <html lang="fr-fr">
 <head>
@@ -8,7 +8,7 @@
     {% block meta %}
     <meta name="keywords" content="{{ BLOG_SETTINGS.meta_keywords }}">
     <meta name="description" content="{{ BLOG_SETTINGS.meta_description }}">
-    <meta name="author" content="{{ BLOG_SETTINGS.author }}" />
+    <meta name="author" content="{{ BLOG_SETTINGS.author_name }}" />
     {% endblock %}
 
      <meta name="copyright" content="{{ BLOG_SETTINGS.copyright }}" />
@@ -103,6 +103,17 @@
                                   {% endfor %}
                                 </ul>
                                 {% endcache %}
+                            </li>
+                            <li class="title">
+                                <h2>{% trans "Archive"%}</h2>
+                                {% cache 7200 "base.archive" %}
+                                {% get_post_archive as dates %}
+                                <ul>
+                                {% for date in dates %}
+                                <li><a href="{% url blog_archive_month date|date:"Y", date|date:"b" %}" title="{{ date|date:"F Y" }}">{{ date|date:"F Y" }}</a></li>
+                                {% endfor %}
+                                </ul>
+                            {% endcache %}
                             </li>
                             <li class="title">
                                 {% cache 3600 "base.post_list" %}

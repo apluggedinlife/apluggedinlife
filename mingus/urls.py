@@ -8,12 +8,13 @@ from basic.blog.sitemap import BlogSitemap
 from mingus.core.views import springsteen_results, springsteen_firehose, \
                             home_list, springsteen_category, contact_form
 from robots.views import rules_list
+from mingus.core.feeds import AllEntries
 
 admin.autodiscover()
 
 feeds = {
     'latest': BlogPostsFeed,
-    'categories': BlogPostsByCategory,
+    'all': AllEntries,
 }
 #ex: /feeds/latest/
 #ex: /feeds/categories/django/
@@ -35,7 +36,6 @@ urlpatterns = patterns('',
 
 urlpatterns += patterns('',
     url(r'^oops/$', 'mingus.core.views.oops', name='raise_exception'),
-    url(r'^comments/', include('mptt_comments.urls')),
     url(r'^quotes/$', 'mingus.core.views.quote_list', name='quote_list'),
     url(r'^quotes/(?P<slug>[-\w]+)/$', 'mingus.core.views.quote_detail', name='quote_detail'),
     url(r'robots.txt$', rules_list, name='robots_rule_list'),
@@ -44,10 +44,10 @@ urlpatterns += patterns('',
     (r'^api/springsteen/posts/$', springsteen_results),
     (r'^api/springsteen/firehose/$', springsteen_firehose),
     (r'^api/springsteen/category/(?P<slug>[-\w]+)/$', springsteen_category),
-
     url(r'^contact/$',
         contact_form,
         name='contact_form'),
+
     url(r'^contact/sent/$',
         direct_to_template,
         { 'template': 'contact_form/contact_form_sent.html' },
@@ -61,7 +61,11 @@ urlpatterns += patterns('',
         view=home_list,
         name='home_index'),
 
+    url(r'^tags/(?P<slug>[-\w]+)/$', 'mingus.core.views.tag_detail',
+            name='blog_tag_detail'),
+
     (r'', include('basic.blog.urls')),
+    url(r'^comments/', include('mptt_comments.urls')),
 )
 
 
