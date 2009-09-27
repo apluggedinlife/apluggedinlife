@@ -201,11 +201,11 @@ section#content {
                     padding: 4px;
                 }
                 
-                span.count {
-                    background: transparent url('/media/img/count.png') no-repeat center center;
-                    font-size: 0.55em;
-                    width: 12px;
-                    height: 12px;
+                span.count,
+                span.comment-count {
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-color: transparent;
                     display: block;
                     text-align: center;
                     position: absolute;
@@ -214,6 +214,14 @@ section#content {
                     float: right;
                     top: -5px;
                     right: -4px;
+                }
+                
+                span.count {
+                    background-image: url('/media/img/count.png');
+                    font-size: 0.55em;
+                    width: 12px;
+                    height: 12px;
+                    color: #000000;
                 }
 
                 div.share a {
@@ -236,7 +244,8 @@ section#content {
                     margin-right: 10px;
                 }
 
-                div.share-right, div.share-left {
+                div.share-right,
+                div.share-left {
                     float: right;
                     position: relative;
                 }
@@ -425,8 +434,7 @@ section#content {
                     min-height: 60px;
                 }
             
-                .comment-reply,
-                .comment-replies {
+                .comment-reply {
                     position: absolute;
                 }
                 
@@ -434,16 +442,20 @@ section#content {
                     left: 20px;
                 }
                 
-                div#mptt-comments-tree > .comment > .comment-whole .comment-replies {
-                    left: 27px;
-                }
-                
                 .comment-reply {
-                    bottom: 10px;
+                    bottom: 7px;
                 }
                 
                 .comment-replies {
-                    bottom: 6px;
+                    top: -1px;
+                    right: -1px;
+                    position: absolute;
+                    width: 31px;
+                    height: 31px;
+                }
+                
+                .comment-no-hidden-replies {
+                    opacity: 0.5;
                 }
         
                 .comment-title {
@@ -453,12 +465,6 @@ section#content {
                     background: #eeeeee;
                     padding: 3px;
                 }
-        
-            .comment-collapsed .comment,
-            .comment-collapsed .comment-body,
-            .comment-collapsed-below {
-                display: none;
-            }
             
                 .comment-whole {
                     position: relative;
@@ -467,11 +473,19 @@ section#content {
                 /* comment which belongs to another */
         
                 .comment > .comment {
-                    padding-left: 1em;
+                    padding-left: 1.5em;
                     margin-left: 18px;
                     border-left: solid 1px #ebebeb;
                     background: transparent url('/media/img/comment_comment_bg.png') no-repeat 0 50px;
                 }
+                    
+                    span.comment-count {
+                        background-image: url('/media/img/comment_count.png');
+                        color: #FFFFFF;
+                        font-size: 1em;
+                        width: 16px;
+                        height: 16px;
+                    }
                 
                     .comment > .comment > .comment {
                         margin-left: 0 !important;
@@ -505,11 +519,7 @@ section#content {
                     }
                     
                     .comment > .comment > .comment-whole .comment-reply {
-                        left: 10px;
-                    }
-                    
-                    .comment > .comment > .comment-whole .comment-replies {
-                        left: 8px;
+                        left: 9px;
                     }
         
 /* SIDEBAR */
