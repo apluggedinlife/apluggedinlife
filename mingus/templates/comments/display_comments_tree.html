@@ -1,4 +1,4 @@
-{% load markup i18n mptt_tags mptt_comments_tags comparison gravatar_tags %}
+{% load markup i18n mptt_tags mptt_comments_tags comparison gravatar_tags blog %}
 
 {% for comment, tree in comments|tree_info %}
 
@@ -9,6 +9,8 @@
         <header>
             {% if comment.email %}
                 {% gravatar_img_for_email comment.email %}
+            {% else %}
+                <img src="{{ MEDIA_URL }}img/avatar_apluggedinlife.png" alt="{% trans "default avatar" %}" />
             {% endif %}
             <div class="comment-meta">
                 <div class="comment-author">{{ comment.name }}</div>
@@ -26,7 +28,7 @@
             </div>
             <span class="comment-reply">
                 <a class="comment-reply" href="{% url comment-reply comment.pk %}" title="{% trans "Reply to the comment" %}">
-                    <img src="/media/img/comment_reply.png" alt="{% trans "Reply to the comment" %}" />
+                    <img src="{{ MEDIA_URL }}img/comment_reply.png" alt="{% trans "Reply to the comment" %}" />
                 </a>
             </span>
             {% if comment|children_count %}
@@ -34,13 +36,13 @@
             <div class="comment-replies">
                 <span class="comment-count">{{ comment|children_count }}</span>
                 <a class="comment-replies" href="{% url comments-subtree comment.pk %}" title="{% trans "show hidden replies" %}">
-                    <img src="/media/img/comment_hidden.png" alt="{% trans "show hidden replies" %}" />
+                    <img src="{{ MEDIA_URL }}img/comment_hidden.png" alt="{% trans "show hidden replies" %}" />
                 </a>
             </div>
             {% else %}
             <div class="comment-replies comment-no-hidden-replies">
                 <span class="comment-count">{{ comment|children_count }}</span>
-                <img src="/media/img/comment_hidden.png" alt="{% trans "no hidden replies" %}" />
+                <img src="{{ MEDIA_URL }}img/comment_hidden.png" alt="{% trans "no hidden replies" %}" />
             </div>
             {% endifequal %}
             {% endif %}

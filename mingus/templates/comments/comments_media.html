@@ -1,6 +1,7 @@
 {% load i18n %}
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function () {
+    
     var MpttComment = {
         commentsLoaded: [],
         repliesLoaded: [],
@@ -51,12 +52,8 @@ $(document).ready(function () {
                 return false;
             });
             
-            $('.new-comment-form-wrapper').each(function () {
-                var nxt = $(this);
-                var frm = $('form', nxt);
-                _this.submit(frm, nxt);
-            });
-            
+            var form_wrapper = $('.new-comment-form-wrapper').get(0);
+            this.submit($('form', form_wrapper), $(form_wrapper))
             this.replies();
         },
         
@@ -98,21 +95,19 @@ $(document).ready(function () {
         
         replies: function () {
             var _this = this;
-            $('.comment-reply').each(function () {
+            $('.comment-reply').click(function (e) {
                  var parent = $(this).parents('.comment-whole:first');
                  parent.after('<div class="comment-form-wrapper"></div>');
-                 $(this).click(function (e) {
-                     $('.comment-form-wrapper').slideUp("slow");
-                     $.get($(this).attr('href') + '?is_ajax=1', function (data, textStatus) {
-                         var nxt = parent.next('.comment-form-wrapper');
-                         nxt.empty();
-                         nxt.append(data);
-                         nxt.slideDown("slow");
-                         var form = $("form", nxt);
-                         _this.submit(form, nxt);
-                     }, "html");
-                     return false;
-                 });
+                 $('.comment-form-wrapper').slideUp("slow");
+                 $.get($(this).attr('href') + '?is_ajax=1', function (data, textStatus) {
+                     var nxt = parent.next('.comment-form-wrapper');
+                     nxt.empty();
+                     nxt.append(data);
+                     nxt.slideDown("slow");
+                     var form = $("form", nxt);
+                     _this.submit(form, nxt);
+                 }, "html");
+                 return false;
              });
 
              $('.comment-replies').each(function () {

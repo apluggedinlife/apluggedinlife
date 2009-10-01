@@ -3,6 +3,8 @@
 {% block article %}
 
 {{ block.super }}
-{% include "blog/includes/comments.html" %}
+{% if post.allow_comments %}
+    {% include "blog/includes/comments.html" %}
+{% endif %}
 
 {% endblock %}

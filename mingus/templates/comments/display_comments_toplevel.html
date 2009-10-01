@@ -6,17 +6,10 @@
 
 <h2>{% trans "Comments" %}</h2>
 
-{% endif %}
-    
 <div id="mptt-comments-tree">
- 
-{% if comments %}
-
-    {% include "comments/display_comments_tree.html" %}    
-    
-{% endif %}
-
+    {% include "comments/display_comments_tree.html" %}
 </div>
+{% endif %}
     
 {% if comments_remaining %}
 <p>

@@ -1,6 +1,6 @@
 {% load comments i18n %}
 
-<form action="{% comment_form_target %}" method="POST">
+<form action="{% comment_form_target %}" method="POST" class="form">
     <fieldset>
         <ol>
         {% for field in form %}
@@ -22,9 +22,9 @@
                 {% endif %}
             {% endfor %}
             {% if allow_post %}
-              <input type="submit" name="submit" class="submit-post" value="{% trans "Post" %}">
+              <input type="submit" name="submit" class="submit-post" value="{% trans "Post" %}" />
             {% endif %}
-              <input type="submit" name="preview" class="submit-preview" value="{% trans "Preview" %}">
+              <input type="submit" name="preview" class="submit-preview" value="{% trans "Preview" %}" />
             </li>
         </ol>
     </fieldset>

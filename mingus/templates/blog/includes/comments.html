@@ -1,4 +1,6 @@
 {% load cache mptt_comments_tags %}
 <footer>
-    {% display_comment_toplevel_for post %}
+    {% with object as post %}
+        {% include "comments/display_comments_toplevel.html" %}
+    {% endwith %}
 </footer>

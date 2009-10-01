@@ -210,17 +210,17 @@ section#content {
                     text-align: center;
                     position: absolute;
                     z-index: 10;
-                    padding-top: 4px;
                     float: right;
-                    top: -5px;
-                    right: -4px;
+                    top: -7px;
+                    right: -7px;
                 }
                 
                 span.count {
                     background-image: url('/media/img/count.png');
                     font-size: 0.55em;
-                    width: 12px;
-                    height: 12px;
+                    width: 14px;
+                    padding-top: 5px;
+                    height: 14px;
                     color: #000000;
                 }
 
@@ -285,6 +285,7 @@ section#content {
 
         section#content article div.entry-body {
             padding-right: 20px;
+            margin-bottom: 50px;
         }
             div.entry-body h1 {
                 font-size: 1.4em;
@@ -292,9 +293,14 @@ section#content {
             }
             
             div.entry-body h1 a,
-            div.entry-body h1 {
+            div.entry-body h1,
+            footer h2 {
                 color: #41281B;
                 font-weight: bold;
+            }
+            
+            footer h2 {
+                font-size: 1.1em;
             }
         
             div.entry-body p {
@@ -439,11 +445,11 @@ section#content {
                 }
                 
                 div#mptt-comments-tree > .comment > .comment-whole .comment-reply {
-                    left: 20px;
+                    left: 10px;
                 }
                 
                 .comment-reply {
-                    bottom: 7px;
+                    bottom: -2px;
                 }
                 
                 .comment-replies {
@@ -470,9 +476,14 @@ section#content {
                     position: relative;
                 }
                 
+                .comment-form-wrapper {
+                    padding-top: 1.5em;
+                }
+                
                 /* comment which belongs to another */
         
-                .comment > .comment {
+                .comment > .comment,
+                .comment-form-wrapper {
                     padding-left: 1.5em;
                     margin-left: 18px;
                     border-left: solid 1px #ebebeb;
@@ -483,11 +494,13 @@ section#content {
                         background-image: url('/media/img/comment_count.png');
                         color: #FFFFFF;
                         font-size: 1em;
+                        padding-top: 6px;
                         width: 16px;
                         height: 16px;
                     }
                 
-                    .comment > .comment > .comment {
+                    .comment > .comment > .comment,
+                    .comment > .comment > .comment-form-wrapper {
                         margin-left: 0 !important;
                     }
                 
@@ -519,8 +532,12 @@ section#content {
                     }
                     
                     .comment > .comment > .comment-whole .comment-reply {
-                        left: 9px;
+                        left: 0;
                     }
+        
+        div.new-comment-form-wrapper {
+            margin: 15px 0;
+        }
         
 /* SIDEBAR */
 
@@ -712,6 +729,53 @@ div.twitter-container {
         width: 167px;
         height: 70px;
     }
+
+/* ---- FORM STYLESHEETS ---- */
+
+.form input[type=text],
+.form input[type=submit],
+.form textarea {
+    border: 4px solid #F0F0F0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin: 3px 0;
+}
+
+.form input[type=text],
+.form textarea {
+    width: 60%;
+    padding: 6px 50px 6px 6px;
+}
+
+.form input[type=submit] {
+    width: 30%;
+    display: block;
+    position: relative;
+    color: #66685B;
+    background-color: #F0F0F0;
+    padding: 7px;
+}
+
+.form ol li {
+    margin-bottom: 10px;
+}
+
+.form ol li.required input[type=text],
+.form ol li.required textarea {
+    background: transparent url('/media/img/field_required.png') no-repeat right center;
+}
+
+.form ol li.required textarea {
+    background-position: right top !important;
+}
+
+.form label {
+    display: block;
+    color: #66685B;
+    font-size: 0.8em;
+    font-weight: bold;
+}
 
 /* ----  GENERIC CLASSES ---- **/
 
