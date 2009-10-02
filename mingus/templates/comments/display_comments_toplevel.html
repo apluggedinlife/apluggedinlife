@@ -4,7 +4,7 @@
     
 {% if comments %}
 
-<h2>{% trans "Comments" %}</h2>
+<h2 id="comments">{% trans "Comments" %}<a title="{% trans "Permalink to comments" %}" href="#comments" class="permalink">¶</a></h2>
 
 <div id="mptt-comments-tree">
     {% include "comments/display_comments_tree.html" %}
@@ -22,7 +22,7 @@
 {% endif %}
 
 
-<h2 id="post-new-comment">{% trans "Post a new comment" %}</h2>
+<h2 id="post-new-comment">{% trans "Post a new comment" %}<a title="{% trans "Permalink to post a new comment" %}" href="#post-new-comments" class="permalink">¶</a></h2>
 
 <div class="new-comment-form-wrapper">
 {% get_mptt_comment_form for object as form %}

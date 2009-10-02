@@ -1,5 +1,5 @@
 {% extends "blog/base_blog.html" %}
-{% load blog tagging_tags inlines cache pygment_tags oembed_tags mptt_comments_tags i18n %}
+{% load blog tagging_tags inlines cache pygment_tags oembed_tags mptt_comments_tags i18n tagging_related %}
 
 {% block title %}{{ object.title }} - {{ block.super }}{% endblock %}
 
@@ -21,7 +21,7 @@
     {% block content_title %}
       <p class="other_posts">
         {% if object.get_previous_by_publish %}
-            <a class="previous" href="{{ object.get_previous_post.get_absolute_url }}">&laquo; {{ object.get_previous_post }}</a>
+            <a class="previous" href="{{ object.get_previous_post.get_absolute_url }}">&laquo; {{ object.get_previous_posFt }}</a>
         {% endif %}
         {% if object.get_next_by_publish %}
             | <a class="next" href="{{ object.get_next_post.get_absolute_url }}">{{ object.get_next_post }} &raquo;</a>

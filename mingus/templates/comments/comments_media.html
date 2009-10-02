@@ -82,11 +82,11 @@ $(document).ready(function () {
                             _this.replies();
                         }
                     } else {
-                        nxt.empty();
-                        nxt.append(data);
-                        nxt.slideDown("slow");
-                        var newForm = $("form", nxt);
-                        _this.submit(newForm, nxt);
+                        nxt
+                            .empty()
+                            .append(data)
+                            .slideDown("slow");
+                        _this.submit($('form', nxt), nxt);
                     }
                 }, "html");
                 return false;
@@ -100,13 +100,13 @@ $(document).ready(function () {
                  parent.after('<div class="comment-form-wrapper"></div>');
                  $('.comment-form-wrapper').slideUp("slow");
                  $.get($(this).attr('href') + '?is_ajax=1', function (data, textStatus) {
-                     var nxt = parent.next('.comment-form-wrapper');
-                     nxt.empty();
-                     nxt.append(data);
-                     nxt.slideDown("slow");
-                     var form = $("form", nxt);
-                     _this.submit(form, nxt);
-                 }, "html");
+                     var nxt = parent
+                                .next('.comment-form-wrapper')
+                                .empty()
+                                .append(data)
+                                .slideDown('slow');
+                     _this.submit($('form', nxt), nxt);
+                 }, 'html');
                  return false;
              });
 
@@ -129,13 +129,14 @@ $(document).ready(function () {
                                     .parent()
                                     .addClass('comment-no-hidden-replies');
                                 _this.replies();
-                            }, "json");
+                            }, 'json');
                         } else {
                             elem
                                 .parents('.comment:first')
                                 .children('.comment')
-                                .slideToggle();
-                            elem
+                                .slideToggle()
+                                .end()
+                                .end()
                                 .parent()
                                 .toggleClass('comment-no-hidden-replies');
                         }

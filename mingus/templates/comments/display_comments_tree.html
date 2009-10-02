@@ -15,7 +15,9 @@
             <div class="comment-meta">
                 <div class="comment-author">{{ comment.name }}</div>
                 <time datetime="{{ comment.submit_date }}">
-                    {{ comment.submit_date|date:"d.m.y" }}
+                    <a href="{% url comment-detail comment.pk %}#comment-{{ comment.pk }}" title="{% trans "comment detail" %}">
+                        {{ comment.submit_date|date:"d.m.y" }}
+                    </a>
                 </time>
             </div> 
         </header>

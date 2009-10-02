@@ -26,6 +26,14 @@
 </head>
 <body id="{% block body_id %}{% endblock %}" class="{% block body_class %}blog{% endblock %}" onload="prettyPrint()">
     <div id="whole" class="whole-main">
+        <div id="accessibility">
+            <ul>
+                <li class="first"><a href="#nav-menu" title="{% trans "Go to navigation" %}">{% trans "Go to navigation" %}</a></li>
+                <li class="first"><a href="#footer" title="{% trans "Go to footer" %}">{% trans "Go to footer" %}</a></li>
+                <li><a href="#content" title="{% trans "Go to content" %}">{% trans "Go to content" %}</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
         <div id="wrapper">
             <header role="banner">
                 <nav>
