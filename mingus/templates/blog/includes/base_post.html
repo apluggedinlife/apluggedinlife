@@ -1,4 +1,4 @@
-{% load blog tagging_tags inlines oembed_tags cache %}
+{% load blog i18n comments tagging_tags inlines oembed_tags cache %}
 <article>
 {% block article %}
     <header>
@@ -86,7 +86,8 @@
         </div>
         <div class="clear"></div>
         <div class="count-comment">
-            <a href="" title="Commentaires">6</a>
+            {% get_comment_count for post as comment_count %}
+            <a href="{{ post.get_absolute_url }}#comments" title="{% trans "comments" %}">{{ comment_count }}</a>
         </div>
     </header>
     <div class="entry-body">

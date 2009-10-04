@@ -33,9 +33,11 @@ div.whole-main {
     background: transparent url('/media/img/header_bg.png') repeat-x  0 0;
 }
 
-div#wrapper {
-    margin: 0 auto;
+div#wrapper,
+div#accessibility ul,
+footer#footer {
     width: 1005px;
+    margin: 0 auto;
     position: relative;  
 }
 
@@ -117,10 +119,6 @@ div#accessibility {
     padding: 0.2em;
     background-color: #0EA6C9;
 }
-    div#accessibility ul {
-        width: 1005px;
-        margin: 0 auto;
-    }
 
         div#accessibility ul li {
             float: right;
@@ -760,6 +758,61 @@ div.twitter-container {
         width: 167px;
         height: 70px;
     }
+
+/* FOOTER */
+
+footer#footer {
+    background: transparent url('/media/img/footer_bg.png') no-repeat center top;
+    padding-top: 47px;
+}
+
+    footer#footer > ul {
+        background: #34322F url('/media/img/footer_worm.png') no-repeat right bottom;
+        padding: 20px;
+    }
+
+        footer#footer > ul > li:not(.clear) {
+            float: left;
+            margin-right: 30px;
+        }
+        
+            footer#footer > ul > li:not(.clear) h1 {
+                color: #19161A;
+                text-align: center;
+                font-size: 1.1em;
+                margin-bottom: 8px;
+                font-weight: bold;
+            }
+            
+            footer#footer > ul > li:not(.clear) div {
+                max-width: 256px;
+                background: transparent url('/media/img/footer_container_arrow.png') no-repeat center top;
+                padding-top: 12px;
+            }
+            
+                footer#footer > ul > li:not(.clear) div ul {
+                    background-color: #19161A;
+                    padding: 10px;
+                    -moz-border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                }
+                
+                    footer#footer > ul > li:not(.clear) div ul li:not(:last-child) {
+                        margin-bottom: 12px;
+                    }
+                    
+                        footer#footer > ul > li:not(.clear) div ul li a,
+                        footer#footer > ul > li:not(.clear) div ul li {
+                            color: #4B4743;
+                        }
+                        
+                        footer#footer > ul > li:not(.clear) div ul li a {
+                            font-size: 0.8em;
+                        }
+                        
+                        footer#footer > ul > li:not(.clear) div ul li a:hover {
+                            border-bottom: 1px dashed #4B4743;
+                        }
 
 /* ---- FORM STYLESHEETS ---- */
 
