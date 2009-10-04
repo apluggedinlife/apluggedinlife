@@ -26,7 +26,6 @@ TEMPLATE_DIRS = (
   [os.path.join(PROJECT_ROOT, "templates")]
 )
 
-AUTH_PROFILE_MODULE = 'profiles.profile'
 MPTT_COMMENTS_OFFSET = 5
 
 MIDDLEWARE_CLASSES = (
@@ -96,6 +95,9 @@ INSTALLED_APPS = (
     'quoteme',
     'mingus',
 )
+
+GRAVATAR_DEFAULT_IMAGE = '/media/img/avatar_apluggedinlife.png'
+
 
 try:
    from local_settings import *

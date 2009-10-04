@@ -123,9 +123,9 @@ div#accessibility {
     }
 
         div#accessibility ul li {
-            float: left;
-            margin-right: 0.5em;
-            padding-right: 0.5em;
+            float: right;
+            margin-left: 0.5em;
+            padding-left: 0.5em;
         }
     
             div#accessibility ul li a {
@@ -134,7 +134,7 @@ div#accessibility {
             }
     
         div#accessibility ul li.first {
-            border-right: 1px solid #414141;
+            border-left: 1px solid #414141;
         }
 
 /* CONTENT */
