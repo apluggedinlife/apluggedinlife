@@ -45,73 +45,73 @@ footer#footer {
         position: relative;
     }
 
-    header h1.logo {
-        background-image: url('/media/img/header.png');
-        height: 444px;
-        text-indent: -500em;
-    }
+        div#wrapper > header h1.logo {
+            background-image: url('/media/img/header.png');
+            height: 444px;
+            text-indent: -500em;
+        }
 
-    header h1.logo a {
-        height: 444px;
-        display: block; 
-    }
+            div#wrapper > header h1.logo a {
+                height: 444px;
+                display: block; 
+            }
 
-nav ul#nav-menu {
-    padding: 10px 0 0 20px;
-}
+        ul#nav-menu {
+            padding: 10px 0 0 20px;
+        }
 
-    nav ul#nav-menu li.nav-item, 
-    nav ul#nav-menu li.nav-item-current {
-        float: left;
-        margin-left: 25px;
-        background-color: transparent;
-        background-repeat: no-repeat;
-        background-position: 0 0;
-        background-attachment: scroll;
-    }
+            ul#nav-menu li.nav-item, 
+            ul#nav-menu li.nav-item-current {
+                float: left;
+                margin-left: 25px;
+                background-color: transparent;
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                background-attachment: scroll;
+            }
 
-    nav ul#nav-menu li.nav-item-current {
-        background-position: 0 -17px !important;
-    }
+            ul#nav-menu li.nav-item-current {
+                background-position: 0 -17px !important;
+            }
 
-    nav ul#nav-menu li a {
-        height: 17px;
-        overflow: hidden;
-        text-indent: -500em;
-        display: block;
-        position: relative;
-        z-index: 10;
-    }
+            ul#nav-menu li a {
+                height: 17px;
+                overflow: hidden;
+                text-indent: -500em;
+                display: block;
+                position: relative;
+                z-index: 10;
+            }
 
-    nav ul#nav-menu li.nav-item-home a {
-        background-image: url('/media/img/nav_item_home.png');
-        width: 36px;
-    }
+            ul#nav-menu li.nav-item-home a {
+                background-image: url('/media/img/nav_item_home.png');
+                width: 36px;
+            }
 
-    nav ul#nav-menu li.nav-item-about a {
-        background-image: url('/media/img/nav_item_about.png');
-        width: 38px;
-    }
+            ul#nav-menu li.nav-item-about a {
+                background-image: url('/media/img/nav_item_about.png');
+                width: 38px;
+            }
 
-    nav ul#nav-menu li.nav-item-contact a {
-        background-image: url('/media/img/nav_item_contact.png');
-        width: 48px;
-    }
+            ul#nav-menu li.nav-item-contact a {
+                background-image: url('/media/img/nav_item_contact.png');
+                width: 48px;
+            }
 
-    nav ul#nav-menu li.nav-item-blogroll a {
-        background-image: url('/media/img/nav_item_blogroll.png');
-        width: 49px;
-    }
+            ul#nav-menu li.nav-item-blogroll a {
+                background-image: url('/media/img/nav_item_blogroll.png');
+                width: 49px;
+            }
 
-    nav ul#nav-menu li.nav-item-archives a {
-        background-image: url('/media/img/nav_item_archives.png');
-        width: 55px;
-    }
+            ul#nav-menu li.nav-item-archives a {
+                background-image: url('/media/img/nav_item_archives.png');
+                width: 55px;
+            }
 
-    nav ul#nav-menu li.nav-item-tuts a {
-        background-image: url('/media/img/nav_item_tuts.png');
-        width: 26px;
-    }
+            ul#nav-menu li.nav-item-tuts a {
+                background-image: url('/media/img/nav_item_tuts.png');
+                width: 26px;
+            }
 
 /* ACCESSIBILITY */
 
@@ -131,7 +131,7 @@ div#accessibility {
                 font-size: 0.65em;
             }
     
-        div#accessibility ul li.first {
+        div#accessibility ul li:not(:last-child) {
             border-left: 1px solid #414141;
         }
 
@@ -315,7 +315,7 @@ section#content {
                         padding-top: 0.4em;
                     }
 
-        section#content article div.entry-body {
+        div.entry-body {
             padding-right: 20px;
             margin-bottom: 50px;
         }
@@ -333,15 +333,18 @@ section#content {
             }
             
             div.blockquote-author {
-                color: #34312E;
                 margin-left: 25px;
                 font-size: 0.9em;
+            }
+            
+            div.blockquote-author,
+            div.blockquote > blockquote {
+                color: #34312E;
             }
             
             div.blockquote > blockquote {
                 display: inline-block;
                 padding-bottom: 19px;
-                color: #34312E;
                 font-size: 0.8em;
                 padding-right: 19px;
                 background: transparent url('/media/img/quote_right.png') no-repeat bottom right;
@@ -583,15 +586,15 @@ section#content {
                         bottom: 10px;
                     }
                     
-                    .comment > .comment > .comment-whole header > * {
-                        float: right;
-                    }
+                        .comment > .comment > .comment-whole header > * {
+                            float: right;
+                        }
                     
-                    .comment > .comment > .comment-whole .comment-meta {
-                        padding-top: 8px;
-                        margin-right: 5px;
-                        text-align: right;
-                    }
+                        .comment > .comment > .comment-whole .comment-meta {
+                            padding-top: 8px;
+                            margin-right: 5px;
+                            text-align: right;
+                        }
                 
                         .comment > .comment > .comment-whole header img {
                             width: 40px;
@@ -839,6 +842,7 @@ footer#footer {
                     padding: 10px;
                     -moz-border-radius: 10px;
                     -webkit-border-radius: 10px;
+                    border-radius: 10px;
                 }
                 
                     footer#footer > ul > li:not(.clear) div ul li:not(:last-child) {
