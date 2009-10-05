@@ -19,7 +19,7 @@ USE_I18N = False
 HONEYPOT_FIELD_NAME = 'fonzie_kungfu'
 
 MANAGERS = (
-    ('fooper','your@emailaddress'),
+    ('Florent Messa','thoas@apluggedinlife.com'),
 )
 
 TEMPLATE_DIRS = (
@@ -96,7 +96,7 @@ INSTALLED_APPS = (
     'mingus',
 )
 
-GRAVATAR_DEFAULT_IMAGE = '/media/img/avatar_apluggedinlife.png'
+GRAVATAR_DEFAULT_IMAGE = MEDIA_URL + 'img/avatar_apluggedinlife.png'
 
 
 try:

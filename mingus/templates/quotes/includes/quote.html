@@ -1,18 +1,21 @@
-<div>
-    <h3><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h3>
-    <div>
-        {% if object.quote %}
-            <blockquote>{{ object.quote }}</blockquote>
-        {% endif %}
-    </div>
-    <div>
-      {% if object.author %}
-      {% if object.url_source %}
-            <span>- <a href="{{ object.url_source }}">{{ object.author }}</a></span>
-      {% else %}
-      <span>- {{ object.author }} {% if object.circa %}, {{ object.circa }}{% endif %}</span>
-      {% endif %}
+{% extends "quotes/includes/base_quote.html" %}
+{% load cache tagging_related i18n %}
+{% block article %}
 
-        {% endif %}
+{{ block.super }}
+{% cache 1800 "quoteme.quote_detail.related_list" quote.pk %}
+{% tagged_get_related object in quoteme.Quote as quote_list with num=3 %}
+{% if quote_list %}
+<footer>
+    <div class="related-quotes">
+        <h2 id="related-quotes">{% trans "Related quotes" %}<a title="{% trans "Permalink to related quotes of this quote" %}" href="#related-quotes" class="permalink">¶</a></h2>
+        <ol>
+            {% for quote in quote_list %}
+            <li><a href="{{ quote.get_absolute_url }}" title="{{ quote.title }}">{{ quote.title }}</a></li>
+            {% endfor %}
+        </ol>
     </div>
-</div>
+</footer>
+{% endif %}
+{% endcache %}
+{% endblock %}

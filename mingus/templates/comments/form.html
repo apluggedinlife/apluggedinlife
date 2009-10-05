@@ -2,7 +2,7 @@
 
 <form action="{% comment_form_target %}" method="POST" class="form">
     <fieldset>
-        <ol>
+        <ul>
         {% for field in form %}
             {% if not field.is_hidden %}
             <li class="{% if not field.field.required %}not{% endif %}required{% if field.errors %} errors{% endif %}{% ifequal field.name "honeypot" %} hidden{% endifequal %}">
@@ -26,6 +26,6 @@
             {% endif %}
               <input type="submit" name="preview" class="submit-preview" value="{% trans "Preview" %}" />
             </li>
-        </ol>
+        </ul>
     </fieldset>
 </form>

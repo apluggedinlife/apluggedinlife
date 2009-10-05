@@ -68,12 +68,11 @@
                 <section id="content">
                     <section id="navigation-inner">
                         <em>{% trans "Vous êtes ici" %}</em>
-                        {% block navigation_inner %}
                         <ul>
-                            <li><a href="{% url home_index %}">Home</a></li>
-                            <li>Home</li>
-                        </ul>
+                        {% block navigation_inner %}
+                            <li><a href="{% url home_index %}" title="{% trans "Homepage" %}">Home</a></li>
                         {% endblock %}
+                        </ul>
                         <div class="clear"></div>
                     </section>
                     {% block content %}
@@ -129,7 +128,7 @@
                                 {% endcache %}
                             </li>
                             <li class="title">
-                                <h2 class="active">{% trans "Popular ports"%}</h2>
+                                <h2 class="active">{% trans "Popular posts"%}</h2>
                                 {% cache 7200 "base.popular_posts" %}
                                 {% get_popular_posts 10 as popular_post_list %}
                                 <ul>
@@ -238,6 +237,7 @@
             </li>
             <li class="clear"></li>
         </ul>
+        <div id="copyright"></div>
     </footer>
 
     <script type="text/javascript" src="{{ MEDIA_URL }}js/prettify.js"></script>

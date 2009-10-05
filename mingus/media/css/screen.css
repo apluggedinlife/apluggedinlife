@@ -168,6 +168,14 @@ section#content {
     section#content > article {
         margin-bottom: 50px;
     }
+    
+    section#content ol {
+        padding: 10px;
+    }
+    
+        section#content ol li:not(:last-child) {
+            margin-bottom: 10px;
+        }
 
         section#content > article > header {
             width: 120px;
@@ -316,6 +324,29 @@ section#content {
                 margin-bottom: 5px;
             }
             
+            div.blockquote {
+                background: transparent url('/media/img/quote_left.png') no-repeat top left;
+                padding-top: 19px;
+                padding-left: 19px;
+                min-height: 20px;
+                display: block;
+            }
+            
+            div.blockquote-author {
+                color: #34312E;
+                margin-left: 25px;
+                font-size: 0.9em;
+            }
+            
+            div.blockquote > blockquote {
+                display: inline-block;
+                padding-bottom: 19px;
+                color: #34312E;
+                font-size: 0.8em;
+                padding-right: 19px;
+                background: transparent url('/media/img/quote_right.png') no-repeat bottom right;
+            }
+            
             div.entry-body h1 a,
             div.entry-body h1,
             footer h2 {
@@ -337,7 +368,8 @@ section#content {
             
             div.entry-body p a,
             section#navigation-inner ul li a,
-            .comment header a {
+            .comment header a,
+            section#content ol li a {
                 color: #222;
                 text-decoration: none;
                 padding: 1px 2px;
@@ -351,7 +383,8 @@ section#content {
             
             div.entry-body p a:active,
             .comment header a:active,
-            section#navigation-inner ul li a:active {
+            section#navigation-inner ul li a:active,
+            section#content ol li a:active {
                 color: #8b1109;
             }
             
@@ -362,7 +395,8 @@ section#content {
             
             div.entry-body p a:hover,
             section#navigation-inner ul li a:hover,
-            .comment header a:hover {
+            .comment header a:hover,
+            section#content ol li a:hover {
                 color: #222;
                 background: transparent;
                 border-bottom: 1px solid #555;
@@ -370,7 +404,8 @@ section#content {
             
             div.entry-body p a:visited,
             section#navigation-inner ul li a:visited,
-            .comment header a:visited {
+            .comment header a:visited,
+            section#content ol li a:visited {
                 color: #222;
                 background: rgba(226, 247, 226, .4);
             }
@@ -392,21 +427,30 @@ section#content {
         }
         
             div.entry-meta ul li {
-                padding: 4px 10px;
                 display: inline-block;
-                background-color: #34312E;
                 float: left;
-                margin-right: 10px;
-                -moz-border-radius: 8px;
-                -webkit-border-radius: 8px;
-                -opera-border-radius: 8px;
-                border-radius: 8px;
+                font-size: 73%;
+                margin-right: -5px;
             }
 
                 div.entry-meta ul li a {
-                    color: #FFFFFF;
-                    font-size: 0.8em;
-                    font-weight: bold;
+                    background: transparent url('/media/img/tags.png') no-repeat 0 0;
+                    padding: 4px 0 6px 8px;
+                }
+                
+                    div.entry-meta ul li a span {
+                        color: #404040;
+                        background-color: #e1e1e1;
+                        padding: 4px 13px 2px 7px;
+                    }
+                    
+                    div.entry-meta ul li a:hover span {
+                        background-color: #6C6C6C;
+                        color: #FFFFFF;
+                    }
+                
+                div.entry-meta ul li a:hover {
+                    background-position: 0 -22px;
                 }
         
         div#mptt-comments-tree {
@@ -813,6 +857,13 @@ footer#footer {
                         footer#footer > ul > li:not(.clear) div ul li a:hover {
                             border-bottom: 1px dashed #4B4743;
                         }
+    
+    div#copyright {
+        width: 461px;
+        height: 49px;
+        margin: 0 auto;
+        background: transparent url('/media/img/copyright.png') no-repeat center center;
+    }
 
 /* ---- FORM STYLESHEETS ---- */
 
@@ -851,16 +902,16 @@ ul.errorlist li {
     padding: 7px;
 }
 
-.form ol li {
+.form ul li {
     margin-bottom: 10px;
 }
 
-.form ol li.required input[type=text],
-.form ol li.required textarea {
+.form ul li.required input[type=text],
+.form ul li.required textarea {
     background: transparent url('/media/img/field_required.png') no-repeat right center;
 }
 
-.form ol li.required textarea {
+.form ul li.required textarea {
     background-position: right top !important;
 }
 

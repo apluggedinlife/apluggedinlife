@@ -3,6 +3,11 @@
 
 {% block title %}{{ object.title }} - {{ block.super }}{% endblock %}
 
+{% block navigation_inner %}
+    {{ block.super }}
+    <li>{{ object.title }}</li>
+{% endblock %}
+
 {% block meta %}
     <meta name="keywords" content="{{ object.get_meta_keywords }}">
     <meta name="description" content="{{ object.get_meta_description }}">

@@ -1,10 +1,25 @@
 {% extends "blog/includes/base_post.html" %}
-
+{% load cache tagging_related i18n   %}
 {% block article %}
 
 {{ block.super }}
-{% if post.allow_comments %}
+<footer>
+    {% cache 1800 "blog.post_detail.related_list" post.pk %}
+    {% tagged_get_related object in blog.Post as post_list with num=3 %}
+    {% if post_list %}
+    <div class="related-posts">
+        <h2 id="related-posts">{% trans "Related posts" %}<a title="{% trans "Permalink to related posts of this post" %}" href="#related-posts" class="permalink">¶</a></h2>
+        <ol>
+            {% for post in post_list %}
+            <li><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+            {% endfor %}
+        </ol>
+    </div>
+    {% endif %}
+    {% endcache %}
+    
+    {% if post.allow_comments %}
     {% include "blog/includes/comments.html" %}
-{% endif %}
-
+    {% endif %}
+</footer>
 {% endblock %}

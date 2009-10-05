@@ -1,0 +1,42 @@
+{% load blog i18n comments tagging_tags cache %}
+<article>
+{% block article %}
+    <div class="entry-body">
+        <h1><a href="{{ quote.get_absolute_url }}" title="{{ quote.title }}">{{ quote.title }}</a></h1>
+        {% cache 300 "quotes.quote_detail.tag_list" quote.pk %}
+        {% tags_for_object quote as tag_list %}
+        {% if tag_list %}
+        <div class="entry-meta">
+            <ul>
+                {% for tag in tag_list %}
+                    <li>
+                        <a href="/tags/{{ tag }}">
+                            <span>{{ tag }}</span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+             <div class="clear"></div>
+         </div>
+        {% endif %}
+        {% endcache %}
+        <div class="entry-body">
+            <div class="blockquote">
+                <blockquote>
+                    {{ quote.quote }}
+                </blockquote>
+            </div>
+            {% if quote.author %}
+                <div class="blockquote-author">
+                {% if quote.url_source %}
+                <span>- <a href="{{ quote.url_source }}">{{ quote.author }}</a></span>
+                {% else %}
+                <span>- {{ quote.author }} {% if quote.circa %}, {{ quote.circa }}{% endif %}</span>
+                {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="clear"></div>
+{% endblock %}
+</article>

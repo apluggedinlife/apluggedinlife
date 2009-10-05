@@ -9,7 +9,15 @@
         <header>
             <img src="{% get_gravatar_for_email comment.email %}" alt="{% trans "gravatar" %}" />
             <div class="comment-meta">
-                <div class="comment-author">{{ comment.name }}</div>
+                <div class="comment-author">
+                    {% if comment.user_url %}
+                        <a href="{{ comment.user_url }}" title="{% trans "go to "%}{{ comment.user_url }}">
+                            {{ comment.name }}
+                        </a>
+                    {% else %}
+                        {{ comment.name }}
+                    {% endif %}
+                    </div>
                 <time datetime="{{ comment.submit_date }}">
                     <a href="{% url comment-detail comment.pk %}#comment-{{ comment.pk }}" title="{% trans "comment detail" %}">
                         {{ comment.submit_date|date:"d.m.y" }}
@@ -22,7 +30,7 @@
         <div class="comment-body">
             <div class="comment-body-content">
                 <h3>{{ comment.title }}</h3>
-                {{ comment.comment|markdown }}
+                {{ comment.comment|escape|linebreaks|markdown }}
             </div>
             <span class="comment-reply">
                 <a class="comment-reply" href="{% url comment-reply comment.pk %}" title="{% trans "Reply to the comment" %}">
