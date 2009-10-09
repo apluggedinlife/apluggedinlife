@@ -10,7 +10,6 @@ $(document).ready(function () {
             this.commentPk = new RegExp("comment-(\\d+)", "");
             this.posted = new RegExp("this_is_a_comment", "g");
             
-            var _this = this;
             $('#comments-more').bind("click", function () {
                 $.get($(this).attr('href') + '?is_ajax=1', {}, function (data, textStatus) {
                     var commentsForUpdate = data.comments_for_update;
@@ -36,7 +35,7 @@ $(document).ready(function () {
                             'href', 
                             _href.replace(
                                 new RegExp("\\d+/$"), 
-                                parseInt(_this.commentPk.exec(
+                                parseInt(MpttComment.commentPk.exec(
                                     $(commentsLoaded[commentsLoaded.length - 1])
                                     .attr('id'))[1]) + '/'
                                 )
@@ -46,7 +45,7 @@ $(document).ready(function () {
                             .parent()
                             .hide();
                     }
-                    _this.replies();
+                    MpttComment.replies();
                 },
                 "json");
                 return false;
@@ -58,7 +57,6 @@ $(document).ready(function () {
         },
         
         submit: function (form, nxt) {
-            var _this = this;
             var postData = {}
             $("input[type=submit]", form).bind("mousedown", function () {
                 postData = {};
@@ -73,20 +71,20 @@ $(document).ready(function () {
 
                 postData['is_ajax'] = 1;
                 $.post(form.attr("action"), postData, function (data, textStatus) {
-                    if (_this.posted.test(data)) {
+                    if (MpttComment.posted.test(data)) {
                         if (nxt.hasClass('new-comment-form-wrapper')) {
                             $('#mptt-comments-tree').append(data);
                             nxt.replaceWith('<p>{% trans "Your comment was posted." %}</p>');
                         } else {
                             nxt.replaceWith(data);
-                            _this.replies();
+                            MpttComment.replies();
                         }
                     } else {
                         nxt
                             .empty()
                             .append(data)
                             .slideDown("slow");
-                        _this.submit($('form', nxt), nxt);
+                        MpttComment.submit($('form', nxt), nxt);
                     }
                 }, "html");
                 return false;
@@ -94,7 +92,6 @@ $(document).ready(function () {
         },
         
         replies: function () {
-            var _this = this;
             $('.comment-reply').click(function (e) {
                  var parent = $(this).parents('.comment-whole:first');
                  parent.after('<div class="comment-form-wrapper"></div>');
@@ -105,7 +102,7 @@ $(document).ready(function () {
                                 .empty()
                                 .append(data)
                                 .slideDown('slow');
-                     _this.submit($('form', nxt), nxt);
+                     MpttComment.submit($('form', nxt), nxt);
                  }, 'html');
                  return false;
              });
@@ -116,7 +113,7 @@ $(document).ready(function () {
                     .unbind('click')
                     .bind('click', function (e) {
                         var href = elem.attr('href') + '?is_ajax=1';
-                        if ($.inArray(href, _this.repliesLoaded) == -1) {
+                        if ($.inArray(href, MpttComment.repliesLoaded) == -1) {
                             $.get(href, {}, function (data, textStatus) {
                                 var commentsTree = data.comments_tree;
                                 if (commentsTree) {
@@ -124,11 +121,11 @@ $(document).ready(function () {
                                         .parents('.comment:first')
                                         .append(commentsTree.html);
                                 }
-                                _this.repliesLoaded.push($(this).get(0).url);
+                                MpttComment.repliesLoaded.push($(this).get(0).url);
                                 elem
                                     .parent()
                                     .addClass('comment-no-hidden-replies');
-                                _this.replies();
+                                MpttComment.replies();
                             }, 'json');
                         } else {
                             elem

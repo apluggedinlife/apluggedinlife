@@ -2,6 +2,15 @@
 
 {% block title %}{{ object.title }} | {{ block.super }}{% endblock %}
 
+{% block navigation_inner %}
+    {{ block.super }}
+    <li>{{ object.title }}</li>
+{% endblock %}
+
+{% block meta %}
+    <link rel="canonical" href="{{ object.get_absolute_url }}" />
+{% endblock %}
+
 {% block content %}
 
 {% with object as quote %}
