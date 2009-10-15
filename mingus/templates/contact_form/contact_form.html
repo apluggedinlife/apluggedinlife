@@ -7,41 +7,52 @@
 {% block content %}
 
 <div class="entry-body">
-    <h1>{% trans "Contact Us" %}</h1>
-    <p>
-        {% trans "Want to contact us?" %}
+    <h1>{% trans "Contact us" %}</h1>
+    <p style="padding: 15px 0">
+        <strong>{% trans "Want to contact us?" %}</strong>
         <br />
-        {% trans "Fill in the form below, we will answer you as soon as possible." %}
+        {% trans "Fill in the form below, we will answer you as soon as possible" %}
+        <br />
+        {% trans "This is our primary address, we check it regulary." %}
+        <h2>{% trans "Futher information" %}</h2>
+        <p>{% trans "Do not hesitate to contact us if you need information about content or others." %}</p>
     </p>
-    <p>
-        <form method="POST" action="." class="form">
-            <fieldset>
-                <ul>
-                {% for field in form %}
-                    {% if not field.is_hidden %}
-                    <li class="{% if not field.field.required %}not{% endif %}required{% if field.errors %} errors{% endif %}{% ifequal field.name "honeypot" %} hidden{% endifequal %}">
-                        {{ field.label_tag }}
-                        {{ field }}
-                        {{ field.errors }}
-                    </li>
-                    {% endif %}
-                {% endfor %}
-                    {% if form.non_field_errors %}
-                    <li class="errors">{{ form.non_field_errors }}</li>
-                    {% endif %}
-                    <li>
+    <div class="contact">
+        <div class="contact-form">
+            <form method="POST" action="." class="form">
+                <fieldset>
+                    <ul>
                     {% for field in form %}
-                        {% if field.is_hidden %}
+                        {% if not field.is_hidden %}
+                        <li class="{% if not field.field.required %}not{% endif %}required{% if field.errors %} errors{% endif %}{% ifequal field.name "honeypot" %} hidden{% endifequal %}">
+                            {{ field.label_tag }}
                             {{ field }}
+                            {{ field.errors }}
+                        </li>
                         {% endif %}
                     {% endfor %}
-                    {% render_honeypot_field %}
-                      <input type="submit" name="submit" class="submit-post" value="{% trans "Post" %}" />
-                    </li>
-                </ul>
-            </fieldset>
-        </form>
-    </p>
+                        {% if form.non_field_errors %}
+                        <li class="errors">{{ form.non_field_errors }}</li>
+                        {% endif %}
+                        <li>
+                        {% for field in form %}
+                            {% if field.is_hidden %}
+                                {{ field }}
+                            {% endif %}
+                        {% endfor %}
+                        {% render_honeypot_field %}
+                          <input type="submit" name="submit" class="submit-post" value="{% trans "Post" %}" />
+                        </li>
+                    </ul>
+                </fieldset>
+            </form>
+        </div>
+        <div class="contact-more">
+            <h2>{% blocktrans %}Contact us <em>via</em> our email address{% endblocktrans %}</h2>
+            <p>{% blocktrans %}If you have any trouble with this form, contact us at <a href="mailto:hello@apluggedinlife.com">hello@apluggedinlife.com</a>.{% endblocktrans %}</p>
+        </div>
+        <div class="clear"></div>
+    </div>
 </div>
 
 {% endblock %}

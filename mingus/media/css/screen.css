@@ -54,16 +54,15 @@ footer#footer {
 
         div#wrapper > header h1.logo {
             text-indent: -500em;
+            background-repeat: no-repeat;
         }
         
         body.blog div#wrapper > header h1.logo {
             background-image: url('/media/img/blog_header.png');
-            height: 444px;
         }
         
         body.contact div#wrapper > header h1.logo {
             background-image: url('/media/img/contact_header.png');
-            height: 478px;
         }
 
             div#wrapper > header h1.logo a {
@@ -75,15 +74,14 @@ footer#footer {
             }
             
             body.contact div#wrapper > header h1.logo a {
-                height: 461px;
+                height: 438px;
             }
 
         ul#nav-menu {
             padding: 10px 0 0 20px;
         }
 
-            ul#nav-menu li.nav-item, 
-            ul#nav-menu li.nav-item-current {
+            ul#nav-menu li.nav-item a {
                 float: left;
                 margin-left: 25px;
                 background-color: transparent;
@@ -92,8 +90,9 @@ footer#footer {
                 background-attachment: scroll;
             }
 
-            ul#nav-menu li.nav-item-current {
-                background-position: 0 -17px !important;
+            ul#nav-menu.home li.nav-item-home a,
+            ul#nav-menu.contact li.nav-item-contact a {
+                background-position: bottom left !important;
             }
 
             ul#nav-menu li a {
@@ -139,7 +138,7 @@ footer#footer {
 
 div#accessibility {
     padding: 0.2em;
-    background-color: #0EA6C9;
+    background-color: #0698BA;
 }
 
         div#accessibility ul li {
@@ -161,11 +160,11 @@ div#accessibility {
 
 section#content {
     float: left;
+    padding: 30px 0 0 0;
 }
 
 body.blog section#content {
     width: 740px;
-    padding: 30px 0 0 0;
 }
 
 body.contact section#content {
@@ -354,6 +353,11 @@ body.contact section#content {
                 margin-bottom: 5px;
             }
             
+            div.entry-body h2 {
+                font-size: 0.9em;
+                margin-bottom: 3px;
+            }
+            
             div.blockquote {
                 background: transparent url('/media/img/quote_left.png') no-repeat top left;
                 padding-top: 19px;
@@ -382,6 +386,7 @@ body.contact section#content {
             
             div.entry-body h1 a,
             div.entry-body h1,
+            div.entry-body h2,
             footer h2 {
                 color: #41281B;
                 font-weight: bold;
@@ -394,7 +399,7 @@ body.contact section#content {
             div.entry-body p {
                 text-align: justify;
                 padding: 5px 5px 5px 0;
-                line-height: 16px;
+                line-height: 18px;
                 font-size: 0.75em;
                 color: #6B605A;
             }
@@ -550,7 +555,7 @@ body.contact section#content {
                 }
                 
                 div#mptt-comments-tree > .comment > .comment-whole .comment-reply {
-                    left: 10px;
+                    left: 9px;
                 }
                 
                 .comment-reply {
@@ -558,7 +563,7 @@ body.contact section#content {
                 }
                 
                 .comment-replies {
-                    top: -1px;
+                    top: 0;
                     right: -1px;
                     position: absolute;
                     width: 31px;
@@ -633,7 +638,6 @@ body.contact section#content {
                 
                     .comment > .comment .comment-body {
                         background-color: #E9F4EC;
-                        border: 1px solid #ebebeb;
                         position: relative;
                     }
                     
@@ -913,7 +917,7 @@ footer#footer {
 
 .form input[type=text],
 .form textarea {
-    width: 60%;
+    width: 70%;
     padding: 6px 50px 6px 6px;
 }
 
@@ -955,6 +959,25 @@ ul.errorlist li {
     font-size: 0.8em;
     font-weight: bold;
 }
+
+/* ---- CONTACT ---- */
+
+div.contact-form {
+    float: left;
+    width: 65%;
+}
+
+div.contact-more {
+    margin-left: 70%;
+    border-left: 3px solid #F0F0F0;
+    padding: 20px;
+    width: 240px;
+}
+
+div.contact {
+    margin-top: 20px;
+}
+
 
 /* ----  GENERIC CLASSES ---- **/
 

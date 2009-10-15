@@ -1,4 +1,4 @@
-{% load blog i18n comments tagging_tags inlines oembed_tags cache %}
+{% load blog i18n mptt_comments_tags tagging_tags inlines oembed_tags cache %}
 <article>
 {% block article %}
     <header>
@@ -31,7 +31,7 @@
         <div class="clear"></div>
         {% if post.allow_comments %}
         <div class="count-comment">
-            {% get_comment_count for post as comment_count %}
+            {% get_mptt_comment_count for post as comment_count %}
             <a href="{{ post.get_absolute_url }}#comments" title="{% trans "comments" %}">{{ comment_count }}</a>
         </div>
         {% endif %}

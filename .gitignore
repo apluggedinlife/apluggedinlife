@@ -1,5 +1,7 @@
 *.pyc
+.DS_Store
 *.bak
 *.db
+secure.py
 local_settings.py
 pip-log.txt

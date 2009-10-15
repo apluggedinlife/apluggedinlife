@@ -4,12 +4,6 @@ abbr[title] {
   border-bottom: 1px dotted; 
   cursor: help; 
 } 
- 
-blockquote { 
-  margin: .75em 0 .75em 20px; 
-  padding: 0 0 0 10px; 
-  border-left: solid 2px #ddd; 
-} 
 
 q,
 cite { 

@@ -13,20 +13,14 @@ ADMIN_MEDIA_PREFIX = '/admin_media/'
 
 SITE_ID=1
 ROOT_URLCONF = 'mingus.urls'
-TIME_ZONE = 'America/New_York'
+TIME_ZONE = 'Europe/Paris'
 SECRET_KEY = '+bq@o(jph^-*sfj4j%xukecxb0jae9lci&ysy=609hj@(l$47c'
 USE_I18N = False
 HONEYPOT_FIELD_NAME = 'fonzie_kungfu'
 
-MANAGERS = (
-    ('Florent Messa','thoas@apluggedinlife.com'),
-)
-
 TEMPLATE_DIRS = (
   [os.path.join(PROJECT_ROOT, "templates")]
 )
-
-MPTT_COMMENTS_OFFSET = 5
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -96,8 +90,8 @@ INSTALLED_APPS = (
     'mingus',
 )
 
+MPTT_COMMENTS_OFFSET = 5
 GRAVATAR_DEFAULT_IMAGE = MEDIA_URL + 'img/avatar_apluggedinlife.png'
-
 
 try:
    from local_settings import *

@@ -55,7 +55,7 @@ $(document).ready(function () {
             this.submit($('form', form_wrapper), $(form_wrapper))
             this.replies();
         },
-        
+
         submit: function (form, nxt) {
             var postData = {}
             $("input[type=submit]", form).bind("mousedown", function () {
@@ -114,6 +114,7 @@ $(document).ready(function () {
                     .bind('click', function (e) {
                         var href = elem.attr('href') + '?is_ajax=1';
                         if ($.inArray(href, MpttComment.repliesLoaded) == -1) {
+                            MpttComment.repliesLoaded.push(href);
                             $.get(href, {}, function (data, textStatus) {
                                 var commentsTree = data.comments_tree;
                                 if (commentsTree) {
@@ -121,7 +122,6 @@ $(document).ready(function () {
                                         .parents('.comment:first')
                                         .append(commentsTree.html);
                                 }
-                                MpttComment.repliesLoaded.push($(this).get(0).url);
                                 elem
                                     .parent()
                                     .addClass('comment-no-hidden-replies');

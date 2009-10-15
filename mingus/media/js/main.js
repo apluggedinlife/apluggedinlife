@@ -43,16 +43,13 @@ $(document).ready(function(){
     
     $('.share-items')
         .hide()
-    
+
     $('.share h1')
         .click(function(){
            $(this)
                 .siblings('.share-items')
                 .slideDown();
         });
-    
-    $('ul#nav-menu li.nav-item-current a')
-        .css({backgroundPosition: 'bottom left'});
     
     $('ul#nav-menu li.nav-item  a')
         .css({backgroundPosition: '0 0'})

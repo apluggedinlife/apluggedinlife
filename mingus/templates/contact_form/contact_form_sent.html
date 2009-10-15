@@ -1,18 +1,27 @@
-{% extends "blog/base_blog.html" %}
+{% extends "contact_form/base_contact.html" %}
 {% load blog i18n %}
+
+{% block title %}{% trans "Contact confirmation" %} - {{ block.super }}{% endblock %}
 
 {% block content %}
 
-<p>{% trans "Thanks! I'll make sure to responsd shortly. In the meantime, check out some of my latest and greatest posts." %}</p>
+<div class="entry-body">
+    <h1>{% trans "Contact us" %}</h1>
+    <p style="padding: 15px 0">
+        {% blocktrans %}
+        Thanks! We'll make sure to responsd shortly. In the meantime, check out some of my latest and greatest posts.
+        {% endblocktrans %}
+    </p>
 
-{% get_latest_posts 10 as post_list %}
-<div class="related-posts">
-    <h2>{% trans "Recent Posts" %}</h2>
-    <ol class="recent-posts">
-        {% for post in post_list %}
-        <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
-        {% endfor %}
-    </ol>
+    {% get_latest_posts 10 as post_list %}
+    <div class="related-posts">
+        <h2>{% trans "Recent Posts" %}</h2>
+        <ol class="recent-posts">
+            {% for post in post_list %}
+            <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+            {% endfor %}
+        </ol>
+    </div>
 </div>
 
 
