@@ -1,7 +1,7 @@
 {% extends "blog/base_blog.html" %}
 {% load blog tagging_tags inlines cache pygment_tags oembed_tags mptt_comments_tags i18n tagging_related %}
 
-{% block title %}{{ object.title }} - {{ block.super }}{% endblock %}
+{% block title %}{{ object.title }} | {{ block.super }}{% endblock %}
 
 {% block navigation_inner %}
     {{ block.super }}
