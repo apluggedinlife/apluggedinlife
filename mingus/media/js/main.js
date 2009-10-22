@@ -102,32 +102,32 @@ $(document).ready(function(){
             .animate({color: '#000000'}, {duration: 500});
     })
     
-    /*
-    function updateTwitterContainer(object, results){
-        if(results.length > 0){
-            var result = results[0];
-            object
-                .find('p')
-                .html(
-                    '<a href="http://twitter.com/'
-                    + $(this).attr('id')
-                    +'/status/'
-                    + result.id 
-                    +'" title="status '
-                    + result.id +'">'
-                    + result.text + '</a>'
-                );
-        }
-    }
     
-    $(".twitter-container-account").each(function(){
-        var _this = $(this);
-        $.twitter.search.user($(this).attr('id'), function(data, textStatus){
-            updateTwitterContainer(_this, data.results);
-        });
-    })
-    
-    $.twitter.search.hashtag("apluggedinlife", function(data, textStatus){
-        updateTwitterContainer($("#apluggedinlife-hashtag"), data.results);
-    });*/
+    // function updateTwitterContainer(object, results){
+    //     if(results.length > 0){
+    //         var result = results[0];
+    //         object
+    //             .find('p')
+    //             .html(
+    //                 '<a href="http://twitter.com/'
+    //                 + object.attr('id')
+    //                 +'/status/'
+    //                 + result.id 
+    //                 +'" title="status '
+    //                 + result.id +'">'
+    //                 + result.text + '</a>'
+    //             );
+    //     }
+    // }
+    // 
+    // $(".twitter-container-account").each(function(){
+    //     var _this = $(this);
+    //     $.twitter.search.user($(this).attr('id'), function(data, textStatus){
+    //         updateTwitterContainer(_this, data.results);
+    //     });
+    // })
+    // 
+    // $.twitter.search.hashtag("apluggedinlife", function(data, textStatus){
+    //     updateTwitterContainer($("#apluggedinlife-hashtag"), data.results);
+    // });
 });

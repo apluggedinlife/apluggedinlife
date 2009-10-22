@@ -11,7 +11,7 @@ STATIC_ROOT = join(MEDIA_ROOT, 'static')
 STATIC_URL = '/media/static/'
 ADMIN_MEDIA_PREFIX = '/admin_media/'
 
-SITE_ID=1
+SITE_ID = 1
 ROOT_URLCONF = 'mingus.urls'
 TIME_ZONE = 'Europe/Paris'
 SECRET_KEY = '+bq@o(jph^-*sfj4j%xukecxb0jae9lci&ysy=609hj@(l$47c'
