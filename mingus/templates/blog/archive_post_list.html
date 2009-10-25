@@ -1,0 +1,10 @@
+{% load i18n %}
+<ul>
+{% for object in object_list %}
+    <li>
+        <h3><a href="{{ object.get_absolute_url }}" title="{{ object.title}}">{{ object.title }}</a></h3>
+        <p>{{ object.tease|truncatewords:30 }}</p>
+        <p class="more"><a href="{{ object.get_absolute_url }}" title="{{ object.title }}">{% trans "Read more" %}→</a></p>
+    </li>
+{% endfor %}
+</ul>

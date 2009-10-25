@@ -684,6 +684,64 @@ body.contact section#content {
             margin: 15px 0;
             width: 500px;
         }
+
+/* ARCHIVE */
+
+article.archive {
+    padding-right: 20px;
+}
+
+article.archive ul li {
+    font-size: 0.7em;
+    width: 320px;
+}
+
+article.archive h3 a {
+    border-color: #CCCCCC;
+    color: #000000;
+    font-weight: bold;
+}
+
+article.archive p {
+    color: #444444;
+    line-height: 19px;
+}
+
+article.archive h2 {
+    display: block;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    background-color: #D5E9DC;
+    color: #000000;
+    text-transform: uppercase;
+    padding: 5px;
+    clear: both;
+}
+
+article.archive ul li:nth-of-type(2) {
+    float: right;
+    padding-right: 10px;
+}
+
+article.archive ul li:nth-of-type(1) {
+    float: left;
+}
+
+article.archive .more {
+    text-align: right;
+}
+
+article.archive .more a {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+article.archive .more a:hover {
+    border-bottom: 1px dotted #CCCCCC;
+}
         
 /* SIDEBAR */
 

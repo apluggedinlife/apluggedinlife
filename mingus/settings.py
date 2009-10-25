@@ -42,6 +42,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "basic.blog.context_processors.blog_settings",
     "mingus.core.context_processors.site_info",
     "navbar.context_processors.navbars",
+    "django.core.context_processors.request"
 )
 
 INSTALLED_APPS = (

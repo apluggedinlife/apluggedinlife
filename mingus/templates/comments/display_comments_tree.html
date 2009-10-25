@@ -4,7 +4,7 @@
 
 {% if not tree.new_level %}</article>{% endif %}
 
-<article class="comment comment-level-{{ comment.level }}" id="comment-{{ comment.pk }}">
+<article role="comment" class="comment comment-level-{{ comment.level }}" id="comment-{{ comment.pk }}">
     <div class="comment-whole">
         <header>
             <img src="{% get_gravatar_for_email comment.email %}" alt="{% trans "gravatar" %}" />

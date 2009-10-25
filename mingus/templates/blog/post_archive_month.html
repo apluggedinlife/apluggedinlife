@@ -1,6 +1,8 @@
 {% extends "blog/base_archive.html" %}
 {% load cache i18n %}
 
+{% block title %}{% trans "Archives for" %} {{ month|date:"F Y"}} | {{ block.super }}{% endblock %}
+
 {% block body_id %}category_{{ category.id }}{% endblock %}
 
 {% block navigation_inner %}
