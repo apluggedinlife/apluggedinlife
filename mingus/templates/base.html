@@ -54,7 +54,7 @@
                             <a href="{% url contact_form %}" title="{% trans "Contact" %}">{% trans "Contact" %}</a>
                         </li>
                         <li class="nav-item nav-item-archives">
-                            <a href="" title="{% trans "Archives" %}">{% trans "Archives" %}</a>
+                            <a href="{% url archives %}" title="{% trans "Archives" %}">{% trans "Archives" %}</a>
                         </li>
                     </ul>
                 </nav>
@@ -117,7 +117,7 @@
                                 {% endcache %}
                             </li>
                             <li class="title">
-                                <h2>{% trans "Archive"%}</h2>
+                                <h2>{% trans "Archives"%}</h2>
                                 {% cache 7200 "base.archive" %}
                                 {% get_post_archive as dates %}
                                 <ul>
@@ -211,7 +211,7 @@
                         {% for comment in comment_list %}
                         <li>
                             &laquo;
-                            <a href="{% url comment-detail comment.pk %}#comment-{{ comment.pk }}" title="{{ comment.comment|truncatewords:10 }}">
+                            <a href="{% url comment_detail comment.pk %}#comment-{{ comment.pk }}" title="{{ comment.comment|truncatewords:10 }}">
                                 {{ comment.comment|truncatewords:10 }}
                             </a>&raquo;
                         </li>

@@ -72,6 +72,9 @@ urlpatterns += patterns('',
         name='proxy_search'),
 
     (r'', include('basic.blog.urls')),
+    
+    # APIL
+    url(r'^archives/$', direct_to_template, { 'template': 'blog/archive_list.html'}, name='archives'),
     url(r'^comments/', include('mptt_comments.urls')),
 )
 

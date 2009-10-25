@@ -41,6 +41,10 @@ body.contact div#whole {
     background-image: url('/media/img/contact_header_bg.png') !important;
 }
 
+body.archives div#whole {
+    background-image: url('/media/img/archives_header_bg.png') !important;
+}
+
 div#whole {
     margin: 0 0;
     padding: 0 0;
@@ -72,6 +76,10 @@ footer#footer {
         body.contact div#wrapper > header h1.logo {
             background-image: url('/media/img/contact_header.png');
         }
+        
+        body.archives div#wrapper > header h1.logo {
+            background-image: url('/media/img/archives_header.png');
+        }
 
             div#wrapper > header h1.logo a {
                 display: block; 
@@ -83,6 +91,10 @@ footer#footer {
             
             body.contact div#wrapper > header h1.logo a {
                 height: 438px;
+            }
+            
+            body.archives div#wrapper > header h1.logo a {
+                height: 444px;
             }
 
         ul#nav-menu {
@@ -171,7 +183,8 @@ section#content {
     padding: 30px 0 0 0;
 }
 
-body.blog section#content {
+body.blog section#content,
+body.archives section#content {
     width: 740px;
 }
 
@@ -943,7 +956,11 @@ footer#footer {
 .form input[type=text],
 .form textarea {
     width: 70%;
-    padding: 6px 50px 6px 6px;
+    padding: 6px;
+}
+
+.form ul li.required input[type=text] {
+    padding-right: 50px;
 }
 
 .form .errors label {
@@ -971,10 +988,6 @@ ul.errorlist li {
 
 .form ul li.required input[type=text] {
     background: transparent url('/media/img/field_required.png') no-repeat right center;
-}
-
-.form ul li.required textarea {
-    background-position: right top !important;
 }
 
 .form label {
