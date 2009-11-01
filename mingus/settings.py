@@ -13,9 +13,17 @@ ADMIN_MEDIA_PREFIX = '/admin_media/'
 
 SITE_ID = 1
 ROOT_URLCONF = 'mingus.urls'
+
+LANGAGE_CODE = 'fr-fr'
+
+ugettext = lambda s: s
+LANGUAGES = (
+  ('fr', ugettext('French')),
+  ('en', ugettext('English')),
+)
 TIME_ZONE = 'Europe/Paris'
 SECRET_KEY = '+bq@o(jph^-*sfj4j%xukecxb0jae9lci&ysy=609hj@(l$47c'
-USE_I18N = False
+USE_I18N = True
 HONEYPOT_FIELD_NAME = 'fonzie_kungfu'
 
 TEMPLATE_DIRS = (
@@ -23,8 +31,9 @@ TEMPLATE_DIRS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
@@ -39,6 +48,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.debug",
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
+    'django.core.context_processors.i18n',
     "basic.blog.context_processors.blog_settings",
     "mingus.core.context_processors.site_info",
     "navbar.context_processors.navbars",

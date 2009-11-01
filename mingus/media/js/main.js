@@ -102,6 +102,16 @@ $(document).ready(function(){
             .animate({color: '#000000'}, {duration: 500});
     })
     
+    $('.entry-meta ul li').hover(function(){
+       $(this)
+            .stop()
+            .animate({left: "-10px"}, {duration: 500});
+    }, function(){
+        $(this)
+            .stop()
+            .animate({left: "0"}, {duration: 500});
+    });
+    
     
     // function updateTwitterContainer(object, results){
     //     if(results.length > 0){

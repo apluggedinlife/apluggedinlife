@@ -14,7 +14,7 @@ django-markup==0.3
 http://www.aeracode.org/releases/south/south-0.6.1.tar.gz
 
 -e svn+http://django-mptt.googlecode.com/svn/trunk/@115#egg=django_mptt-0.3p2-py2.5-dev
--e git://github.com/thoas/django-mptt-comments.git@c4bcd0ac3121f34e344cf25ca5c77cf3d27970ae#egg=django_mptt_comments-0.1-py2.5-c4bcd0ac3121f34e344cf25ca5c77cf3d27970ae
+-e git@github.com:thoas/django-mptt-comments.git#egg=django_mptt_comments-0.1-py2.5
 -e git://github.com/thoas/django-gravatar.git@3294508f3e3dee4d62bcf92ef188de513a2e6794#egg=django_gravatar-0.1.0-py2.5-3294508f3e3dee4d62bcf92ef188de513a2e6794
 
 -e git://github.com/django-extensions/django-extensions.git@664ca825578c5c13f0817eba0578fbda4bac62cf#egg=django_extensions

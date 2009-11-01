@@ -22,19 +22,6 @@
 {% block body_class %}{{ block.super }} post_detail{% endblock %}
 {% block body_id %}post_{{ object.id }}{% endblock %}
 
-{% comment 'previous and next posts' %}
-    {% block content_title %}
-      <p class="other_posts">
-        {% if object.get_previous_by_publish %}
-            <a class="previous" href="{{ object.get_previous_post.get_absolute_url }}">&laquo; {{ object.get_previous_posFt }}</a>
-        {% endif %}
-        {% if object.get_next_by_publish %}
-            | <a class="next" href="{{ object.get_next_post.get_absolute_url }}">{{ object.get_next_post }} &raquo;</a>
-        {% endif %}
-      </p>
-    {% endblock %}
-{% endcomment %}
-
 {% block content %}
     {% with object as post %}
         {% include "blog/includes/post_detail.html" %}

@@ -184,60 +184,62 @@
             </div>
         </div>
     </div>
-    <footer id="footer">
-        <ul>
-            <li>
-                <h1>{% trans "Last entries" %}</h1>
-                {% cache 3600 "base.post_list" %}
-                {% get_latest_posts 10 as post_list %}
-                {% if post_list %}
-                <div>
-                    <ul>
-                        {% for post in post_list %}
-                        <li><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endif %}
-                {% endcache %}
-            </li>
-            <li>
-                <h1>{% trans "Last comments" %}</h1>
-                {% cache 3600 "base.comments_list" %}
-                {% get_latest_comments 10 as comment_list %}
-                {% if comment_list %}
-                <div>
-                    <ul>
-                        {% for comment in comment_list %}
-                        <li>
-                            &laquo;
-                            <a href="{% url comment_detail comment.pk %}#comment-{{ comment.pk }}" title="{{ comment.comment|truncatewords:10 }}">
-                                {{ comment.comment|truncatewords:10 }}
-                            </a>&raquo;
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endif %}
-                {% endcache %}
-            </li>
-            <li>
-                <h1>{% trans "Tags" %}</h1>
-                <div>
-                    <ul>
-                        <li>&laquo;<a href="" title="">Rumoribus incrementis optimum pro minantiu 
-                        tum ut eius eius impetus patentes consilia 
-                        primum?? (...)</a>&raquo;</li>
-                        <li><a href="" title="">Eos etiam plantis nullas</a></li>
-                        <li><a href="" title="">Eos etiam plantis nullas</a></li>
-                        <li><a href="" title="">Eos etiam plantis nullas</a></li>
-                        <li><a href="" title="">Eos etiam plantis nullas</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="clear"></li>
-        </ul>
-        <div id="copyright"></div>
+    <footer id="footer" role="contentinfo">
+        <div id="footer-worm-container">
+            <ul>
+                <li>
+                    <h1>{% trans "Last entries" %}</h1>
+                    {% cache 3600 "base.post_list" %}
+                    {% get_latest_posts 10 as post_list %}
+                    {% if post_list %}
+                    <div>
+                        <ul>
+                            {% for post in post_list %}
+                            <li><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                    {% endcache %}
+                </li>
+                <li>
+                    <h1>{% trans "Last comments" %}</h1>
+                    {% cache 3600 "base.comments_list" %}
+                    {% get_latest_comments 10 as comment_list %}
+                    {% if comment_list %}
+                    <div>
+                        <ul>
+                            {% for comment in comment_list %}
+                            <li>
+                                &laquo;
+                                <a href="{% url comment_detail comment.pk %}#comment-{{ comment.pk }}" title="{{ comment.comment|truncatewords:10 }}">
+                                    {{ comment.comment|truncatewords:10 }}
+                                </a>&raquo;
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                    {% endcache %}
+                </li>
+                <li>
+                    <h1>{% trans "Tags" %}</h1>
+                    <div>
+                        <ul>
+                            <li>&laquo;<a href="" title="">Rumoribus incrementis optimum pro minantiu 
+                            tum ut eius eius impetus patentes consilia 
+                            primum?? (...)</a>&raquo;</li>
+                            <li><a href="" title="">Eos etiam plantis nullas</a></li>
+                            <li><a href="" title="">Eos etiam plantis nullas</a></li>
+                            <li><a href="" title="">Eos etiam plantis nullas</a></li>
+                            <li><a href="" title="">Eos etiam plantis nullas</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="clear"></li>
+            </ul>
+            <div id="copyright"></div>
+        </div>
     </footer>
 
     <script type="text/javascript" src="{{ MEDIA_URL }}js/prettify.js"></script>
