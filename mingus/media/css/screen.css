@@ -202,15 +202,42 @@ body.contact section#content {
         }
     
         section#navigation-inner ul li {
-            margin-left: 10px;
             float: left;
-            padding-left: 29px;
-            background: transparent url('/media/img/navigation_inner_arrow.png') no-repeat left center;
+            height: 30px;
+        }
+        
+        section#navigation-inner ul li:first-child {
+            margin-left: 10px;
+        }
+        
+        section#navigation-inner ul li:not(:first-child) {
+            margin-left: 15px;
         }
         
         section#navigation-inner ul li,
-        section#navigation-inner ul li a {
+        section#navigation-inner ul li span {
             font-size: 1em;
+            color: #34312E;
+        }
+        
+        section#navigation-inner ul li:not(:last-child) {
+            background: transparent url('/media/img/fil_ariane.png') no-repeat right bottom;
+        }
+                
+        section#navigation-inner ul li:last-child {
+            background: transparent url('/media/img/current_pic.png') no-repeat left bottom;
+        }
+        
+        section#navigation-inner ul li:first-child span {
+            background-image: url('/media/img/home_pic.png');
+            background-repeat: no-repeat;
+            padding-left: 15px;
+        }
+
+        section#navigation-inner ul li:not(:first-child) span {
+            background-image: url('/media/img/cactus_pic.png');
+            background-repeat: no-repeat;
+            padding-left: 12px;
         }
 
     section#content > article {
@@ -445,7 +472,6 @@ body.contact section#content {
             }
             
             div.entry-body p a,
-            section#navigation-inner ul li a,
             .comment header a,
             section#content ol li a {
                 color: #222;
@@ -461,7 +487,6 @@ body.contact section#content {
             
             div.entry-body p a:active,
             .comment header a:active,
-            section#navigation-inner ul li a:active,
             section#content ol li a:active {
                 color: #8b1109;
             }
@@ -472,7 +497,6 @@ body.contact section#content {
             }
             
             div.entry-body p a:hover,
-            section#navigation-inner ul li a:hover,
             .comment header a:hover,
             section#content ol li a:hover {
                 color: #222;
@@ -481,7 +505,6 @@ body.contact section#content {
             }
             
             div.entry-body p a:visited,
-            section#navigation-inner ul li a:visited,
             .comment header a:visited,
             section#content ol li a:visited {
                 color: #222;
@@ -537,8 +560,15 @@ body.contact section#content {
         div#entry-navigation {
             padding-right: 20px;
             margin-bottom: 40px;
-            float: right;
         }
+        
+            div.entry-previous {
+                float: left;
+            }
+            
+            div.entry-next {
+                float: right;
+            }
         
         div#mptt-comments-tree {
             padding: 1em 15px 1em 0;

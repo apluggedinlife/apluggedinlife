@@ -14,8 +14,8 @@
 {% if comments_remaining %}
 <p>
     {% with comments|last as last_comment %}
-    <a id="comments-more" href="{% url comments_more last_comment.pk %}">
-        {% trans "Still" %} <span id="comments-more-remaining">{{ comments_remaining }}</span> {% trans "comments left" %}
+    <a id="comments-more" href="{% url comments_more last_comment.pk %}" title="{% trans "Still" %} {{ comments_remaining }} {% trans "comments left" %}">
+        <img src="{{ MEDIA_URL }}img/more_comments" alt="{% trans "More comments" %}" />
     </a>
     {% endwith %}
 </p>

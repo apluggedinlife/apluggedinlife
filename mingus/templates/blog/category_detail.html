@@ -6,9 +6,13 @@
 {% block body_class %}{{ block.super }} category_detail{% endblock %}
 {% block body_id %}category_{{ category.id }}{% endblock %}
 
+{% block navigation_inner %}
+    {{ block.super }}
+    <li><span>{% trans "Posts for" %} <strong>{{ category.title }}</strong></span></li>
+{% endblock %}
+
 {% block content %}
 
-<h2 class="filter-title">{% trans "Posts for" %} {{ category.title }}</h2>
 {% if object_list %}
     {% cache 3600 "blog.category_detail.object_list" category.title %}
         {% for post in object_list %}
