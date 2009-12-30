@@ -266,6 +266,8 @@ body.contact section#content {
             section#content > article > header ul li a,
             div.entry-author a {
                 -moz-border-radius: 7px;
+                -webkit-border-radius: 7px;
+                border-radius: 7px;
                 height: 17px;
                 padding: 7px 26px 0 7px;
                 display: inline-block;
