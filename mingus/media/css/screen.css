@@ -79,6 +79,14 @@ div#footer-worm-container > ul {
         body.archives div#wrapper > header h1.logo {
             background-image: url('/media/img/archives_header.png');
         }
+        
+        body.handler500 div#wrapper > header h1.logo {
+            background-image: url('/media/img/500_header.png');
+        }
+        
+        body.handler404 div#wrapper > header h1.logo {
+            background-image: url('/media/img/404_header.png');
+        }
 
             div#wrapper > header h1.logo a {
                 display: block; 
@@ -94,6 +102,14 @@ div#footer-worm-container > ul {
             
             body.archives div#wrapper > header h1.logo a {
                 height: 444px;
+            }
+            
+            body.handler500 div#wrapper > header h1.logo a {
+                height: 446px;
+            }
+            
+            body.handler404 div#wrapper > header h1.logo a {
+                height: 448px;
             }
 
         ul#nav-menu {

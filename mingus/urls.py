@@ -7,7 +7,7 @@ from basic.blog.feeds import BlogPostsFeed, BlogPostsByCategory
 from basic.blog.sitemap import BlogSitemap
 from mingus.core.views import springsteen_results, springsteen_firehose, \
                             home_list, springsteen_category, contact_form, \
-                            proxy_search
+                            proxy_search, blogroll
 from robots.views import rules_list
 from mingus.core.feeds import AllEntries
 
@@ -75,7 +75,12 @@ urlpatterns += patterns('',
     
     # APIL
     url(r'^archives/$', direct_to_template, { 'template': 'blog/archive_list.html'}, name='archives'),
+    url(r'^404/$', direct_to_template, { 'template': '404.html'}, name='404'),
+    url(r'^500/$', direct_to_template, { 'template': '500.html'}, name='500'),
     url(r'^comments/', include('mptt_comments.urls')),
+    url(r'^blogroll/$',
+        blogroll,
+        name='blogroll'),
 )
 
 

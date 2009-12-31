@@ -78,7 +78,7 @@ $(document).ready(function(){
         .find('ul')
             .css({display: 'none'});
     
-    $('#twitter ul li,div.share-right,div.share-left,#footer-worm-container > ul > li div ul li').hover(function(){
+    $('#twitter ul li,div.share-right,div.share-left').hover(function(){
         $(this)
             .siblings(':not(".clear")')
             .stop()

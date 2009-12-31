@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block body_class %}handler404{% endblock %}
+{% block body_class %}blogroll{% endblock %}
 
 {% block navigation_inner %}
     {{ block.super }}
-    <li><span>{% trans "Page not found" %}</span></li>
+    <li><span>{% trans "Blogroll" %}</span></li>
 {% endblock %}
 
 {% block content %}
