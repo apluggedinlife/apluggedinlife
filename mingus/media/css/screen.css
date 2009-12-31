@@ -87,6 +87,10 @@ div#footer-worm-container > ul {
         body.handler404 div#wrapper > header h1.logo {
             background-image: url('/media/img/404_header.png');
         }
+        
+        body.blogroll div#wrapper > header h1.logo {
+            background-image: url('/media/img/blogroll_header.png');
+        }
 
             div#wrapper > header h1.logo a {
                 display: block; 
@@ -110,6 +114,10 @@ div#footer-worm-container > ul {
             
             body.handler404 div#wrapper > header h1.logo a {
                 height: 448px;
+            }
+    
+            body.blogroll div#wrapper > header h1.logo a {
+                height: 434px;
             }
 
         ul#nav-menu {

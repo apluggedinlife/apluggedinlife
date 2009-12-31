@@ -7,7 +7,7 @@
 
     {% block meta %}
     <meta name="keywords" content="{{ BLOG_SETTINGS.meta_keywords }}">
-    <meta name="description" content="{{ BLOG_SETTINGS.meta_description }}">
+    <meta name="description" content="{{ BLOG_SETTINGS.meta_description|safe }}">
     <meta name="author" content="{{ BLOG_SETTINGS.author_name }}" />
     {% endblock %}
 
@@ -40,9 +40,6 @@
                     <ul id="nav-menu" class="{% block menu %}home{% endblock %}">
                         <li class="nav-item nav-item-home">
                             <a href="{% url home_index %}" title="{% trans "Home" %}">{% trans "Home" %}</a>
-                        </li>
-                        <li class="nav-item nav-item-tuts">
-                            <a href="" title="{% trans "Tuts" %}">{% trans "Tuts" %}</a>
                         </li>
                         <li class="nav-item nav-item-blogroll">
                             <a href="{% url blogroll %}" title="{% trans "Blogroll" %}">{% trans "Blogroll" %}</a>
