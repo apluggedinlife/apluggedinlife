@@ -8,13 +8,11 @@ from basic.blog.models import Post
 register = Library()
 
 class GetPostsForArchiveNode(Node):
-    """docstring for GetPostsForArchiveNode"""
     def __init__(self, archive_date):
         self.archive_date = Variable(archive_date)
         super(GetPostsForArchiveNode, self).__init__()
     
     def render(self, context):
-        """docstring for render"""
         try:
             archive_date = self.archive_date.resolve(context)
             

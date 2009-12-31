@@ -21,11 +21,9 @@
         {% endif %}
         {% endcache %}
         <div class="entry-body">
-            <div class="blockquote">
-                <blockquote>
-                    {{ quote.quote }}
-                </blockquote>
-            </div>
+            <blockquote>
+                {{ quote.quote }}
+            </blockquote>
             {% if quote.author %}
                 <div class="blockquote-author">
                 {% if quote.url_source %}

@@ -413,30 +413,26 @@ body.contact section#content {
                 margin-top: 2em;
             }
             
-            div.blockquote {
-                background: transparent url('/media/img/quote_left.png') no-repeat top left;
-                padding-top: 19px;
-                padding-left: 19px;
-                min-height: 20px;
-                display: block;
+            div.blockquote-author {
+                padding-left: 50px;
+                font-size: 1em;
             }
             
-            div.blockquote-author {
-                margin-left: 25px;
-                font-size: 0.9em;
+            div.blockquote-author span {
+                font-weight: bold;
             }
             
             div.blockquote-author,
-            div.blockquote > blockquote {
+            div.entry-body > blockquote {
                 color: #34312E;
             }
             
-            div.blockquote > blockquote {
-                display: inline-block;
-                padding-bottom: 19px;
-                font-size: 0.8em;
-                padding-right: 19px;
-                background: transparent url('/media/img/quote_right.png') no-repeat bottom right;
+            div.entry-body > blockquote {
+                font-size: 1.1em;
+                width: 360px;
+                padding: 0 50px;
+                margin: 40px 0 20px;
+                background: transparent url('/media/img/quotes.png') no-repeat 0 0;
             }
             
             div.entry-body h1 a,
