@@ -64,10 +64,10 @@
             <div id="center">
                 <section id="content">
                     <section id="navigation-inner">
-                        <em>{% trans "You are here: " %}</em>
+                        <em>{% trans "You are here:" %}</em>
                         <ul>
                         {% block navigation_inner %}
-                            <li><a href="{% url home_index %}" title="{% trans "Homepage" %}"><span>Home</span></a></li>
+                            <li><a href="{% url home_index %}" title="{% trans "Homepage" %}"><span>{% trans "Home" %}</span></a></li>
                         {% endblock %}
                         </ul>
                         <div class="clear"></div>

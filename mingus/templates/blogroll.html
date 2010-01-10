@@ -3,6 +3,12 @@
 
 {% block body_class %}blogroll{% endblock %}
 
+{% block menu %}
+    blogroll
+{% endblock %}
+
+{% block title %}{% trans "Blogroll" %} | {{ block.super }}{% endblock %}
+
 {% block navigation_inner %}
     {{ block.super }}
     <li><span>{% trans "Blogroll" %}</span></li>

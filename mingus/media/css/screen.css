@@ -134,7 +134,9 @@ div#footer-worm-container > ul {
             }
 
             ul#nav-menu.home li.nav-item-home a,
-            ul#nav-menu.contact li.nav-item-contact a {
+            ul#nav-menu.contact li.nav-item-contact a,
+            ul#nav-menu.archives li.nav-item-archives a,
+            ul#nav-menu.blogroll li.nav-item-blogroll a {
                 background-position: bottom left !important;
             }
 
