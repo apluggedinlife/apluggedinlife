@@ -1046,12 +1046,16 @@ footer#footer {
                     border-radius: 10px;
                 }
             
-                    div#footer-worm-container > ul > li:not(.clear) div ul li:not(:last-child) {
+                    div#footer-worm-container > ul > li:not(.clear) div ul.link-list li:not(:last-child) {
                         margin-bottom: 12px;
+                    }
+                    
+                    div#footer-worm-container > ul > li:not(.clear) div ul.chart-list li:not(:last-child) {
+                        margin-bottom: 7px;
                     }
                 
                         div#footer-worm-container > ul > li:not(.clear) div ul li a,
-                        div#footer-worm-container > ul > li:not(.clear) div ul li {
+                        div#footer-worm-container > ul > li:not(.clear) div ulli {
                             color: #4B4743;
                         }
                     
@@ -1059,7 +1063,7 @@ footer#footer {
                             font-size: 0.8em;
                         }
                     
-                        div#footer-worm-container > ul > li:not(.clear) div ul li a:hover {
+                        div#footer-worm-container > ul > li:not(.clear) div ul.link-list li a:hover {
                             border-bottom: 1px dashed #4B4743;
                             color: #594531;
                         }
@@ -1069,6 +1073,14 @@ footer#footer {
             height: 49px;
             margin: 0 auto;
             background: transparent url('/media/img/copyright.png') no-repeat center center;
+        }
+        
+        div#tag-list ul.chart-list { 
+            width: 250px; 
+        }
+        
+        footer#footer span.tag-count {
+            font-size: 0.8em;
         }
 
 /* ---- FORM STYLESHEETS ---- */
@@ -1141,6 +1153,60 @@ div.contact {
 
 
 /* ----  GENERIC CLASSES ---- **/
+
+ul.chart-list {
+    border-top: 1px solid rgb(47, 21, 8); 
+    float: left; 
+    width: 480px; 
+}
+
+ul.chart-list li { 
+    border-bottom: 1px solid rgb(47, 21, 8); 
+    position: relative; 
+    display: block; 
+}
+
+ul.chart-list li a { 
+    padding: 0pt; 
+    display: block; 
+    position: relative; 
+    z-index: 2;
+}
+
+ul.chart-list span.tag-count { 
+    display: block; 
+    position: absolute; 
+    top: 0pt; 
+    right: 0pt; 
+    text-align: right;
+    color: rgb(34, 113, 59);
+    z-index: 2; 
+}
+
+ul.chart-list span.index { 
+    border-right: 2px solid rgb(99, 55, 9); 
+    overflow: hidden; 
+    display: block; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    height: 100%; 
+    text-indent: -9999px; 
+    opacity: 0.5;
+}
+
+ul.chart-list li:hover span.index {
+    border-right: 2px solid #88C284; 
+    background: rgb(99, 55, 9) none repeat scroll 0% 0%; 
+    -moz-background-clip: border; 
+    -moz-background-origin: padding; 
+    -moz-background-inline-policy: continuous; 
+    opacity: 0.5; 
+}
+
+ul.chart-list li:hover span.tag-count {
+    color: #88C284; 
+}
 
 .clear {
     clear: both;
