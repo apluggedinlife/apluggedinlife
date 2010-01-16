@@ -1049,13 +1049,9 @@ footer#footer {
                     div#footer-worm-container > ul > li:not(.clear) div ul.link-list li:not(:last-child) {
                         margin-bottom: 12px;
                     }
-                    
-                    div#footer-worm-container > ul > li:not(.clear) div ul.chart-list li:not(:last-child) {
-                        margin-bottom: 7px;
-                    }
                 
-                        div#footer-worm-container > ul > li:not(.clear) div ul li a,
-                        div#footer-worm-container > ul > li:not(.clear) div ulli {
+                        div#footer-worm-container > ul > li:not(.clear) div ul.link-list li a,
+                        div#footer-worm-container > ul > li:not(.clear) div ul.link-list li {
                             color: #4B4743;
                         }
                     
@@ -1075,7 +1071,7 @@ footer#footer {
             background: transparent url('/media/img/copyright.png') no-repeat center center;
         }
         
-        div#tag-list ul.chart-list { 
+        div#footer-tag-list ul.chart-list { 
             width: 250px; 
         }
         
@@ -1151,26 +1147,58 @@ div.contact {
     margin-top: 20px;
 }
 
+div#tag-list ul.chart-list li {
+    border-bottom: 1px solid #F7EEE8;
+    height: 20px;
+}
+
+div#tag-list {
+    font-size: 0.9em;
+}
+
+div#tag-list ul.chart-list li:hover span.index {
+    border-right: 2px solid #88C284; 
+    background: #F7EEE8 none repeat scroll 0% 0%;
+}
+
+div#tag-list ul.chart-list {
+    border-top: 1px solid #F7EEE8;
+}
+
+div#tag-list ul.chart-list li,
+div#tag-list ul.chart-list span.tag-count {
+    padding: 5px 1px 0;
+}
 
 /* ----  GENERIC CLASSES ---- **/
 
 ul.chart-list {
-    border-top: 1px solid rgb(47, 21, 8); 
     float: left; 
-    width: 480px; 
+    width: 720px; 
 }
 
 ul.chart-list li { 
-    border-bottom: 1px solid rgb(47, 21, 8); 
+    border-bottom: 1px solid #120F12; 
     position: relative; 
-    display: block; 
+    display: block;
+}
+
+ul.chart-list li,
+ul.chart-list span.tag-count {
+    padding: 6px 1px;
+}
+
+ul.chart-list li:hover span.tag-count,
+ul.chart-list li:hover a {
+    color: #319855; 
 }
 
 ul.chart-list li a { 
     padding: 0pt; 
     display: block; 
-    position: relative; 
+    position: relative;
     z-index: 2;
+    color: #4B4743;
 }
 
 ul.chart-list span.tag-count { 
@@ -1179,12 +1207,12 @@ ul.chart-list span.tag-count {
     top: 0pt; 
     right: 0pt; 
     text-align: right;
-    color: rgb(34, 113, 59);
+    color: #319855;
     z-index: 2; 
 }
 
 ul.chart-list span.index { 
-    border-right: 2px solid rgb(99, 55, 9); 
+    border-right: 2px solid #319855; 
     overflow: hidden; 
     display: block; 
     position: absolute; 
@@ -1196,16 +1224,12 @@ ul.chart-list span.index {
 }
 
 ul.chart-list li:hover span.index {
-    border-right: 2px solid #88C284; 
-    background: rgb(99, 55, 9) none repeat scroll 0% 0%; 
+    border-right: 2px solid #319855;
+    background: #4B4743 none repeat scroll 0% 0%; 
     -moz-background-clip: border; 
     -moz-background-origin: padding; 
     -moz-background-inline-policy: continuous; 
     opacity: 0.5; 
-}
-
-ul.chart-list li:hover span.tag-count {
-    color: #88C284; 
 }
 
 .clear {

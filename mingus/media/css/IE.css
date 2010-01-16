@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+/* HTML5 tags */
+
+header, section, footer,
+aside, nav, article, figure {
+    display: block;
+}
+
+
+div#whole {
+    margin: 0 0;
+    padding: 0 0;
+    width: 100%;
+    text-align: center;
+    border-width: 0;    
+}
+
+div#wrapper {
+    width: 1005px;
+    margin: 0 auto;
+}
+
+    div#wrapper header {
+        position: relative;
+    }
+
+        div#wrapper header h1.logo {
+            text-indent: -500em;
+            background-repeat: no-repeat;
+            background-image: url('/media/img/ie_header.png');
+            height: 424px;
+        }
+
+section#content,
+section#introduction {
+    margin-top: 40px;
+    text-align: left;
+}
+
+    div#quotation {
+        float: left;
+        padding: 25px 0;
+    }
+
+    div#quotation p {
+        color: #493213;
+        font-size: 16px;
+    }
+
+    div#not-wanted {
+        background-repeat: no-repeat;
+        background-image: url('/media/img/ie_not_wanted.png');
+        width: 201px;
+        height: 227px;
+        float: right;
+    }
+
+p.quotes {
+    width: 664px;
+    padding: 0 50px;
+    margin: 40px 0 20px;
+    background: transparent url('/media/img/ie_quotes.png') no-repeat 0 0;
+}
+
+/* GENERIC CLASSES */
+
+.separator {
+    margin: 0 auto;
+    width: 528px;
+    height: 18px;
+    background-image: url('/media/img/ie_separator.png');
+}
+
+.clear {
+    clear: both;
+}

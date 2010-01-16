@@ -75,6 +75,7 @@ urlpatterns += patterns('',
     
     # APIL
     url(r'^archives/$', direct_to_template, { 'template': 'blog/archive_list.html'}, name='archives'),
+    url(r'^IE/$', direct_to_template, { 'template': 'IE.html'}, name='IE'),
     url(r'^404/$', direct_to_template, { 'template': '404.html'}, name='404'),
     url(r'^500/$', direct_to_template, { 'template': '500.html'}, name='500'),
     url(r'^comments/', include('mptt_comments.urls')),
