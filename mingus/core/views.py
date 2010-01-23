@@ -121,7 +121,7 @@ def home_list(request, page=0, template_name='proxy/proxy_list.html', **kwargs):
     '''
 
     posts = Proxy.objects.published().order_by('-pub_date')
-    pagesize = Settings.get_current().page_size or 20
+    pagesize = getattr(Settings.get_current(), 'page_size', 20)
 
     return list_detail.object_list(
         request,
@@ -171,7 +171,7 @@ def oops(request):
     foo = 1/0
 
 
-def tag_detail(request, slug, template_name='blog/tag_detail.html', **kwargs):
+def tag_detail(request, slug, template_name='proxy/tag_detail.html', **kwargs):
     ''' Display objects for all content types supported: Post and Quotes.'''
 
     tag = get_object_or_404(Tag, name__iexact=slug)
@@ -179,7 +179,6 @@ def tag_detail(request, slug, template_name='blog/tag_detail.html', **kwargs):
     #below could be prettier
     results = []
     qs = Proxy.objects.published().filter(tags__icontains=tag.name).order_by('-pub_date')
-
     for item in qs:
         comma_delimited = (',' in item.tags)
         if comma_delimited:
@@ -220,7 +219,7 @@ def blogroll(request, template_name='blog/blogroll.html'):
 
 def tag_list(request, template_name='blog/tag_list.html'):
     return render_to_response(template_name,{},
-                            context_instance=RequestContext(request))
+                              context_instance=RequestContext(request))
 
 # Stop Words courtesy of http://www.dcs.gla.ac.uk/idom/ir_resources/linguistic_utils/stop_words
 STOP_WORDS = r"""\b(a|about|above|across|after|afterwards|again|against|all|almost|alone|along|already|also|
