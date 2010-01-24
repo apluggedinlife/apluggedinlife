@@ -17,6 +17,10 @@ h1 {
     font-weight: bold;
 }
 
+article h1 {
+    margin: 0 0 2em;
+}
+
 ul {
     list-style-type: none;
 }
@@ -120,6 +124,13 @@ section#introduction {
         height: 227px;
         float: right;
     }
+
+div#copyright {
+    width: 461px;
+    height: 49px;
+    margin: 0 auto;
+    background: transparent url('/media/img/ie_copyright.png') no-repeat center center;
+}
 
 p.quotes {
     width: 664px;
