@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block menu %}about{% endblock %}
+
+{% block navigation_inner %}
+    {{ block.super }}
+    <li><span>{% trans "About" %}</span></li>
+{% endblock %}
+
+{% block body_class %}blog{% endblock %}
+
+{% block content %}
+<div class="strip">
+    <p><img src="{{ MEDIA_URL }}img/about.png" /></p>
+</div>
+{% endblock %}

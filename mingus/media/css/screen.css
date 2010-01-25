@@ -1170,6 +1170,10 @@ div#tag-list ul.chart-list span.tag-count {
     padding: 5px 1px 0;
 }
 
+div.strip img {
+    float: right;
+}
+
 /* ----  GENERIC CLASSES ---- **/
 
 ul.chart-list {
