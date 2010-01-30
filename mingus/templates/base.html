@@ -67,7 +67,7 @@
                         <em>{% trans "You are here:" %}</em>
                         <ul>
                         {% block navigation_inner %}
-                            <li><a href="{% url home_index %}" title="{% trans "Homepage" %}"><span>{% trans "Home" %}</span></a></li>
+                            <li><a href="{% url home_index %}" title="{% trans "Homepage" %}"><span></span>{% trans "Home" %}</a></li>
                         {% endblock %}
                         </ul>
                         <div class="clear"></div>
@@ -90,9 +90,7 @@
                                         <input type="text" name="q" id="search" />
                                     </div>
                                     <div id="search-button">
-                                        <button type="submit" name="sa">
-                                            <img src="{{ MEDIA_URL }}img/search_button.png" alt="Submit" />
-                                        </button>
+                                        <button type="submit" name="sa"></button>
                                     </div>
                                     <div class="clear"></div>
                                 </div>

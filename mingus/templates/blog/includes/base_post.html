@@ -4,12 +4,12 @@
     <header role="articleinfo">
         <div class="datetime">
             <time datetime="{{ post.publish }}">
-                {{ post.publish|date:"d.m.y" }} - {{ post.publish|date:"h:m"}}
+                {{ post.publish|date:"d.m.y" }} - {{ post.publish|date:"h:m"}}<span></span>
             </time>
         </div>
         {% if post.author %}
         <div class="entry-author">
-            <a href="" title="{{ post.author.username }}">{{ post.author.username }}</a>
+            <a href="" title="{{ post.author.username }}">{{ post.author.username }}<span></span></a>
         </div>
         {% endif %}
         {% cache 3600 "blog.post_detail.categories" post.title %}
@@ -18,9 +18,7 @@
             <ul>
                 {% for category in post.categories.all %}
                 <li>
-                    <a href="{% url basic.blog.views.category_detail category.slug %}" title="{{ category.slug }}">
-                        {{ category.slug }}
-                    </a>
+                    <a href="{% url basic.blog.views.category_detail category.slug %}" title="{{ category.slug }}">{{ category.slug }}<span></span></a>
                 </li>
                 {% endfor %}
             </ul>

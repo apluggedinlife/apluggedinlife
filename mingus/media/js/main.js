@@ -51,18 +51,20 @@ $(document).ready(function(){
                 .slideDown();
         });
     
-    $('ul#nav-menu li.nav-item  a')
-        .css({backgroundPosition: '0 0'})
-        .mouseover(function(){
+    $('ul#nav-menu li.nav-item  a').each(function(){
+        var backgroundPositionX = $(this).css('backgroundPosition').split(' ')[0];
+        $(this).mouseover(function(){
             $(this)
                 .stop()
-                .animate({backgroundPosition: '(0 -17px)'}, {duration: 300});
+                .animate({backgroundPosition: '('+ backgroundPositionX +' -17px)'}, {duration: 300});
         })
         .mouseout(function(){
             $(this)
                 .stop()
-                .animate({backgroundPosition: '(0 0)'}, {duration: 300});
+                .animate({backgroundPosition: '('+ backgroundPositionX +' 0)'}, {duration: 300});
         });
+    });
+
     
     $('ul li.title h2')
         .click(function(){

@@ -7,7 +7,7 @@
 
 {% block navigation_inner %}
     {{ block.super }}
-    <li><a href="{% url archives %}" title="{% trans "Archives" %}"><span>{% trans "Archives" %}</span></a></li>
+    <li><a href="{% url archives %}" title="{% trans "Archives" %}"><span></span>{% trans "Archives" %}</a></li>
     <li><span>{{ year }}</span></li>
 {% endblock %}
 
