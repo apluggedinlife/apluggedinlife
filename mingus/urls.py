@@ -7,7 +7,7 @@ from basic.blog.feeds import BlogPostsFeed, BlogPostsByCategory
 from basic.blog.sitemap import BlogSitemap
 from mingus.core.views import springsteen_results, springsteen_firehose, \
                             home_list, springsteen_category, contact_form, \
-                            proxy_search, blogroll, tag_list
+                            proxy_search, blogroll
 from robots.views import rules_list
 from mingus.core.feeds import AllEntries
 
@@ -84,7 +84,8 @@ urlpatterns += patterns('',
         blogroll,
         name='blogroll'),
     url(r'^tags/$',
-        tag_list,
+        direct_to_template,
+        { 'template': 'blog/tag_list.html'},
         name='tag_list'),
 )
 

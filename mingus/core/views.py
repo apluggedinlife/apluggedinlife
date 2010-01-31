@@ -217,10 +217,6 @@ def blogroll(request, template_name='blog/blogroll.html'):
     return render_to_response(template_name,{},
                               context_instance=RequestContext(request))
 
-def tag_list(request, template_name='blog/tag_list.html'):
-    return render_to_response(template_name,{},
-                              context_instance=RequestContext(request))
-
 # Stop Words courtesy of http://www.dcs.gla.ac.uk/idom/ir_resources/linguistic_utils/stop_words
 STOP_WORDS = r"""\b(a|about|above|across|after|afterwards|again|against|all|almost|alone|along|already|also|
 although|always|am|among|amongst|amoungst|amount|an|and|another|any|anyhow|anyone|anything|anyway|anywhere|are|
