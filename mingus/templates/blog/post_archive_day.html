@@ -7,8 +7,8 @@
 
 {% block navigation_inner %}
     {{ block.super }}
-    <li><a href="{% url archives %}" title="{% trans "Archives" %}"><span>{% trans "Archives" %}</span></a></li>
-    <li><span>{{ day|date:"d F Y" }}</span></li>
+    <li><a href="{% url archives %}" title="{% trans "Archives" %}"><span></span>{% trans "Archives" %}</a></li>
+    <li><span></span>{{ day|date:"d F Y" }}</li>
 {% endblock %}
 
 {% block content %}

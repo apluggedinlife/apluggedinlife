@@ -91,21 +91,23 @@ div#footer-worm-container > ul {
         body.blogroll div#wrapper > header h1.logo {
             background-image: url('/media/img/blogroll_header.png');
         }
+        
+        body.about div#wrapper > header h1.logo {
+            background-image: url('/media/img/about_header.png');
+        }
 
             div#wrapper > header h1.logo a {
                 display: block; 
             }
             
-            body.blog div#wrapper > header h1.logo a {
+            body.blog div#wrapper > header h1.logo a,
+            body.archives div#wrapper > header h1.logo a,
+            body.about div#wrapper > header h1.logo a {
                 height: 444px;
             }
             
             body.contact div#wrapper > header h1.logo a {
                 height: 438px;
-            }
-            
-            body.archives div#wrapper > header h1.logo a {
-                height: 444px;
             }
             
             body.handler500 div#wrapper > header h1.logo a {
@@ -219,7 +221,17 @@ div#accessibility {
 
 section#content {
     float: left;
-    padding: 30px 0 0 0;
+    padding: 10px 0 0 0;
+}
+
+section#content h1,
+section#content h2,
+section#content h3,
+section#content h4,
+section#content h5,
+section#content h6,
+section#content p {
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
 
 body.blog section#content,
@@ -519,7 +531,7 @@ body.contact section#content {
             }
             
             div.entry-body > blockquote {
-                font-size: 1.1em;
+                font-size: 1.2em;
                 width: 360px;
                 padding: 0 50px;
                 margin: 40px 0 20px;
@@ -541,9 +553,9 @@ body.contact section#content {
             div.entry-body p {
                 text-align: justify;
                 margin: 1em 0;
-                line-height: 20px;
-                font-size: 0.75em;
-                color: #6B605A;
+                line-height: 24px;
+                font-size: 0.80em;
+                color: #584941;
             }
             
             div.entry-body embed {
@@ -1241,6 +1253,31 @@ div.strip img {
     float: right;
 }
 
+div#business-card {
+    width: 484px;
+    margin: 0 auto;
+}
+
+div#business-card ul li {
+    background-image: url('/media/img/business_cards.png');
+    float: left;
+    height: 250px;
+}
+
+div#business-card ul li:not(:last-child) {
+    margin-right: 50px;
+}
+
+div#business-card ul li.business-card-thoas {
+    width: 226px;
+    background-position: 0px 0px;
+}
+
+div#business-card ul li.business-card-norelijn {
+    width: 208px;
+    background-position: 208px 0;
+}
+
 /* ----  GENERIC CLASSES ---- **/
 
 ul.chart-list {
@@ -1305,6 +1342,14 @@ ul.chart-list li:hover span.index {
 
 .clear {
     clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
 }
 
 .height-10 {

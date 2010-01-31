@@ -8,14 +8,34 @@
     <li><span></span>{% trans "About" %}</li>
 {% endblock %}
 
-{% block body_class %}blog{% endblock %}
+{% block body_class %}about{% endblock %}
 
 {% block content %}
 <div class="strip">
     <p><img src="{{ MEDIA_URL }}img/about.png" /></p>
+    <div class="clear"></div>
 </div>
-<div class="clear"></div>
+
 <div class="entry-body">
     <h1>{% trans "Authors" %}</h1>
+    <div id="business-card">
+        <ul>
+            <li class="business-card-thoas"></li>
+            <li class="business-card-norelijn"></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    
+    <h1>{% trans "More about our site" %}</h1>
+    <p>
+        {% blocktrans %}
+        A big thanks to <a href="http://montylounge.com/" title="monty lounge industries">Kevin Fricovsky</a>
+        for his Open-Source blogware powered by Django: <a href="http://github.com/montylounge/django-mingus" title="django-mingus">django-mingus</a>.
+        <br />
+        Thanks for the support, for being that receptive and willing to share.
+        {% endblocktrans %}
+    </p>
+    <p>{% blocktrans %}For those who appreciate our website menu design, all the credit goes to <a href="http://www.dandypark.se/" title="Dandypark">Dandypark</a>, thanks a lot!{% endblocktrans %}</p>
+    <p>{% blocktrans %}Thanks again to <a href="http://jeffcroft.com/" title="Jeff Croft">Jeff Croft</a> for the fancy tags pyramid you can see in our footer.{% endblocktrans %}</p>
 </div>
 {% endblock %}
