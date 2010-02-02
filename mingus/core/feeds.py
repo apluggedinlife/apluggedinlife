@@ -27,7 +27,7 @@ class AllEntries(Feed):
         return self.settings.copyright
 
     def link(self):
-        return 'http://%s' % self._settings.site.domain
+        return 'http://%s' % self.settings.site.domain
 
     def items(self):
         return Proxy.objects.published().order_by('-pub_date')[:10]
@@ -36,7 +36,12 @@ class AllEntries(Feed):
         return item.content_object.get_absolute_url()
 
     def item_categories(self, item):
-        return item.tags.replace(',', '').split()
+        tags = item.tags
+        # Avoid problems with empty/null values:
+        if not tags:
+            return list()
+        else:
+            return tags.replace(',', '').split()
 
 
 class ByTag(AllEntries):

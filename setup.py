@@ -6,13 +6,14 @@ def read(fname):
 
 setup(
     name='django-mingus',
-    version='0.4.5',
+    version='0.9beta3',
     description='A django blog engine.',
     long_description=read('README.textile'),
     author='Kevin Fricovsky',
     author_email='kfricovsky@gmail.com',
     license='BSD',
-    url='http://github.com/montylounge/django-mingus/tree',
+    url='http://github.com/montylounge/django-mingus/',
+    keywords = ['blog', 'django',],
     packages=[
         'mingus',
         'mingus.core',
@@ -27,12 +28,5 @@ setup(
         'Programming Language :: Python',
         'Framework :: Django',
     ],
-    package_data = {
-            'mingus': [
-                'media/static/css/*.css',
-                'media/static/imgs/*.png',
-                'media/static/js/*.js',
-            ]
-        },
-    zip_safe=False, # required to convince setuptools/easy_install to unzip the package data
+    zip_safe=False,
 )
