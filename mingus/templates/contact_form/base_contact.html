@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block menu %}contact{% endblock %}
+
+{% block navigation_inner %}
+    {{ block.super }}
+    <li><span></span>{% trans "Contact" %}</li>
+{% endblock %}
+
+{% block body_class %}contact{% endblock %}

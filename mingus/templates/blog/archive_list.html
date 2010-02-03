@@ -1,0 +1,24 @@
+{% extends "blog/base_archive.html" %}
+
+{% load i18n archive_tags archive %}
+
+{% block menu %}
+    archives
+{% endblock %}
+
+{% block navigation_inner %}
+    {{ block.super }}
+    <li><span></span>{% trans "Archives" %}</li>
+{% endblock %}
+
+{% block title %}{% trans "Archives" %} | {{ block.super }}{% endblock %}
+
+{% block content %}
+    {% get_post_archive as dates %}
+    {% for date in dates %}
+    <article class="archive" role="archive">
+        <h2>{{ date|date:"F Y" }}</h2>
+        {% get_posts_for_archive date %}
+    </article>
+    {% endfor %}
+{% endblock %}

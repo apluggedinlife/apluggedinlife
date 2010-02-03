@@ -1,6 +1,8 @@
 *.pyc
+.DS_Store
 *.bak
 *.db
+secure.py
 local_settings.py
 mingus/media/CACHE
 pip-log.txt

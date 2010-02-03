@@ -1,40 +1,45 @@
 # -*- coding: utf-8 -*-
-import os
+
+import os, os.path, sys
+from os.path import join, dirname, normpath
+import re
 
 PROJECT_ROOT = os.path.dirname(__file__)
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+MEDIA_ROOT = join(PROJECT_ROOT, 'media')
 MEDIA_URL = '/media/'
+STATIC_ROOT = join(MEDIA_ROOT, 'static')
+STATIC_URL = '/media/static/'
 ADMIN_MEDIA_PREFIX = '/admin_media/'
-
-#staticfiles app values
-STATIC_URL = '/media/mingus/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'media')
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'media', 'mingus'),
-)
 
 SITE_ID = 1
 ROOT_URLCONF = 'mingus.urls'
-TIME_ZONE = 'America/New_York'
+
+LANGAGE_CODE = 'fr-fr'
+
+ugettext = lambda s: s
+LANGUAGES = (
+  ('fr', ugettext('French')),
+  ('en', ugettext('English')),
+)
+TIME_ZONE = 'Europe/Paris'
 SECRET_KEY = '+bq@o(jph^-*sfj4j%xukecxb0jae9lci&ysy=609hj@(l$47c'
-USE_I18N = False
+USE_I18N = True
 HONEYPOT_FIELD_NAME = 'fonzie_kungfu'
 
 TEMPLATE_DIRS = (
-  os.path.join(PROJECT_ROOT, "templates"),
+  [os.path.join(PROJECT_ROOT, "templates")]
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
     'sugar.middleware.debugging.UserBasedExceptionMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'djangodblog.DBLogMiddleware',
-    'slimmer.middleware.CompressHtmlMiddleware',
-    'request.middleware.RequestMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
@@ -46,6 +51,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "basic.blog.context_processors.blog_settings",
     "navbar.context_processors.navbars",
     "staticfiles.context_processors.static_url",
+    "django.core.context_processors.request"
 )
 
 INSTALLED_APPS = (
@@ -61,7 +67,6 @@ INSTALLED_APPS = (
   'django_extensions',
   'tagging',
   'djangodblog',
-  'disqus',
   'basic.inlines',
   'basic.blog',
   'basic.bookmarks',
@@ -93,8 +98,19 @@ INSTALLED_APPS = (
   'django_wysiwyg',
   'request',
   'cropper',
-  'memcache_status',
+  
+  'django.contrib.comments',
+  'django.contrib.markup',
+  'mptt',
+  'mptt_comments',
+  'social_bookmarking',
+  'basic.profiles',
+  'gravatar',
 )
+
+
+MPTT_COMMENTS_OFFSET = 5
+GRAVATAR_DEFAULT_IMAGE = MEDIA_URL + 'img/avatar_apluggedinlife.png'
 
 TINYMCE_JS_ROOT = STATIC_ROOT + '/mingus/js/tiny_mce/'
 TINYMCE_COMPRESSOR = True
@@ -108,7 +124,10 @@ TINYMCE_DEFAULT_CONFIG = {
 DJANGO_WYSIWYG_MEDIA_URL = STATIC_URL + "mingus/js/ckeditor/"
 DJANGO_WYSIWYG_FLAVOR = "ckeditor"
 
+
 try:
    from local_settings import *
 except ImportError:
    pass
+
+

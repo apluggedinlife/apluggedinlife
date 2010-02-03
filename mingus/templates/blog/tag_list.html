@@ -1,0 +1,31 @@
+{% extends "blog/base_blog.html" %}
+{% load tagging_related %}
+
+{% load cache i18n %}
+
+
+{% block title %}{% trans "Tags" %} | {{ block.super }}{% endblock %}
+{% block body_class %}{{ block.super }} tag_list{% endblock %}
+{% block body_id %}tag_list{% endblock %}
+
+{% block navigation_inner %}
+    {{ block.super }}
+    <li>{% trans "Tags" %}</li>
+{% endblock %}
+
+{% block content %}
+
+<div id="tag-list">
+    <ul class="chart-list">
+        {% get_tag_list_with_percent_for_model blog.Post as tag_list %}
+        {% for tag in tag_list %}
+        <li>
+          <a href="{% url blog_tag_detail tag.name %}">{{ tag.name }}</a>
+          <span class="tag-count">{{ tag.count }}</span>
+          <span class="index" style="width: {{ tag.percent }}%;">({{ tag.percent }}%)</span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

@@ -1,0 +1,294 @@
+{% load i18n analytics cache %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>The GOOD, the BAD and the UGLY</title>
+    <link rel="stylesheet" type="text/css" media="all" href="{{ MEDIA_URL }}css/base.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="{{ MEDIA_URL }}css/IE.css" />
+</head>
+<body>
+    <section id="accessibility">
+        <ul>
+            <li class="stroke"><a href="#firefox-plugins" title="Personnaliser Firefox : les modules">Personnaliser Firefox : les modules</a></li>
+            <li class="stroke"><a href="#import-bookmarks" title="Importer ses favoris">Importer ses favoris</a></li>
+            <li class="stroke"><a href="#configure-homepage" title="Configurer une page d'accueil">Configurer une page d'accueil</a></li>
+            <li class="stroke"><a href="#install-firefox" title="Installer Mozilla Firefox">Installer Mozilla Firefox</a></li>
+            <li><a href="#explanations" title="Quelques explications...">Quelques explications...</a></li>
+        </ul>
+        <div class="clear"></div>
+    </section>
+    <div id="whole">
+        <div id="wrapper">
+            <header role="banner">
+                <h1 class="logo">
+                    <a href="{% url IE  %}" title="The GOOD, the BAD and the UGLY">The GOOD, the BAD and the UGLY</a>
+                </h1>
+            </header>
+            
+            <section id="introduction">
+                <div id="quotation">
+                    <div class="separator"></div>
+                    <p class="quotes">
+                        Tu vois, hmm, le monde se divise en 2 categories : ceux qui utilisent Firefox,<br />
+                        Google Chrome, Safari, Opera et ceux qui utilisent Internet Explorer.<br /><br />
+                        Toi tu utilises Internet Explorer.
+                    </p>
+                    <div class="separator"></div>
+                </div>
+                <div id="not-wanted"></div>
+                <div class="clear"></div>
+            </section>
+            
+            <section id="content">
+                <article>
+                    <h1 id="explanations">QUELQUES EXPLICATIONS...</h1>
+                    <div>
+                        <p><img src="{{ MEDIA_URL }}img/ie_explanation.png" /></p>
+                        <p>
+                            En décidant de faire &laquo; A plugged in life &raquo;, nous avons pris le parti de nous faire plaisir au niveau du développement et du design tout en restant fidèles aux normes W3C.
+                            <br />
+                            Ce faisant, nous avons décidé de nous affranchir des contraintes de réajustement d'IE décrites plus haut, en le boycottant purement et simplement.
+                            <br /><br />
+                            C'est pourquoi nous souhaitons t'inviter à changer de navigateur pour cette session sur notre site, voire, pour toutes celles à venir.<br />
+                            Au besoin, voici les liens à partir desquels tu pourras télécharger gratuitement le navigateur de ton choix :<br /><br />
+                        </p>
+                        <ul>
+                            <li><strong>Safari</strong> : <a href="http://www.apple.com/fr/safari" title="Safari">http://www.apple.com/fr/safari</a></li>
+                            <li><strong>Opera</strong> : <a href="http://www.opera-fr.com/" title="Opera">http://www.opera-fr.com/</a></li>
+                            <li><strong>Chrome</strong> : <a href="http://www.google.fr/chrome" title="Google Chrome">http://www.google.fr/chrome</a></li>
+                            <li><strong>Firefox</strong> : <a href="http://www.mozilla-europe.org/fr/firefox/" title="Mozilla Firefox">http://www.mozilla-europe.org/fr/firefox/</a></li>
+                        </ul>
+                        <p>
+                            Si ton choix se porte sur Firefox, tu trouveras ci-dessous tout un tutoriel sur son installation et son utilisation.
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <h1 id="install-firefox">INSTALLER MOZILLA FIREFOX</h1>
+                    <div>
+                        <em>Open-source, respectueux des normes W3C, performant, rapide, sûr et hautement personnalisable, Firefox est un choix solide.</em>
+                        <ol>
+                            <li>
+                                <h2>Pour l'installer, se rendre sur le site de Mozilla en cliquant <a href="http://www.mozilla-europe.org/fr/" title="Mozilla Europe">ici</a></h2>
+                            </li>
+                            <li>
+                                <h2>Cliquer sur le bouton de téléchargement de Firefox, comme suit :</h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_install_firefox_step2.png" alt="Installation Mozilla Firefox - deuxième étape" />
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h2>Enregistrer le fichier : </h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_install_firefox_step3.png" alt="Installation Mozilla Firefox - troisième étape" />
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h2>Choisir le dossier dans lequel on souhaite enregistrer le fichier puis cliquer sur &laquo; enregistrer &raquo; :</h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_install_firefox_step4.png" alt="Installation Mozilla Firefox - quatrième étape" />
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h2>Une boîte de dialogue indique la progression du téléchargement :</h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_install_firefox_step5.png" alt="Installation Mozilla Firefox - cinquième étape" />
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h2>Une fois le téléchargement terminé, cliquer sur &laquo; exécuter &raquo; et confirmer l'exécution à la fenêtre suivante :</h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_install_firefox_step6.png" alt="Installation Mozilla Firefox - sixième étape" />
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h2>Une boîte de dialogue indique ensuite la progression de l'extraction des données :</h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_install_firefox_step7.png" alt="Installation Mozilla Firefox - septième étape" />
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h2>Après ça, l'assistant d'installation de Firefox vous guide pour le reste de l'installation. Cliquez sur &laquo; suivant &raquo; :</h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_install_firefox_step8.png" alt="Installation Mozilla Firefox - huitième étape" />
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h2>Choisissez l'installation &laquo; standard &raquo; :</h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_install_firefox_step9.png" alt="Installation Mozilla Firefox - neuvième étape" />
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h2>L'assistant d'installation vous informe de l'emplacement où sera installé Firefox. Cliquez sur &laquo; installer &raquo; pour démarrer l'installation :</h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_install_firefox_step10.png" alt="Installation Mozilla Firefox - dixième étape" />
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h2>Une barre de progression vous permet de suivre l'avancement de l'installation :</h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_install_firefox_step11.png" alt="Installation Mozilla Firefox - onzième étape" />
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h2>Lorsque l'assistant vous signale la fin de l'installation de Firefox, cochez &laquo; lancer Firefox maintenant &raquo; et cliquer sur &laquo; terminer &raquo; :</h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_install_firefox_step12.png" alt="Installation Mozilla Firefox - douzième étape" />
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h2>Le navigateur Firefox s'ouvre, il n'y a plus qu'à surfer !</h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_install_firefox_step13.png" alt="Installation Mozilla Firefox - treizième étape" />
+                                    </p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </article>
+                <article>
+                    <h1 id="import-bookmarks">IMPORTER D'INTERNET EXPLORER SES FAVORIS ET AUTRES</h1>
+                    <div>
+                        <ol>
+                            <li>
+                                <h2>Pour plus de confort de navigation, il est également possible, d'importer vos favoris, historique, mots de passe et autres depuis Internet Explorer.
+                                Pour ce faire, dans Firefox, cliquez sur &laquo; fichier &raquo; puis &laquo; importer &raquo; :</h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_import_bookmarks_step1.png" alt="Installation Mozilla Firefox - Importation de ses favoris - première étape" />
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h2>Lorsque s'affiche l'assistant d'importation, cocher « Microsoft Internet Explorer » et suivre les indications :</h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_import_bookmarks_step2.png" alt="Installation Mozilla Firefox - Importation de ses favoris - deuxième étape" />
+                                    </p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </article>
+                <article>
+                    <h1 id="configure-homepage">CONFIGURER UNE PAGE D'ACCUEIL</h1>
+                    <div>
+                        <ol>
+                            <li>
+                                <h2>Si vous souhaitez définir une page d'accueil, rendez-vous dans &laquo; outils &raquo;, cliquez sur &laquo; options &raquo; :</h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_configure_homepage_step1.png" alt="Installation Mozilla Firefox - Configurer une page d'accueil - première étape" />
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h2>Puis, rentrez le lien de la page de votre choix :</h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_configure_homepage_step2.png" alt="Installation Mozilla Firefox - Configurer une page d'accueil - deuxième étape" />
+                                    </p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </article>
+                <article>
+                    <h1 id="firefox-plugins">PERSONNALISER FIREFOX : LES MODULES</h1>
+                    <div>
+                        <p>
+                            L'intérêt de Firefox réside aussi dans la multitude de modules complémentaires, &laquo; modules &raquo;, que des développeurs mettent à disposition.<br />
+                            Ils permettent une personnalisation très avancée de votre navigateur en enrichissant sans cesse ses fonctionnalités de base.<br /><br />
+                            Ci-dessous, nous conseillons 3 modules mais il en existe plusieurs milliers classés par catégories.
+                        </p>
+                        <ol>
+                            <li>
+                                <h2>Pour avoir accès à la page des modules pour Firefox, cliquer <a href="https://addons.mozilla.org/fr/firefox/" title="Modules pour Firefox">ici</a></h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_plugins_step1.png" alt="Installation Mozilla Firefox - Personnaliser Firefox - première étape" />
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h2><strong>1er module</strong> : Adblock (permet de bloquer toutes les publicités et bannières).<br />Cliquer sur &laquo; Ajouter à Firefox &raquo; et suivez les étapes indiquées pour l'installer</h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_plugins_step2.png" alt="Installation Mozilla Firefox - Personnaliser Firefox - deuxième étape" />
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h2><strong>2ème module</strong> : Xmarks [pour l’utilisation de Firefox sur plusieurs ordinateurs : permet la synchronisation de ses marque-pages<br /> et (facultativement) de ses mots de passe] :</h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_plugins_step3.png" alt="Installation Mozilla Firefox - Personnaliser Firefox - troisième étape" />
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <h2><strong>3ème module</strong> : Personas (pour la personnalisation du navigateur : un choix de plus de 30.000 thèmes, classées par catégories) :  </h2>
+                                <div>
+                                    <p>
+                                        <img src="{{ MEDIA_URL }}img/ie_plugins_step4.png" alt="Installation Mozilla Firefox - Personnaliser Firefox - quatrième étape" />
+                                    </p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+    <footer>
+        <div id="copyright"></div>
+    </footer>
+    
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!--[if lt IE 7]>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE7.js" type="text/javascript"></script>
+    <![endif]-->
+    
+    <!--[if lt IE 8]>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js" type="text/javascript"></script>
+    <![endif]-->
+    
+    <script src="{{ MEDIA_URL }}js/cufon.js" type="text/javascript"></script>
+    <script src="{{ MEDIA_URL }}js/Alfredos_Dance_400.font.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        Cufon.replace('div#quotation p');
+    </script>
+    
+    {% cache 7200 "base.analytics" %}
+    {% analytics %}
+    {% endcache %}
+</body>
+</html>

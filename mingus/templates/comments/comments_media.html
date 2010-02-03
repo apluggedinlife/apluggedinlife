@@ -1,0 +1,148 @@
+{% load i18n %}
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function () {
+    
+    var MpttComment = {
+        commentsLoaded: [],
+        repliesLoaded: [],
+        
+        init: function () {
+            this.commentPk = new RegExp("comment-(\\d+)", "");
+            this.posted = new RegExp("this_is_a_comment", "g");
+            
+            $('#comments-more').bind("click", function () {
+                $.get($(this).attr('href') + '?is_ajax=1', {}, function (data, textStatus) {
+                    var commentsForUpdate = data.comments_for_update;
+                    if (commentsForUpdate) {
+                        var comment;
+                        for (var c = 0; c < commentsForUpdate.length; c++) {
+                            comment = commentsForUpdate[c];
+                            $('.comment-level-' + (comment.level - 1))
+                                .append(comment.html);
+                        }
+                    }
+                    var commentsTree = data.comments_tree;
+                    if (commentsTree) {
+                        $('#mptt-comments-tree')
+                            .append(commentsTree.html);
+                    }
+                    commentsLoaded = $('.comment');
+                    var remainingCount = data.remaining_count;
+                    if (remainingCount > 0) {
+                        $('#comments-more-remaining').html(remainingCount);
+                        var _href = $('#comments-more').attr('href');
+                        $('#comments-more').attr(
+                            'href', 
+                            _href.replace(
+                                new RegExp("\\d+/$"), 
+                                parseInt(MpttComment.commentPk.exec(
+                                    $(commentsLoaded[commentsLoaded.length - 1])
+                                    .attr('id'))[1]) + '/'
+                                )
+                        );
+                    } else {
+                        $('#comments-more')
+                            .parent()
+                            .hide();
+                    }
+                    MpttComment.replies();
+                },
+                "json");
+                return false;
+            });
+            
+            var form_wrapper = $('.new-comment-form-wrapper').get(0);
+            this.submit($('form', form_wrapper), $(form_wrapper))
+            this.replies();
+        },
+
+        submit: function (form, nxt) {
+            var postData = {}
+            $("input[type=submit]", form).bind("mousedown", function () {
+                postData = {};
+                postData[this.name] = this.value;
+            });
+
+            form.bind("submit", function () {
+                var dataDict = $(":input", form).serializeArray();
+                $.each(dataDict, function () {
+                    postData[this.name] = this.value;
+                });
+
+                postData['is_ajax'] = 1;
+                $.post(form.attr("action"), postData, function (data, textStatus) {
+                    if (MpttComment.posted.test(data)) {
+                        if (nxt.hasClass('new-comment-form-wrapper')) {
+                            $('#mptt-comments-tree').append(data);
+                            nxt.replaceWith('<p>{% trans "Your comment was posted." %}</p>');
+                        } else {
+                            nxt.replaceWith(data);
+                            MpttComment.replies();
+                        }
+                    } else {
+                        nxt
+                            .empty()
+                            .append(data)
+                            .slideDown("slow");
+                        MpttComment.submit($('form', nxt), nxt);
+                    }
+                }, "html");
+                return false;
+            });
+        },
+        
+        replies: function () {
+            $('.comment-reply').click(function (e) {
+                 var parent = $(this).parents('.comment-whole:first');
+                 parent.after('<div class="comment-form-wrapper"></div>');
+                 $('.comment-form-wrapper').slideUp("slow");
+                 $.get($(this).attr('href') + '?is_ajax=1', function (data, textStatus) {
+                     var nxt = parent
+                                .next('.comment-form-wrapper')
+                                .empty()
+                                .append(data)
+                                .slideDown('slow');
+                     MpttComment.submit($('form', nxt), nxt);
+                 }, 'html');
+                 return false;
+             });
+
+             $('.comment-replies').each(function () {
+                 var elem = $(this);
+                 elem
+                    .unbind('click')
+                    .bind('click', function (e) {
+                        var href = elem.attr('href') + '?is_ajax=1';
+                        if ($.inArray(href, MpttComment.repliesLoaded) == -1) {
+                            MpttComment.repliesLoaded.push(href);
+                            $.get(href, {}, function (data, textStatus) {
+                                var commentsTree = data.comments_tree;
+                                if (commentsTree) {
+                                    elem
+                                        .parents('.comment:first')
+                                        .append(commentsTree.html);
+                                }
+                                elem
+                                    .parent()
+                                    .addClass('comment-no-hidden-replies');
+                                MpttComment.replies();
+                            }, 'json');
+                        } else {
+                            elem
+                                .parents('.comment:first')
+                                .children('.comment')
+                                .slideToggle()
+                                .end()
+                                .end()
+                                .parent()
+                                .toggleClass('comment-no-hidden-replies');
+                        }
+                        return false;
+                    });
+             });
+        }
+    }
+    
+    MpttComment.init(); // intercept links
+});
+</script>
