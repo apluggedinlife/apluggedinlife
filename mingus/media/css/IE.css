@@ -17,7 +17,7 @@ h1 {
     font-weight: bold;
 }
 
-article h1 {
+div.article h1 {
     margin: 0 0 2em;
 }
 
@@ -27,24 +27,24 @@ ul {
 
 /* ACCESSIBILITY */
 
-section#accessibility {
+div#accessibility {
     padding: 0.4em;
     margin-bottom: 20px;
     background-color: #fdf6ed;
 }
 
-        section#accessibility ul li {
+        div#accessibility ul li {
             float: right;
             margin-left: 0.5em;
             padding-left: 0.5em;
         }
     
-            section#accessibility ul li a {
+            div#accessibility ul li a {
                 color: #000000;
                 font-size: 0.65em;
             }
         
-        section#accessibility ul li.stroke {
+        div#accessibility ul li.stroke {
             border-left: 1px solid #414141;
         }
 
@@ -79,11 +79,11 @@ div#wrapper {
     margin: 0 auto;
 }
 
-    div#wrapper header {
+    div#wrapper div#header {
         position: relative;
     }
 
-        div#wrapper header h1.logo {
+        div#wrapper div#header h1.logo {
             text-indent: -500em;
             background-repeat: no-repeat;
             background-image: url('/media/img/ie_header.png');
@@ -92,17 +92,17 @@ div#wrapper {
             margin: 0 auto;
         }
 
-section#content,
-section#introduction {
+div#content,
+div#introduction {
     margin-top: 40px;
     text-align: left;
 }
     
-    section#content article {
+    div#content article {
         margin-bottom: 50px;
     }
     
-    section#content ol li {
+    div#content ol li {
         position: relative;
         margin-top: 30px;
     }
