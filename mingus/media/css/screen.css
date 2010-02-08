@@ -481,7 +481,7 @@ body.contact section#content {
                 
                 div.count-comment {
                     background-image: url('/media/img/icons.png');
-                    background-position: -38px -84px;
+                    background-position: -37px -92px;
                     background-repeat: no-repeat;
                     float: right;
                     margin-top: 6px;
@@ -489,8 +489,8 @@ body.contact section#content {
                 
                     div.count-comment,
                     div.count-comment a {
-                        width: 22px;
-                        height: 28px;
+                        width: 27px;
+                        height: 27px;
                     }
                 
                     div.count-comment a {
@@ -499,7 +499,7 @@ body.contact section#content {
                         font-size: 1em;
                         text-align: center;
                         display: block;
-                        padding-top: 0.3em;
+                        padding-top: 3px;
                     }
 
         div.entry-body {
@@ -968,7 +968,7 @@ ul li.title {
     
     ul li.title ul li a {
         font-weight: bold;
-        color: #319855;
+        color: #319755;
     }
 
     ul li.title ul li:hover {
@@ -1068,7 +1068,7 @@ div.twitter-container {
     }
 
     div.twitter-container-green-2 {
-        background-position: 0px 219;
+        background-position: 0px 219px;
     }
 
     div.twitter-container-green-3 {
