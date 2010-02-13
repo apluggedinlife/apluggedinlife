@@ -99,6 +99,7 @@ INSTALLED_APPS = (
   'request',
   'cropper',
   
+  # apil requirements
   'django.contrib.comments',
   'django.contrib.markup',
   'mptt',

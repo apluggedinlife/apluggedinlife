@@ -1,4 +1,4 @@
-{% load blog i18n mptt_comments_tags tagging_tags inlines oembed_tags cache %}
+{% load blog i18n mptt_comments_tags tagging_tags inlines oembed_tags cache social_bookmarking_tags %}
 <article role="article">
 {% block article %}
     <header role="articleinfo">
@@ -25,7 +25,7 @@
         </div>
         {% endif %}
         {% endcache %}
-        {% include "blog/includes/share.html" %}
+        {% show_bookmarks_related post.title post.get_absolute_url post %}
         <div class="clear"></div>
         {% if post.allow_comments %}
         <div class="count-comment">
