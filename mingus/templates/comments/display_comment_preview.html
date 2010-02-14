@@ -1,0 +1,29 @@
+{% load i18n markup gravatar_tags %}
+
+{% if comment %}
+<article role="comment" class="comment" id="comment-preview">
+    <div class="comment-whole">
+        <header>
+            <img src="{% get_gravatar_for_email form.data.email %}" alt="{% trans "gravatar" %}" />
+            <div class="comment-meta">
+                <div class="comment-author">
+                    {% if form.data.url %}
+                        <a href="{{ form.data.url|escape }}" title="{% trans "go to "%}{{ form.data.url|escape }}">
+                            {{ form.data.name }}
+                        </a>
+                    {% else %}
+                        {{ form.data.name }}
+                    {% endif %}
+                </div>
+            </div> 
+        </header>
+
+        <div class="comment-body">
+            <div class="comment-body-content">
+                <h3>{{ form.data.title }}</h3>
+                {{ comment|escape|linebreaks|markdown }}
+            </div>
+        </div>
+    </div>
+</article>
+{% endif %}

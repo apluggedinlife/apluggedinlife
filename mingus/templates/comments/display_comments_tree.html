@@ -11,11 +11,11 @@
             <div class="comment-meta">
                 <div class="comment-author">
                     {% if comment.user_url %}
-                        <a href="{{ comment.user_url }}" title="{% trans "go to "%}{{ comment.user_url }}">
-                            {{ comment.name }}
+                        <a href="{{ comment.user_url|escape }}" title="{% trans "go to "%}{{ comment.user_url|escape }}">
+                            {{ comment.name|escape }}
                         </a>
                     {% else %}
-                        {{ comment.name }}
+                        {{ comment.name|escape}}
                     {% endif %}
                     </div>
                 <time datetime="{{ comment.submit_date }}">
@@ -25,11 +25,10 @@
                 </time>
             </div> 
         </header>
-    
-
+        
         <div class="comment-body">
             <div class="comment-body-content">
-                <h3>{{ comment.title }}</h3>
+                <h3>{{ comment.title|escape }}</h3>
                 {{ comment.comment|escape|linebreaks|markdown }}
             </div>
             <span class="comment-reply">
@@ -65,5 +64,4 @@
     {% endif %}
 
 {% endfor %}
-
-{% endfor %}   
+{% endfor %}

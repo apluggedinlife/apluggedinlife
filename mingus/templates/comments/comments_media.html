@@ -3,40 +3,34 @@
 $(document).ready(function () {
     
     var MpttComment = {
-        commentsLoaded: [],
-        repliesLoaded: [],
+        comments_loaded: [],
+        replies_loaded: [],
         
         init: function () {
-            this.commentPk = new RegExp("comment-(\\d+)", "");
-            this.posted = new RegExp("this_is_a_comment", "g");
+            this.comment_pk_re = new RegExp("comment-(\\d+)", "");
+            this.posted_re = new RegExp("this_is_a_comment", "g");
             
             $('#comments-more').bind("click", function () {
-                $.get($(this).attr('href') + '?is_ajax=1', {}, function (data, textStatus) {
-                    var commentsForUpdate = data.comments_for_update;
-                    if (commentsForUpdate) {
-                        var comment;
-                        for (var c = 0; c < commentsForUpdate.length; c++) {
-                            comment = commentsForUpdate[c];
-                            $('.comment-level-' + (comment.level - 1))
-                                .append(comment.html);
-                        }
-                    }
-                    var commentsTree = data.comments_tree;
-                    if (commentsTree) {
+                $.get($(this).attr('href') + '?is_ajax=1', {}, function (data, text_status) {
+                    $.each(data.comments_for_update, function(comment) {
+                        $('.comment-level-' + (comment.level - 1)).append(comment.html);
+                    });
+                    
+                    var comments_tree = data.comments_tree;
+                    if (comments_tree) {
                         $('#mptt-comments-tree')
-                            .append(commentsTree.html);
+                            .append(comments_tree.html);
                     }
-                    commentsLoaded = $('.comment');
-                    var remainingCount = data.remaining_count;
-                    if (remainingCount > 0) {
-                        $('#comments-more-remaining').html(remainingCount);
+                    comments_loaded = $('.comment');
+                    var remaining_count = data.remaining_count;
+                    if (remaining_count > 0) {
+                        $('#comments-more-remaining').html(remaining_count);
                         var _href = $('#comments-more').attr('href');
-                        $('#comments-more').attr(
-                            'href', 
+                        $('#comments-more').attr('href',
                             _href.replace(
-                                new RegExp("\\d+/$"), 
-                                parseInt(MpttComment.commentPk.exec(
-                                    $(commentsLoaded[commentsLoaded.length - 1])
+                                new RegExp("\\d+/$"),
+                                parseInt(MpttComment.comment_pk_re.exec(
+                                    $(comments_loaded[comments_loaded.length - 1])
                                     .attr('id'))[1]) + '/'
                                 )
                         );
@@ -57,21 +51,21 @@ $(document).ready(function () {
         },
 
         submit: function (form, nxt) {
-            var postData = {}
+            var data = {}
             $("input[type=submit]", form).bind("mousedown", function () {
-                postData = {};
-                postData[this.name] = this.value;
+                data = {};
+                data[this.name] = this.value;
             });
 
             form.bind("submit", function () {
-                var dataDict = $(":input", form).serializeArray();
-                $.each(dataDict, function () {
-                    postData[this.name] = this.value;
+                var dict = $(":input", form).serializeArray();
+                $.each(dict, function () {
+                    data[this.name] = this.value;
                 });
 
-                postData['is_ajax'] = 1;
-                $.post(form.attr("action"), postData, function (data, textStatus) {
-                    if (MpttComment.posted.test(data)) {
+                data['is_ajax'] = 1;
+                $.post(form.attr("action"), data, function (data, text_status) {
+                    if (MpttComment.posted_re.test(data)) {
                         if (nxt.hasClass('new-comment-form-wrapper')) {
                             $('#mptt-comments-tree').append(data);
                             nxt.replaceWith('<p>{% trans "Your comment was posted." %}</p>');
@@ -96,7 +90,7 @@ $(document).ready(function () {
                  var parent = $(this).parents('.comment-whole:first');
                  parent.after('<div class="comment-form-wrapper"></div>');
                  $('.comment-form-wrapper').slideUp("slow");
-                 $.get($(this).attr('href') + '?is_ajax=1', function (data, textStatus) {
+                 $.get($(this).attr('href') + '?is_ajax=1', function (data, text_status) {
                      var nxt = parent
                                 .next('.comment-form-wrapper')
                                 .empty()
@@ -113,14 +107,14 @@ $(document).ready(function () {
                     .unbind('click')
                     .bind('click', function (e) {
                         var href = elem.attr('href') + '?is_ajax=1';
-                        if ($.inArray(href, MpttComment.repliesLoaded) == -1) {
-                            MpttComment.repliesLoaded.push(href);
-                            $.get(href, {}, function (data, textStatus) {
-                                var commentsTree = data.comments_tree;
-                                if (commentsTree) {
+                        if ($.inArray(href, MpttComment.replies_loaded) == -1) {
+                            MpttComment.replies_loaded.push(href);
+                            $.get(href, {}, function (data, text_status) {
+                                var comments_tree = data.comments_tree;
+                                if (comments_tree) {
                                     elem
                                         .parents('.comment:first')
-                                        .append(commentsTree.html);
+                                        .append(comments_tree.html);
                                 }
                                 elem
                                     .parent()
