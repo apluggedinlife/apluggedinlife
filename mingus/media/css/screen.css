@@ -382,18 +382,25 @@ body.contact section#content {
             div.share {
                 width: 80px;
             }
-            
+                
+                div.share h1.share-hide {
+                    background-image: url('/media/img/hide.png');
+                }
+                
                 div.share h1 {
                     text-align: center;
                     font-size: 0.9em;
+                    background-image: url('/media/img/show.png');
                     font-weight: bold;
                     color: #34312E;
                     margin: 6px 0;
-                    background: transparent url('/media/img/show.png') no-repeat left top;
                     height: 16px;
                     cursor: pointer;
                     vertical-align: bottom;
                     padding-left: 2px;
+                    background-position: left top;
+                    background-repeat: no-repeat;
+                    background-color: transparent;
                 }
                 
                 div.share-items {
@@ -663,11 +670,11 @@ body.contact section#content {
             margin-bottom: 40px;
         }
         
-            div.entry-previous {
+            div#entry-navigation a.entry-previous {
                 float: left;
             }
             
-            div.entry-next {
+            div#entry-navigation a.entry-next {
                 float: right;
             }
         

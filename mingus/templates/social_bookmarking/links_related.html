@@ -1,7 +1,7 @@
 {% load i18n social_bookmarking_tags %}
 
 <div class="share">
-    <h1>{% trans "share" %}</h1>
+    <h1 class="share-show">{% trans "share" %}</h1>
     <div class="share-items">
         {% for bookmark in bookmarks %}
             {% ifnotequal forloop.counter0 0  %}
@@ -11,7 +11,7 @@
             {% endifnotequal %}
             <div class="share-{% cycle right,left %} share-{{ bookmark.slug }}">
                 <span class="count">{{ bookmark.visits }}</span>
-                <a href="{% url bookmark_referer bookmark.slug bookmark.content_type bookmark.object_pk bookmark.url %}" title="Partager sous {{ bookmark.slug }}">
+                <a href="{% url bookmark_referer bookmark.slug bookmark.content_type bookmark.object_pk bookmark.url %}" title="{% blocktrans with bookmark.slug as slug %}Share on {{ slug }}{% endblocktrans %}">
                     <div class="share-icon"></div>
                 </a>
             </div>

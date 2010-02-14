@@ -12,6 +12,13 @@
     {% endblock %}
 
     <meta name="copyright" content="{{ BLOG_SETTINGS.copyright }}" />
+    <!--[if IE]>
+        <script type="text/javascript" charset="utf-8">
+           window.onload = function() {
+               window.location = "{% url IE %}"
+           }
+        </script>
+    <![endif]-->
     <link rel="shortcut icon" href="{{ MEDIA_URL }}favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/screen.css?ver=0.1" type="text/css" media="screen" />
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/print.css?ver=0.1" type="text/css" media="print" />
@@ -241,13 +248,6 @@
     </footer>
 
     <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.uncompressed.js?ver=1.3.2"></script>
-    <script type="text/javascript" charset="utf-8">
-        $(document).ready(function(){
-            if (!jQuery.support.cssFloat) {
-                window.location = "{% url IE %}"
-            }
-        });
-    </script>
     <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.plugins.js?ver=1.3.2"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}js/main.js?ver=0.1"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}js/prettify.js"></script>

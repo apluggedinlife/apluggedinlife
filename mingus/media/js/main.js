@@ -1,6 +1,6 @@
 (function($){
     $.extend($.fx.step, {
-        backgroundPosition: function(fx){
+        backgroundPosition: function(fx) {
             if(fx.state === 0 && typeof fx.end == 'string'){
                 var start = $.curCSS(fx.elem, 'backgroundPosition');
                 start = toArray(start);
@@ -27,6 +27,9 @@
 
 $(document).ready(function(){
     
+    $('.share-items')
+        .hide()
+    
     $('a[href*=#]').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
         && location.hostname == this.hostname) {
@@ -41,28 +44,33 @@ $(document).ready(function(){
         }
     });
     
-    $('.share-items')
-        .hide()
-
+    $('a[rel*=external]').click( function() {
+        window.open(this.href);
+        return false;
+    });
+    
     $('.share h1')
         .click(function(){
            $(this)
                 .siblings('.share-items')
-                .slideDown();
+                .slideToggle()
+                .end()
+                .toggleClass('share-hide')
         });
     
     $('ul#nav-menu li.nav-item  a').each(function(){
         var backgroundPositionX = $(this).css('backgroundPosition').split(' ')[0];
-        $(this).mouseover(function(){
-            $(this)
-                .stop()
-                .animate({backgroundPosition: '('+ backgroundPositionX +' -17px)'}, {duration: 300});
-        })
-        .mouseout(function(){
-            $(this)
-                .stop()
-                .animate({backgroundPosition: '('+ backgroundPositionX +' 0)'}, {duration: 300});
-        });
+        $(this)
+            .mouseover(function(){
+                $(this)
+                    .stop()
+                    .animate({backgroundPosition: '('+ backgroundPositionX +' -17px)'}, {duration: 300});
+            })
+            .mouseout(function(){
+                $(this)
+                    .stop()
+                    .animate({backgroundPosition: '('+ backgroundPositionX +' 0)'}, {duration: 300});
+            });
     });
 
     
@@ -80,7 +88,7 @@ $(document).ready(function(){
         .find('ul')
             .css({display: 'none'});
     
-    $('#twitter ul li,div.share-right,div.share-left').hover(function(){
+    $('#twitter ul li, div.share-items > div').hover(function(){
         $(this)
             .siblings(':not(".clear")')
             .stop()

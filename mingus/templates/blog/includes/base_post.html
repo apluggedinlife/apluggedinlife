@@ -59,14 +59,15 @@
         {% endoembed %}
     </div>
     {% if object.get_previous_by_publish or object.get_next_by_publish %}
+    <div class="clear"></div>
     <div id="entry-navigation">
         {% if object.get_previous_by_publish %}
-          <a class="entry-previous" href="{{ object.get_previous_post.get_absolute_url }}" title="{{ object.get_previous_post }}">
+          <a class="entry-previous" href="{{ object.get_previous_post.get_absolute_url }}" title="{% blocktrans with object.get_previous_post as previous_post %}Previous entry: {{ previous_post }}{% endblocktrans %}">
             <img src="{{ MEDIA_URL }}img/entry_previous.png" alt="{% trans "Previous entry" %}" />
           </a>
         {% endif %}
         {% if object.get_next_by_publish %}
-          <a class="entry-next" href="{{ object.get_next_post.get_absolute_url }}" title="{{ object.get_next_post }}">
+          <a class="entry-next" href="{{ object.get_next_post.get_absolute_url }}" title="{% blocktrans with object.get_next_post as next_post %}Next entry: {{ next_post }}{% endblocktrans %}">
             <img src="{{ MEDIA_URL }}img/entry_next.png" alt="{% trans "Next entry" %}" />
           </a>
         {% endif %}
