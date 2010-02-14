@@ -2,7 +2,6 @@
 
 @import "reset.css";
 @import "base.css";
-@import "pygments.css";
 
 /* ---- GENERIC ELEMENT ---- */
 
@@ -1212,7 +1211,7 @@ div#tag-list {
             border-right: 2px solid #88C284; 
             background: #F7EEE8 none repeat scroll 0% 0%;
         }
-
+        
         div#tag-list ul.chart-list li,
         div#tag-list ul.chart-list span.tag-count {
             padding: 5px 1px 0;
@@ -1227,16 +1226,16 @@ div#business-card {
         float: left;
         height: 250px;
     }
-
+    
     div#business-card ul li:not(:last-child) {
         margin-right: 50px;
     }
-
+    
     div#business-card ul li.business-card-thoas {
         width: 226px;
         background-position: 0px 0px;
     }
-
+    
     div#business-card ul li.business-card-norelijn {
         width: 208px;
         background-position: 208px 0;
@@ -1276,7 +1275,7 @@ ul.chart-list {
             position: absolute;
             top: 0pt;
             right: 0pt;
-            text-align: right
+            text-align: right;
             color: #319855;
             z-index: 2;
         }
@@ -1302,21 +1301,10 @@ ul.chart-list {
             opacity: 0.5;
         }
 
-.clear {
-    clear: both;
-}
-
-.left {
-    float: left;
-}
-
-.right {
-    float: right;
-}
-
-.height-10 {
-    height: 10px;
-}
+.clear { clear: both; }
+.left { float: left; }
+.right { float: right; }
+.height-10 { height: 10px; }
 
 /* syntax highlighting */
 
@@ -1334,7 +1322,6 @@ ul.chart-list {
 
 pre {
     border-left: 1px solid #DDDDDD;
-    padding-left: 2.154em;
     overflow: auto;
     margin: 2em 0;
 }

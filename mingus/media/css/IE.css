@@ -17,36 +17,37 @@ h1 {
     font-weight: bold;
 }
 
-div.article h1 {
-    margin: 0 0 2em;
+div.article {
+    margin-bottom: 2em;
 }
+    div.article h1 {
+        margin: 0 0 1em;
+    }
 
 ul {
     list-style-type: none;
 }
 
-/* ACCESSIBILITY */
+/* --- ACCESSIBILITY ---- */
 
 div#accessibility {
     padding: 0.4em;
     margin-bottom: 20px;
     background-color: #fdf6ed;
 }
-
-        div#accessibility ul li {
-            float: right;
-            margin-left: 0.5em;
-            padding-left: 0.5em;
+    div#accessibility ul li {
+        float: right;
+        margin-left: 0.5em;
+        padding-left: 0.5em;
+    }
+        div#accessibility ul li a {
+            color: #000000;
+            font-size: 0.65em;
         }
     
-            div#accessibility ul li a {
-                color: #000000;
-                font-size: 0.65em;
-            }
-        
-        div#accessibility ul li.stroke {
-            border-left: 1px solid #414141;
-        }
+    div#accessibility ul li.stroke {
+        border-left: 1px solid #414141;
+    }
 
 h2 {
     font-size: 0.9em;
@@ -78,11 +79,9 @@ div#wrapper {
     width: 1005px;
     margin: 0 auto;
 }
-
     div#wrapper div#header {
         position: relative;
     }
-
         div#wrapper div#header h1.logo {
             text-indent: -500em;
             background-repeat: no-repeat;
@@ -94,10 +93,9 @@ div#wrapper {
 
 div#content,
 div#introduction {
-    margin-top: 40px;
+    margin-top: 30px;
     text-align: left;
 }
-    
     div#content article {
         margin-bottom: 50px;
     }
@@ -106,17 +104,17 @@ div#introduction {
         position: relative;
         margin-top: 30px;
     }
-
+    
     div#quotation {
         float: left;
         padding: 25px 0;
     }
-
+    
     div#quotation p {
         color: #493213;
         font-size: 16px;
     }
-
+    
     div#not-wanted {
         background-repeat: no-repeat;
         background-image: url('/media/img/ie_not_wanted.png');
@@ -134,12 +132,12 @@ div#copyright {
 
 p.quotes {
     width: 664px;
-    padding: 0 50px;
+    padding: 0 0 0 100px;
     margin: 40px 0 20px;
     background: transparent url('/media/img/ie_quotes.png') no-repeat 0 0;
 }
 
-/* GENERIC CLASSES */
+/* --- GENERIC CLASSES --- */
 
 .separator {
     margin: 0 auto;
@@ -148,6 +146,4 @@ p.quotes {
     background-image: url('/media/img/ie_separator.png');
 }
 
-.clear {
-    clear: both;
-}
+.clear { clear: both; }
