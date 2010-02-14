@@ -20,9 +20,9 @@
         {% get_tag_list_with_percent_for_model blog.Post as tag_list %}
         {% for tag in tag_list %}
         <li>
-          <a href="{% url blog_tag_detail tag.name %}">{{ tag.name }}</a>
-          <span class="tag-count">{{ tag.count }}</span>
-          <span class="index" style="width: {{ tag.percent }}%;">({{ tag.percent }}%)</span>
+            <a href="{% url blog_tag_detail tag.name %}">{{ tag.name }}</a>
+            <span class="tag-count">{{ tag.count }}</span>
+            <span class="index" style="width: {{ tag.percent }}%;">({{ tag.percent }}%)</span>
         </li>
         {% endfor %}
     </ul>
