@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
 {% block content %}
     <div class="entry-body">
-        <h2>{% trans "Preview of your comment" %}</h2>
+        <h1>{% trans "Preview of your comment" %}</h1>
         
         <div id="mptt-comments-tree">
             {% include "comments/display_comment_preview.html" %}

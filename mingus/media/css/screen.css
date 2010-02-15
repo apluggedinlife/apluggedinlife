@@ -789,43 +789,50 @@ section#content {
                         height: 16px;
                     }
                     
-                    .comment > .comment  .comment {
+                    .comment > .comment .comment,
+                    .comment > .comment-form-wrapper > .comment .comment {
                         margin-left: 0 !important;
                     }
                     
-                    .comment > .comment .comment-whole header {
+                    .comment > .comment .comment-whole header,
+                    .comment > .comment-form-wrapper > .comment .comment-whole header {
                         position: absolute;
                         z-index: 20;
                         right: 10px;
                         bottom: 10px;
                     }
-                        .comment > .comment .comment-whole header > * {
+                        .comment > .comment .comment-whole header > *,
+                        .comment > .comment-form-wrapper > .comment .comment-whole header > * {
                             float: right;
                         }
                         
-                        .comment > .comment .comment-whole .comment-meta {
+                        .comment > .comment .comment-whole .comment-meta,
+                        .comment > .comment-form-wrapper > .comment .comment-whole .comment-meta {
                             padding-top: 8px;
                             margin-right: 5px;
                             text-align: right;
                         }
                         
-                        .comment > .comment .comment-whole header img {
+                        .comment > .comment .comment-whole header img,
+                        .comment > .comment-form-wrapper > .comment .comment-whole header img {
                             width: 40px;
                             height: 40px;
                         }
                     
-                    .comment > .comment .comment-body {
+                    .comment > .comment .comment-body,
+                    .comment > .comment-form-wrapper > .comment .comment-body {
                         background-color: #E9F4EC;
                         position: relative;
                     }
                     
-                    .comment > .comment > .comment-whole .comment-reply {
+                    .comment > .comment > .comment-whole .comment-reply,
+                    .comment > .comment-form-wrapper > .comment > .comment-whole .comment-reply {
                         left: 0;
                     }
         
         div.new-comment-form-wrapper {
             margin: 15px 0;
-            width: 500px;
+            width: 725px;
         }
 
 /* --- ARCHIVE --- */
@@ -1145,7 +1152,6 @@ footer#footer {
 /* ---- FORM STYLESHEETS ---- */
 
 .form input[type=text],
-.form input[type=submit],
 .form textarea {
     border: 3px solid #F0F0F0;
     margin: 3px 0;
@@ -1155,17 +1161,6 @@ footer#footer {
 .form textarea {
     width: 70%;
     padding: 6px;
-}
-
-.form input[type=submit] {
-    width: 30%;
-    display: block;
-    position: relative;
-    color: #66685B;
-    background-color: #F0F0F0;
-    padding: 7px;
-    float: left;
-    margin-right: 5px;
 }
 
 .form .errors label {
@@ -1321,6 +1316,30 @@ ul.chart-list {
 .left { float: left; }
 .right { float: right; }
 .height-10 { height: 10px; }
+
+.btn-style {
+    -moz-border-radius: 2px 2px 2px 2px;
+    background: none repeat scroll 0 0 #2A2A2A;
+    border: medium none;
+    color: #FFB300;
+    float: left;
+    font: bold 11px/17px Arial,sans-serif;
+    height: 31px;
+    margin: 0 10px 10px 0;
+    padding: 4px 20px;
+    position: relative;
+    text-decoration: none;
+}
+
+.btn-style-white {
+    background: none repeat scroll 0 0 #F0F0F0;
+    color: #4D4D4D;
+}
+
+.btn-style-dark-green {
+    background: none repeat scroll 0 0 #34312E;
+    color: #319755;
+}
 
 /* syntax highlighting */
 
