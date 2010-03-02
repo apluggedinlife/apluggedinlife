@@ -638,7 +638,7 @@ section#content {
                     padding-top: 1px;
                 }
                     div.entry-meta ul li a span {
-                        padding: 2px;
+                        padding: 2px 8px;
                         display: inline-block;
                         min-width: 70px;
                         -moz-border-radius-topright: 4px;

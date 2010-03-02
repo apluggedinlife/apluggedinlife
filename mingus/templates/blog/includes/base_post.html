@@ -18,7 +18,7 @@
             <ul>
                 {% for category in post.categories.all %}
                 <li>
-                    <a href="{% url basic.blog.views.category_detail category.slug %}" title="{{ category.slug }}">{{ category.slug }}<span></span></a>
+                    <a href="{% url basic.blog.views.category_detail category.slug %}" title="{{ category.slug }}">{{ category.title }}<span></span></a>
                 </li>
                 {% endfor %}
             </ul>
