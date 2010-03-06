@@ -11,8 +11,8 @@ p, h1, h2, h3, h4, h5, h6, input[type=text], a, li, span {
     font-style: normal;
 }
 
-h1, h2 {
-    margin: 1em 0;
+h1, h2, h3 {
+    margin: 0 0 1em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -237,7 +237,7 @@ section#content {
     
     section#navigation-inner {
         width: 100%;
-        margin: 10px 0 20px;
+        margin: 10px 0 30px;
     }
         section#navigation-inner ul,
         section#navigation-inner em {
@@ -507,8 +507,11 @@ section#content {
             }
             
             div.entry-body h2 {
-                font-size: 0.9em;
-                margin-top: 2em;
+                font-size: 1.2em;
+            }
+            
+            div.entry-body h3 {
+                font-size: 1em;
             }
             
             div.blockquote-author {
@@ -535,9 +538,21 @@ section#content {
             
             div.entry-body h1 a,
             div.entry-body h1,
-            div.entry-body h2,
+            div.entry-body h3,
+            div.entry-body h3 a,
             footer h2 {
                 color: #41281B;
+                font-weight: bold;
+            }
+            
+            div.entry-body h2 {
+                color: #5D3927;
+                font-weight: bold;
+            }
+            
+            div.entry-body h3,
+            div.entry-body h3 a {
+                color: #6b422c;
                 font-weight: bold;
             }
             
@@ -547,9 +562,9 @@ section#content {
             
             div.entry-body p {
                 text-align: justify;
-                margin: 1em 0;
+                margin: 0 0 1.5em;
                 line-height: 24px;
-                font-size: 0.80em;
+                font-size: 0.9em;
                 color: #584941;
             }
             
@@ -616,6 +631,10 @@ section#content {
                 font-size: 0.9em;
                 line-height: 20px;
                 font-style: italic;
+            }
+            
+            div.related-posts {
+                margin-bottom: 20px;
             }
 
         div.entry-meta {
@@ -844,11 +863,13 @@ article.archive {
         border-color: #CCCCCC;
         color: #000000;
         font-weight: bold;
+        font-size: 1.2em;
     }
     
     article.archive p {
         color: #444444;
-        line-height: 19px;
+        line-height: 20px;
+        font-size: 1.2em;
     }
     
     article.archive h2 {
@@ -1193,14 +1214,14 @@ ul.errorlist li {
 
 div.contact-form {
     float: left;
-    width: 65%;
+    width: 70%;
 }
 
 div.contact-more {
-    margin-left: 70%;
+    margin-left: 60%;
     border-left: 3px solid #F0F0F0;
     padding: 20px;
-    width: 240px;
+    width: 310px;
 }
 
 div.contact {
@@ -1230,7 +1251,7 @@ div#tag-list {
 
 div#business-card {
     width: 484px;
-    margin: 0 auto;
+    margin: 0 auto 20px;
 }
     div#business-card ul li {
         background-image: url('/media/img/business_cards.png');
