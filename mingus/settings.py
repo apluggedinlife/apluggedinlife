@@ -123,8 +123,6 @@ GRAVATAR_DEFAULT_IMAGE = MEDIA_URL + 'img/avatar_apluggedinlife.png'
 
 TINYMCE_JS_ROOT = STATIC_ROOT + '/mingus/js/tiny_mce/'
 TINYMCE_COMPRESSOR = True
-
-
 TINYMCE_JS_URL = STATIC_URL + 'js/tiny_mce/tiny_mce.js'
 TINYMCE_DEFAULT_CONFIG = {
     'theme': 'advanced',

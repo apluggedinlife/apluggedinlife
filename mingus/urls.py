@@ -11,6 +11,9 @@ from mingus.core.views import springsteen_results, springsteen_firehose, \
 from robots.views import rules_list
 from mingus.core.feeds import AllEntries, ByTag
 
+from django.views.static import serve
+from mingus.utils import serve_download
+
 admin.autodiscover()
 
 feeds = {
@@ -116,10 +119,12 @@ urlpatterns += patterns('',
         direct_to_template,
         { 'template': 'blog/tag_list.html'},
         name='tag_list'),
+    
+    url(r'^download/(?P<path>.*)$',
+        serve_download(serve),
+        {'document_root': settings.MEDIA_ROOT}),
 )
 
-
-from django.conf import settings
 if settings.DEBUG:
     urlpatterns += patterns('', 
         (r'', include('staticfiles.urls')),
