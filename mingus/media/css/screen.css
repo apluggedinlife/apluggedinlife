@@ -545,7 +545,8 @@ section#content {
                 font-weight: bold;
             }
             
-            div.entry-body h2 {
+            div.entry-body h2,
+            div.entry-body h2 a {
                 color: #5D3927;
                 font-weight: bold;
             }
@@ -564,7 +565,11 @@ section#content {
                 margin: 0 0 1.5em;
                 line-height: 24px;
                 font-size: 0.9em;
-                color: #584941;
+                color: #4f423a;
+            }
+            
+            div.entry-body p:hover {
+                color: #3d332d;
             }
             
             div.entry-body embed {
@@ -588,10 +593,6 @@ section#content {
                 text-decoration: none;
                 border-bottom: 1px solid #ddd;
                 background: #E2F7E2;
-            }
-            
-            div.entry-body p a {
-                font-size: 1.1em;
             }
             
             div.entry-body p a:active,
