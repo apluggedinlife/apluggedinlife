@@ -1,3 +1,8 @@
-{% with object.content_object as post %}
-    {% include "blog/includes/base_post.html" %}
-{% endwith %}
+{% extends "blog/includes/base_post.html" %}
+
+{% load i18n %}
+
+{% block post_content %}
+    <p>{{ post.tease|safe }}</p>
+    <p class="more"><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{% trans "Read more" %}→</a></p>
+{% endblock %}

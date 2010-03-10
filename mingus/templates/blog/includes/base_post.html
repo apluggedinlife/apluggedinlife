@@ -1,4 +1,4 @@
-{% load blog i18n mptt_comments_tags tagging_tags inlines oembed_tags cache social_bookmarking_tags %}
+{% load blog i18n mptt_comments_tags tagging_tags cache social_bookmarking_tags %}
 <article role="article">
 {% block article %}
     <header role="articleinfo">
@@ -43,7 +43,7 @@
             <ul>
             {% for tag in tag_list %}
                 <li>
-                    <a href="/tags/{{ tag }}" title="{{ tag }}">
+                    <a href="{% url blog_tag_detail tag %}" title="{{ tag }}">
                         <span>{{ tag }}</span>
                     </a>
                 </li>
@@ -53,10 +53,9 @@
          </div>
         {% endif %}
         {% endcache %}
-        <p class="entry-teaser">{{ post.tease|safe }}</p>
-        {% oembed %}
-            {{ post.body_markup|render_inlines|safe }}
-        {% endoembed %}
+        {% block post_content %}
+            
+        {% endblock %}
     </div>
     {% if object.get_previous_by_publish or object.get_next_by_publish %}
     <div class="clear"></div>

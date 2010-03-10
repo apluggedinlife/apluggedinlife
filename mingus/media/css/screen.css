@@ -572,18 +572,20 @@ section#content {
                 color: #3d332d;
             }
             
-            div.entry-body embed {
+            div.entry-body .left {
+                float: left;
+                margin-right: 15px;
+            }
+            
+            div.entry-body .right {
                 float: right;
-                display: inline;
-                margin-bottom: 15px;
                 margin-left: 15px;
             }
             
-            div.entry-body img {
-                float: left;
+            div.entry-body .large,
+            div.entry-body .left,
+            div.entry-body .right {
                 display: inline;
-                margin-bottom: 15px;
-                margin-right: 15px;
             }
             
             div.entry-body p a,
@@ -592,7 +594,7 @@ section#content {
                 color: #222;
                 text-decoration: none;
                 border-bottom: 1px solid #ddd;
-                background: #E2F7E2;
+                background-color: #E2F7E2;
             }
             
             div.entry-body p a:active,
@@ -610,7 +612,7 @@ section#content {
             .comment header a:hover,
             section#content ol li a:hover {
                 color: #222;
-                background: transparent;
+                background-color: transparent;
                 border-bottom: 1px solid #555;
             }
             
@@ -618,7 +620,7 @@ section#content {
             .comment header a:visited,
             section#content ol li a:visited {
                 color: #222;
-                background: rgba(226, 247, 226, .4);
+                background-color: rgba(226, 247, 226, .4);
             }
             
             div.entry-body p blockquote {
@@ -898,17 +900,17 @@ article.archive {
         float: left;
     }
     
-    article.archive .more {
+    p.more {
         text-align: right;
     }
     
-    article.archive .more a {
+    p.more a {
         font-size: 0.8em;
         text-transform: uppercase;
         color: #000000;
     }
     
-    article.archive .more a:hover {
+    p.more a:hover {
         border-bottom: 1px dotted #CCCCCC;
     }
 
@@ -1273,6 +1275,13 @@ div#business-card {
     }
 
 /* ----  GENERIC CLASSES ---- **/
+
+a[rel*=external] {
+    background-image: url('/media/img/external.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding: 0 15px 0 0;
+}
 
 ul.chart-list {
     float: left;

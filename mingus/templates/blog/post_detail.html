@@ -16,6 +16,7 @@
 {% endblock %}
 
 {% block extra_javascript %}
+    {{ block.super }}
     {% mptt_comments_media %}
 {% endblock %}
 
