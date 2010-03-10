@@ -16,7 +16,7 @@
 {% if object_list %}
     {% cache 3600 "blog.category_detail.object_list" category.title %}
         {% for post in object_list %}
-            {% include "blog/includes/post_list.html" %}
+            {% include "proxy/includes/post_item.html" %}
         {% endfor %}
     {% endcache %}
 {% endif %}
