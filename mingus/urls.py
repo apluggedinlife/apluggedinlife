@@ -94,6 +94,11 @@ urlpatterns += patterns('',
         direct_to_template,
         {'template': 'about.html'},
         name='about'),
+
+    # url(r'^test/$',
+    #     direct_to_template,
+    #     {'template': 'test.html'},
+    #     name='test'),
     
     url(r'^404/$',
         direct_to_template,
