@@ -1,9 +1,7 @@
-@charset "utf-8";
-
 /* ---- GENERIC ELEMENT ---- */
 
 p, h1, h2, h3, h4, h5, h6, input[type=text], a, li, span {
-    font-family: Helvetica,Arial,sans-serif;
+    font-family: Arial,Helvetica,sans-serif;
     font-weight: normal;
     font-style: normal;
 }
@@ -360,6 +358,7 @@ section#content {
                 background-color: #329A57;
                 padding: 4px 8px;
                 -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
                 display: inline-block;
                 float: right;
             }
@@ -369,17 +368,17 @@ section#content {
                 width: 80px;
             }
                 div.share h1.share-hide {
-                    background-image: url('/media/img/hide.png');
+                    background-position: left -14px;
                 }
                 
                 div.share h1 {
                     text-align: center;
                     font-size: 0.9em;
-                    background-image: url('/media/img/show.png');
+                    background-image: url('/media/img/share_control.png');
                     font-weight: bold;
                     color: #34312E;
                     margin: 6px 0;
-                    height: 16px;
+                    height: 14px;
                     cursor: pointer;
                     vertical-align: bottom;
                     padding-left: 2px;
