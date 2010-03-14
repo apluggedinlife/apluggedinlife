@@ -1020,12 +1020,15 @@ div#search-button {
     float: left;
     height: 17px;
     width: 17px;
+    top: 3px;
+    position: relative;
 }
-    div#search-button button[type=submit] {
+    div#search-button input[type=submit] {
         height: 17px;
         width: 18px;
         background: transparent url('/media/img/icons.png') no-repeat -19px -90px;
         border-width: 0;
+        text-indent: -9999em;
     }
 
 div#search-mentions p {
