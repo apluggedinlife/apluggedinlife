@@ -2,7 +2,9 @@
 
 {% load i18n %}
 
-{% block body_class %}{{ block.super }} post_list{% endblock %}
+{% block body_id %}posts{% endblock %}
+
+{% block body_class %}{{ block.super }} posts{% endblock %}
 
 {% block title %}{% trans "Home" %} | {{ block.super }}{% endblock %}
 

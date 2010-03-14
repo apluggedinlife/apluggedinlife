@@ -32,8 +32,8 @@
     {% mptt_comments_media %}
 {% endblock %}
 
-{% block body_class %}{{ block.super }} post_detail{% endblock %}
-{% block body_id %}post_{{ object.id }}{% endblock %}
+{% block body_class %}{{ block.super }} post-detail{% endblock %}
+{% block body_id %}post-{{ object.id }}{% endblock %}
 
 {% block content %}
     {% with object as post %}

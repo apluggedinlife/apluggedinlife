@@ -3,7 +3,9 @@
 
 {% block title %}{% trans "Archives for" %} {{ month|date:"F Y"}} | {{ block.super }}{% endblock %}
 
-{% block body_id %}archive_{{ category.id }}{% endblock %}
+{% block body_id %}archive-{{ category.id }}{% endblock %}
+
+{% block body_class %}archives{% endblock %}
 
 {% block navigation_inner %}
     {{ block.super }}

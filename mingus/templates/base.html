@@ -19,10 +19,10 @@
     <![endif]-->
     <link rel="shortcut icon" href="{{ MEDIA_URL }}favicon.ico" type="image/x-icon"/>
     {% compress css %}
-    <link rel="stylesheet" href="{{ MEDIA_URL }}css/reset.css" type="text/css" media="screen" charset="utf-8" />
-    <link rel="stylesheet" href="{{ MEDIA_URL }}css/base.css" type="text/css" media="screen" charset="utf-8" />
-    <link rel="stylesheet" href="{{ MEDIA_URL }}css/screen.css" type="text/css" media="screen" charset="utf-8" />
-    <link rel="stylesheet" href="{{ MEDIA_URL }}css/print.css" type="text/css" media="print" charset="utf-8" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/base.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/screen.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/print.css" type="text/css" media="print" />
     {% endcompress %}
     {% block rss %}
     <link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} main rss feed" href="{{ BLOG_SETTINGS.rss_url }}">
@@ -32,12 +32,11 @@
     {% if category %}
         <link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} - {{ category }} posts" href="/feeds/categories/{{ category.title|lower }}">
     {% endif %}
-    
     {% endblock %}
 
     {% block extra_head %}{% endblock %}
 </head>
-<body id="{% block body_id %}{% endblock %}" class="{% block body_class %}blog{% endblock %}" onload="prettyPrint()">
+<body id="{% block body_id %}{% endblock %}" class="{% block body_class %}blog{% endblock %}">
     <div id="accessibility">
         <ul>
             <li><a href="#footer" title="{% trans "Go to footer" %}">{% trans "Go to footer" %}</a></li>
@@ -100,10 +99,10 @@
                                     <div id="search-input">
                                         <input type="hidden" name="cx" value="006789194927321815761:kj7f0ea1nsy" />
                                         <input type="hidden" name="ie" value="UTF-8" />
-                                        <input type="text" name="q" id="search" />
+                                        <input type="text" name="q" />
                                     </div>
                                     <div id="search-button">
-                                        <input type="submit" name="sa"></button>
+                                        <input type="submit" name="sa" />
                                     </div>
                                     <div class="clear"></div>
                                 </div>
@@ -260,11 +259,14 @@
         </div>
     </footer>
     
+    <!--[if lte IE 8]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
     {% compress js %}
-    <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.uncompressed.js" charset="utf-8"></script>
-    <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.plugins.js" charset="utf-8"></script>
-    <script type="text/javascript" src="{{ MEDIA_URL }}js/main.js" charset="utf-8"></script>
-    <script type="text/javascript" src="{{ MEDIA_URL }}js/prettify.js" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/prettify.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.uncompressed.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.plugins.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/main.js"></script>
     {% block extra_javascript %}{% endblock %}
     {% endcompress %}
     

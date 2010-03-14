@@ -2,9 +2,11 @@
 
 {% load i18n archive_tags archive %}
 
-{% block menu %}
-    archives
-{% endblock %}
+{% block menu %}archives{% endblock %}
+
+{% block body_class %}archives{% endblock %}
+
+{% block body_id %}archives{% endblock %}
 
 {% block navigation_inner %}
     {{ block.super }}

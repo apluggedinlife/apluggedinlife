@@ -3,7 +3,7 @@
 {% block article %}
     <header role="articleinfo">
         <div class="datetime">
-            <time datetime="{{ post.publish }}">
+            <time datetime="{{ post.publish|date:"Y-m-d" }}">
                 {{ post.publish|date:"d.m.y" }} - {{ post.publish|date:"h:m"}}<span></span>
             </time>
         </div>
