@@ -18,7 +18,7 @@
 {% block content %}
     {% get_post_archive as dates %}
     {% for date in dates %}
-    <article class="archive" role="archive">
+    <article class="archive">
         <h2>{{ date|date:"F Y" }}</h2>
         {% get_posts_for_archive date %}
     </article>

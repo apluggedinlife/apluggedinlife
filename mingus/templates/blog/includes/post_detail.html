@@ -10,7 +10,7 @@
 {% block article %}
 
 {{ block.super }}
-<footer role="comments" id="comments">
+<footer id="comments">
     {% cache 1800 "blog.post_detail.related_list" post.pk %}
     {% tagged_get_related object in blog.Post as post_list with num=3 %}
     {% if post_list %}

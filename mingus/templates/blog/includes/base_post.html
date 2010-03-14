@@ -1,7 +1,7 @@
 {% load blog i18n mptt_comments_tags tagging_tags cache social_bookmarking_tags %}
 <article role="article">
 {% block article %}
-    <header role="articleinfo">
+    <header>
         <div class="datetime">
             <time datetime="{{ post.publish|date:"Y-m-d" }}">
                 {{ post.publish|date:"d.m.y" }} - {{ post.publish|date:"h:m"}}<span></span>
