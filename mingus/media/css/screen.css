@@ -948,7 +948,7 @@ section#sidebar-content {
 }
 
 ul li.title {
-    margin: 10px 0;
+    margin-bottom: 10px;;
     padding: 0.5em 0;
 }
     ul li.title h2,
@@ -1042,6 +1042,11 @@ section#twitter {
     section#twitter ul li {
         margin-bottom: 20px;
     }
+
+section#facebook {
+    margin: 0 auto 10px;
+    width: 100px;
+}
 
 div.twitter-container {
     width: 177px;

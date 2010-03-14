@@ -112,41 +112,48 @@
                                 <p>{% trans "Search on this website via Google" %}</p>
                             </div>
                         </section>
-                        <ul>
-                            <li class="title">
-                                <h2>{% trans "Categories" %}</h2>
-                                <ul>
-                                {% cache 3600 "base.category_list" %}
-                                  {% get_blog_categories as category_list %}
-                                  {% for category in category_list %}
-                                  <li><a href="{% url basic.blog.views.category_detail category.slug %}" title="{{ category.title }}">{{ category.title }}</a></li>
-                                  {% endfor %}
-                                </ul>
-                                {% endcache %}
-                            </li>
-                            <li class="title">
-                                <h2>{% trans "Archives"%}</h2>
-                                {% cache 7200 "base.archive" %}
-                                {% get_post_archive as dates %}
-                                <ul>
-                                {% for date in dates %}
-                                <li><a href="{% url blog_archive_month date|date:"Y", date|date:"m" %}" title="{{ date|date:"F Y" }}">{{ date|date:"F Y" }}</a></li>
-                                {% endfor %}
-                                </ul>
-                                {% endcache %}
-                            </li>
-                            <li class="title">
-                                <h2 class="active">{% trans "Popular posts"%}</h2>
-                                {% cache 7200 "base.popular_posts" %}
-                                {% get_popular_posts 10 as popular_post_list %}
-                                <ul>
-                                {% for popular_post in popular_post_list %}
-                                <li><a href="{{ popular_post.get_absolute_url }}" title="{{ popular_post.title }}">{{ popular_post.title }}</a></li>
-                                {% endfor %}
-                                </ul>
-                                {% endcache %}
-                            </li>
-                        </ul>
+                        <section id="sidebar-list">
+                            <ul>
+                                <li class="title">
+                                    <h2>{% trans "Categories" %}</h2>
+                                    <ul>
+                                    {% cache 3600 "base.category_list" %}
+                                      {% get_blog_categories as category_list %}
+                                      {% for category in category_list %}
+                                      <li><a href="{% url basic.blog.views.category_detail category.slug %}" title="{{ category.title }}">{{ category.title }}</a></li>
+                                      {% endfor %}
+                                    </ul>
+                                    {% endcache %}
+                                </li>
+                                <li class="title">
+                                    <h2>{% trans "Archives"%}</h2>
+                                    {% cache 7200 "base.archive" %}
+                                    {% get_post_archive as dates %}
+                                    <ul>
+                                    {% for date in dates %}
+                                    <li><a href="{% url blog_archive_month date|date:"Y", date|date:"m" %}" title="{{ date|date:"F Y" }}">{{ date|date:"F Y" }}</a></li>
+                                    {% endfor %}
+                                    </ul>
+                                    {% endcache %}
+                                </li>
+                                <li class="title">
+                                    <h2 class="active">{% trans "Popular posts"%}</h2>
+                                    {% cache 7200 "base.popular_posts" %}
+                                    {% get_popular_posts 10 as popular_post_list %}
+                                    <ul>
+                                    {% for popular_post in popular_post_list %}
+                                    <li><a href="{{ popular_post.get_absolute_url }}" title="{{ popular_post.title }}">{{ popular_post.title }}</a></li>
+                                    {% endfor %}
+                                    </ul>
+                                    {% endcache %}
+                                </li>
+                            </ul>
+                        </section>
+                        <section id="facebook">
+                            <a href="http://www.facebook.com/pages/apluggedinlife/350938287300#!/pages/apluggedinlife/350938287300?v=app_4949752878" title="Facebook page">
+                                <img src="{{ MEDIA_URL }}img/facebook.png" alt="Jorge" />
+                            </a>
+                        </section>
                         {% cache 3600 "base.profile_list" %}
                         {% get_profiles as profile_list %}
                         {% if profile_list %}
