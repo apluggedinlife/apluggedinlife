@@ -14,7 +14,7 @@ ADMIN_MEDIA_PREFIX = '/admin_media/'
 SITE_ID = 1
 ROOT_URLCONF = 'mingus.urls'
 
-LANGAGE_CODE = 'fr' 
+LANGUAGE_CODE = 'fr' 
 
 ugettext = lambda s: s
 LANGUAGES = (
@@ -37,7 +37,6 @@ TEMPLATE_DIRS = (
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
