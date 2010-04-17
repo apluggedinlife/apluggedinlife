@@ -123,32 +123,32 @@ $(document).ready(function(){
             .animate({left: "0"}, {duration: 500});
     });
     
+    function twitterize(text) {
+        text = text.replace(/\bwww\.\w.\w/ig, 'http://$&');
+        text = text.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, '<a href="$1">$1</a>');
+        text = text.replace(/\B@([_a-z0-9]+)/ig, '@<a href="http://twitter.com/$1">$1</a>');
+        text = text.replace(/\B#([_a-z0-9]+)/ig, '#<a href="http://twitter.com/search?q=$1">$1</a>');
+        
+        return text;
+    }
     
-    // function updateTwitterContainer(object, results){
-    //     if(results.length > 0){
-    //         var result = results[0];
-    //         object
-    //             .find('p')
-    //             .html(
-    //                 '<a href="http://twitter.com/'
-    //                 + object.attr('id')
-    //                 +'/status/'
-    //                 + result.id 
-    //                 +'" title="status '
-    //                 + result.id +'">'
-    //                 + result.text + '</a>'
-    //             );
-    //     }
-    // }
-    // 
-    // $(".twitter-container-account").each(function(){
-    //     var _this = $(this);
-    //     $.twitter.search.user($(this).attr('id'), function(data, textStatus){
-    //         updateTwitterContainer(_this, data.results);
-    //     });
-    // })
-    // 
-    // $.twitter.search.hashtag("apluggedinlife", function(data, textStatus){
-    //     updateTwitterContainer($("#apluggedinlife-hashtag"), data.results);
-    // });
+    function updateTwitterContainer(object, results){
+        if(results.length > 0){
+            var result = results[0];
+            object
+                .find('p')
+                .html(twitterize(result.text));
+        }
+    }
+    
+    $(".twitter-container-account").each(function(){
+        var _this = $(this);
+        $.twitter.search.user($(this).attr('id'), function(data, textStatus){
+            updateTwitterContainer(_this, data.results);
+        });
+    })
+    
+    $.twitter.search.hashtag("apluggedinlife", function(data, textStatus){
+        updateTwitterContainer($("#apluggedinlife-hashtag"), data.results);
+    });
 });

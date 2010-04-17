@@ -555,6 +555,7 @@ $.twitter.statuses.show = function(userid, callback, options){
 
 $.twitter.users.show = function(userid, callback, options){ 
     //TODO : check userid is number until
+    var options = {};
     if (userid){
         options.user_id = userid;
     }

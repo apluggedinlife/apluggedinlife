@@ -18,6 +18,8 @@ from django.template import RequestContext
 import re
 from django.db.models import Q
 
+from xml.etree import ElementTree
+
 def page_key_prefix(request):
     '''Used by cache_page_with_prefix to create a cache key prefix.'''
     return request.GET.get('page','')
@@ -213,8 +215,17 @@ def contact_form(request, form_class=ContactForm,
     return django_contact_form(request, form_class=form_class,
                  template_name=template_name)
 
-def blogroll(request, template_name='blog/blogroll.html'):
-    return render_to_response(template_name,{},
+def blogroll(request, feed=settings.OPML_ROOT, template_name='blog/blogroll.html'):
+    tags = list({
+        'title': tag.attrib['title'],
+        'feeds': list({
+            'title': feed.attrib['title'],
+            'feed': feed.attrib['xmlUrl'],
+            'url': feed.attrib['htmlUrl']
+        } for feed in tag.getchildren())
+    } for tag in ElementTree.parse(feed).findall('body/outline'))
+    
+    return render_to_response(template_name, {'tags': tags},
                               context_instance=RequestContext(request))
 
 # Stop Words courtesy of http://www.dcs.gla.ac.uk/idom/ir_resources/linguistic_utils/stop_words

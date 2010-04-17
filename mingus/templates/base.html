@@ -163,11 +163,11 @@
                                 <li>
                                     <div id="{{ service.username }}" class="twitter-container twitter-container-account twitter-container-green-{{ forloop.counter0 }}">
                                         <h2>
-                                            <a href="http://twitter.com/{{ service.username }}" title="@{{ service.username }}">
-                                                @{{ service.username }}
+                                            @<a href="http://twitter.com/{{ service.username }}" title="{{ service.username }}" class="sidebar-twitter-anywhere-user">
+                                                {{ service.username }}
                                             </a>
                                         </h2>
-                                        <p>
+                                        <p class="tweet">
                                             <span class="twitter-container-loader">
                                             </span>
                                         </p>
@@ -182,7 +182,7 @@
                                                 #apluggedinlife
                                             </a>
                                         </h2>
-                                        <p>
+                                        <p class="tweet">
                                             <span class="twitter-container-loader">
                                             </span>
                                         </p>
@@ -191,8 +191,8 @@
                             </ul>
                         </section>
                         {% endif %}
-                        {% endcache %}
                     </section>
+                    {% endcache %}
                 </nav>
                 <div class="clear"></div>
             </div>
@@ -262,6 +262,19 @@
     <!--[if lte IE 8]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    
+    <script src="http://platform.twitter.com/anywhere.js?id=xFdsfquW8fvA5RDp28BqA&v=1"></script>
+    <script type="text/javascript">
+       twttr.anywhere(function(twitter) {
+            twitter("*:not(.sidebar-twitter-anywhere-user)").hovercards();
+            twitter(".sidebar-twitter-anywhere-user").hovercards({
+              username: function(node) {
+                return node.title;
+              }
+            });
+       });
+    </script>
+    
     {% compress js %}
     <script type="text/javascript" src="{{ MEDIA_URL }}js/prettify.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.uncompressed.js"></script>

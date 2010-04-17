@@ -1081,7 +1081,8 @@ div.twitter-container {
         padding: 5px;
     }
         div.twitter-container p a {
-            color: #000000;
+            color: #191816;
+            text-decoration: underline;
         }
     
     div.twitter-container-green-0 {
