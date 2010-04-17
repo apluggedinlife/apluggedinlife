@@ -18,8 +18,6 @@ from django.template import RequestContext
 import re
 from django.db.models import Q
 
-from xml.etree import ElementTree
-
 def page_key_prefix(request):
     '''Used by cache_page_with_prefix to create a cache key prefix.'''
     return request.GET.get('page','')
@@ -216,6 +214,8 @@ def contact_form(request, form_class=ContactForm,
                  template_name=template_name)
 
 def blogroll(request, feed=settings.OPML_ROOT, template_name='blog/blogroll.html'):
+    from xml.etree import ElementTree
+    
     tags = list({
         'title': tag.attrib['title'],
         'feeds': list({
@@ -225,7 +225,21 @@ def blogroll(request, feed=settings.OPML_ROOT, template_name='blog/blogroll.html
         } for feed in tag.getchildren())
     } for tag in ElementTree.parse(feed).findall('body/outline'))
     
-    return render_to_response(template_name, {'tags': tags},
+    count_per_group = len(max(tags, key=lambda k: len(k['feeds']))['feeds'])
+    groups = []
+    current = []
+    total = 0
+    for tag in tags:
+        current.append(tag)
+        total += len(tag['feeds'])
+        
+        if total > count_per_group:
+            groups.append(current)
+            current = []
+            total = 0
+    
+    return render_to_response(template_name,
+                              {'tags': tags, 'groups': groups},
                               context_instance=RequestContext(request))
 
 # Stop Words courtesy of http://www.dcs.gla.ac.uk/idom/ir_resources/linguistic_utils/stop_words

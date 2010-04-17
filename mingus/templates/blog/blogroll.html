@@ -19,22 +19,26 @@
     <h1>{% trans "The map" %}</h1>
     <h1>{% trans "Links and OPML" %}</h1>
     {% if tags %}
-        <ul class="blogroll">
-            {% for tag in tags %}
-                 <li>
-                    <h3>{{ tag.title }}</h3>
-                    <div>
-                        {% if tag.feeds %}
-                            <ul>
-                                {% for entry in tag.feeds %}
-                                    <li><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
-                    </div>
-                </li>
+        <div id="blogroll">
+            {% for group in groups %}
+                 <div class="column">
+                     <ul>
+                        {% for tag in group %}
+                            <li>
+                            <h3>{{ tag.title }}</h3>
+                            {% if tag.feeds %}
+                                <ul>
+                                    {% for entry in tag.feeds %}
+                                        <li><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                            </li>
+                        {% endfor %}
+                     </ul>
+                </div>
             {% endfor %}
-        </ul>
+        </div>
     {% endif %}
 </div>
 {% endblock %}
