@@ -1,9 +1,9 @@
 BeautifulSoup==3.0.8.1
 PIL
 python-dateutil==1.4.1
-django==1.1.1
+Django==1.2
 django-debug-toolbar==0.8.1
-django-tagging==0.3
+django-tagging==0.3.1
 Pygments==1.1.1
 FeedParser==4.1
 Markdown==2.0.1
