@@ -127,7 +127,8 @@ urlpatterns += patterns('',
     
     url(r'^download/(?P<path>.*)$',
         serve_download(serve),
-        {'document_root': settings.MEDIA_ROOT}),
+        {'document_root': settings.MEDIA_ROOT},
+        name='download'),
 )
 
 if settings.DEBUG:

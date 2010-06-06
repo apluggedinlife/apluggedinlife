@@ -587,7 +587,8 @@ section#content {
             
             div.entry-body p a,
             .comment header a,
-            section#content ol li a {
+            section#content ol li a,
+            a.link {
                 color: #222;
                 text-decoration: none;
                 background-color: #E2F7E2;
@@ -595,7 +596,8 @@ section#content {
             
             div.entry-body p a:active,
             .comment header a:active,
-            section#content ol li a:active {
+            section#content ol li a:active,
+            a.link:active {
                 color: #8b1109;
             }
             
@@ -606,7 +608,8 @@ section#content {
             
             div.entry-body p a:hover,
             .comment header a:hover,
-            section#content ol li a:hover {
+            section#content ol li a:hover,
+            a.link:hover {
                 color: #222;
                 background-color: transparent;
                 border-bottom: 1px solid #555;
@@ -614,7 +617,8 @@ section#content {
             
             div.entry-body p a:visited,
             .comment header a:visited,
-            section#content ol li a:visited {
+            section#content ol li a:visited,
+            a.link:visited {
                 color: #222;
                 background-color: rgba(226, 247, 226, .4);
             }
@@ -1353,6 +1357,38 @@ ul.chart-list {
 .right { float: right; }
 .height-10 { height: 10px; }
 .center { margin-left: auto; margin-right: auto;}
+.block-20 { padding-top: 20px; }
+
+.column-50 {
+    margin-right: 50px;
+}
+
+.column {
+    display: inline;
+    float: left;
+    overflow: hidden;
+}
+
+.column > ul > li {
+    margin-bottom: 25px;
+}
+
+.column h3 + ul li:not(:last-child) {
+    margin-bottom: 7px;
+}
+
+.column h3 + ul li a {
+    font-size: 13px;
+}
+
+.column ul li h3 {
+    text-transform: uppercase;
+}
+
+.grid-2 {
+    width: 140px;
+}
+
 
 .btn-style {
     -moz-border-radius: 2px 2px 2px 2px;

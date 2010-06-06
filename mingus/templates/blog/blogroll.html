@@ -19,9 +19,12 @@
     <h1>{% trans "The map" %}</h1>
     <h1>{% trans "Links and OPML" %}</h1>
     {% if tags %}
-        <div id="blogroll">
+        <div id="blogroll" class="block-20">
             {% for group in groups %}
-                 <div class="column">
+                {% if forloop.counter|divisibleby:4 %}
+                    <div class="clear"></div>
+                {% endif %}
+                 <div class="column column-50">
                      <ul>
                         {% for tag in group %}
                             <li>
@@ -29,7 +32,7 @@
                             {% if tag.feeds %}
                                 <ul>
                                     {% for entry in tag.feeds %}
-                                        <li><a href="{{ entry.url }}" title="{{ entry.title }}">{{ entry.title }}</a></li>
+                                        <li><a href="{{ entry.url }}" title="{{ entry.title }}" class="link" rel="external">{{ entry.title }}</a></li>
                                     {% endfor %}
                                 </ul>
                             {% endif %}
@@ -38,6 +41,9 @@
                      </ul>
                 </div>
             {% endfor %}
+        </div>
+        <div class="block-20 clear">
+            <a href="{% url download path="OPML_APIL.xml" %}" class="icon center download">Blogroll OPML</a>
         </div>
     {% endif %}
 </div>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
     <head>
-        <title>Abonnements de APIL dans Google Reader</title>
+        <title>Abonnements de apluggedinlife.com</title>
     </head>
     <body>
         <outline title="SEO-SEM" text="SEO-SEM">
@@ -20,6 +20,17 @@
                 xmlUrl="http://www.ouinon.net/rss.php" htmlUrl="http://www.ouinon.net/index.php"/>
             <outline text="Serial Mapper" title="Serial Mapper"
                 type="rss" xmlUrl="http://www.serialmapper.com/atom.xml" htmlUrl="http://www.serialmapper.com/"/>
+            <outline text="Flowing Data" title="Flowing Data" type="rss"
+                xmlUrl="http://feeds.feedburner.com/FlowingData" htmlUrl="http://flowingdata.com/"/>
+            <outline text="Information Aesthetics" title="Information Aesthetics" type="rss"
+                xmlUrl="http://feeds.infosthetics.com/infosthetics.com" htmlUrl="http://infosthetics.com/"/>
+            <outline text="Datavisualization" title="Datavisualization" type="rss"
+                xmlUrl="http://feeds.feedburner.com/Datavisualization" htmlUrl="http://datavisualization.ch/"/>
+            <outline text="Information Is Beautiful" title="Information Is Beautiful" type="rss"
+                xmlUrl="http://www.informationisbeautiful.net/feed/" htmlUrl="http://www.informationisbeautiful.net/"/>
+            <outline text="La Cartoteca" title="La Cartoteca" type="rss"
+                xmlUrl="http://alpoma.net/carto/?feed=rss2" htmlUrl="http://alpoma.net/carto/"/>
+
         </outline>
         <outline title="Ruby" text="Ruby">
             <outline text="Alex Payne" title="Alex Payne" type="rss"
