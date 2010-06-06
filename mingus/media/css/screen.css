@@ -1352,6 +1352,7 @@ ul.chart-list {
 .left { float: left; }
 .right { float: right; }
 .height-10 { height: 10px; }
+.center { margin-left: auto; margin-right: auto;}
 
 .btn-style {
     -moz-border-radius: 2px 2px 2px 2px;
@@ -1420,6 +1421,22 @@ code {
     color: #454545;
     font-size: 1.2em;
     padding: 1px 3px;
+}
+
+.icon {
+    background-image: url('/media/img/icons.png');
+    background-repeat: no-repeat;
+    background-color: transparent !important;
+    display: block;
+    height: 16px;
+    width: 16px;
+}
+
+.download {
+    background-position: 0 -50px;
+    width: 40px;
+    height: 39px;
+    text-indent: -9999px;
 }
 
 a.permalink {
