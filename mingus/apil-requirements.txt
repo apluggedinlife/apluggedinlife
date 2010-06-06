@@ -15,8 +15,8 @@ django-memcache-status==1.0.1
 
 -e svn+http://django-mptt.googlecode.com/svn/trunk/@115#egg=django_mptt-0.3p2-py2.5-dev
 -e git://github.com/thoas/django-mptt-comments.git#egg=django_mptt_comments-0.1-py2.5
--e git://github.com/thoas/django-gravatar.git#egg=django_gravatar-0.1.0-py2.5
--e git://github.com/thoas/django-social-bookmarking.git#egg=django-social-bookmarking-py2.5
+-e git://github.com/thoas/django-gravatar.git@c1ade6dbc0786903279839e855c8d1e69bb3d0ed#egg=django_gravatar-0.1.0-py2.5
+-e git://github.com/thoas/django-social-bookmarking.git@0e85c75e9e77ac430fc035dc49236c8e06300dab#egg=django-social-bookmarking-py2.5
 
 -e git://github.com/django-extensions/django-extensions.git@459276ded0edf1d1cf6d94b4865891a281445b95#egg=django_extensions-0.4.2_pre-py2.5-dev
 -e git://github.com/montylounge/django-basic-apps.git@72ad0a50a464d3dd296a566f749e86b1f9080bac#egg=django_basic_apps-0.6-py2.5-dev
