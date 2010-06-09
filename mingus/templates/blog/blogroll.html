@@ -3,6 +3,24 @@
 
 {% block body_class %}blogroll{% endblock %}
 
+{% block extra_javascript %}
+    <script src="{{ MEDIA_URL }}js/raphael.js" type="text/javascript" charset="utf-8"></script>
+{% endblock %}
+
+{% block extra_head %}
+    <style type="text/css" media="screen">
+        #holder {
+            background: #fff;
+            border: solid 1px #999;
+            cursor: move;
+            overflow: hidden;
+            width: 690px;
+            height: 540px;
+            margin: 20px 0;
+        }
+    </style>
+{% endblock %}
+
 {% block menu %}
     blogroll
 {% endblock %}
@@ -17,6 +35,9 @@
 {% block content %}
 <div class="entry-body">
     <h1>{% trans "The map" %}</h1>
+    <div id="holder">
+        <embed src="{{ MEDIA_URL }}Blogroll.svg" width="690" height="540"></embed>
+    </div>
     <h1>{% trans "Links and OPML" %}</h1>
     {% if tags %}
         <div id="blogroll" class="block-20">

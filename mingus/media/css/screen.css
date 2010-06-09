@@ -1360,6 +1360,7 @@ ul.chart-list {
 .block-20 { padding-top: 20px; }
 
 .column-50 {
+    width: 180px;
     margin-right: 50px;
 }
 
