@@ -79,7 +79,7 @@
                         <em>{% trans "You are here:" %}</em>
                         <ul>
                         {% block navigation_inner %}
-                            <li><a href="{% url home_index %}" title="{% trans "Homepage" %}"><span></span>{% trans "Home" %}</a></li>
+                            <li><a href="{% url home_index %}" title="{% trans "Homepage" %}"><span class="icon"></span>{% trans "Home" %}</a></li>
                         {% endblock %}
                         </ul>
                         <div class="clear"></div>
@@ -89,11 +89,11 @@
                     {% endblock %}
                 </section>
                 <nav id="sidebar">
-                    <section id="syndication">
+                    <section id="syndication" class="icon">
                         <a href="{{ BLOG_SETTINGS.rss_url }}" title="Syndication">{% trans "Syndication" %}</a>
                     </section>
                     <section id="sidebar-content">
-                        <section role="search" id="search">
+                        <section role="search" id="search" class="icon">
                             <form action="http://www.google.com/cse" id="cse-search-box">
                                 <div id="search-engine">
                                     <div id="search-input">
@@ -102,7 +102,7 @@
                                         <input type="text" name="q" />
                                     </div>
                                     <div id="search-button">
-                                        <input type="submit" name="sa" />
+                                        <input type="submit" name="sa" class="icon" />
                                     </div>
                                     <div class="clear"></div>
                                 </div>
@@ -114,7 +114,7 @@
                         <section id="sidebar-list">
                             <ul>
                                 <li class="title">
-                                    <h2>{% trans "Categories" %}</h2>
+                                    <h2>{% trans "Categories" %}<span class="icon"></span></h2>
                                     <ul>
                                     {% cache 3600 "base.category_list" %}
                                       {% get_blog_categories as category_list %}
@@ -125,7 +125,7 @@
                                     {% endcache %}
                                 </li>
                                 <li class="title">
-                                    <h2>{% trans "Archives"%}</h2>
+                                    <h2>{% trans "Archives"%}<span class="icon"></span></h2>
                                     {% cache 7200 "base.archive" %}
                                     {% get_post_archive as dates %}
                                     <ul>
@@ -136,7 +136,7 @@
                                     {% endcache %}
                                 </li>
                                 <li class="title">
-                                    <h2 class="active">{% trans "Popular posts"%}</h2>
+                                    <h2 class="active">{% trans "Popular posts"%}<span class="icon"></span></h2>
                                     {% cache 7200 "base.popular_posts" %}
                                     {% get_popular_posts 10 as popular_post_list %}
                                     <ul>
@@ -150,7 +150,7 @@
                         </section>
                         <section id="facebook">
                             <a href="http://www.facebook.com/pages/apluggedinlife/350938287300#!/pages/apluggedinlife/350938287300?v=app_4949752878" title="Facebook page">
-                                <img src="{{ MEDIA_URL }}img/facebook.png" alt="Jorge" />
+                                <span class="icon"></span>
                             </a>
                         </section>
                         {% cache 3600 "base.profile_list" %}
@@ -161,7 +161,7 @@
                                 {% with profile_list|first as profile %}
                                 {% for service in profile.service_set.all %}
                                 <li>
-                                    <div id="{{ service.username }}" class="twitter-container twitter-container-account twitter-container-green-{{ forloop.counter0 }}">
+                                    <div id="{{ service.username }}" class="twitter-container twitter-container-account twitter-container-green-{{ forloop.counter0 }} icon">
                                         <h2>
                                             @<a href="http://twitter.com/{{ service.username }}" title="{{ service.username }}" class="sidebar-twitter-anywhere-user">
                                                 {{ service.username }}
@@ -176,7 +176,7 @@
                                 {% endfor %}
                                 {% endwith %}
                                 <li>
-                                    <div id="apluggedinlife-hashtag" class="twitter-container twitter-container-hashtag twitter-container-green-3">
+                                    <div id="apluggedinlife-hashtag" class="twitter-container twitter-container-hashtag twitter-container-green-3 icon">
                                         <h2>
                                             <a href="http://search.twitter.com/search?q=apluggedinlife" title="#apluggedinlife">
                                                 #apluggedinlife
@@ -255,7 +255,7 @@
                 </li>
                 <li class="clear"></li>
             </ul>
-            <div id="copyright"></div>
+            <div id="copyright icon"></div>
         </div>
     </footer>
     

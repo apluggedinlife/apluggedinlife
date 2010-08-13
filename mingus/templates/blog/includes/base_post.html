@@ -2,14 +2,25 @@
 <article role="article">
 {% block article %}
     <header>
+        {% show_bookmarks_related post.title post.get_absolute_url post %}
+        <div class="clear"></div>
+        {% if post.allow_comments %}
+        <div class="icon count-comment">
+            {% get_mptt_comment_count for post as comment_count %}
+            <a href="{{ post.get_absolute_url }}#comments" title="{% trans "comments" %}">{{ comment_count }}</a>
+        </div>
+        {% endif %}
+    </header>
+    <div class="entry-body">
+        <h1><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></h1>
         <div class="datetime">
             <time datetime="{{ post.publish|date:"Y-m-d" }}">
-                {{ post.publish|date:"d.m.y" }} - {{ post.publish|date:"h:m"}}<span></span>
+                {{ post.publish|date:"d.m.y" }} - {{ post.publish|date:"h:m"}}<span class="icon"></span>
             </time>
         </div>
         {% if post.author %}
         <div class="entry-author">
-            <a href="" title="{{ post.author.username }}">{{ post.author.username }}<span></span></a>
+            <a href="" title="{{ post.author.username }}">{{ post.author.username }}<span class="icon"></span></a>
         </div>
         {% endif %}
         {% cache 3600 "blog.post_detail.categories" post.title %}
@@ -18,25 +29,14 @@
             <ul>
                 {% for category in post.categories.all %}
                 <li>
-                    <a href="{% url basic.blog.views.category_detail category.slug %}" title="{{ category.slug }}">{{ category.title }}<span></span></a>
+                    <a href="{% url basic.blog.views.category_detail category.slug %}" title="{{ category.slug }}">{{ category.title }}<span class="icon"></span></a>
                 </li>
                 {% endfor %}
             </ul>
         </div>
         {% endif %}
         {% endcache %}
-        {% show_bookmarks_related post.title post.get_absolute_url post %}
-        <div class="clear"></div>
-        {% if post.allow_comments %}
-        <div class="count-comment">
-            {% get_mptt_comment_count for post as comment_count %}
-            <a href="{{ post.get_absolute_url }}#comments" title="{% trans "comments" %}">{{ comment_count }}</a>
-        </div>
-        {% endif %}
-    </header>
-    <div class="entry-body">
-        <h1><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></h1>
-        {% cache 300 "blog.post_detail.tag_list" post.pk %}
+       {% cache 300 "blog.post_detail.tag_list" post.pk %}
         {% tags_for_object post as tag_list %}
         {% if tag_list %}
         <div class="entry-meta">
@@ -62,12 +62,12 @@
     <div id="entry-navigation">
         {% if object.get_previous_by_publish %}
           <a class="entry-previous" href="{{ object.get_previous_post.get_absolute_url }}" title="{% blocktrans with object.get_previous_post as previous_post %}Previous entry: {{ previous_post }}{% endblocktrans %}">
-            <img src="{{ MEDIA_URL }}img/entry_previous.png" alt="{% trans "Previous entry" %}" />
+              <span class="icon"></span>
           </a>
         {% endif %}
         {% if object.get_next_by_publish %}
           <a class="entry-next" href="{{ object.get_next_post.get_absolute_url }}" title="{% blocktrans with object.get_next_post as next_post %}Next entry: {{ next_post }}{% endblocktrans %}">
-            <img src="{{ MEDIA_URL }}img/entry_next.png" alt="{% trans "Next entry" %}" />
+              <span class="icon"></span>
           </a>
         {% endif %}
         <div class="clear"></div>

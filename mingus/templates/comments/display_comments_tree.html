@@ -31,23 +31,21 @@
                 <h3>{{ comment.title|escape }}</h3>
                 {{ comment.comment|escape|linebreaks|markdown }}
             </div>
-            <span class="comment-reply">
-                <a class="comment-reply" href="{% url comment_reply comment.pk %}" title="{% trans "Reply to the comment" %}">
-                    <img src="{{ MEDIA_URL }}img/comment_reply.png" alt="{% trans "Reply to the comment" %}" />
-                </a>
-            </span>
+            <a class="comment-reply" href="{% url comment_reply comment.pk %}" title="{% trans "Reply to the comment" %}">
+                <span class="icon"></span>
+            </a>
             {% if comment|children_count %}
             {% ifequal comment.level cutoff_level %}
             <div class="comment-replies">
-                <span class="comment-count">{{ comment|children_count }}</span>
+                <span class="comment-count icon">{{ comment|children_count }}</span>
                 <a class="comment-replies" href="{% url comments_subtree comment.pk %}" title="{% trans "show hidden replies" %}">
-                    <img src="{{ MEDIA_URL }}img/comment_hidden.png" alt="{% trans "show hidden replies" %}" />
+                    <span class="icon comment-icon"></span>
                 </a>
             </div>
             {% else %}
             <div class="comment-replies comment-no-hidden-replies">
-                <span class="comment-count">{{ comment|children_count }}</span>
-                <img src="{{ MEDIA_URL }}img/comment_hidden.png" alt="{% trans "no hidden replies" %}" />
+                <span class="comment-count icon">{{ comment|children_count }}</span>
+                <span class="icon comment-icon"></span>
             </div>
             {% endifequal %}
             {% endif %}

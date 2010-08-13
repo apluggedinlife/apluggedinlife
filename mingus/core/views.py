@@ -17,6 +17,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 import re
 from django.db.models import Q
+from django.utils import simplejson
 
 def page_key_prefix(request):
     '''Used by cache_page_with_prefix to create a cache key prefix.'''
