@@ -65,12 +65,12 @@ $(document).ready(function(){
             .mouseover(function(){
                 $(this)
                     .stop()
-                    .animate({backgroundPosition: '('+ backgroundPositionX +' -17px)'}, {duration: 300});
+                    .animate({backgroundPosition: '('+ backgroundPositionX +' -432px)'}, {duration: 300});
             })
             .mouseout(function(){
                 $(this)
                     .stop()
-                    .animate({backgroundPosition: '('+ backgroundPositionX +' 0)'}, {duration: 300});
+                    .animate({backgroundPosition: '('+ backgroundPositionX +' -416px)'}, {duration: 300});
             });
     });
 

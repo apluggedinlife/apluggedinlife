@@ -51,19 +51,19 @@
                 <nav>
                     <ul id="nav-menu" class="{% block menu %}home{% endblock %}">
                         <li class="nav-item nav-item-home">
-                            <a href="{% url home_index %}" title="{% trans "Home" %}">{% trans "Home" %}</a>
+                            <a class="icon" href="{% url home_index %}" title="{% trans "Home" %}">{% trans "Home" %}</a>
                         </li>
                         <li class="nav-item nav-item-blogroll">
-                            <a href="{% url blogroll %}" title="{% trans "Blogroll" %}">{% trans "Blogroll" %}</a>
+                            <a class="icon" href="{% url blogroll %}" title="{% trans "Blogroll" %}">{% trans "Blogroll" %}</a>
                         </li>
                         <li class="nav-item nav-item-about">
-                            <a href="{% url about %}" title="{% trans "About" %}">{% trans "About" %}</a>
+                            <a class="icon" href="{% url about %}" title="{% trans "About" %}">{% trans "About" %}</a>
                         </li>
                         <li class="nav-item nav-item-contact">
-                            <a href="{% url contact_form %}" title="{% trans "Contact" %}">{% trans "Contact" %}</a>
+                            <a class="icon" href="{% url contact_form %}" title="{% trans "Contact" %}">{% trans "Contact" %}</a>
                         </li>
                         <li class="nav-item nav-item-archives">
-                            <a href="{% url archives %}" title="{% trans "Archives" %}">{% trans "Archives" %}</a>
+                            <a class="icon" href="{% url archives %}" title="{% trans "Archives" %}">{% trans "Archives" %}</a>
                         </li>
                     </ul>
                 </nav>
