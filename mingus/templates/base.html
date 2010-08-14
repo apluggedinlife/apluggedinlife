@@ -157,6 +157,7 @@
                         {% get_profiles as profile_list %}
                         {% if profile_list %}
                         <section id="twitter">
+                            <span class="icon"></span>
                             <ul>
                                 {% with profile_list|first as profile %}
                                 {% for service in profile.service_set.all %}
@@ -202,7 +203,7 @@
         <div id="footer-worm-container">
             <ul>
                 <li>
-                    <h1>{% trans "Last entries" %}</h1>
+                    <h1>{% trans "Last entries" %}<span class="icon"></span></h1>
                     {% cache 3600 "base.post_list" %}
                     {% get_latest_posts 10 as post_list %}
                     {% if post_list %}
@@ -217,7 +218,7 @@
                     {% endcache %}
                 </li>
                 <li>
-                    <h1>{% trans "Last comments" %}</h1>
+                    <h1>{% trans "Last comments" %}<span class="icon"></span></h1>
                     {% cache 3600 "base.comment_list" %}
                     {% get_latest_comments 10 as comment_list %}
                     {% if comment_list %}
@@ -237,7 +238,7 @@
                     {% endcache %}
                 </li>
                 <li>
-                    <h1>{% trans "Tags" %}</h1>
+                    <h1>{% trans "Tags" %}<span class="icon"></span></h1>
                     {% cache 3600 "base.tag_list" %}
                     <div id="footer-tag-list">
                         <ul class="footer chart-list">
@@ -253,9 +254,10 @@
                     </div>
                     {% endcache %}
                 </li>
-                <li class="clear"></li>
             </ul>
-            <div id="copyright icon"></div>
+            <div class="clear"></div>
+            <div id="copyright" class="icon"></div>
+            <span class="icon"></span>
         </div>
     </footer>
     

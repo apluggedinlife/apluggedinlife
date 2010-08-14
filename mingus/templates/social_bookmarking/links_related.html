@@ -10,7 +10,7 @@
                 {% endif %}
             {% endifnotequal %}
             <div class="share-{% cycle right,left %} share-{{ bookmark.slug }}">
-                <span class="count">{{ bookmark.visits }}</span>
+                <span class="count icon">{{ bookmark.visits }}</span>
                 <a href="{% url bookmark_referer bookmark.slug bookmark.content_type bookmark.object_pk bookmark.url %}" title="{% blocktrans with bookmark.slug as slug %}Share on {{ slug }}{% endblocktrans %}">
                     <div class="share-icon icon"></div>
                 </a>

@@ -44,7 +44,8 @@
             {% for tag in tag_list %}
                 <li>
                     <a href="{% url blog_tag_detail tag %}" title="{{ tag }}">
-                        <span>{{ tag }}</span>
+                        <span class="icon"></span>
+                        <span class="tag-body">{{ tag }}</span>
                     </a>
                 </li>
             {% endfor %}

@@ -47,11 +47,16 @@ div#whole {
 }
 
 div#wrapper,
-div#accessibility ul,
-div#footer-worm-container > ul {
+div#accessibility ul {
     width: 1005px;
     margin: 0 auto;
 }
+
+div#footer-worm-container > ul {
+    margin: 0 auto;
+    width: 900px;
+}
+
     div#wrapper > header {
         position: relative;
     }
@@ -298,7 +303,7 @@ section#content {
             padding-right: 20px;
             float: left;
             position: relative;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
             
             div.entry-author,
@@ -398,13 +403,11 @@ section#content {
                 }
                 
                 span.count {
-                    background-position: center center;
-                    background-repeat: no-repeat;
-                    background-image: url('/media/img/count.png');
                     font-size: 0.55em;
-                    width: 14px;
-                    padding-top: 5px;
-                    height: 14px;
+                    background-position: -96px -64px;
+                    width: 12px;
+                    padding-top: 2px;
+                    height: 12px;
                     color: #000000;
                 }
 
@@ -490,7 +493,7 @@ section#content {
         }
             div.entry-body h1 {
                 font-size: 1.4em;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
             }
             
             div.entry-body h2 {
@@ -638,14 +641,19 @@ section#content {
                 margin-right: -5px;
             }
                 div.entry-meta ul li a {
-                    background: transparent url('/media/img/tag_arrow.png') no-repeat 0 0;
-                    padding-left: 12px;
                     color: #FFFFFF;
                     display: inline-block;
-                    height: 15px;
-                    padding-top: 1px;
                 }
-                    div.entry-meta ul li a span {
+                    div.entry-meta ul li a span.icon {
+                        background-position: 0 -23px;
+                        height: 21px;
+                        width: 12px;
+                        position: relative;
+                        display: inline-block;
+                        top: 7px;
+                    }
+                    
+                    div.entry-meta ul li a span.tag-body {
                         font: 10px/1.2 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",sans-serif;
                         padding: 2px 8px;
                         display: inline-block;
@@ -1054,8 +1062,16 @@ div#search-mentions p {
 
 section#twitter {
     padding: 50px 0;
-    background: transparent url('/media/img/twitter.png') no-repeat center top;
 }
+    section#twitter > span.icon {
+        background-position: -192px -384px;
+        width: 105px;
+        height: 22px;
+        position: relative;
+        top: -25px;
+        margin: 0 auto;
+    }
+
     section#twitter ul li {
         margin-bottom: 20px;
     }
@@ -1136,18 +1152,27 @@ footer#footer {
     background: #34312E url('/media/img/footer_bg.png') repeat-x center top;
     padding-top: 60px;
 }
-    div#footer-worm-container {
-        background: url('/media/img/footer_worm.png') no-repeat right bottom;
+
+    div#footer-worm-container > span {
+        background-position: -192px -224px;
+        position: absolute;
+        height: 132px;
+        bottom: 0;
+        right: 0;
+        width: 99px;
     }
     
     div#footer-worm-container > ul {
         padding: 25px 0;
     }
-        div#footer-worm-container > ul > li:not(.clear) {
+        div#footer-worm-container > ul > li {
             float: left;
+        }
+
+        div#footer-worm-container > ul > li:not(:last-child) {
             margin-right: 30px;
         }
-            div#footer-worm-container > ul > li:not(.clear) h1 {
+            div#footer-worm-container > ul > li h1 {
                 color: #19161A;
                 text-align: center;
                 font-size: 1.1em;
@@ -1155,34 +1180,38 @@ footer#footer {
                 font-weight: bold;
             }
             
-            div#footer-worm-container > ul > li:not(.clear) div {
-                max-width: 256px;
-                background: transparent url('/media/img/footer_container_arrow.png') no-repeat center top;
-                padding-top: 12px;
+            div#footer-worm-container > ul > li h1 span {
+                background-position: -104px 0;
+                position: relative;
+                top: 8px;
+                margin: 0 auto;
+                height: 11px;
+                width: 18px;
             }
-                div#footer-worm-container > ul > li:not(.clear) div ul {
-                    background-color: #19161A;
-                    padding: 10px;
-                    -moz-border-radius: 10px;
-                    -webkit-border-radius: 10px;
-                    border-radius: 10px;
+
+            div#footer-worm-container > ul > li div ul {
+                background-color: #19161A;
+                padding: 10px;
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+                border-radius: 10px;
+            }
+                div#footer-worm-container > ul > li div ul.link-list li:not(:last-child) {
+                    margin-bottom: 12px;
                 }
-                    div#footer-worm-container > ul > li:not(.clear) div ul.link-list li:not(:last-child) {
-                        margin-bottom: 12px;
+                    div#footer-worm-container > ul > li div ul.link-list li a,
+                    div#footer-worm-container > ul > li div ul.link-list li {
+                        color: #4B4743;
                     }
-                        div#footer-worm-container > ul > li:not(.clear) div ul.link-list li a,
-                        div#footer-worm-container > ul > li:not(.clear) div ul.link-list li {
-                            color: #4B4743;
-                        }
-                        
-                        div#footer-worm-container > ul > li:not(.clear) div ul li a {
-                            font-size: 0.8em;
-                        }
-                        
-                        div#footer-worm-container > ul > li:not(.clear) div ul.link-list li a:hover {
-                            border-bottom: 1px dashed #4B4743;
-                            color: #594531;
-                        }
+                    
+                    div#footer-worm-container > ul > li div ul li a {
+                        font-size: 0.8em;
+                    }
+                    
+                    div#footer-worm-container > ul > li div ul.link-list li a:hover {
+                        border-bottom: 1px dashed #4B4743;
+                        color: #594531;
+                    }
         
         div#copyright {
             width: 420px;

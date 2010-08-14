@@ -83,7 +83,7 @@ div#wrapper {
         div#wrapper div#header h1.logo {
             text-indent: -500em;
             background-repeat: no-repeat;
-            background-image: url('/media/img/ie_header.png');
+            background-image: url('/media/img/ie/ie_header.png');
             height: 424px;
             width: 850px;
             margin: 0 auto;
@@ -115,7 +115,7 @@ div#introduction {
     
     div#not-wanted {
         background-repeat: no-repeat;
-        background-image: url('/media/img/ie_not_wanted.png');
+        background-image: url('/media/img/ie/ie_not_wanted.png');
         width: 201px;
         height: 227px;
         float: right;
@@ -125,14 +125,14 @@ div#copyright {
     width: 461px;
     height: 49px;
     margin: 0 auto;
-    background: transparent url('/media/img/ie_copyright.png') no-repeat center center;
+    background: transparent url('/media/img/ie/ie_copyright.png') no-repeat center center;
 }
 
 p.quotes {
     width: 664px;
     padding: 0 0 0 100px;
     margin: 40px 0 20px;
-    background: transparent url('/media/img/ie_quotes.png') no-repeat 0 0;
+    background: transparent url('/media/img/ie/ie_quotes.png') no-repeat 0 0;
 }
 
 /* --- GENERIC CLASSES --- */
@@ -141,7 +141,7 @@ p.quotes {
     margin: 0 auto;
     width: 528px;
     height: 18px;
-    background-image: url('/media/img/ie_separator.png');
+    background-image: url('/media/img/ie/ie_separator.png');
 }
 
 .clear { clear: both; }
