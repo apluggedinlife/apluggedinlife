@@ -405,7 +405,7 @@ section#content {
                     font-size: 0.55em;
                     background-position: -96px -64px;
                     width: 12px;
-                    padding-top: 2px;
+                    padding-top: 1px;
                     height: 12px;
                     color: #000000;
                 }
@@ -765,6 +765,11 @@ section#content {
                 div#mptt-comments-tree > .comment > .comment-whole .comment-reply {
                     left: 18px;
                     bottom: 0;
+                }
+                
+                div#mptt-comments-tree > .comment > .comment-whole .comment-meta {
+                    text-align: center;
+                    margin-top: 5px;
                 }
 
                 a.comment-reply {

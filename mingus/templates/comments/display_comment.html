@@ -1,6 +1,7 @@
 {% load markup i18n mptt_tags mptt_comments_tags comparison gravatar_tags blog %}
 
 <article role="comment" class="comment comment-level-{{ comment.level }}" id="comment-{{ comment.pk }}">
+<!-- this_is_a_comment -->
     <div class="comment-whole">
         <header>
             <img src="{% get_gravatar_for_email comment.email %}" alt="{% trans "gravatar" %}" />

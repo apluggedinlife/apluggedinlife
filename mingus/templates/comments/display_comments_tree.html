@@ -5,9 +5,10 @@
 {% if not tree.new_level %}</article>{% endif %}
 
 <article role="comment" class="comment comment-level-{{ comment.level }}" id="comment-{{ comment.pk }}">
+<!-- this_is_a_comment -->
     <div class="comment-whole">
         <header>
-            <img src="{% get_gravatar_for_email comment.email %}" alt="{% trans "gravatar" %}" />
+            <img src="{% get_gravatar_for_email comment.user_email %}" alt="{% trans "gravatar" %}" />
             <div class="comment-meta">
                 <div class="comment-author">
                     {% if comment.user_url %}

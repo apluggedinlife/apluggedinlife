@@ -1,4 +1,5 @@
 {% extends "blog/includes/base_post.html" %}
+
 {% load cache tagging_related i18n oembed_tags inlines %}
 
 {% block post_content %}
@@ -10,6 +11,7 @@
 {% block article %}
 
 {{ block.super }}
+
 <footer id="comments">
     {% cache 1800 "blog.post_detail.related_list" post.pk %}
     {% tagged_get_related object in blog.Post as post_list with num=3 %}

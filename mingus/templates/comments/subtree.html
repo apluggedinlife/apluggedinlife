@@ -2,9 +2,10 @@
 {% load mptt_comments_tags %}
 
 
-{% block extra_head %}
+{% block extra_javascript %}
+    {{ block.super }}
     {% mptt_comments_media %}
-{% endblock extra_head %}
+{% endblock extra_javascript %}
 
 {% block content %}
 

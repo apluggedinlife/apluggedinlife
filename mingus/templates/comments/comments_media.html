@@ -51,33 +51,28 @@ $(document).ready(function () {
         },
 
         submit: function (form, nxt) {
-            var data = {}
+            var parameters = {}
             $("input[type=submit]", form).bind("mousedown", function () {
-                data = {};
-                data[this.name] = this.value;
+                parameters = {};
+                parameters[this.name] = this.value;
             });
 
             form.bind("submit", function () {
                 var dict = $(":input", form).serializeArray();
                 $.each(dict, function () {
-                    data[this.name] = this.value;
+                    parameters[this.name] = this.value;
                 });
 
-                data['is_ajax'] = 1;
-                $.post(form.attr("action"), data, function (data, text_status) {
-                    if (MpttComment.posted_re.test(data)) {
-                        if (nxt.hasClass('new-comment-form-wrapper')) {
-                            $('#mptt-comments-tree').append(data);
-                            nxt.replaceWith('<p>{% trans "Your comment was posted." %}</p>');
-                        } else {
-                            nxt.replaceWith(data);
-                            MpttComment.replies();
-                        }
+                parameters['is_ajax'] = 1;
+                $.post(form.attr("action"), parameters, function (data, text_status) {
+                    if (!parameters.preview && nxt.hasClass('new-comment-form-wrapper')) {
+                        $('#mptt-comments-tree').append(data);
+                        nxt.replaceWith('<p>{% trans "Your comment has been posted." %}</p>');
                     } else {
                         nxt
                             .empty()
                             .append(data)
-                            .slideDown("slow");
+                            .show();
                         MpttComment.submit($('form', nxt), nxt);
                     }
                 }, "html");
@@ -86,54 +81,52 @@ $(document).ready(function () {
         },
         
         replies: function () {
-            $('.comment-reply').click(function (e) {
+            $('a.comment-reply').click(function (e) {
                  var parent = $(this).parents('.comment-whole:first');
                  parent.after('<div class="comment-form-wrapper"></div>');
-                 $('.comment-form-wrapper').slideUp("slow");
+                 $('.comment-form-wrapper').hide();
                  $.get($(this).attr('href') + '?is_ajax=1', function (data, text_status) {
                      var nxt = parent
                                 .next('.comment-form-wrapper')
                                 .empty()
                                 .append(data)
-                                .slideDown('slow');
+                                .show();
                      MpttComment.submit($('form', nxt), nxt);
                  }, 'html');
                  return false;
              });
 
-             $('.comment-replies').each(function () {
-                 var elem = $(this);
-                 elem
-                    .unbind('click')
-                    .bind('click', function (e) {
-                        var href = elem.attr('href') + '?is_ajax=1';
-                        if ($.inArray(href, MpttComment.replies_loaded) == -1) {
-                            MpttComment.replies_loaded.push(href);
-                            $.get(href, {}, function (data, text_status) {
-                                var comments_tree = data.comments_tree;
-                                if (comments_tree) {
-                                    elem
-                                        .parents('.comment:first')
-                                        .append(comments_tree.html);
-                                }
-                                elem
-                                    .parent()
-                                    .addClass('comment-no-hidden-replies');
-                                MpttComment.replies();
-                            }, 'json');
-                        } else {
-                            elem
+            $('a.comment-replies').click(function() {
+                var _this = $(this);
+                var href = _this.attr('href') + '?is_ajax=1';
+                if ($.inArray(href, MpttComment.replies_loaded) == -1) {
+                    
+                    MpttComment.replies_loaded.push(href);
+                    
+                    $.get(href, {}, function (data, text_status) {
+                        var comments_tree = data.comments_tree;
+                        if (comments_tree) {
+                            _this
                                 .parents('.comment:first')
-                                .children('.comment')
-                                .slideToggle()
-                                .end()
-                                .end()
-                                .parent()
-                                .toggleClass('comment-no-hidden-replies');
+                                .append(comments_tree.html);
                         }
-                        return false;
-                    });
-             });
+                        _this
+                            .parent()
+                            .addClass('comment-no-hidden-replies');
+                        MpttComment.replies();
+                    }, 'json');
+                } else {
+                    _this
+                        .parents('.comment:first')
+                        .children('.comment')
+                        .toggle()
+                        .end()
+                        .end()
+                        .parent()
+                        .toggleClass('comment-no-hidden-replies');
+                }
+                return false;
+            });
         }
     }
     
