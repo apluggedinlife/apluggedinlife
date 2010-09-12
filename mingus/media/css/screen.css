@@ -1171,6 +1171,7 @@ footer#footer {
     }
         div#footer-worm-container > ul > li {
             float: left;
+            max-width: 280px;
         }
 
         div#footer-worm-container > ul > li:not(:last-child) {
