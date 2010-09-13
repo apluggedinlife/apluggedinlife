@@ -1,4 +1,4 @@
-{% load i18n analytics cache %}
+{% load i18n analytics cache disqus_tags %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
@@ -7,6 +7,11 @@
     <title>The GOOD, the BAD and the UGLY</title>
     <link rel="stylesheet" type="text/css" media="all" href="{{ MEDIA_URL }}css/base.css" />
     <link rel="stylesheet" type="text/css" media="all" href="{{ MEDIA_URL }}css/IE.css" />
+    <style type="text/css" media="screen">
+        #disqus_thread {
+            padding: 0 50px;
+        }
+    </style>
 </head>
 <body>
     <div id="accessibility">
@@ -264,6 +269,7 @@
                     </div>
                 </div>
             </div>
+        {% disqus_show_comments %}
         </div>
     </div>
     <div id="footer">
@@ -279,7 +285,7 @@
             Cufon.replace('p.quotes');
         });
     </script>
-    
+
     {% cache 7200 "base.analytics" %}
     {% analytics %}
     {% endcache %}
