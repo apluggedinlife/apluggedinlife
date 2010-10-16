@@ -138,9 +138,6 @@ DJANGO_WYSIWYG_FLAVOR = 'ckeditor'
 
 OPML_ROOT = join(MEDIA_ROOT, 'OPML_APIL.xml')
 
-DISQUS_API_KEY = 'yfnhuHlqhBIOZF3Kp2aNAQwKMI86YXMczZI3hZi3CiTKswxFC83UKVbNNGF8SfRn'
-DISQUS_WEBSITE_SHORTNAME = 'apluggedinlife'
-
 try:
    from local_settings import *
 except ImportError:
