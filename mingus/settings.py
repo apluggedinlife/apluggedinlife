@@ -137,6 +137,7 @@ DJANGO_WYSIWYG_MEDIA_URL = STATIC_URL + 'js/ckeditor/'
 DJANGO_WYSIWYG_FLAVOR = 'ckeditor'
 
 OPML_ROOT = join(MEDIA_ROOT, 'OPML_APIL.xml')
+BLOGROLL_CSV_ROOT = join(MEDIA_ROOT, 'blogroll.csv')
 
 try:
    from local_settings import *

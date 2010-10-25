@@ -55,41 +55,41 @@ urlpatterns += patterns('',
     url(r'^contact/$',
         contact_form,
         name='contact_form'),
-    
+
     url(r'^contact/sent/$',
         direct_to_template,
         { 'template': 'contact_form/contact_form_sent.html' },
         name='contact_form_sent'),
-    
+
     url(r'^page/(?P<page>\w)/$',
         view=home_list,
         name='home_paginated'),
-    
+
     url(r'^$',
         view=home_list,
         name='home_index'),
-    
+
     url(r'^tags/(?P<slug>[-\w]+)/$',
         'mingus.core.views.tag_detail',
         name='blog_tag_detail'),
-    
+
     url (r'^search/$',
         view=proxy_search,
         name='proxy_search'),
-    
+
     (r'', include('basic.blog.urls')),
-    
+
     # APIL
     url(r'^archives/$',
         direct_to_template,
         {'template': 'blog/archive_list.html'},
         name='archives'),
-    
+
     url(r'^IE/$',
         direct_to_template,
         {'template': 'IE.html'},
         name='IE'),
-    
+
     url(r'^about/$',
         direct_to_template,
         {'template': 'about.html'},
@@ -99,32 +99,32 @@ urlpatterns += patterns('',
     #     direct_to_template,
     #     {'template': 'test.html'},
     #     name='test'),
-    
+
     url(r'^404/$',
         direct_to_template,
          {'template': '404.html'},
          name='404'),
-    
+
     url(r'^500/$',
         direct_to_template,
         {'template': '500.html'},
         name='500'),
-    
+
     url(r'^comments/',
         include('mptt_comments.urls')),
-    
+
     url(r'^social/',
         include('social_bookmarking.urls')),
-    
+
     url(r'^blogroll/$',
         blogroll,
         name='blogroll'),
-    
+
     url(r'^tags/$',
         direct_to_template,
         { 'template': 'blog/tag_list.html'},
         name='tag_list'),
-    
+
     url(r'^download/(?P<path>.*)$',
         serve_download(serve),
         {'document_root': settings.MEDIA_ROOT},
@@ -132,7 +132,7 @@ urlpatterns += patterns('',
 )
 
 if settings.DEBUG:
-    urlpatterns += patterns('', 
+    urlpatterns += patterns('',
         (r'', include('staticfiles.urls')),
     )
 

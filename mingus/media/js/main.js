@@ -27,10 +27,10 @@
 
 $(document).ready(function(){
     prettyPrint();
-    
+
     $('.share-items')
         .hide()
-    
+
     $('a[href*=#]').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
         && location.hostname == this.hostname) {
@@ -44,12 +44,12 @@ $(document).ready(function(){
             }
         }
     });
-    
+
     $('a[rel*=external]').click( function() {
         window.open(this.href);
         return false;
     });
-    
+
     $('.share h1')
         .click(function(){
            $(this)
@@ -58,7 +58,7 @@ $(document).ready(function(){
                 .end()
                 .toggleClass('share-hide')
         });
-    
+
     $('ul#nav-menu li.nav-item  a').each(function(){
         var backgroundPositionX = $(this).css('backgroundPosition').split(' ')[0];
         $(this)
@@ -74,7 +74,7 @@ $(document).ready(function(){
             });
     });
 
-    
+
     $('ul li.title h2')
         .click(function(){
             $(this)
@@ -83,12 +83,12 @@ $(document).ready(function(){
                 .find('ul')
                     .slideToggle();
         });
-    
+
     $('ul li.title h2.active')
         .parent()
         .find('ul')
             .css({display: 'none'});
-    
+
     $('#twitter ul li, div.share-items > div').hover(function(){
         $(this)
             .siblings(':not(".clear")')
@@ -100,7 +100,7 @@ $(document).ready(function(){
             .stop()
             .fadeTo(500, 1);
     });
-    
+
     $('#search-engine').hover(function(){
         $('#search-mentions')
             .children()
@@ -112,7 +112,7 @@ $(document).ready(function(){
             .stop()
             .animate({color: '#000000'}, {duration: 500});
     })
-    
+
     $('.entry-meta ul li').hover(function(){
        $(this)
             .stop()
@@ -122,16 +122,16 @@ $(document).ready(function(){
             .stop()
             .animate({left: "0"}, {duration: 500});
     });
-    
+
     function twitterize(text) {
         text = text.replace(/\bwww\.\w.\w/ig, 'http://$&');
         text = text.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, '<a href="$1">$1</a>');
         text = text.replace(/\B@([_a-z0-9]+)/ig, '@<a href="http://twitter.com/$1">$1</a>');
         text = text.replace(/\B#([_a-z0-9]+)/ig, '#<a href="http://twitter.com/search?q=$1">$1</a>');
-        
+
         return text;
     }
-    
+
     function updateTwitterContainer(object, results){
         if(results.length > 0){
             var result = results[0];
@@ -140,14 +140,14 @@ $(document).ready(function(){
                 .html(twitterize(result.text));
         }
     }
-    
+
     $(".twitter-container-account").each(function(){
         var _this = $(this);
         $.twitter.search.user($(this).attr('id'), function(data, textStatus){
             updateTwitterContainer(_this, data.results);
         });
     })
-    
+
     $.twitter.search.hashtag("apluggedinlife", function(data, textStatus){
         updateTwitterContainer($("#apluggedinlife-hashtag"), data.results);
     });

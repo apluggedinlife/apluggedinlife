@@ -5,6 +5,7 @@
 
 {% block extra_javascript %}
     <script src="{{ MEDIA_URL }}js/raphael.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ MEDIA_URL }}js/blogroll.js" type="text/javascript" charset="utf-8"></script>
 {% endblock %}
 
 {% block extra_head %}
@@ -36,7 +37,7 @@
 <div class="entry-body">
     <h1>{% trans "The map" %}</h1>
     <div id="holder">
-        <iframe src="{{ MEDIA_URL }}Blogroll.svg" width="690" height="540"></iframe>
+
     </div>
     <h1>{% trans "Links and OPML" %}</h1>
     {% if tags %}

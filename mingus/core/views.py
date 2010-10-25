@@ -216,7 +216,7 @@ def contact_form(request, form_class=ContactForm,
 
 def blogroll(request, feed=settings.OPML_ROOT, template_name='blog/blogroll.html'):
     from xml.etree import ElementTree
-    
+
     tags = list({
         'title': tag.attrib['title'],
         'feeds': list({
@@ -225,7 +225,7 @@ def blogroll(request, feed=settings.OPML_ROOT, template_name='blog/blogroll.html
             'url': feed.attrib['htmlUrl']
         } for feed in tag.getchildren())
     } for tag in ElementTree.parse(feed).findall('body/outline'))
-    
+
     count_per_group = len(max(tags, key=lambda k: len(k['feeds']))['feeds'])
     groups = []
     current = []
@@ -233,12 +233,14 @@ def blogroll(request, feed=settings.OPML_ROOT, template_name='blog/blogroll.html
     for tag in tags:
         current.append(tag)
         total += len(tag['feeds'])
-        
+
         if total > count_per_group:
             groups.append(current)
             current = []
             total = 0
-    
+
+
+
     return render_to_response(template_name,
                               {'tags': tags, 'groups': groups},
                               context_instance=RequestContext(request))

@@ -82,13 +82,13 @@ class GetTagListWithPercentForModel(Node):
             max_value = tag_list[0].count
             for tag in tag_list:
                 tag.percent = tag.count * 100 / max_value
-        
+
         if 'num' in self.kwargs:
             tag_list = tag_list[:self.kwargs.get('num')]
-        
+
         if not self.context_var:
             return tag_list
-        
+
         context[self.context_var] = tag_list
         return ''
 
@@ -97,14 +97,14 @@ def get_tag_list_with_percent_for_model(parser, token):
     """
     Retrieve a tag list with percentage of use.
     For example, if "django" is used twice and "blog" once, then we give 100% for "django" and 50% for "blog"
-    
+
     {% get_tag_list_with_percent_for_model [model] as [varname] with num=10 %}
     """
     kwargs = {}
     bits = token.contents.split()
     if bits[2] != 'as':
         raise TemplateSyntaxError(_("second argument to %s tag must be 'as'") % bits[0])
-    
+
     if len(bits) == 6:
         if bits[4] != 'with':
             raise TemplateSyntaxError(_("if given, fourth argument to %s tag must be 'with'") % bits[0])
@@ -129,5 +129,5 @@ def get_tag_list_with_percent_for_model(parser, token):
                 'tag': bits[0],
                 'option': bits[i],
                 })
-    
+
     return GetTagListWithPercentForModel(bits[1], bits[3], **kwargs)

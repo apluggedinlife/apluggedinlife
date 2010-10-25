@@ -28,7 +28,7 @@
     <link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} main rss feed" href="{{ BLOG_SETTINGS.rss_url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} all entries feed" href="/feeds/all/">
     <link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} all posts feed" href="/feeds/latest/">
-    
+
     {% if category %}
         <link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} - {{ category }} posts" href="/feeds/categories/{{ category.title|lower }}">
     {% endif %}
@@ -85,7 +85,7 @@
                         <div class="clear"></div>
                     </section>
                     {% block content %}
-                    
+
                     {% endblock %}
                 </section>
                 <nav id="sidebar">
@@ -260,11 +260,11 @@
             <span class="icon"></span>
         </div>
     </footer>
-    
+
     <!--[if lte IE 8]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    
+
     <script src="http://platform.twitter.com/anywhere.js?id=xFdsfquW8fvA5RDp28BqA&v=1"></script>
     <script type="text/javascript">
        twttr.anywhere(function(twitter) {
@@ -276,7 +276,7 @@
             });
        });
     </script>
-    
+
     {% compress js %}
     <script type="text/javascript" src="{{ MEDIA_URL }}js/prettify.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.uncompressed.js"></script>
@@ -284,7 +284,7 @@
     <script type="text/javascript" src="{{ MEDIA_URL }}js/main.js"></script>
     {% block extra_javascript %}{% endblock %}
     {% endcompress %}
-    
+
     {% cache 7200 "base.analytics" %}
     {% analytics %}
     {% endcache %}

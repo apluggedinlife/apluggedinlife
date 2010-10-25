@@ -64,60 +64,60 @@ div#footer-worm-container > ul {
             text-indent: -500em;
             background-repeat: no-repeat;
         }
-        
+
         body.blog div#wrapper > header h1.logo {
             background-image: url('/media/img/blog_header.png');
         }
-        
+
         body.contact div#wrapper > header h1.logo {
             background-image: url('/media/img/contact_header.png');
         }
-        
+
         body.archives div#wrapper > header h1.logo {
             background-image: url('/media/img/archives_header.png');
         }
-        
+
         body.handler500 div#wrapper > header h1.logo {
             background-image: url('/media/img/500_header.png');
         }
-        
+
         body.handler404 div#wrapper > header h1.logo {
             background-image: url('/media/img/404_header.png');
         }
-        
+
         body.blogroll div#wrapper > header h1.logo {
             background-image: url('/media/img/blogroll_header.png');
         }
-        
+
         body.about div#wrapper > header h1.logo {
             background-image: url('/media/img/about_header.png');
         }
             div#wrapper > header h1.logo a {
-                display: block; 
+                display: block;
             }
-            
+
             body.blog div#wrapper > header h1.logo a,
             body.archives div#wrapper > header h1.logo a,
             body.about div#wrapper > header h1.logo a {
                 height: 444px;
             }
-            
+
             body.contact div#wrapper > header h1.logo a {
                 height: 438px;
             }
-            
+
             body.handler500 div#wrapper > header h1.logo a {
                 height: 446px;
             }
-            
+
             body.handler404 div#wrapper > header h1.logo a {
                 height: 448px;
             }
-            
+
             body.blogroll div#wrapper > header h1.logo a {
                 height: 434px;
             }
-        
+
         ul#nav-menu {
             padding: 10px 0 0 20px;
         }
@@ -129,27 +129,27 @@ div#footer-worm-container > ul {
                 background-position: 0 0;
                 background-attachment: scroll;
             }
-            
+
             ul#nav-menu.home li.nav-item-home a {
                 background-position: -192px -432px !important;
             }
-            
+
             ul#nav-menu.contact li.nav-item-contact a {
                 background-position: -267px -432px !important;
             }
-            
+
             ul#nav-menu.archives li.nav-item-archives a {
                 background-position: -315px -432px !important;
             }
-            
+
             ul#nav-menu.blogroll li.nav-item-blogroll a {
                 background-position: -372px -432px !important;
             }
-            
+
             ul#nav-menu.about li.nav-item-about a {
                 background-position: -228px -432px !important;
             }
-            
+
             ul#nav-menu li a {
                 height: 16px;
                 overflow: hidden;
@@ -158,32 +158,32 @@ div#footer-worm-container > ul {
                 position: relative;
                 z-index: 10;
             }
-            
+
             ul#nav-menu li.nav-item-home a {
                 background-position: -192px -416px;
                 width: 36px;
             }
-            
+
             ul#nav-menu li.nav-item-about a {
                 background-position: -227px -416px;
                 width: 38px;
             }
-            
+
             ul#nav-menu li.nav-item-contact a {
                 background-position: -267px -416px;
                 width: 48px;
             }
-            
+
             ul#nav-menu li.nav-item-blogroll a {
                 background-position: -371px -416px;
                 width: 49px;
             }
-            
+
             ul#nav-menu li.nav-item-archives a {
                 background-position: -316px -416px;
                 width: 55px;
             }
-            
+
             ul#nav-menu li.nav-item-tuts a {
                 background-position: -250px 0;
                 width: 26px;
@@ -204,7 +204,7 @@ div#accessibility {
             color: #000000;
             font-size: 0.65em;
         }
-    
+
     div#accessibility ul li:not(:last-child) {
         border-left: 1px solid #414141;
     }
@@ -233,7 +233,7 @@ section#content {
     section#content p {
         text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
     }
-    
+
     section#navigation-inner {
         width: 100%;
         margin: 10px 0 30px;
@@ -242,30 +242,30 @@ section#content {
         section#navigation-inner em {
             float: left;
         }
-        
+
         section#navigation-inner ul li {
             float: left;
             height: 30px;
         }
-        
+
         section#navigation-inner ul li:first-child {
             margin-left: 10px;
         }
-        
+
         section#navigation-inner ul li:not(:first-child) {
             margin-left: 15px;
         }
-        
+
         section#navigation-inner ul li,
         section#navigation-inner ul li a {
             font-size: 1em;
             color: #34312E;
         }
-        
+
         section#navigation-inner ul li:last-child {
             background: transparent url('/media/img/current_pic.png') no-repeat left bottom;
         }
-        
+
         section#navigation-inner ul li:first-child span {
             background-position: -69px 0;
             margin-right: 5px;
@@ -274,7 +274,7 @@ section#content {
             width: 11px;
             background-repeat: no-repeat;
         }
-        
+
         section#navigation-inner ul li:not(:first-child) span {
             background-position: -81px 0;
             margin-right: 5px;
@@ -283,11 +283,11 @@ section#content {
             width: 8px;
             background-repeat: no-repeat;
         }
-    
+
     section#content > article {
         margin-bottom: 50px;
     }
-    
+
     section#content ol {
         padding: 10px;
         margin-left: 30px;
@@ -295,7 +295,7 @@ section#content {
         section#content ol li:not(:last-child) {
             margin-bottom: 10px;
         }
-        
+
         section#content > article > header {
             width: 130px;
             text-align: right;
@@ -304,7 +304,7 @@ section#content {
             position: relative;
             margin-bottom: 30px;
         }
-            
+
             div.entry-author,
             div.datetime,
             div.entry-category ul li {
@@ -325,9 +325,9 @@ section#content {
                 position: relative;
                 display: inline-block;
             }
-            
+
             div.entry-author span,
-            div.datetime span, 
+            div.datetime span,
             div.entry-category span {
                 display: inline-block;
                 height: 22px;
@@ -337,15 +337,15 @@ section#content {
                 left: 0;
                 top: -3px;
             }
-            
+
             div.entry-author span {
                 background-position: -23px 0px;
             }
-            
+
             div.datetime span {
                 background-position: -45px 0px;
             }
-            
+
             div.share {
                 background-color: #329A57;
                 padding: 4px 8px;
@@ -355,7 +355,7 @@ section#content {
                 display: inline-block;
                 float: right;
             }
-            
+
             div.share h1,
             div.share {
                 width: 80px;
@@ -363,7 +363,7 @@ section#content {
                 div.share h1.share-hide span {
                     background-position: -73px -112px;
                 }
-                
+
                 div.share h1 {
                     text-align: center;
                     font-size: 0.9em;
@@ -385,11 +385,11 @@ section#content {
                     height: 14px;
                     width: 14px;
                 }
-                
+
                 div.share-items {
                     padding: 4px;
                 }
-                
+
                 span.count,
                 span.comment-count {
                     display: block;
@@ -400,7 +400,7 @@ section#content {
                     top: -7px;
                     right: -7px;
                 }
-                
+
                 span.count {
                     font-size: 0.55em;
                     background-position: -96px -64px;
@@ -413,7 +413,7 @@ section#content {
                 div.share a {
                     text-indent: -500em;
                 }
-                
+
                 div.share img {
                     position: relative;
                 }
@@ -427,56 +427,56 @@ section#content {
                     float: right;
                     position: relative;
                 }
-                
+
                 div.share-icon {
                     width: 31px;
                     height: 31px;
                 }
-                
+
                 div.share-delicious div.share-icon {
                     background-position: -387px 0;
                 }
-                
+
                 div.share-diigo div.share-icon {
                     background-position: -419px 0;
                 }
-                
+
                 div.share-facebook div.share-icon {
                     background-position: -387px -32px;
                 }
-                
+
                 div.share-digg div.share-icon {
                     background-position: -419px -32px;
                 }
-                
+
                 div.share-twitter div.share-icon {
                     background-position: -387px -64px;
                 }
-                
+
                 div.share-friendfeed div.share-icon {
                     background-position: -419px -64px;
                 }
-                
+
                 div.share-technorati div.share-icon {
                     background-position: -387px -96px;
                 }
-                
+
                 div.share-wikio div.share-icon {
                     background-position: -419px -96px;
                 }
-                
+
                 div.count-comment {
                     background-position: -37px -92px;
                     float: right;
                     margin-top: 6px;
                 }
-                
+
                     div.count-comment,
                     div.count-comment a {
                         width: 27px;
                         height: 27px;
                     }
-                    
+
                     div.count-comment a {
                         color: #34312E;
                         font-weight: bold;
@@ -485,7 +485,7 @@ section#content {
                         display: block;
                         padding-top: 3px;
                     }
-        
+
         div.entry-body {
             padding-right: 20px;
             margin-bottom: 30px;
@@ -494,29 +494,29 @@ section#content {
                 font-size: 1.4em;
                 margin-bottom: 15px;
             }
-            
+
             div.entry-body h2 {
                 font-size: 1.2em;
             }
-            
+
             div.entry-body h3 {
                 font-size: 1em;
             }
-            
+
             div.blockquote-author {
                 padding-left: 50px;
                 font-size: 1em;
             }
-            
+
             div.blockquote-author span {
                 font-weight: bold;
             }
-            
+
             div.blockquote-author,
             div.entry-body > blockquote {
                 color: #34312E;
             }
-            
+
             div.entry-body > blockquote {
                 font-size: 1.2em;
                 width: 360px;
@@ -524,7 +524,7 @@ section#content {
                 margin: 40px 0 20px;
                 background: transparent url('/media/img/quotes.png') no-repeat 0 0;
             }
-            
+
             div.entry-body h1 a,
             div.entry-body h1,
             div.entry-body h3,
@@ -533,70 +533,70 @@ section#content {
                 color: #41281B;
                 font-weight: bold;
             }
-            
+
             div.entry-body h2,
             div.entry-body h2 a {
                 color: #5D3927;
                 font-weight: bold;
             }
-            
+
             div.entry-body h3,
             div.entry-body h3 a {
                 color: #6b422c;
                 font-weight: bold;
             }
-            
+
             footer h2 {
                 font-size: 1.1em;
             }
-            
+
             div.entry-body p {
                 margin: 0 0 1.5em;
                 line-height: 24px;
                 font-size: 0.9em;
                 color: #4f423a;
             }
-            
+
             div.entry-body p:hover {
                 color: #3d332d;
             }
-            
+
             div.entry-body .left {
                 float: left;
                 margin-right: 15px;
             }
-            
+
             div.entry-body .right {
                 float: right;
                 margin-left: 15px;
             }
-            
+
             div.entry-body .large,
             div.entry-body .left,
             div.entry-body .right {
                 display: inline;
             }
-            
+
             div.entry-body p a,
             .comment header a,
             section#content ol li a,
             a.link {
                 color: #222;
                 text-decoration: none;
-                background-color: #E2F7E2;
+                background-color: #EEFBEE;
             }
-            
+
             div.entry-body p a:active,
             .comment header a:active,
             section#content ol li a:active,
             a.link:active {
                 color: #8b1109;
             }
-            
+
             div.entry-body p:hover a {
                 color: #444444;
             }
-            
+
             div.entry-body p a:hover,
             .comment header a:hover,
             section#content ol li a:hover,
@@ -604,7 +604,7 @@ section#content {
                 color: #222;
                 background-color: transparent;
             }
-            
+
             div.entry-body p a:visited,
             .comment header a:visited,
             section#content ol li a:visited,
@@ -612,18 +612,18 @@ section#content {
                 color: #222;
                 background-color: rgba(226, 247, 226, .4);
             }
-            
+
             div.entry-body p blockquote {
                 text-indent: -0.8em;
             }
-            
+
             div.entry-body p.teaser {
                 text-indent: 1em;
                 font-size: 0.9em;
                 line-height: 20px;
                 font-style: italic;
             }
-            
+
             div.related-posts {
                 margin-bottom: 20px;
             }
@@ -651,7 +651,7 @@ section#content {
                         display: inline-block;
                         top: 7px;
                     }
-                    
+
                     div.entry-meta ul li a span.tag-body {
                         font: 10px/1.2 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",sans-serif;
                         padding: 2px 8px;
@@ -667,7 +667,7 @@ section#content {
                         color: #FFFFFF;
                         text-align: center;
                     }
-        
+
         div#entry-navigation {
             padding-right: 20px;
             margin-bottom: 40px;
@@ -675,7 +675,7 @@ section#content {
             div#entry-navigation a.entry-previous {
                 float: left;
             }
-            
+
             div#entry-navigation a.entry-next {
                 float: right;
             }
@@ -691,7 +691,7 @@ section#content {
                 background-position: -12px -23px;
                 width: 30px;
             }
-        
+
         div#mptt-comments-tree {
             padding: 1em 15px 1em 0;
         }
@@ -705,53 +705,53 @@ section#content {
                 .new-comment-form-wrapper > .comment > .comment-whole > .comment-body {
                     background: #F0F0F0 url('/media/img/comment_parent_bg.png') no-repeat left top;
                 }
-                
+
                 div#mptt-comments-tree > .comment > .comment-whole header,
                 .new-comment-form-wrapper > .comment > .comment-whole header {
                     position: absolute;
                     left: -100px;
                 }
-                
+
                 div#mptt-comments-tree > .comment > .comment-whole .comment-body-content,
                 .new-comment-form-wrapper > .comment > .comment-whole .comment-body-content {
                     padding-left: 38px !important;
                 }
-            
+
             .comment {
                 padding-top: 1.2em;
             }
-            
+
             .comment > .comment-form-wrapper .comment {
                 padding-top: 0 !important;
                 padding-bottom: 1.2em;
             }
-            
+
             .comment,
             .comment p {
                 color: #34312E;
                 font-family: "Trebuchet MS",Verdana,"Lucida Grande",Tahoma,Helvetica,Sans-Serif;
             }
-            
+
             .comment h3 {
                 color: #41281B;
                 font-weight: bold;
                 margin-bottom: 10px;
             }
-            
+
             .comment p {
                 font-size: 0.7em;
                 line-height: 18px;
                 font-style: normal;
                 font-weight: normal;
             }
-            
+
             span.comments-more {
                 width: 25px;
                 height: 41px;
                 display: block;
                 background-position: 0 -139px;
             }
-            
+
             .comment-author,
             .comment-meta time,
             .comment-replies {
@@ -761,12 +761,12 @@ section#content {
                     padding: 20px 20px 60px;
                     min-height: 60px;
                 }
-                
+
                 div#mptt-comments-tree > .comment > .comment-whole .comment-reply {
                     left: 18px;
                     bottom: 0;
                 }
-                
+
                 div#mptt-comments-tree > .comment > .comment-whole .comment-meta {
                     text-align: center;
                     margin-top: 5px;
@@ -775,13 +775,13 @@ section#content {
                 a.comment-reply {
                     position: absolute;
                 }
-                
+
                 a.comment-reply span {
                     background-position: -58px -50px;
                     height: 28px;
                     width: 28px;
                 }
-                
+
                 .comment-replies {
                     top: 0;
                     right: -1px;
@@ -795,11 +795,11 @@ section#content {
                     height: 28px;
                     width: 28px;
                 }
-                
+
                 a.comment-no-hidden-replies {
                     opacity: 0.5;
                 }
-                
+
                 .comment-title {
                     font-size: 0.9em;
                     font-weight: bold;
@@ -807,15 +807,15 @@ section#content {
                     background: #eeeeee;
                     padding: 3px;
                 }
-                
+
                 .comment-whole {
                     position: relative;
                 }
-                
+
                 .comment-form-wrapper {
                     padding-top: 1.5em;
                 }
-                
+
                 /* comment which belongs to another */
                 .comment > .comment,
                 .comment-form-wrapper {
@@ -832,12 +832,12 @@ section#content {
                         width: 16px;
                         height: 16px;
                     }
-                    
+
                     .comment > .comment .comment,
                     .comment > .comment-form-wrapper > .comment .comment {
                         margin-left: 0 !important;
                     }
-                    
+
                     .comment > .comment .comment-whole header,
                     .comment > .comment-form-wrapper > .comment .comment-whole header {
                         position: absolute;
@@ -849,33 +849,33 @@ section#content {
                         .comment > .comment-form-wrapper > .comment .comment-whole header > * {
                             float: right;
                         }
-                        
+
                         .comment > .comment .comment-whole .comment-meta,
                         .comment > .comment-form-wrapper > .comment .comment-whole .comment-meta {
                             padding-top: 8px;
                             margin-right: 5px;
                             text-align: right;
                         }
-                        
+
                         .comment > .comment .comment-whole header img,
                         .comment > .comment-form-wrapper > .comment .comment-whole header img {
                             width: 40px;
                             height: 40px;
                         }
-                    
+
                     .comment > .comment .comment-body,
                     .comment > .comment-form-wrapper > .comment .comment-body {
                         background-color: #E9F4EC;
                         position: relative;
                     }
-                    
+
                     .comment > .comment > .comment-whole .comment-reply,
                     .comment > .comment-form-wrapper > .comment > .comment-whole .comment-reply {
                         bottom: 0;
                         left: 0;
                     }
 
-                            
+
         div.new-comment-form-wrapper {
             margin: 15px 0;
             width: 725px;
@@ -892,13 +892,13 @@ article.archive {
         font-weight: bold;
         font-size: 1.2em;
     }
-    
+
     article.archive p {
         color: #444444;
         line-height: 20px;
         font-size: 1.2em;
     }
-    
+
     article.archive h2 {
         display: block;
         -moz-border-radius: 5px;
@@ -911,31 +911,31 @@ article.archive {
         padding: 5px;
         clear: both;
     }
-    
+
     article.archive ul li {
         font-size: 0.7em;
         width: 320px;
     }
-    
+
     article.archive ul li:nth-of-type(2) {
         float: right;
         padding-right: 10px;
     }
-    
+
     article.archive ul li:nth-of-type(1) {
         float: left;
     }
-    
+
     p.more {
         text-align: right;
     }
-    
+
     p.more a {
         font-size: 0.8em;
         text-transform: uppercase;
         color: #000000;
     }
-    
+
     p.more a:hover {
         border-bottom: 1px dotted #CCCCCC;
     }
@@ -982,13 +982,13 @@ ul li.title {
     ul li.title ul li {
         font-weight: bold;
     }
-    
+
     ul li.title h2 span,
     ul.li.title h2.active span {
         background-position: -41px -67px;
         float: right;
     }
-    
+
     ul li.title h2 {
         font-size: 0.9em;
         color: #FFFFFF;
@@ -999,15 +999,15 @@ ul li.title {
         width: 205px;
         padding-left: 14px;
     }
-    
+
     ul li.title h2.active span {
         background-position: -41px -50px !important;
     }
-    
+
     ul li.title ul {
         padding: 0.5em 0;
     }
-    
+
     ul li.title ul li {
         padding: 0.5em 0 0.5em 2em;
         margin-bottom: 0.5em;
@@ -1015,12 +1015,12 @@ ul li.title {
         font-size: 0.81em;
         cursor: pointer;
     }
-    
+
     ul li.title ul li a {
         font-weight: bold;
         color: #319755;
     }
-    
+
     ul li.title ul li:hover {
         background-color: #2B2927;
     }
@@ -1107,16 +1107,16 @@ div.twitter-container {
             color: #FFFFFF;
             font-family: Arial, sans-serif;
         }
-    
+
     div.twitter-container p,
     div.twitter-container h2 {
         font-size: 0.70em;
     }
-    
+
     div.twitter-container a {
         text-decoration: none;
     }
-    
+
     div.twitter-container p {
         line-height: 1.35em;
         padding: 5px;
@@ -1125,23 +1125,23 @@ div.twitter-container {
             color: #191816;
             text-decoration: underline;
         }
-    
+
     div.twitter-container-green-0 {
         background-position: 0 -224px;
     }
-    
+
     div.twitter-container-green-1 {
         background-position: 0px -334px;
     }
-    
+
     div.twitter-container-green-2 {
         background-position: 0px -444px;
     }
-    
+
     div.twitter-container-green-3 {
         background-position: 0px -554px;
     }
-    
+
     span.twitter-container-loader {
         background: url('/media/img/twitter_container_loader.gif') no-repeat center center;
         display: block;
@@ -1165,7 +1165,7 @@ footer#footer {
         right: 0;
         width: 99px;
     }
-    
+
     div#footer-worm-container > ul {
         padding: 25px 0;
     }
@@ -1184,7 +1184,7 @@ footer#footer {
                 margin-bottom: 8px;
                 font-weight: bold;
             }
-            
+
             div#footer-worm-container > ul > li h1 span {
                 background-position: -104px 0;
                 position: relative;
@@ -1208,27 +1208,27 @@ footer#footer {
                     div#footer-worm-container > ul > li div ul.link-list li {
                         color: #4B4743;
                     }
-                    
+
                     div#footer-worm-container > ul > li div ul li a {
                         font-size: 0.8em;
                     }
-                    
+
                     div#footer-worm-container > ul > li div ul.link-list li a:hover {
                         border-bottom: 1px dashed #4B4743;
                         color: #594531;
                     }
-        
+
         div#copyright {
             width: 420px;
             height: 49px;
             margin: 0 auto;
             background-position: -30px -171px;
         }
-        
+
         div#footer-tag-list ul.chart-list {
-            width: 250px; 
+            width: 250px;
         }
-        
+
         footer#footer span.tag-count {
             font-size: 0.8em;
         }
@@ -1303,10 +1303,10 @@ div#tag-list {
         }
 
         div#tag-list ul.chart-list li:hover span.index {
-            border-right: 2px solid #88C284; 
+            border-right: 2px solid #88C284;
             background: #F7EEE8 none repeat scroll 0% 0%;
         }
-        
+
         div#tag-list ul.chart-list li,
         div#tag-list ul.chart-list span.tag-count {
             padding: 5px 1px 0;
@@ -1321,16 +1321,16 @@ div#business-card {
         float: left;
         height: 250px;
     }
-    
+
     div#business-card ul li:not(:last-child) {
         margin-right: 50px;
     }
-    
+
     div#business-card ul li.business-card-thoas {
         width: 226px;
         background-position: 0px 0px;
     }
-    
+
     div#business-card ul li.business-card-norelijn {
         width: 208px;
         background-position: 208px 0;
@@ -1354,7 +1354,7 @@ ul.chart-list {
         position: relative;
         display: block;
     }
-    
+
     ul.chart-list li,
     ul.chart-list li span.tag-count {
         padding: 6px 1px;
@@ -1363,7 +1363,7 @@ ul.chart-list {
         ul.chart-list li:hover a {
             color: #319855;
         }
-        
+
         ul.chart-list li a {
             padding: 0pt;
             display: block;
@@ -1371,7 +1371,7 @@ ul.chart-list {
             z-index: 2;
             color: #4B4743;
         }
-        
+
         ul.chart-list li span.tag-count {
             display: block;
             position: absolute;
@@ -1381,7 +1381,7 @@ ul.chart-list {
             color: #319855;
             z-index: 2;
         }
-        
+
         ul.chart-list li span.index {
             border-right: 2px solid #319855;
             overflow: hidden;
@@ -1393,7 +1393,7 @@ ul.chart-list {
             text-indent: -9999px;
             opacity: 0.5;
         }
-        
+
         ul.chart-list li:hover span.index {
             border-right: 2px solid #319855;
             background: #4B4743 none repeat scroll 0% 0%;
