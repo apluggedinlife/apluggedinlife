@@ -10,6 +10,8 @@
 
 {% block body_class %}about{% endblock %}
 
+{% block title %}{% trans "About" %} | {{ block.super }}{% endblock %}
+
 {% block content %}
 <div class="strip">
     <p><img src="{{ MEDIA_URL }}img/about.png" /></p>
@@ -25,7 +27,7 @@
         </ul>
         <div class="clear"></div>
     </div>
-    
+
     <h2>{% trans "More about our site" %}</h2>
     <p>
         {% blocktrans %}
