@@ -63,6 +63,7 @@ div#footer-worm-container > ul {
         div#wrapper > header h1.logo {
             text-indent: -500em;
             background-repeat: no-repeat;
+            margin: 5px 0 0;
         }
 
         body.blog div#wrapper > header h1.logo {
@@ -99,11 +100,11 @@ div#footer-worm-container > ul {
             body.blog div#wrapper > header h1.logo a,
             body.archives div#wrapper > header h1.logo a,
             body.about div#wrapper > header h1.logo a {
-                height: 444px;
+                height: 264px;
             }
 
             body.contact div#wrapper > header h1.logo a {
-                height: 438px;
+                height: 265px;
             }
 
             body.handler500 div#wrapper > header h1.logo a {
@@ -115,7 +116,7 @@ div#footer-worm-container > ul {
             }
 
             body.blogroll div#wrapper > header h1.logo a {
-                height: 434px;
+                height: 266px;
             }
 
         ul#nav-menu {
@@ -213,7 +214,7 @@ div#accessibility {
 
 body.blog section#content,
 body.archives section#content {
-    width: 740px;
+    width: 730px;
 }
 
 body.contact section#content {
@@ -222,7 +223,8 @@ body.contact section#content {
 
 section#content {
     float: left;
-    padding: 10px 0 0 0;
+    padding-top: 10px;
+    padding-left: 20px;
 }
     section#content h1,
     section#content h2,
@@ -236,7 +238,7 @@ section#content {
 
     section#navigation-inner {
         width: 100%;
-        margin: 10px 0 30px;
+        margin: 10px 0 20px;
     }
         section#navigation-inner ul,
         section#navigation-inner em {
@@ -945,7 +947,7 @@ article.archive {
 nav#sidebar {
     width: 234px;
     float: right;
-    margin-right: 27px;
+    margin-right: 20px;
     top: -70px;
     position: relative;
     background: transparent url('/media/img/column_head.png') no-repeat center top;
@@ -1221,7 +1223,7 @@ footer#footer {
         div#copyright {
             width: 420px;
             height: 49px;
-            margin: 0 auto;
+            margin: 20px auto 0;
             background-position: -30px -171px;
         }
 

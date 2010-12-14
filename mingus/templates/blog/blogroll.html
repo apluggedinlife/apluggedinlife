@@ -3,70 +3,90 @@
 
 {% block body_class %}blogroll{% endblock %}
 
-{% block extra_javascript %}
-    <script src="{{ MEDIA_URL }}js/raphael.js" type="text/javascript" charset="utf-8"></script>
-    <script src="{{ MEDIA_URL }}js/blogroll.js" type="text/javascript" charset="utf-8"></script>
-{% endblock %}
-
 {% block extra_head %}
-    <style type="text/css" media="screen">
-        #holder {
-            background: #fff;
-            border: solid 1px #999;
-            cursor: move;
-            overflow: hidden;
-            width: 690px;
-            height: 540px;
-            margin: 20px 0;
-        }
-    </style>
+<style type="text/css" media="screen">
+    #map {
+        width: 690px;
+        height: 540px;
+    }
+
+    #map figure {
+        cursor: pointer;
+        background: #fff;
+        border: solid 1px #999;
+        overflow: hidden;
+        margin: 20px 0;
+        position: relative;
+        -webkit-transition: all 1s ease; 
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+
+    #map figure img {
+        width: 100%;
+    }
+
+    #map figure:focus {
+        outline: none;
+
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+
+        z-index: 9999;
+    }
+</style>
 {% endblock %}
 
 {% block menu %}
-    blogroll
+blogroll
 {% endblock %}
 
 {% block title %}{% trans "Blogroll" %} | {{ block.super }}{% endblock %}
 
 {% block navigation_inner %}
-    {{ block.super }}
-    <li><span class="icon"></span>{% trans "Blogroll" %}</li>
+{{ block.super }}
+<li><span class="icon"></span>{% trans "Blogroll" %}</li>
 {% endblock %}
 
 {% block content %}
 <div class="entry-body">
-    <h1>{% trans "The map" %}</h1>
-    <div id="holder">
-
+    <h1>{% trans "Map" %}</h1>
+    <div id="map">
+        <figure tabindex="1">
+            <img src="{{ MEDIA_URL }}img/blogroll.jpg" alt="Blogroll" />
+        </figure>
     </div>
     <h1>{% trans "Links and OPML" %}</h1>
     {% if tags %}
-        <div id="blogroll" class="block-20">
-            {% for group in groups %}
-                {% if forloop.counter|divisibleby:4 %}
-                    <div class="clear"></div>
+    <div id="blogroll" class="block-20">
+        {% for group in groups %}
+        {% if forloop.counter|divisibleby:4 %}
+        <div class="clear"></div>
+        {% endif %}
+        <div class="column column-50">
+            <ul>
+                {% for tag in group %}
+                <li>
+                <h3>{{ tag.title }}</h3>
+                {% if tag.feeds %}
+                <ul>
+                    {% for entry in tag.feeds %}
+                    <li><a href="{{ entry.url }}" title="{{ entry.title }}" class="link" rel="external">{{ entry.title }}</a></li>
+                    {% endfor %}
+                </ul>
                 {% endif %}
-                 <div class="column column-50">
-                     <ul>
-                        {% for tag in group %}
-                            <li>
-                            <h3>{{ tag.title }}</h3>
-                            {% if tag.feeds %}
-                                <ul>
-                                    {% for entry in tag.feeds %}
-                                        <li><a href="{{ entry.url }}" title="{{ entry.title }}" class="link" rel="external">{{ entry.title }}</a></li>
-                                    {% endfor %}
-                                </ul>
-                            {% endif %}
-                            </li>
-                        {% endfor %}
-                     </ul>
-                </div>
-            {% endfor %}
+                </li>
+                {% endfor %}
+            </ul>
         </div>
-        <div class="block-20 clear">
-            <a href="{% url download path="OPML_APIL.xml" %}" class="icon center download">Blogroll OPML</a>
-        </div>
+        {% endfor %}
+    </div>
+    <div class="block-20 clear">
+        <a href="{% url download path="OPML_APIL.xml" %}" class="icon center download">Blogroll OPML</a>
+    </div>
     {% endif %}
 </div>
 {% endblock %}

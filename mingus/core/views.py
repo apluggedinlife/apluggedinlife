@@ -239,8 +239,6 @@ def blogroll(request, feed=settings.OPML_ROOT, template_name='blog/blogroll.html
             current = []
             total = 0
 
-
-
     return render_to_response(template_name,
                               {'tags': tags, 'groups': groups},
                               context_instance=RequestContext(request))
