@@ -42,7 +42,7 @@ div#accessibility {
             color: #000000;
             font-size: 0.65em;
         }
-    
+
     div#accessibility ul li.stroke {
         border-left: 1px solid #414141;
     }
@@ -70,7 +70,7 @@ div#whole {
     padding: 0 0;
     width: 100%;
     text-align: center;
-    border-width: 0;    
+    border-width: 0;
 }
 
 div#wrapper {
@@ -97,22 +97,22 @@ div#introduction {
     div#content article {
         margin-bottom: 50px;
     }
-    
+
     div#content ol li {
         position: relative;
         margin-top: 30px;
     }
-    
+
     div#quotation {
         float: left;
         padding: 25px 0;
     }
-    
+
     div#quotation p {
         color: #493213;
         font-size: 16px;
     }
-    
+
     div#not-wanted {
         background-repeat: no-repeat;
         background-image: url('/media/img/ie/ie_not_wanted.png');
@@ -122,7 +122,7 @@ div#introduction {
     }
 
 div#copyright {
-    width: 461px;
+    width: 479px;
     height: 49px;
     margin: 0 auto;
     background: transparent url('/media/img/ie/ie_copyright.png') no-repeat center center;
