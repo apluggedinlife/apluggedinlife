@@ -11,11 +11,11 @@ class GetPostsForArchiveNode(Node):
     def __init__(self, archive_date):
         self.archive_date = Variable(archive_date)
         super(GetPostsForArchiveNode, self).__init__()
-    
+
     def render(self, context):
         try:
             archive_date = self.archive_date.resolve(context)
-            
+
             response = date_based.archive_month(
                 context['request'],
                 year = archive_date.year,
