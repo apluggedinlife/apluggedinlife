@@ -9,14 +9,14 @@
 
 {% block navigation_inner %}
     {{ block.super }}
-    <li><a href="{% url archives %}" title="{% trans "Archives" %}"><span></span>{% trans "Archives" %}</a></li>
+    <li><span class="icon"></span><a href="{% url archives %}" title="{% trans "Archives" %}"><span></span>{% trans "Archives" %}</a></li>
     <li><span class="icon"></span>{{ day|date:"d F Y" }}</li>
 {% endblock %}
 
 {% block content %}
 
 {% for post in object_list %}
-  {% include "blog/includes/post_list.html" %}
+    {% include "proxy/includes/post_item.html" %}
 {% endfor %}
 
 {% endblock %}
