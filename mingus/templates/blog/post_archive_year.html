@@ -10,7 +10,7 @@
 {% block navigation_inner %}
     {{ block.super }}
     <li><a href="{% url archives %}" title="{% trans "Archives" %}"><span></span>{% trans "Archives" %}</a></li>
-    <li><span></span>{{ year }}</li>
+    <li><span class="icon"></span>{{ year }}</li>
 {% endblock %}
 
 {% block content %}
