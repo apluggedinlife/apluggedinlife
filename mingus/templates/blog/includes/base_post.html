@@ -1,4 +1,5 @@
 {% load blog i18n mptt_comments_tags tagging_tags cache social_bookmarking_tags %}
+
 <article role="article">
 {% block article %}
     <header>
@@ -11,18 +12,21 @@
         </div>
         {% endif %}
     </header>
-    <div class="entry-body">
+
+    <div class="entry-information">
         <h1><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></h1>
         <div class="datetime">
             <time datetime="{{ post.publish|date:"Y-m-d" }}">
                 {{ post.publish|date:"d.m.y" }} - {{ post.publish|date:"h:m"}}<span class="icon"></span>
             </time>
         </div>
+
         {% if post.author %}
         <div class="entry-author">
             <a href="" title="{{ post.author.username }}">{{ post.author.username }}<span class="icon"></span></a>
         </div>
         {% endif %}
+
         {% cache 3600 "blog.post_detail.categories" post.title %}
         {% if post.categories %}
         <div class="entry-category">
@@ -36,44 +40,52 @@
         </div>
         {% endif %}
         {% endcache %}
-       {% cache 300 "blog.post_detail.tag_list" post.pk %}
+        <div class="clear"></div>
+
+        {% cache 300 "blog.post_detail.tag_list" post.pk %}
         {% tags_for_object post as tag_list %}
         {% if tag_list %}
         <div class="entry-meta">
             <ul>
-            {% for tag in tag_list %}
+                {% for tag in tag_list %}
                 <li>
                     <a href="{% url blog_tag_detail tag %}" title="{{ tag }}">
                         <span class="icon"></span>
                         <span class="tag-body">{{ tag }}</span>
                     </a>
                 </li>
-            {% endfor %}
+                {% endfor %}
             </ul>
-             <div class="clear"></div>
-         </div>
+            <div class="clear"></div>
+        </div>
         {% endif %}
         {% endcache %}
+    </div>
+
+    <div class="entry-body">
         {% block post_content %}
-            
+
         {% endblock %}
     </div>
+
     {% if object.get_previous_by_publish or object.get_next_by_publish %}
     <div class="clear"></div>
     <div id="entry-navigation">
         {% if object.get_previous_by_publish %}
-          <a class="entry-previous" href="{{ object.get_previous_post.get_absolute_url }}" title="{% blocktrans with object.get_previous_post as previous_post %}Previous entry: {{ previous_post }}{% endblocktrans %}">
-              <span class="icon"></span>
-          </a>
+        <a class="entry-previous" href="{{ object.get_previous_post.get_absolute_url }}" title="{% blocktrans with object.get_previous_post as previous_post %}Previous entry: {{ previous_post }}{% endblocktrans %}">
+            <span class="icon"></span>
+        </a>
         {% endif %}
+
         {% if object.get_next_by_publish %}
-          <a class="entry-next" href="{{ object.get_next_post.get_absolute_url }}" title="{% blocktrans with object.get_next_post as next_post %}Next entry: {{ next_post }}{% endblocktrans %}">
-              <span class="icon"></span>
-          </a>
+        <a class="entry-next" href="{{ object.get_next_post.get_absolute_url }}" title="{% blocktrans with object.get_next_post as next_post %}Next entry: {{ next_post }}{% endblocktrans %}">
+            <span class="icon"></span>
+        </a>
         {% endif %}
         <div class="clear"></div>
     </div>
     {% endif %}
+
     <div class="clear"></div>
 {% endblock %}
 </article>
