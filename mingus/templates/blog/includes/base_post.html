@@ -63,9 +63,11 @@
     </div>
 
     <div class="entry-body">
-        {% block post_content %}
+        <div class="entry-content">
+            {% block post_content %}
 
-        {% endblock %}
+            {% endblock %}
+        </div>
     </div>
 
     {% if object.get_previous_by_publish or object.get_next_by_publish %}
