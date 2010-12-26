@@ -1,3 +1,12 @@
+/* ****************************************************
+  @file         screen.css
+  @description  Main stylesheet
+  vim: set et ts=4 sts=4 fdm=marker fenc=utf-8:
+ ***************************************************** */
+
+/* @section GENERIC ELEMENT {{{
+ ******************************************************************************/
+
 @font-face {
     font-family: 'AlfredosDanceRegular';
     src: url('alfredo-webfont.eot');
@@ -34,7 +43,28 @@ ul {
     list-style-type: none;
 }
 
-/* --- ACCESSIBILITY ---- */
+h2 {
+    font-size: 0.9em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+}
+
+a {
+    text-decoration: none;
+    color: #C89D64;
+    font-weight: bold;
+}
+
+a > img {
+    border-width: 0;
+}
+
+/*}}}*/
+
+/* @section ACCESSIBILITY {{{
+ ******************************************************************************/
 
 div#accessibility {
     padding: 0.4em;
@@ -55,23 +85,10 @@ div#accessibility {
         border-left: 1px solid #414141;
     }
 
-h2 {
-    font-size: 0.9em;
-}
+/*}}}*/
 
-h1, h2, h3, h4, h5, h6 {
-    line-height: 1;
-}
-
-a {
-    text-decoration: none;
-    color: #C89D64;
-    font-weight: bold;
-}
-
-a > img {
-    border-width: 0;
-}
+/* @section GLOBAL CONTENT {{{
+ ******************************************************************************/
 
 div#whole {
     margin: 0 0;
@@ -136,14 +153,17 @@ div#copyright {
     background: transparent url('/media/img/ie/ie_copyright.png') no-repeat center center;
 }
 
+/*}}}*/
+
+/* @section GENERIC CLASSES {{{
+ ******************************************************************************/
+
 p.quotes {
     width: 664px;
     padding: 0 0 0 100px;
     margin: 40px 0 20px;
     background: transparent url('/media/img/ie/ie_quotes.png') no-repeat 0 0;
 }
-
-/* --- GENERIC CLASSES --- */
 
 .separator {
     margin: 0 auto;
@@ -153,3 +173,5 @@ p.quotes {
 }
 
 .clear { clear: both; }
+
+/*}}}*/

@@ -1,52 +1,52 @@
 /* ---- BASE STYLESHEETS BY ALSACREATIONS ---- */ 
- 
+
 abbr[title] { 
-  border-bottom: 1px dotted; 
-  cursor: help; 
+    border-bottom: 1px dotted; 
+    cursor: help; 
 } 
 
 q,
 cite { 
-  font-style: italic; 
+    font-style: italic; 
 } 
 
 q cite,
 q q { 
-  font-style: normal 
+    font-style: normal 
 } 
 
 blockquote p,
 li p { 
-  margin: .5em 0; 
+    margin: .5em 0; 
 } 
- 
+
 dl { 
-  margin: .75em 0; 
+    margin: .75em 0; 
 } 
 
 dt { 
-  margin: .75em 0 0 0; 
-  font-weight: bold; 
+    margin: .75em 0 0 0; 
+    font-weight: bold; 
 }
 
 dd { 
-  margin: .25em 0 .25em 32px; 
+    margin: .25em 0 .25em 32px; 
 }
 
 table { 
-  margin: 0; 
-  border: 1px solid gray;
-  border-collapse: collapse;
-  border-spacing: 0; 
+    margin: 0; 
+    border: 1px solid gray;
+    border-collapse: collapse;
+    border-spacing: 0; 
 } 
 
 table td, table th { 
-  padding: 4px;
-  border: 1px solid #ccc;
-  vertical-align: top;
+    padding: 4px;
+    border: 1px solid #ccc;
+    vertical-align: top;
 } 
- 
+
 article, aside, dialog, figure, footer, header,
 hgroup, menu, nav, section { 
-  display: block; 
+    display: block; 
 }

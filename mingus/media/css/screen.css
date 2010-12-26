@@ -389,11 +389,11 @@ section#content {
                 }
 
                 span.count {
-                    font-size: 0.55em;
-                    background-position: -96px -64px;
-                    width: 12px;
-                    padding-top: 1px;
-                    height: 12px;
+                    font-size: 0.6em;
+                    background-position: -96px -63px;
+                    width: 18px;
+                    padding-top: 5px;
+                    height: 17px;
                     color: #000000;
                 }
 
