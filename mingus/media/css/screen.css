@@ -299,12 +299,11 @@ section#content {
         }
 
         section#content > article > header {
-            width: 130px;
+            width: 96px;
             text-align: right;
             padding-right: 20px;
             float: left;
             position: relative;
-            margin-bottom: 30px;
         }
 
             div.entry-author,
@@ -382,7 +381,7 @@ section#content {
                     background-position: -73px -99px;
                     position: absolute;
                     top: 12px;
-                    left: 45px;
+                    left: 10px;
                     display: inline-block;
                     height: 14px;
                     width: 14px;
@@ -490,7 +489,7 @@ section#content {
 
         div.entry-information {
             float: left;
-            width: 560px;
+            width: 595px;
         }
 
         div.entry-body {
@@ -560,8 +559,9 @@ section#content {
                 font-size: 1.1em;
             }
 
-            div.entry-body p {
-                margin: 0 0 1.5em;
+            div.entry-body p,
+            div.entry-body li {
+                margin: 0 0 1em;
                 line-height: 24px;
                 font-size: 0.9em;
                 color: #4f423a;
@@ -576,6 +576,10 @@ section#content {
                 margin-right: 15px;
             }
 
+            div.entry-body span.strike {
+                text-decoration: line-through;
+            }
+
             div.entry-body .right {
                 float: right;
                 margin-left: 15px;
@@ -587,7 +591,13 @@ section#content {
                 display: inline;
             }
 
+            div.entry-body ul {
+                padding-left: 30px;
+                list-style-type: disc;
+            }
+
             div.entry-body p a,
+            div.entry-body li a,
             .comment header a,
             section#content ol li a,
             a.link {
@@ -597,17 +607,20 @@ section#content {
             }
 
             div.entry-body p a:active,
+            div.entry-body li a:active,
             .comment header a:active,
             section#content ol li a:active,
             a.link:active {
                 color: #8b1109;
             }
 
-            div.entry-body p:hover a {
+            div.entry-body p:hover a,
+            div.entry-body li:hover a {
                 color: #444444;
             }
 
             div.entry-body p a:hover,
+            div.entry-body li a:hover,
             .comment header a:hover,
             section#content ol li a:hover,
             a.link:hover {
@@ -616,6 +629,7 @@ section#content {
             }
 
             div.entry-body p a:visited,
+            div.entry-body li a:visited,
             .comment header a:visited,
             section#content ol li a:visited,
             a.link:visited {

@@ -3,6 +3,7 @@
 {% load i18n %}
 
 {% block post_content %}
-    <p>{{ post.tease|safe }}</p>
+    {{ post.tease|safe }}
+
     <p class="more"><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{% trans "Read more" %}→</a></p>
 {% endblock %}
