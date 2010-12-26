@@ -3,16 +3,6 @@
 
 {% block body_class %}blogroll{% endblock %}
 
-{% block extra_javascript %}
-<script src="{{ MEDIA_URL }}js/jquery.blogroll.js" type="text/javascript" charset="utf-8"></script>
-<script src="{{ MEDIA_URL }}js/raphael.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" charset="utf-8">
-    (function($){
-        $('#map').blogroll();
-    })(jQuery);
-</script>
-{% endblock %}
-
 {% block extra_head %}
 <style type="text/css" media="screen">
     #map {
