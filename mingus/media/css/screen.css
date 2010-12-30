@@ -132,74 +132,59 @@ div#footer-worm-container > ul {
         ul#nav-menu {
             padding: 10px 0 0 20px;
         }
-            ul#nav-menu li.nav-item a {
+            ul#nav-menu li a {
                 float: left;
                 margin-left: 25px;
-                background-color: transparent;
-                background-repeat: no-repeat;
-                background-position: 0 0;
-                background-attachment: scroll;
-            }
-
-            ul#nav-menu.home li.nav-item-home a {
-                background-position: -192px -432px !important;
-            }
-
-            ul#nav-menu.contact li.nav-item-contact a {
-                background-position: -267px -432px !important;
-            }
-
-            ul#nav-menu.archives li.nav-item-archives a {
-                background-position: -315px -432px !important;
-            }
-
-            ul#nav-menu.blogroll li.nav-item-blogroll a {
-                background-position: -372px -432px !important;
-            }
-
-            ul#nav-menu.about li.nav-item-about a {
-                background-position: -228px -432px !important;
-            }
-
-            ul#nav-menu li a {
-                height: 16px;
-                overflow: hidden;
-                text-indent: -500em;
-                display: block;
+                width: 60px;
+                height: 20px;
                 position: relative;
-                z-index: 10;
+                overflow: hidden;
             }
 
-            ul#nav-menu li.nav-item-home a {
-                background-position: -192px -416px;
-                width: 36px;
+            ul#nav-menu li a:hover span:first-child,
+            ul#nav-menu.home li.nav-item-home a span:first-child,
+            ul#nav-menu.blogroll li.nav-item-blogroll a span:first-child,
+            ul#nav-menu.about li.nav-item-about a span:first-child,
+            ul#nav-menu.contact li.nav-item-contact a span:first-child,
+            ul#nav-menu.archives li.nav-item-archives a span:first-child {
+                top: -30px !important;
             }
 
-            ul#nav-menu li.nav-item-about a {
-                background-position: -227px -416px;
-                width: 38px;
+            ul#nav-menu li a:hover span + span,
+            ul#nav-menu.home li.nav-item-home a span + span,
+            ul#nav-menu.blogroll li.nav-item-blogroll a span + span,
+            ul#nav-menu.about li.nav-item-about a span + span,
+            ul#nav-menu.contact li.nav-item-contact a span + span,
+            ul#nav-menu.archives li.nav-item-archives a span + span {
+                top: -17px !important;
             }
 
-            ul#nav-menu li.nav-item-contact a {
-                background-position: -267px -416px;
-                width: 48px;
+            ul#nav-menu li a span {
+                font: bold 13px Arial, sans-serif;
+                color: #063C42;
+                position: relative;
+                display: inline-block;
+                text-align: center;
+                width: 100%;
             }
 
-            ul#nav-menu li.nav-item-blogroll a {
-                background-position: -371px -416px;
-                width: 49px;
+            ul#nav-menu:not(.home) li.nav-item-home a span, 
+            ul#nav-menu:not(.blogroll) li.nav-item-blogroll a span, 
+            ul#nav-menu:not(.about) li.nav-item-about a span, 
+            ul#nav-menu:not(.contact) li.nav-item-contact a span, 
+            ul#nav-menu:not(.archives) li.nav-item-archives a span { 
+                -webkit-transition: top .5s ease-out;
+                -moz-transition: top 0.5s ease-out;
             }
 
-            ul#nav-menu li.nav-item-archives a {
-                background-position: -316px -416px;
-                width: 55px;
+            ul#nav-menu li a span:first-child {
+                top: 0;
             }
 
-            ul#nav-menu li.nav-item-tuts a {
-                background-position: -250px 0;
-                width: 26px;
+            ul#nav-menu li a span + span {
+                color: #FFFFFF;
+                top: 5px;
             }
-
 /*}}}*/
 
 /* @section ACCESSIBILITY {{{

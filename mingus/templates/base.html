@@ -51,19 +51,19 @@
                 <nav>
                     <ul id="nav-menu" class="{% block menu %}home{% endblock %}">
                         <li class="nav-item nav-item-home">
-                            <a class="icon" href="{% url home_index %}" title="{% trans "Home" %}">{% trans "Home" %}</a>
+                            <a href="{% url home_index %}" title="{% trans "Home" %}"><span>{% trans "Home" %}</span><span>{% trans "Home" %}</span></a>
                         </li>
                         <li class="nav-item nav-item-blogroll">
-                            <a class="icon" href="{% url blogroll %}" title="{% trans "Blogroll" %}">{% trans "Blogroll" %}</a>
+                            <a href="{% url blogroll %}" title="{% trans "Blogroll" %}"><span>{% trans "Blogroll" %}</span><span>{% trans "Blogroll" %}</span></a>
                         </li>
                         <li class="nav-item nav-item-about">
-                            <a class="icon" href="{% url about %}" title="{% trans "About" %}">{% trans "About" %}</a>
+                            <a href="{% url about %}" title="{% trans "About" %}"><span>{% trans "About" %}</span><span>{% trans "About" %}</span></a>
                         </li>
                         <li class="nav-item nav-item-contact">
-                            <a class="icon" href="{% url contact_form %}" title="{% trans "Contact" %}">{% trans "Contact" %}</a>
+                            <a href="{% url contact_form %}" title="{% trans "Contact" %}"><span>{% trans "Contact" %}</span><span>{% trans "Contact" %}</span></a>
                         </li>
                         <li class="nav-item nav-item-archives">
-                            <a class="icon" href="{% url archives %}" title="{% trans "Archives" %}">{% trans "Archives" %}</a>
+                            <a href="{% url archives %}" title="{% trans "Archives" %}"><span>{% trans "Archives" %}</span><span>{% trans "Archives" %}</span></a>
                         </li>
                     </ul>
                 </nav>
