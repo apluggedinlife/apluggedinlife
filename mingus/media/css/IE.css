@@ -10,7 +10,7 @@
 @font-face {
     font-family: 'AlfredosDanceRegular';
     src: url('alfredo-webfont.eot');
-    src: local('☺'), url('/media/font/alfredo-webfont.woff') format('woff'), url('/media/font/alfredo-webfont.ttf') format('truetype'), url('/media/font/alfredo-webfont.#webfontRdQzYRlH') format('svg');
+    src: local('☺'), url('/media/font/alfredo-webfont.woff') format('woff'), url('/media/font/alfredo-webfont.ttf') format('truetype'), url('/media/font/alfredo-webfont.svg#webfontRdQzYRlH') format('svg');
     font-weight: normal;
     font-style: normal;
 }
