@@ -34,105 +34,106 @@ a > img {
 /* @section GLOBAL LAYOUT {{{
  ******************************************************************************/
 
-div#whole {
+#whole {
     background-image: url('/media/img/blog_header_bg.png');
     background-repeat: repeat-x;
     background-color: transparent;
     background-position: 0 0;
 }
 
-body.contact div#whole {
+body.contact #whole {
     background-image: url('/media/img/contact_header_bg.png') !important;
 }
 
-body.archives div#whole {
+body.archives #whole {
     background-image: url('/media/img/archives_header_bg.png') !important;
 }
 
-div#whole {
+#whole {
     margin: 0 0;
     padding: 0 0;
     width: 100%;
     border-width: 0;
 }
 
-div#wrapper,
-div#accessibility ul {
+#wrapper,
+#accessibility ul,
+#sites {
     width: 1005px;
     margin: 0 auto;
 }
 
-div#footer-worm-container > ul {
+#footer-worm-container > ul {
     margin: 0 auto;
     width: 900px;
 }
 
-    div#wrapper > header {
+    #wrapper > header {
         position: relative;
     }
-        div#wrapper > header h1.logo {
+        #wrapper > header h1.logo {
             text-indent: -500em;
             background-repeat: no-repeat;
             margin: 5px 0 0;
         }
 
-        body.blog div#wrapper > header h1.logo {
+        body.blog #wrapper > header h1.logo {
             background-image: url('/media/img/blog_header.png');
         }
 
-        body.contact div#wrapper > header h1.logo {
+        body.contact #wrapper > header h1.logo {
             background-image: url('/media/img/contact_header.png');
         }
 
-        body.archives div#wrapper > header h1.logo {
+        body.archives #wrapper > header h1.logo {
             background-image: url('/media/img/archives_header.png');
         }
 
-        body.handler500 div#wrapper > header h1.logo {
+        body.handler500 #wrapper > header h1.logo {
             background-image: url('/media/img/500_header.png');
         }
 
-        body.handler404 div#wrapper > header h1.logo {
+        body.handler404 #wrapper > header h1.logo {
             background-image: url('/media/img/404_header.png');
         }
 
-        body.blogroll div#wrapper > header h1.logo {
+        body.blogroll #wrapper > header h1.logo {
             background-image: url('/media/img/blogroll_header.png');
         }
 
-        body.about div#wrapper > header h1.logo {
+        body.about #wrapper > header h1.logo {
             background-image: url('/media/img/about_header.png');
         }
-            div#wrapper > header h1.logo a {
+            #wrapper > header h1.logo a {
                 display: block;
             }
 
-            body.blog div#wrapper > header h1.logo a,
-            body.archives div#wrapper > header h1.logo a,
-            body.about div#wrapper > header h1.logo a {
+            body.blog #wrapper > header h1.logo a,
+            body.archives #wrapper > header h1.logo a,
+            body.about #wrapper > header h1.logo a {
                 height: 264px;
             }
 
-            body.contact div#wrapper > header h1.logo a {
+            body.contact #wrapper > header h1.logo a {
                 height: 265px;
             }
 
-            body.handler500 div#wrapper > header h1.logo a {
+            body.handler500 #wrapper > header h1.logo a {
                 height: 446px;
             }
 
-            body.handler404 div#wrapper > header h1.logo a {
+            body.handler404 #wrapper > header h1.logo a {
                 height: 448px;
             }
 
-            body.blogroll div#wrapper > header h1.logo a {
+            body.blogroll #wrapper > header h1.logo a {
                 height: 266px;
             }
 
-        ul#nav-menu {
+        #nav-menu {
             padding: 10px 0 0 20px;
         }
-            ul#nav-menu li a {
+            #nav-menu li a {
                 float: left;
                 margin-left: 25px;
                 width: 60px;
@@ -141,25 +142,25 @@ div#footer-worm-container > ul {
                 overflow: hidden;
             }
 
-            ul#nav-menu li a:hover span:first-child,
-            ul#nav-menu.home li.nav-item-home a span:first-child,
-            ul#nav-menu.blogroll li.nav-item-blogroll a span:first-child,
-            ul#nav-menu.about li.nav-item-about a span:first-child,
-            ul#nav-menu.contact li.nav-item-contact a span:first-child,
-            ul#nav-menu.archives li.nav-item-archives a span:first-child {
+            #nav-menu li a:hover span:first-child,
+            #nav-menu.home li.nav-item-home a span:first-child,
+            #nav-menu.blogroll li.nav-item-blogroll a span:first-child,
+            #nav-menu.about li.nav-item-about a span:first-child,
+            #nav-menu.contact li.nav-item-contact a span:first-child,
+            #nav-menu.archives li.nav-item-archives a span:first-child {
                 top: -30px !important;
             }
 
-            ul#nav-menu li a:hover span + span,
-            ul#nav-menu.home li.nav-item-home a span + span,
-            ul#nav-menu.blogroll li.nav-item-blogroll a span + span,
-            ul#nav-menu.about li.nav-item-about a span + span,
-            ul#nav-menu.contact li.nav-item-contact a span + span,
-            ul#nav-menu.archives li.nav-item-archives a span + span {
+            #nav-menu li a:hover span + span,
+            #nav-menu.home li.nav-item-home a span + span,
+            #nav-menu.blogroll li.nav-item-blogroll a span + span,
+            #nav-menu.about li.nav-item-about a span + span,
+            #nav-menu.contact li.nav-item-contact a span + span,
+            #nav-menu.archives li.nav-item-archives a span + span {
                 top: -17px !important;
             }
 
-            ul#nav-menu li a span {
+            #nav-menu li a span {
                 font: bold 13px Arial, sans-serif;
                 color: #063C42;
                 position: relative;
@@ -168,20 +169,21 @@ div#footer-worm-container > ul {
                 width: 100%;
             }
 
-            ul#nav-menu:not(.home) li.nav-item-home a span, 
-            ul#nav-menu:not(.blogroll) li.nav-item-blogroll a span, 
-            ul#nav-menu:not(.about) li.nav-item-about a span, 
-            ul#nav-menu:not(.contact) li.nav-item-contact a span, 
-            ul#nav-menu:not(.archives) li.nav-item-archives a span { 
+            #nav-menu:not(.home) li.nav-item-home a span, 
+            #nav-menu:not(.blogroll) li.nav-item-blogroll a span, 
+            #nav-menu:not(.about) li.nav-item-about a span, 
+            #nav-menu:not(.contact) li.nav-item-contact a span, 
+            #nav-menu:not(.archives) li.nav-item-archives a span { 
+                -o-transition: top .5s ease-out;
                 -webkit-transition: top .5s ease-out;
                 -moz-transition: top 0.5s ease-out;
             }
 
-            ul#nav-menu li a span:first-child {
+            #nav-menu li a span:first-child {
                 top: 0;
             }
 
-            ul#nav-menu li a span + span {
+            #nav-menu li a span + span {
                 color: #FFFFFF;
                 top: 5px;
             }
@@ -190,21 +192,28 @@ div#footer-worm-container > ul {
 /* @section ACCESSIBILITY {{{
  ******************************************************************************/
 
-div#accessibility {
+#accessibility {
     padding: 0.2em;
     background-color: #0698BA;
 }
-    div#accessibility ul li {
+    #accessibility ul li {
         float: right;
         margin-left: 0.5em;
         padding-left: 0.5em;
     }
-        div#accessibility ul li a {
+
+    #accessibility form {
+        float: right;
+        margin-left: 0.5em;
+    }
+
+        #accessibility ul li a,
+        #accessibility ul li span {
             color: #000000;
-            font-size: 0.65em;
+            font-size: 11px;
         }
 
-    div#accessibility ul li:not(:last-child) {
+    #accessibility > ul > li:not(:last-child) {
         border-left: 1px solid #414141;
     }
 
@@ -213,66 +222,66 @@ div#accessibility {
 /* @section CONTENT {{{
  ******************************************************************************/
 
-body.blog section#content,
-body.archives section#content {
+body.blog #content,
+body.archives #content {
     width: 730px;
 }
 
-body.contact section#content {
+body.contact #content {
     width: 600px;
 }
 
-section#content {
+#content {
     float: left;
     padding-top: 10px;
     padding-left: 20px;
 }
-    section#content h1,
-    section#content h2,
-    section#content h3,
-    section#content h4,
-    section#content h5,
-    section#content h6,
-    section#content p {
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6,
+    #content p {
         text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
     }
 
     /* @section NAVIGATION INNER {{{
      ******************************************************************************/
 
-    section#navigation-inner {
+    #navigation-inner {
         width: 100%;
         margin: 10px 0 20px;
     }
-        section#navigation-inner ul,
-        section#navigation-inner em {
+        #navigation-inner ul,
+        #navigation-inner em {
             float: left;
         }
 
-        section#navigation-inner ul li {
+        #navigation-inner ul li {
             float: left;
             height: 30px;
         }
 
-        section#navigation-inner ul li:first-child {
+        #navigation-inner ul li:first-child {
             margin-left: 10px;
         }
 
-        section#navigation-inner ul li:not(:first-child) {
+        #navigation-inner ul li:not(:first-child) {
             margin-left: 15px;
         }
 
-        section#navigation-inner ul li,
-        section#navigation-inner ul li a {
+        #navigation-inner ul li,
+        #navigation-inner ul li a {
             font-size: 1em;
             color: #34312E;
         }
 
-        section#navigation-inner ul li:last-child {
+        #navigation-inner ul li:last-child {
             background: transparent url('/media/img/current_pic.png') no-repeat left bottom;
         }
 
-        section#navigation-inner ul li:first-child span {
+        #navigation-inner ul li:first-child span {
             background-position: -69px 0;
             margin-right: 5px;
             display: inline-block;
@@ -281,7 +290,7 @@ section#content {
             background-repeat: no-repeat;
         }
 
-        section#navigation-inner ul li:not(:first-child) span {
+        #navigation-inner ul li:not(:first-child) span {
             background-position: -81px 0;
             margin-right: 5px;
             display: inline-block;
@@ -295,19 +304,19 @@ section#content {
     /* @section ARTICLE {{{
      ******************************************************************************/
 
-    section#content > article {
+    #content > article {
         margin-bottom: 50px;
     }
 
-    section#content ol {
+    #content ol {
         padding: 10px;
         margin-left: 30px;
     }
-        section#content ol li:not(:last-child) {
+        #content ol li:not(:last-child) {
             margin-bottom: 10px;
         }
 
-        section#content > article > header {
+        #content > article > header {
             width: 96px;
             text-align: right;
             padding-right: 20px;
@@ -469,6 +478,7 @@ section#content {
         div.entry-information {
             float: left;
             width: 595px;
+            margin-bottom: 20px;
         }
             div.entry-author,
             div.datetime,
@@ -623,7 +633,7 @@ section#content {
             div.entry-body p a,
             div.entry-content li a,
             .comment header a,
-            section#content ol li a,
+            #content ol li a,
             a.link {
                 color: #222;
                 text-decoration: none;
@@ -633,7 +643,7 @@ section#content {
             div.entry-body p a:active,
             div.entry-content li a:active,
             .comment header a:active,
-            section#content ol li a:active,
+            #content ol li a:active,
             a.link:active {
                 color: #8b1109;
             }
@@ -646,7 +656,7 @@ section#content {
             div.entry-body p a:hover,
             div.entry-content li a:hover,
             .comment header a:hover,
-            section#content ol li a:hover,
+            #content ol li a:hover,
             a.link:hover {
                 color: #222;
                 background-color: transparent;
@@ -655,7 +665,7 @@ section#content {
             div.entry-body p a:visited,
             div.entry-content li a:visited,
             .comment header a:visited,
-            section#content ol li a:visited,
+            #content ol li a:visited,
             a.link:visited {
                 color: #222;
                 background-color: rgba(226, 247, 226, .4);
@@ -683,7 +693,6 @@ section#content {
 
         div.entry-meta {
             display: inline-block;
-            margin-bottom: 20px;
         }
             div.entry-meta ul li {
                 display: inline-block;
@@ -726,25 +735,25 @@ section#content {
         /* @section NAVIGATION {{{
          ******************************************************************************/
 
-        div#entry-navigation {
+        #entry-navigation {
             padding-right: 20px;
             margin-bottom: 40px;
         }
-            div#entry-navigation a.entry-previous {
+            #entry-navigation a.entry-previous {
                 float: left;
             }
 
-            div#entry-navigation a.entry-next {
+            #entry-navigation a.entry-next {
                 float: right;
             }
 
-            div#entry-navigation a.entry-next span {
+            #entry-navigation a.entry-next span {
                 background-position: -44px -23px;
                 height: 26px;
                 width: 31px;
             }
 
-            div#entry-navigation a.entry-previous span {
+            #entry-navigation a.entry-previous span {
                 height: 26px;
                 background-position: -12px -23px;
                 width: 30px;
@@ -761,27 +770,27 @@ section#content {
 /* @section COMMENTS {{{
  ******************************************************************************/
 
-div#mptt-comments-tree {
+#mptt-comments-tree {
     padding: 1em 15px 1em 0;
 }
     /* comments at the root of the tree */
-    div#mptt-comments-tree > .comment,
+    #mptt-comments-tree > .comment,
     .new-comment-form-wrapper > .comment {
         padding-left: 100px;
         margin-bottom: 10px;
     }
-        div#mptt-comments-tree > .comment > .comment-whole > .comment-body,
+        #mptt-comments-tree > .comment > .comment-whole > .comment-body,
         .new-comment-form-wrapper > .comment > .comment-whole > .comment-body {
             background: #F0F0F0 url('/media/img/comment_parent_bg.png') no-repeat left top;
         }
 
-        div#mptt-comments-tree > .comment > .comment-whole header,
+        #mptt-comments-tree > .comment > .comment-whole header,
         .new-comment-form-wrapper > .comment > .comment-whole header {
             position: absolute;
             left: -100px;
         }
 
-        div#mptt-comments-tree > .comment > .comment-whole .comment-body-content,
+        #mptt-comments-tree > .comment > .comment-whole .comment-body-content,
         .new-comment-form-wrapper > .comment > .comment-whole .comment-body-content {
             padding-left: 38px !important;
         }
@@ -831,12 +840,12 @@ div#mptt-comments-tree {
             min-height: 60px;
         }
 
-        div#mptt-comments-tree > .comment > .comment-whole .comment-reply {
+        #mptt-comments-tree > .comment > .comment-whole .comment-reply {
             left: 18px;
             bottom: 0;
         }
 
-        div#mptt-comments-tree > .comment > .comment-whole .comment-meta {
+        #mptt-comments-tree > .comment > .comment-whole .comment-meta {
             text-align: center;
             margin-top: 5px;
         }
@@ -1017,7 +1026,7 @@ article.archive {
 /* @section SIDEBAR {{{
  ******************************************************************************/
 
-nav#sidebar {
+#sidebar {
     width: 234px;
     float: right;
     margin-right: 20px;
@@ -1027,24 +1036,24 @@ nav#sidebar {
     min-height: 400px;
 }
 
-section#syndication {
+#syndication {
     background-position: -136px 0px;
     top: -22px;
     left: 7px;
     position: relative;
 }
-    section#syndication,
-    section#syndication a {
+    #syndication,
+    #syndication a {
         width: 155px;
         height: 100px;
     }
 
-    section#syndication a {
+    #syndication a {
         text-indent: -500em;
         display: block;
     }
 
-section#sidebar-content {
+#sidebar-content {
     margin-top: 20px;
     background-color: #34312E;
 }
@@ -1100,17 +1109,17 @@ ul li.title {
         background-color: #2B2927;
     }
 
-section#search {
+#search {
     background-position: -30px -128px;
     width: 177px;
     height: 24px;
     margin: 0 0 30px 28px;
 }
 
-div#search-input {
+#search-input {
     float: left;
 }
-    div#search-input input[type=text] {
+    #search-input input[type=text] {
         border-width: 0;
         height: 18px;
         font-size: 0.8em;
@@ -1118,14 +1127,14 @@ div#search-input {
         width: 145px;
     }
 
-div#search-button {
+#search-button {
     float: left;
     height: 17px;
     width: 17px;
     top: 3px;
     position: relative;
 }
-    div#search-button input[type=submit] {
+    #search-button input[type=submit] {
         height: 17px;
         width: 18px;
         background-position: -19px -90px;
@@ -1133,16 +1142,16 @@ div#search-button {
         text-indent: -9999em;
     }
 
-div#search-mentions p {
+#search-mentions p {
     margin-top: 5px;
     font-size: 0.65em;
     color: #000000;
 }
 
-section#twitter {
+#twitter {
     padding: 50px 0;
 }
-    section#twitter > span.icon {
+    #twitter > span.icon {
         background-position: -192px -384px;
         width: 105px;
         height: 22px;
@@ -1151,16 +1160,16 @@ section#twitter {
         margin: 0 auto;
     }
 
-    section#twitter ul li {
+    #twitter ul li {
         margin-bottom: 20px;
     }
 
-section#facebook {
+#facebook {
     margin: 0 auto 10px;
     width: 100px;
 }
 
-    section#facebook span {
+    #facebook span {
         background-position: -286px 0;
         width: 100px;
         height: 118px;
@@ -1229,13 +1238,13 @@ div.twitter-container {
 /* @section FOOTER {{{
  ******************************************************************************/
 
-footer#footer {
+#footer {
     position: relative;
     background: #34312E url('/media/img/footer_bg.png') repeat-x center top;
     padding-top: 60px;
 }
 
-    div#footer-worm-container > span {
+    #footer-worm-container > span {
         background-position: -192px -224px;
         position: absolute;
         height: 132px;
@@ -1244,18 +1253,18 @@ footer#footer {
         width: 99px;
     }
 
-    div#footer-worm-container > ul {
+    #footer-worm-container > ul {
         padding: 25px 0;
     }
-        div#footer-worm-container > ul > li {
+        #footer-worm-container > ul > li {
             float: left;
             max-width: 280px;
         }
 
-        div#footer-worm-container > ul > li:not(:last-child) {
+        #footer-worm-container > ul > li:not(:last-child) {
             margin-right: 30px;
         }
-            div#footer-worm-container > ul > li h1 {
+            #footer-worm-container > ul > li h1 {
                 color: #19161A;
                 text-align: center;
                 font-size: 1.1em;
@@ -1263,7 +1272,7 @@ footer#footer {
                 font-weight: bold;
             }
 
-            div#footer-worm-container > ul > li h1 span {
+            #footer-worm-container > ul > li h1 span {
                 background-position: -104px 0;
                 position: relative;
                 top: 8px;
@@ -1272,44 +1281,77 @@ footer#footer {
                 width: 18px;
             }
 
-            div#footer-worm-container > ul > li div ul {
+            #footer-worm-container > ul > li div ul {
                 background-color: #19161A;
                 padding: 10px;
                 -moz-border-radius: 10px;
                 -webkit-border-radius: 10px;
                 border-radius: 10px;
             }
-                div#footer-worm-container > ul > li div ul.link-list li:not(:last-child) {
+                #footer-worm-container > ul > li div ul.link-list li:not(:last-child) {
                     margin-bottom: 12px;
                 }
-                    div#footer-worm-container > ul > li div ul.link-list li a,
-                    div#footer-worm-container > ul > li div ul.link-list li {
+                    #footer-worm-container > ul > li div ul.link-list li a,
+                    #footer-worm-container > ul > li div ul.link-list li {
                         color: #4B4743;
                     }
 
-                    div#footer-worm-container > ul > li div ul li a {
+                    #footer-worm-container > ul > li div ul li a {
                         font-size: 0.8em;
                     }
 
-                    div#footer-worm-container > ul > li div ul.link-list li a:hover {
+                    #footer-worm-container > ul > li div ul.link-list li a:hover {
                         border-bottom: 1px dashed #4B4743;
                         color: #594531;
                     }
 
-        div#copyright {
+        #copyright {
             width: 420px;
             height: 49px;
             margin: 20px auto 0;
             background-position: -30px -171px;
         }
 
-        div#footer-tag-list ul.chart-list {
+        #footer-tag-list ul.chart-list {
             width: 250px;
         }
 
-        footer#footer span.tag-count {
+        #footer span.tag-count {
             font-size: 0.8em;
         }
+
+/*}}}*/
+
+/* @section LOCALES {{{
+ ******************************************************************************/
+
+#locales {
+    padding: 10px 0 50px;
+    background-color: #19161A;
+    margin-top: 20px;
+}
+
+#sites {
+    padding: 0 15px;
+}
+
+#sites ul li {
+    float: left;
+}
+
+#sites ul li a,
+#sites ul li {
+    font-size: 14px;
+    color: #4B4743;
+}
+
+#sites ul li a:hover {
+    color: #594531;
+}
+
+#sites ul li:not(:last-child) {
+    margin-right: 20px;
+}
 
 /*}}}*/
 
@@ -1380,24 +1422,24 @@ div.contact {
 /* @section TAGS {{{
  ******************************************************************************/
 
-div#tag-list {
+#tag-list {
     font-size: 0.9em;
 }
-    div#tag-list ul.chart-list {
+    #tag-list ul.chart-list {
         border-top: 1px solid #F7EEE8;
     }
-        div#tag-list ul.chart-list li {
+        #tag-list ul.chart-list li {
             border-bottom: 1px solid #F7EEE8;
             height: 20px;
         }
 
-        div#tag-list ul.chart-list li:hover span.index {
+        #tag-list ul.chart-list li:hover span.index {
             border-right: 2px solid #88C284;
             background: #F7EEE8 none repeat scroll 0% 0%;
         }
 
-        div#tag-list ul.chart-list li,
-        div#tag-list ul.chart-list span.tag-count {
+        #tag-list ul.chart-list li,
+        #tag-list ul.chart-list span.tag-count {
             padding: 5px 1px 0;
         }
 
@@ -1406,26 +1448,26 @@ div#tag-list {
 /* @section ABOUT {{{
  ******************************************************************************/
 
-div#business-card {
+#business-card {
     width: 484px;
     margin: 0 auto 20px;
 }
-    div#business-card ul li {
+    #business-card ul li {
         background-image: url('/media/img/business_cards.png');
         float: left;
         height: 250px;
     }
 
-    div#business-card ul li:not(:last-child) {
+    #business-card ul li:not(:last-child) {
         margin-right: 50px;
     }
 
-    div#business-card ul li.business-card-thoas {
+    #business-card ul li.business-card-thoas {
         width: 226px;
         background-position: 0px 0px;
     }
 
-    div#business-card ul li.business-card-norelijn {
+    #business-card ul li.business-card-norelijn {
         width: 208px;
         background-position: 208px 0;
     }
@@ -1440,6 +1482,7 @@ a[rel*=external] {
     background-repeat: no-repeat;
     background-position: right center;
     padding: 0 15px 0 0;
+    font-size: 0.8em !important;
 }
 
 ul.chart-list {

@@ -1,4 +1,4 @@
-{% load flatblock_tags mptt_comments_tags profiles cache navbar generic_content blog compress analytics feeds i18n archive tagging_related %}
+{% load flatblock_tags mptt_comments_tags profiles cache navbar generic_content blog compress analytics feeds i18n archive tagging_related localeurl_tags %}
 <!DOCTYPE html>
 <html lang="fr-fr">
 <head>
@@ -42,8 +42,21 @@
             <li><a href="#footer" title="{% trans "Go to footer" %}">{% trans "Go to footer" %}</a></li>
             <li><a href="#content" title="{% trans "Go to content" %}">{% trans "Go to content" %}</a></li>
             <li><a href="#nav-menu" title="{% trans "Go to navigation" %}">{% trans "Go to navigation" %}</a></li>
+            <li>
+                <span>{% trans "Language:" %}</span>
+                <form id="locale-switcher" method="POST" action="{% url localeurl_change_locale %}">
+                    <select name="locale">
+                        {% for lang in LANGUAGES %}
+                            <option value="{{ lang.0 }}" {% ifequal lang.0 LANGUAGE_CODE %}selected="selected"{% endifequal %}>{{ lang.1 }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="submit" value="{% trans "Ok" %}" />
+                </form>
+            </li>
         </ul>
         <div class="clear"></div>
+    </div>
+    <div id="language">
     </div>
     <div id="whole">
         <div id="wrapper">
@@ -258,6 +271,20 @@
             <div class="clear"></div>
             <div id="copyright" class="icon"></div>
             <span class="icon"></span>
+        </div>
+        <div id="locales">
+            <div id="sites">
+                <ul>
+                {% for lang in LANGUAGES %}
+                    {% ifequal lang.0 LANGUAGE_CODE %}
+                        <li class="selected">{{ lang.1 }}</li>
+                    {% else %}
+                        <li><a href="{{ request.path|chlocale:lang.0 }}">{{ lang.1 }}</a></li>
+                    {% endifequal %}
+                {% endfor %}
+                </ul>
+                <div class="clear"></div>
+            </div>
         </div>
     </footer>
 

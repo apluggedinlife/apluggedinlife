@@ -2,11 +2,20 @@ $(document).ready(function(){
     prettyPrint();
 
     $('.share-items')
-        .hide()
+        .hide();
 
-    $('a[href*=#]').click(function() {
+    $('form#locale-switcher')
+        .children('input[type=submit]')
+        .hide()
+        .end()
+        .children('select[name=locale]')
+        .change(function(){
+            $(this).parent().submit();
+        });
+
+    $('a[href*=#]').click(function(){
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
-        && location.hostname == this.hostname) {
+            && location.hostname == this.hostname) {
             var $target = $(this.hash);
             $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
             if ($target.length) {
@@ -18,7 +27,7 @@ $(document).ready(function(){
         }
     });
 
-    $('a[rel*=external]').click( function() {
+    $('a[rel*=external]').click( function(){
         window.open(this.href);
         return false;
     });

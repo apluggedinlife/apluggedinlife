@@ -129,6 +129,8 @@ urlpatterns += patterns('',
         serve_download(serve),
         {'document_root': settings.MEDIA_ROOT},
         name='download'),
+
+    url(r'^localeurl/', include('localeurl.urls')),
 )
 
 if settings.DEBUG:

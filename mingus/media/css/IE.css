@@ -10,7 +10,7 @@
 @font-face {
     font-family: 'AlfredosDanceRegular';
     src: url('alfredo-webfont.eot');
-    src: local('☺'), url('/media/font/alfredo-webfont.woff') format('woff'), url('/media/font/alfredo-webfont.ttf') format('truetype'), url('/media/font/alfredo-webfont.svg#webfontRdQzYRlH') format('svg');
+    src: local('☺'), url('/media/font/alfredo-webfont.woff') format('woff'), url('/media/font/alfredo-webfont.ttf') format('truetype'), url('/media/font/alfredo-webfont.#webfontRdQzYRlH') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -66,22 +66,22 @@ a > img {
 /* @section ACCESSIBILITY {{{
  ******************************************************************************/
 
-div#accessibility {
+#accessibility {
     padding: 0.4em;
     margin-bottom: 20px;
     background-color: #fdf6ed;
 }
-    div#accessibility ul li {
+    #accessibility ul li {
         float: right;
         margin-left: 0.5em;
         padding-left: 0.5em;
     }
-        div#accessibility ul li a {
+        #accessibility ul li a {
             color: #000000;
             font-size: 0.65em;
         }
 
-    div#accessibility ul li.stroke {
+    #accessibility ul li.stroke {
         border-left: 1px solid #414141;
     }
 
@@ -90,7 +90,7 @@ div#accessibility {
 /* @section GLOBAL CONTENT {{{
  ******************************************************************************/
 
-div#whole {
+#whole {
     margin: 0 0;
     padding: 0 0;
     width: 100%;
@@ -98,14 +98,14 @@ div#whole {
     border-width: 0;
 }
 
-div#wrapper {
+#wrapper {
     width: 1005px;
     margin: 0 auto;
 }
-    div#wrapper div#header {
+    #wrapper #header {
         position: relative;
     }
-        div#wrapper div#header h1.logo {
+        #wrapper #header h1.logo {
             text-indent: -500em;
             background-repeat: no-repeat;
             background-image: url('/media/img/ie/ie_header.png');
@@ -114,31 +114,31 @@ div#wrapper {
             margin: 0 auto;
         }
 
-div#content,
-div#introduction {
+#content,
+#introduction {
     margin-top: 30px;
     text-align: left;
 }
-    div#content article {
+    #content article {
         margin-bottom: 50px;
     }
 
-    div#content ol li {
+    #content ol li {
         position: relative;
         margin-top: 30px;
     }
 
-    div#quotation {
+    #quotation {
         float: left;
         padding: 25px 0;
     }
 
-    div#quotation p {
+    #quotation p {
         color: #493213;
         font-size: 16px;
     }
 
-    div#not-wanted {
+    #not-wanted {
         background-repeat: no-repeat;
         background-image: url('/media/img/ie/ie_not_wanted.png');
         width: 201px;
@@ -146,7 +146,7 @@ div#introduction {
         float: right;
     }
 
-div#copyright {
+#copyright {
     width: 479px;
     height: 49px;
     margin: 0 auto;

@@ -18,8 +18,9 @@ LANGUAGE_CODE = 'fr'
 
 ugettext = lambda s: s
 LANGUAGES = (
-    ('fr', ugettext('French')),
+    ('fr', ugettext('Français')),
     ('en', ugettext('English')),
+    ('es', ugettext('Español')),
 )
 
 LOCALE_PATHS = (
@@ -37,6 +38,7 @@ TEMPLATE_DIRS = (
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'localeurl.middleware.LocaleURLMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
@@ -60,6 +62,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request'
 )
 
+LOCALE_INDEPENDENT_PATHS = (
+    re.compile('^/admin/$'),
+)
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -70,6 +76,7 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'django.contrib.redirects',
 
+    'localeurl',
     'django_extensions',
     'tagging',
     'djangodblog',
