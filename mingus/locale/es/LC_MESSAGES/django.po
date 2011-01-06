@@ -7,85 +7,233 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-01 20:52-0500\n"
+"POT-Creation-Date: 2011-01-05 19:28+0100\n"
 "PO-Revision-Date: 2010-02-02 18:44+0100\n"
 "Last-Translator: Pablo Martí <pmargam@gmail.com>\n"
 "Language-Team: Spanish <ES@li.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: core/templatetags/tagging_related.py:21
+#: settings.py:21
+msgid "Français"
+msgstr ""
+
+#: settings.py:22
+msgid "English"
+msgstr ""
+
+#: settings.py:23
+msgid "Español"
+msgstr ""
+
+#: core/templatetags/tagging_related.py:25
 #, python-format
 msgid "tagged_get_related tag was given an invalid input: %s"
 msgstr "la etiqueta tagged_get_related recibó una entrada inválida: %s"
 
-#: core/templatetags/tagging_related.py:35
+#: core/templatetags/tagging_related.py:39
 #, python-format
 msgid "%s tag requires either five or seven arguments"
 msgstr "la etiqueta %s requiere cinco o siete argumentos"
 
-#: core/templatetags/tagging_related.py:37
+#: core/templatetags/tagging_related.py:41
 #, python-format
 msgid "second argument to %s tag must be 'in'"
 msgstr "el segundo argumento para la etiqueta %s debe de ser 'in'"
 
-#: core/templatetags/tagging_related.py:39
+#: core/templatetags/tagging_related.py:43
 #, python-format
 msgid "fourth argument to %s tag must be 'as'"
 msgstr "el cuarto argumento para la etiqueta %s debe de ser 'as'"
 
-#: core/templatetags/tagging_related.py:42
+#: core/templatetags/tagging_related.py:46
+#: core/templatetags/tagging_related.py:110
 #, python-format
 msgid "if given, fourth argument to %s tag must be 'with'"
 msgstr "si es dado, el cuarto argumento para la etiqueta %s debe de ser 'with'"
 
-#: core/templatetags/tagging_related.py:49
+#: core/templatetags/tagging_related.py:53
+#: core/templatetags/tagging_related.py:117
 #, python-format
 msgid "%(tag)s tag's '%(option)s' option was not a valid integer: '%(value)s'"
-msgstr "la opción '%(option)s' de la etiqueta %(tag)s no es un entero válido: '%(value)s'"
+msgstr ""
+"la opción '%(option)s' de la etiqueta %(tag)s no es un entero válido: "
+"'%(value)s'"
 
-#: core/templatetags/tagging_related.py:55
+#: core/templatetags/tagging_related.py:59
+#: core/templatetags/tagging_related.py:123
 #, python-format
 msgid "%(tag)s tag was given an invalid option: '%(option)s'"
 msgstr "la etiqueta %(tag)s ha recibido una opción inválida: '%(option)s'"
 
-#: core/templatetags/tagging_related.py:60
+#: core/templatetags/tagging_related.py:64
+#: core/templatetags/tagging_related.py:128
 #, python-format
 msgid "%(tag)s tag was given a badly formatted option: '%(option)s'"
-msgstr "la etiqueta %(tag)s ha recibido una opción mal formateada: '%(option)s'"
+msgstr ""
+"la etiqueta %(tag)s ha recibido una opción mal formateada: '%(option)s'"
 
-#: templates/base.html:87
+#: core/templatetags/tagging_related.py:106
+#, fuzzy, python-format
+msgid "second argument to %s tag must be 'as'"
+msgstr "el segundo argumento para la etiqueta %s debe de ser 'in'"
+
+#: templates/404.html:8
+msgid "Page not found"
+msgstr "No se encuentra la página solicitada"
+
+#: templates/500.html:9
+msgid "Internal error"
+msgstr "Error interno del servidor"
+
+#: templates/about.html:8 templates/about.html.py:13 templates/base.html:71
 msgid "About"
-msgstr "Acerca de"
+msgstr "Acerca"
 
-#: templates/base.html:105
-msgid "Elsewhere"
-msgstr "En otros sitios"
+#: templates/about.html:22
+msgid "Authors"
+msgstr "Autores"
 
-#: templates/base.html:117
+#: templates/about.html:31
+msgid "More about our site"
+msgstr "Más acerca del sitio"
+
+#: templates/about.html:33
+msgid ""
+"\n"
+"        A big thanks to <a href=\"http://montylounge.com/\" title=\"monty "
+"lounge industries\">Kevin Fricovsky</a>\n"
+"        for his Open-Source blogware powered by Django: <a href=\"http://"
+"github.com/montylounge/django-mingus\" title=\"django-mingus\">django-"
+"mingus</a>.\n"
+"        <br />\n"
+"        Thanks for the support, for being that receptive and willing to "
+"share.\n"
+"        "
+msgstr ""
+"\n"
+"        Un agradecimento especial a <a href=\"http://montylounge.com/\" "
+"title=\"monty lounge industries\">Kevin Fricovsky</a>\n"
+"        para su motor de blog Open-Source utilizando Django: <a href="
+"\"http://github.com/montylounge/django-mingus\" title=\"django-mingus"
+"\">django-mingus</a>.\n"
+"        <br />\n"
+"        Gracias por la ayuda, por haber estado tan abierto y por la voluntad "
+"de compartir.\n"
+"        "
+
+#: templates/about.html:41
+msgid ""
+"\n"
+"        For those who appreciate our website menu design,\n"
+"        all the credit goes to <a href=\"http://www.dandypark.se/\" title="
+"\"Dandypark\">Dandypark</a> for the idea<br />\n"
+"        and <a href=\"http://deaxon.com\" title=\"Deaxon - Software design"
+"\">Deaxon</a> for its <a href=\"http://playground.deaxon.com/\" title="
+"\"Deaxon's playground\">playground</a>\n"
+"        about HTML5/CSS3, thanks a lot!\n"
+"        "
+msgstr ""
+"\n"
+"        Para aquellos a los que les gusta el menú del sitio,\n"
+"        todo el mérito es para <a href=\"http://www.dandypark.se/\" title="
+"\"Dandypark\">Dandypark</a> que tuvo la idea<br />\n"
+"        y para <a href=\"http://deaxon.com\" title=\"Deaxon - Software design"
+"\">Deaxon</a> para su <a href=\"http://playground.deaxon.com/\" title="
+"\"Deaxon's playground\">playground</a>\n"
+"        sobre HTML5/CSS3 ¡muchísimas gracias!\n"
+"        "
+
+#: templates/about.html:48
+msgid ""
+"Thanks again to <a href=\"http://jeffcroft.com/\" title=\"Jeff Croft\">Jeff "
+"Croft</a> for the fancy tags pyramid you can see in our footer."
+msgstr ""
+"Gracias de nuevo a <a href=\"http://jeffcroft.com/\" title=\"Jeff Croft"
+"\">Jeff Croft</a> por la original pirámide de tags que podéis ver en el pie "
+"de página."
+
+#: templates/base.html:42
+msgid "Go to footer"
+msgstr "Ir al pie de página"
+
+#: templates/base.html:43
+msgid "Go to content"
+msgstr "Ir al contenido"
+
+#: templates/base.html:44
+msgid "Go to navigation"
+msgstr "Ir a la navegación"
+
+#: templates/base.html:46
+msgid "Language:"
+msgstr "Idiomas:"
+
+#: templates/base.html:53
+msgid "Ok"
+msgstr ""
+
+#: templates/base.html:65 templates/base.html.py:93
+#: templates/proxy/proxy_list.html:9
+msgid "Home"
+msgstr "Portada"
+
+#: templates/base.html:68 templates/blog/blogroll.html:47
+#: templates/blog/blogroll.html.py:51
+msgid "Blogroll"
+msgstr "Blogroll"
+
+#: templates/base.html:74 templates/contact_form/base_contact.html:8
+#: templates/contact_form/contact_form.html:5
+msgid "Contact"
+msgstr "Contacto"
+
+#: templates/base.html:77 templates/base.html.py:139
+#: templates/blog/archive_list.html:13 templates/blog/archive_list.html:16
+#: templates/blog/post_archive_day.html:12
+#: templates/blog/post_archive_month.html:12
+#: templates/blog/post_archive_year.html:12
+msgid "Archives"
+msgstr "Archivos"
+
+#: templates/base.html:90
+msgid "You are here:"
+msgstr "Estas ahí:"
+
+#: templates/base.html:93
+msgid "Homepage"
+msgstr "Página principal"
+
+#: templates/base.html:104
+msgid "Syndication"
+msgstr "Sindicación"
+
+#: templates/base.html:122
+msgid "Search on this website via Google"
+msgstr "Buscar en el sitio mediante Google"
+
+#: templates/base.html:128
 msgid "Categories"
 msgstr "Categorías"
 
-#: templates/base.html:129 templates/contact_form/contact_form_sent.html:13
-msgid "Recent Posts"
-msgstr "Entradas Recientes"
+#: templates/base.html:150
+msgid "Popular posts"
+msgstr "Entradas populares"
 
-#: templates/base.html:140
-msgid "Archive"
-msgstr "Archivo"
+#: templates/base.html:217
+msgid "Last entries"
+msgstr "Últimas entradas"
 
-#: templates/base.html:151
-msgid "BlogRoll"
-msgstr "BlogRoll"
+#: templates/base.html:232
+msgid "Last comments"
+msgstr "Últimos comentarios"
 
-#: templates/base.html:163
-msgid "Popular Posts"
-msgstr "Entradas Populares"
-
-#: templates/base.html:175
-msgid "Django Popular"
-msgstr "Django Popular"
+#: templates/base.html:252 templates/blog/tag_list.html:6
+#: templates/blog/tag_list.html.py:14
+msgid "Tags"
+msgstr ""
 
 #: templates/admin/base_site.html:4
 msgid "Mingus site admin"
@@ -107,91 +255,273 @@ msgstr "Contraseña:"
 msgid "Log in"
 msgstr "Entrar"
 
-#: templates/blog/category_detail.html:5
-#: templates/blog/category_detail.html:11
-#: templates/blog/post_archive_day.html:9
-#: templates/blog/post_archive_month.html:9
-#: templates/blog/post_archive_year.html:9 templates/blog/tag_detail.html:4
-msgid "Posts for"
-msgstr "Entradas para"
+#: templates/blog/archive_post_list.html:7
+#: templates/proxy/includes/post_item.html:8
+msgid "Read more"
+msgstr "Leer más"
 
-#: templates/blog/category_list.html:9
-msgid "Post categories"
-msgstr "Categorías de entradas"
+#: templates/blog/blogroll.html:56
+msgid "Map"
+msgstr "Mapa"
 
-#: templates/blog/post_detail.html:72
-msgid "Twitter this"
-msgstr "Twittealo"
+#: templates/blog/blogroll.html:62
+msgid "Links and OPML"
+msgstr "Enlaces y OPML"
 
-#: templates/blog/post_detail.html:75
-msgid "Reddit this"
-msgstr "Redittealo"
+#: templates/blog/category_detail.html:4
+#: templates/blog/category_detail.html:12
+msgid "Posts for category"
+msgstr "Entradas para la categoría"
 
-#: templates/blog/post_detail.html:76
-msgid "Add to Delicious"
-msgstr "Añadir a Delicious"
+#: templates/blog/category_list.html:10
+msgid "Posts categories"
+msgstr "Categorías de las entradas"
 
-#: templates/blog/post_detail.html:78
-msgid "Subscribe RSS"
-msgstr "Suscribir al RSS"
+#: templates/blog/post_archive_day.html:4
+#: templates/blog/post_archive_month.html:4
+#: templates/blog/post_archive_year.html:4
+msgid "Archives for"
+msgstr "Archivos para"
 
 #: templates/blog/post_search.html:5 templates/blog/post_search.html.py:10
 msgid "Search results for:"
 msgstr "Resultados de búsqueda para:"
 
-#: templates/blog/tag_detail.html:10
-msgid "Posts tagged:"
-msgstr "Entradas etiquetadas:"
+#: templates/blog/includes/base_post.html:11
+msgid "comments"
+msgstr "comentarios"
 
-#: templates/contact_form/contact_form.html:4
-msgid "Contact"
-msgstr "Contactar"
+#: templates/blog/includes/base_post.html:77
+#, python-format
+msgid "Previous entry: %(previous_post)s"
+msgstr "Entrada precedente: %(previous_post)s"
+
+#: templates/blog/includes/base_post.html:83
+#, python-format
+msgid "Next entry: %(next_post)s"
+msgstr "Entrada siguiente: %(next_post)s"
+
+#: templates/blog/includes/pagination.html:6
+msgid "Older posts"
+msgstr "Antiguas entradas"
+
+#: templates/blog/includes/pagination.html:11
+msgid "Newer posts"
+msgstr "Entradas recientes"
+
+#: templates/blog/includes/post_detail.html:20
+msgid "Related posts"
+msgstr "Entradas relacionadas"
+
+#: templates/blog/includes/post_detail.html:20
+msgid "Permalink to related posts of this post"
+msgstr "Enlace permanente hacia entradas relacionadas"
+
+#: templates/comments/comments_media.html:70
+msgid "Your comment has been posted."
+msgstr "Ha sido registrado tu comentario."
+
+#: templates/comments/display_comment.html:7
+#: templates/comments/display_comment_preview.html:7
+#: templates/comments/display_comments_tree.html:11
+msgid "gravatar"
+msgstr ""
+
+#: templates/comments/display_comment.html:11
+#: templates/comments/display_comment_preview.html:11
+#: templates/comments/display_comments_tree.html:15
+msgid "go to "
+msgstr "ir a "
+
+#: templates/comments/display_comment.html:19
+#: templates/comments/display_comments_tree.html:23
+msgid "comment detail"
+msgstr "detalle del comentario"
+
+#: templates/comments/display_comment.html:31
+#: templates/comments/display_comments_tree.html:35
+msgid "Reply to the comment"
+msgstr "Contestar al comentario"
+
+#: templates/comments/display_comment.html:38
+#: templates/comments/display_comments_tree.html:42
+msgid "show hidden replies"
+msgstr "mostrar los comentarios escondidos"
+
+#: templates/comments/display_comments_toplevel.html:8
+#: templates/comments/subtree.html:14
+msgid "Comments"
+msgstr "Comentarios"
+
+#: templates/comments/display_comments_toplevel.html:9
+msgid "Permalink to comments"
+msgstr "Enlace permanente hacia los comentarios"
+
+#: templates/comments/display_comments_toplevel.html:20
+#, python-format
+msgid "Still %(remaining)s comments left"
+msgstr "Todavía quedan %(remaining)s comentarios"
+
+#: templates/comments/display_comments_toplevel.html:28
+msgid "Post a new comment"
+msgstr "Deja un nuevo comentario"
+
+#: templates/comments/display_comments_toplevel.html:29
+msgid "Permalink to post a new comment"
+msgstr "Enlace permanente hacia un nuevo comentario"
+
+#: templates/comments/form.html:25
+msgid "Preview"
+msgstr "Previsualizar"
+
+#: templates/comments/form.html:27 templates/contact_form/contact_form.html:44
+msgid "Post"
+msgstr "Enviar"
+
+#: templates/comments/posted.html:7
+msgid "Thanks for your comment"
+msgstr "Gracias por haber comentado"
+
+#: templates/comments/posted.html:11
+#: templates/contact_form/contact_form_sent.html:18
+msgid "Recent Posts"
+msgstr "Entradas Recientes"
+
+#: templates/comments/preview.html:7
+msgid "Preview of your comment"
+msgstr "Previsualizar mi comentario"
 
 #: templates/contact_form/contact_form.html:10
-#: templates/contact_form/contact_form_sent.html:8
-msgid "Contact me"
-msgstr "Contáctame"
+#: templates/contact_form/contact_form_sent.html:9
+msgid "Contact us"
+msgstr "Contactarnos"
 
 #: templates/contact_form/contact_form.html:12
-msgid "Get in touch."
-msgstr "Contacta al autor"
+msgid "Want to contact us?"
+msgstr "¿Quieres ponerte en contacto con nosotros?"
+
+#: templates/contact_form/contact_form.html:14
+msgid "Fill in the form below, we will answer you as soon as possible"
+msgstr ""
+"Rellena el formulario a continuación, te responderemos lo antes posible"
+
+#: templates/contact_form/contact_form.html:16
+msgid "This is our primary address, we check it regulary."
+msgstr ""
+"Esta dirección es nuestra dirección principal, leemos los correos a diaro"
 
 #: templates/contact_form/contact_form.html:18
-msgid "Woops, looks like you forgot some information."
-msgstr "Oops, parece que olvidaste algún dato."
+msgid "Futher information"
+msgstr "Para más información"
 
-#: templates/contact_form/contact_form.html:28
-msgid "Your name"
-msgstr "Tu nombre"
-
-#: templates/contact_form/contact_form.html:33
-msgid "Your email"
-msgstr "Tu email"
-
-#: templates/contact_form/contact_form.html:38
-msgid "Your message"
-msgstr "Tu mensaje"
-
-#: templates/contact_form/contact_form_sent.html:10
+#: templates/contact_form/contact_form.html:19
 msgid ""
-"Thanks! I'll make sure to respond shortly. In the meantime, check out some "
-"of my latest and greatest posts."
+"Do not hesitate to contact us if you need information about content or "
+"others."
 msgstr ""
-"¡Gracias! Me aseguraré de responder en breves. Mientras tanto, puedes echar "
-"un vistazo a algunos de mis últimas entradas."
+"No dudes en contactarnos si necesitas más informaciones acerca del sitio, "
+"del contenido o lo que sea."
 
-#: templates/proxy/proxy_search.html:27
-msgid "No results found"
-msgstr "No se encontraron resultados"
+#: templates/contact_form/contact_form.html:51
+msgid "Contact us <em>via</em> our email address"
+msgstr "Contactarnos <em>via</em> nuestra dirección email"
 
-#: templates/proxy/tag_detail.html:4
-msgid "Entries for"
-msgstr "Entradas para"
+#: templates/contact_form/contact_form.html:52
+msgid ""
+"If you have any trouble with this form, contact us at <a href=\"mailto:"
+"hello@apluggedinlife.com\">hello@apluggedinlife.com</a>."
+msgstr ""
+"Si tienes cualquier problema con el formulario, contáctanos mediante <a href="
+"\"mailto:hello@apluggedinlife.com\">hello@apluggedinlife.com</a>."
 
-#: templates/proxy/tag_detail.html:10
-msgid "Entries tagged:"
-msgstr "Entradas etiquetadas:"
+#: templates/contact_form/contact_form_sent.html:4
+#, fuzzy
+msgid "Contact confirmation"
+msgstr "Mensaje enviado"
+
+#: templates/contact_form/contact_form_sent.html:11
+msgid ""
+"\n"
+"        Thanks! We'll make sure to response shortly.<br />In the meantime, "
+"check out some of my latest and greatest posts.\n"
+"        "
+msgstr ""
+"\n"
+"¡Gracias! Intentaremos responderte en breves. Mientras tanto, puedes echar "
+"un vistazo a algunas de nuestras últimas entradas.\n"
+"        "
+
+#: templates/proxy/tag_detail.html:5 templates/proxy/tag_detail.html.py:13
+#, fuzzy
+msgid "Posts for tag"
+msgstr "Entradas para el tag"
 
 #: templates/quotes/quote_list.html:4 templates/quotes/quote_list.html.py:8
 msgid "Quotes"
 msgstr "Frases"
+
+#: templates/quotes/quote_list.html:10
+msgid "A little side note, my favorite jazz album is"
+msgstr ""
+
+#: templates/quotes/includes/quote.html:11
+msgid "Related quotes"
+msgstr ""
+
+#: templates/quotes/includes/quote.html:11
+msgid "Permalink to related quotes of this quote"
+msgstr ""
+
+#: templates/social_bookmarking/links_related.html:4
+msgid "share"
+msgstr "compatir"
+
+#: templates/social_bookmarking/links_related.html:14
+#, python-format
+msgid "Share on %(slug)s"
+msgstr "Compatir en %(slug)s"
+
+#~ msgid "Elsewhere"
+#~ msgstr "En otros sitios"
+
+#~ msgid "Django Popular"
+#~ msgstr "Django Popular"
+
+#~ msgid "Twitter this"
+#~ msgstr "Twittealo"
+
+#~ msgid "Reddit this"
+#~ msgstr "Redittealo"
+
+#~ msgid "Add to Delicious"
+#~ msgstr "Añadir a Delicious"
+
+#~ msgid "Subscribe RSS"
+#~ msgstr "Suscribir al RSS"
+
+#~ msgid "Posts tagged:"
+#~ msgstr "Entradas etiquetadas:"
+
+#~ msgid "Get in touch."
+#~ msgstr "Contacta al autor"
+
+#~ msgid "Woops, looks like you forgot some information."
+#~ msgstr "Oops, parece que olvidaste algún dato."
+
+#~ msgid "Your name"
+#~ msgstr "Tu nombre"
+
+#~ msgid "Your email"
+#~ msgstr "Tu email"
+
+#~ msgid "Your message"
+#~ msgstr "Tu mensaje"
+
+#~ msgid "No results found"
+#~ msgstr "No se encontraron resultados"
+
+#~ msgid "Entries for"
+#~ msgstr "Entradas para"
+
+#~ msgid "Entries tagged:"
+#~ msgstr "Entradas etiquetadas:"

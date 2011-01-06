@@ -8,7 +8,7 @@
  ******************************************************************************/
 
 p, h1, h2, h3, h4, h5, h6, input[type=text], a, li, span, time {
-    font-family: Arial,Helvetica,sans-serif;
+    font-family: helvetica,arial,freesans,clean,sans-serif;
     font-weight: normal;
     font-style: normal;
 }
@@ -57,15 +57,9 @@ body.archives #whole {
 }
 
 #wrapper,
-#accessibility ul,
-#sites {
+#accessibility ul {
     width: 1005px;
     margin: 0 auto;
-}
-
-#footer-worm-container > ul {
-    margin: 0 auto;
-    width: 900px;
 }
 
     #wrapper > header {
@@ -360,8 +354,8 @@ body.contact #content {
                 div.share h1 span {
                     background-position: -73px -99px;
                     position: absolute;
-                    top: 12px;
-                    left: 10px;
+                    top: 11px;
+                    left: 5px;
                     display: inline-block;
                     height: 14px;
                     width: 14px;
@@ -1254,6 +1248,8 @@ div.twitter-container {
     }
 
     #footer-worm-container > ul {
+        width: 1005px;
+        margin: 0 auto;
         padding: 25px 0;
     }
         #footer-worm-container > ul > li {
@@ -1262,7 +1258,7 @@ div.twitter-container {
         }
 
         #footer-worm-container > ul > li:not(:last-child) {
-            margin-right: 30px;
+            margin-right: 85px;
         }
             #footer-worm-container > ul > li h1 {
                 color: #19161A;
@@ -1301,7 +1297,7 @@ div.twitter-container {
                     }
 
                     #footer-worm-container > ul > li div ul.link-list li a:hover {
-                        border-bottom: 1px dashed #4B4743;
+                        border-bottom: 1px solid #4B4743;
                         color: #594531;
                     }
 
@@ -1327,21 +1323,27 @@ div.twitter-container {
 
 #locales {
     padding: 10px 0 50px;
-    background-color: #19161A;
     margin-top: 20px;
+    background: url("/media/img/world_map.png") no-repeat 50% -10px #19161A;
 }
 
 #sites {
-    padding: 0 15px;
+    width: 1005px;
+    margin: 0 auto;
 }
 
 #sites ul li {
     float: left;
 }
 
+#sites ul li.selected,
+#sites ul li:hover {
+    border-bottom: 1px solid #4B4743;
+}
+
 #sites ul li a,
 #sites ul li {
-    font-size: 14px;
+    font-size: 11px;
     color: #4B4743;
 }
 
@@ -1482,7 +1484,6 @@ a[rel*=external] {
     background-repeat: no-repeat;
     background-position: right center;
     padding: 0 15px 0 0;
-    font-size: 0.8em !important;
 }
 
 ul.chart-list {
