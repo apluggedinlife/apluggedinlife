@@ -64,7 +64,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 LOCALE_INDEPENDENT_PATHS = (
     re.compile('^/admin/$'),
-    re.compile('^/feeds/$'),
+    re.compile('^/feeds/'),
     re.compile('^/IE/$'),
 )
 
