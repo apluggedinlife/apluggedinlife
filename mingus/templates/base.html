@@ -307,8 +307,8 @@
     <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.uncompressed.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.plugins.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}js/main.js"></script>
-    {% block extra_javascript %}{% endblock %}
     {% endcompress %}
+    {% block extra_javascript %}{% endblock %}
 
     {% cache 7200 "base.analytics" %}
     {% analytics %}
