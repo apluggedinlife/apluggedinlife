@@ -63,9 +63,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 LOCALE_INDEPENDENT_PATHS = (
-    re.compile('^/admin/$'),
-    re.compile('^/feeds/'),
+    re.compile('^/admin/(.*)'),
     re.compile('^/IE/$'),
+    re.compile('^/social/(.*)'),
+    re.compile('^/sentry/(.*)'),
 )
 
 INSTALLED_APPS = (
@@ -116,6 +117,11 @@ INSTALLED_APPS = (
     'request',
 
     # apil requirements
+    'south',
+    'indexer',
+    'paging',
+    'sentry',
+    'sentry.client',
     'django.contrib.comments',
     'django.contrib.markup',
     'mptt',
