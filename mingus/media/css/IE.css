@@ -35,9 +35,10 @@ h1 {
 div.article {
     margin-bottom: 2em;
 }
-    div.article h1 {
-        margin: 0 0 1em;
-    }
+
+div.article h1 {
+    margin: 0 0 1em;
+}
 
 ul {
     list-style-type: none;
@@ -71,19 +72,21 @@ a > img {
     margin-bottom: 20px;
     background-color: #fdf6ed;
 }
-    #accessibility ul li {
-        float: right;
-        margin-left: 0.5em;
-        padding-left: 0.5em;
-    }
-        #accessibility ul li a {
-            color: #000000;
-            font-size: 0.65em;
-        }
 
-    #accessibility ul li.stroke {
-        border-left: 1px solid #414141;
-    }
+#accessibility ul li {
+    float: right;
+    margin-left: 0.5em;
+    padding-left: 0.5em;
+}
+
+#accessibility ul li a {
+    color: #000000;
+    font-size: 0.65em;
+}
+
+#accessibility ul li.stroke {
+    border-left: 1px solid #414141;
+}
 
 /*}}}*/
 
@@ -102,49 +105,52 @@ a > img {
     width: 1005px;
     margin: 0 auto;
 }
-    #wrapper #header {
-        position: relative;
-    }
-        #wrapper #header h1.logo {
-            text-indent: -500em;
-            background-repeat: no-repeat;
-            background-image: url('/media/img/ie/ie_header.png');
-            height: 424px;
-            width: 850px;
-            margin: 0 auto;
-        }
+
+#wrapper #header {
+    position: relative;
+}
+
+#wrapper #header h1.logo {
+    text-indent: -500em;
+    background-repeat: no-repeat;
+    background-image: url('/media/img/ie/ie_header.png');
+    height: 424px;
+    width: 850px;
+    margin: 0 auto;
+}
 
 #content,
 #introduction {
     margin-top: 30px;
     text-align: left;
 }
-    #content article {
-        margin-bottom: 50px;
-    }
 
-    #content ol li {
-        position: relative;
-        margin-top: 30px;
-    }
+#content article {
+    margin-bottom: 50px;
+}
 
-    #quotation {
-        float: left;
-        padding: 25px 0;
-    }
+#content ol li {
+    position: relative;
+    margin-top: 30px;
+}
 
-    #quotation p {
-        color: #493213;
-        font-size: 16px;
-    }
+#quotation {
+    float: left;
+    padding: 25px 0;
+}
 
-    #not-wanted {
-        background-repeat: no-repeat;
-        background-image: url('/media/img/ie/ie_not_wanted.png');
-        width: 201px;
-        height: 227px;
-        float: right;
-    }
+#quotation p {
+    color: #493213;
+    font-size: 16px;
+}
+
+#not-wanted {
+    background-repeat: no-repeat;
+    background-image: url('/media/img/ie/ie_not_wanted.png');
+    width: 201px;
+    height: 227px;
+    float: right;
+}
 
 #copyright {
     width: 479px;
@@ -172,6 +178,8 @@ p.quotes {
     background-image: url('/media/img/ie/ie_separator.png');
 }
 
-.clear { clear: both; }
+.clear {
+    clear: both;
+}
 
 /*}}}*/

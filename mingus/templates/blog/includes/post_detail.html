@@ -1,10 +1,10 @@
 {% extends "blog/includes/base_post.html" %}
 
-{% load cache tagging_related i18n oembed_tags inlines %}
+{% load cache tagging_related i18n oembed_tags %}
 
 {% block post_content %}
     {% oembed %}
-        {{ post.body_markup|render_inlines|safe }}
+        {{ post.body_markup|safe }}
     {% endoembed %}
 {% endblock %}
 

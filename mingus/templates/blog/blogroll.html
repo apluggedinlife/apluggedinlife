@@ -37,6 +37,10 @@
 
         z-index: 9999;
     }
+
+    #blogroll a {
+        color: #19161A;
+    }
 </style>
 {% endblock %}
 
@@ -59,9 +63,9 @@ blogroll
             <img src="{{ MEDIA_URL }}img/blogroll.jpg" alt="Blogroll" />
         </figure>
     </div>
-    <h1>{% trans "Links and OPML" %}</h1>
+    <h1 class="block-20">{% trans "Links and OPML" %}</h1>
     {% if tags %}
-    <div id="blogroll" class="block-20">
+    <div id="blogroll">
         {% for group in groups %}
         {% if forloop.counter|divisibleby:4 %}
         <div class="clear"></div>
