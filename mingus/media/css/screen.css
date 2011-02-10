@@ -206,9 +206,13 @@ body.blogroll #wrapper > header h1.logo a {
 }
 
 #accessibility ul li a,
-#accessibility ul li span {
+#accessibility label {
     color: #000000;
     font-size: 11px;
+}
+
+#accessibility label {
+    margin-right: 5px;
 }
 
 #accessibility > ul > li:not(:last-child) {
@@ -597,7 +601,7 @@ div.entry-body p {
 
 div.entry-body p,
 div.entry-body ul {
-    margin: 24px 0;
+    margin: 15px 0;
 }
 
 div.entry-body p:hover {
@@ -1409,6 +1413,10 @@ div.contact-more {
     border-left: 3px solid #F0F0F0;
     padding: 20px;
     width: 310px;
+}
+
+div.contact-more p {
+    text-align: left !important;
 }
 
 div.contact {

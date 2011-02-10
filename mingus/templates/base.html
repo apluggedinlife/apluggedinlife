@@ -13,7 +13,7 @@
 
     <meta name="copyright" content="{{ BLOG_SETTINGS.copyright }}" />
     <!--[if lte IE 8]>
-        <script type="text/javascript" charset="utf-8">
+        <script type="text/javascript">
                window.location = "{% url IE %}";
         </script>
     <![endif]-->
@@ -43,8 +43,8 @@
             <li><a href="#content" title="{% trans "Go to content" %}">{% trans "Go to content" %}</a></li>
             <li><a href="#nav-menu" title="{% trans "Go to navigation" %}">{% trans "Go to navigation" %}</a></li>
             <li>
-                <span>{% trans "Language:" %}</span>
                 <form id="locale-switcher" method="POST" action="{% url localeurl_change_locale %}">
+                    <label for="locale">{% trans "Language:" %}</label>
                     <select name="locale">
                         {% for lang in LANGUAGES %}
                             <option value="{{ lang.0 }}" {% ifequal lang.0 LANGUAGE_CODE %}selected="selected"{% endifequal %}>{{ lang.1 }}</option>
