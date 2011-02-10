@@ -38,14 +38,14 @@
             {% if comment|children_count %}
             {% ifequal comment.level cutoff_level %}
             <div class="comment-replies">
-                <span class="comment-count icon">{{ comment|children_count }}</span>
+                <span class="comment-count">{{ comment|children_count }}</span>
                 <a class="comment-replies" href="{% url comments_subtree comment.pk %}" title="{% trans "show hidden replies" %}">
                     <span class="icon comment-icon"></span>
                 </a>
             </div>
             {% else %}
             <div class="comment-replies comment-no-hidden-replies">
-                <span class="comment-count icon">{{ comment|children_count }}</span>
+                <span class="comment-count">{{ comment|children_count }}</span>
                 <span class="icon comment-icon"></span>
             </div>
             {% endifequal %}
