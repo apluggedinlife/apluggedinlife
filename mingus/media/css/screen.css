@@ -7,7 +7,7 @@
 /* @section GENERIC ELEMENTS {{{
  ******************************************************************************/
 
-p, h1, h2, h3, h4, h5, h6, input[type=text], a, li, span, time {
+p, h1, h2, h3, h4, h5, h6, input[type=text], a, li, span, time, code {
     font-family: helvetica,arial,freesans,clean,sans-serif;
     font-weight: normal;
     font-style: normal;
@@ -650,7 +650,7 @@ div.entry-body p.teaser {
 }
 
 div.related-posts {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 div.related-posts a,
@@ -1116,6 +1116,12 @@ ul li.title ul li:hover {
     margin: 0 0 30px 28px;
 }
 
+#search-engine {
+    border: 2px solid #319755;
+    background-color: #fff;
+    height: 21px;
+}
+
 #search-input {
     float: left;
 }
@@ -1124,15 +1130,13 @@ ul li.title ul li:hover {
     border-width: 0;
     height: 18px;
     font-size: 0.8em;
-    padding: 5px 5px 0;
     width: 145px;
 }
 
 #search-button {
-    float: left;
-    height: 17px;
-    width: 17px;
-    top: 3px;
+    float: right;
+    top: 2px;
+    right: 2px;
     position: relative;
 }
 
