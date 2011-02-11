@@ -12,7 +12,9 @@
                             {{ comment.name|escape }}
                         </a>
                     {% else %}
-                        {{ comment.name|escape}}
+                        <span>
+                            {{ comment.name|escape}}
+                        </span>
                     {% endif %}
                     </div>
                 <time datetime="{{ comment.submit_date }}">

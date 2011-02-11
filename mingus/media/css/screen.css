@@ -768,8 +768,7 @@ span.comments-more {
 }
 
 .comment-author {
-    font-size: 0.9em;
-    font-weight: bold;
+    font-size: 12px;
 }
 
 .comment-body-content {
