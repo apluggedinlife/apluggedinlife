@@ -34,8 +34,6 @@
     {% endblock %}
 
     {% block extra_head %}{% endblock %}
-
-    {% disqus_dev %}
 </head>
 <body id="{% block body_id %}{% endblock %}" class="{% block body_class %}blog{% endblock %}">
     <div id="accessibility">
@@ -270,18 +268,6 @@
     <!--[if lte IE 8]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
-    <script src="http://platform.twitter.com/anywhere.js?id=xFdsfquW8fvA5RDp28BqA&v=1"></script>
-    <script type="text/javascript">
-       twttr.anywhere(function(twitter) {
-            twitter("*:not(.sidebar-twitter-anywhere-user)").hovercards();
-            twitter(".sidebar-twitter-anywhere-user").hovercards({
-              username: function(node) {
-                return node.title;
-              }
-            });
-       });
-    </script>
 
     {% compress js %}
     <script type="text/javascript" src="{{ MEDIA_URL }}js/prettify.js"></script>

@@ -110,9 +110,6 @@ urlpatterns += patterns('',
         {'template': '500.html'},
         name='500'),
 
-    url(r'^comments/',
-        include('mptt_comments.urls')),
-
     url(r'^social/',
         include('social_bookmarking.urls')),
 
