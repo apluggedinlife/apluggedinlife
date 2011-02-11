@@ -9,8 +9,10 @@
 
 p, h1, h2, h3, h4, h5, h6, input[type=text], a, li, span, time, code, em {
     font-family: helvetica,arial,freesans,clean,sans-serif;
-    font-weight: normal;
-    font-style: normal;
+}
+
+em {
+    font-style: italic;
 }
 
 h1, h2, h3 {
@@ -225,6 +227,7 @@ body.blogroll #wrapper > header h1.logo a {
  ******************************************************************************/
 
 body.blog #content,
+body.about #content,
 body.archives #content {
     width: 730px;
 }
@@ -236,6 +239,7 @@ body.contact #content {
 #content {
     float: left;
     padding-top: 10px;
+    padding-right: 10px;
     padding-left: 10px;
 }
 
@@ -373,8 +377,7 @@ div.share-items::before {
     border-bottom-color: #329A57;
 }
 
-span.count,
-span.comment-count {
+span.count {
     display: block;
     text-align: center;
     position: absolute;
@@ -408,7 +411,7 @@ div.share img {
 
 div.share-right,
 div.share-left {
-    margin-right: 14px;
+    margin-right: 16px;
     float: right;
     position: relative;
 }
@@ -715,7 +718,7 @@ a.link:hover {
  ******************************************************************************/
 
 article.archive {
-    padding-right: 20px;
+    margin-bottom: 10px;
 }
 
 article.archive h3 a {
@@ -747,11 +750,13 @@ article.archive h2 {
 article.archive ul li {
     font-size: 0.7em;
     width: 320px;
+    margin-bottom: 20px;
 }
 
 article.archive ul li:nth-of-type(2) {
     float: right;
     padding-right: 10px;
+    clear: right;
 }
 
 article.archive ul li:nth-of-type(1) {

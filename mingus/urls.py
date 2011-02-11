@@ -95,11 +95,6 @@ urlpatterns += patterns('',
         {'template': 'about.html'},
         name='about'),
 
-    # url(r'^test/$',
-    #     direct_to_template,
-    #     {'template': 'test.html'},
-    #     name='test'),
-
     url(r'^404/$',
         direct_to_template,
          {'template': '404.html'},
@@ -128,6 +123,8 @@ urlpatterns += patterns('',
         name='download'),
 
     url(r'^localeurl/', include('localeurl.urls')),
+
+    url(r'^sentry/', include('sentry.urls')),
 )
 
 if settings.DEBUG:
