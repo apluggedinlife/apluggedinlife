@@ -229,7 +229,7 @@ body.blogroll #wrapper > header h1.logo a {
 body.blog #content,
 body.about #content,
 body.archives #content {
-    width: 730px;
+    width: 710px;
 }
 
 body.contact #content {
@@ -238,9 +238,7 @@ body.contact #content {
 
 #content {
     float: left;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding: 10px 20px 0 20px;
 }
 
 #content h1,
@@ -525,7 +523,6 @@ div.count-comment {
 div.entry-information {
     float: left;
     width: 565px;
-    margin-bottom: 20px;
 }
 
 /* @section BODY {{{
