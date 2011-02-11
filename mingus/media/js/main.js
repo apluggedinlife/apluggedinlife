@@ -15,7 +15,7 @@ $(document).ready(function(){
 
     $('a[href*=#]').click(function(){
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
-            && location.hostname == this.hostname) {
+            && location.hostname == this.hostname && this.hash != '') {
             var $target = $(this.hash);
             $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
             if ($target.length) {
@@ -32,7 +32,7 @@ $(document).ready(function(){
         return false;
     });
 
-    $('.share h1')
+    $('.share > a')
         .click(function(){
            $(this)
                 .siblings('.share-items')
@@ -78,16 +78,6 @@ $(document).ready(function(){
             .stop()
             .animate({color: '#000000'}, {duration: 500});
     })
-
-    $('.entry-meta ul li').hover(function(){
-       $(this)
-            .stop()
-            .animate({left: "-10px"}, {duration: 500});
-    }, function(){
-        $(this)
-            .stop()
-            .animate({left: "0"}, {duration: 500});
-    });
 
     function twitterize(text) {
         text = text.replace(/\bwww\.\w.\w/ig, 'http://$&');

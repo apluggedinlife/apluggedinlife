@@ -1,7 +1,9 @@
 {% load i18n social_bookmarking_tags %}
 
-<div class="share">
-    <h1 class="share-show"><span class="icon"></span>{% trans "share" %}</h1>
+<div class="share entry-item">
+    <a href="javascript:;" class="share-show">
+        <span class="icon"></span>{% trans "share" %}
+    </a>
     <div class="share-items">
         {% for bookmark in bookmarks %}
             {% ifnotequal forloop.counter0 0  %}

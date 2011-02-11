@@ -1,65 +1,97 @@
 {% load blog i18n mptt_comments_tags tagging_tags cache social_bookmarking_tags %}
 
-<article role="article">
+<article role="article" class="entry">
 {% block article %}
-    <header>
-        {% show_bookmarks_related post.title post.get_absolute_url post %}
-        <div class="clear"></div>
-        {% if post.allow_comments %}
-        <div class="icon count-comment">
-            {% get_mptt_comment_count for post as comment_count %}
-            <a href="{{ post.get_absolute_url }}#comments" title="{% trans "comments" %}">{{ comment_count }}</a>
-        </div>
-        {% endif %}
+    <header class="entry-header">
+        <ul>
+            <li>
+                <div class="datetime entry-item">
+                    <time datetime="{{ post.publish|date:"Y-m-d" }}">
+                        <span class="icon"></span>
+                        <span>
+                            {{ post.publish|date:"b d, Y" }}
+                        </span>
+                    </time>
+                </div>
+            </li>
+            {% if post.author %}
+            <li>
+                <div class="entry-author entry-item">
+                    <a href="#" title="{{ post.author.username }}">
+                        <span class="icon"></span>
+                        <span>
+                            {{ post.author.username }}
+                        </span>
+                    </a>
+                </div>
+            </li>
+            {% endif %}
+            {% cache 3600 "blog.post_detail.categories" post.title %}
+            {% if post.categories.all %}
+            <li>
+                <div class="entry-category entry-item">
+                    <ul>
+                        {% for category in post.categories.all %}
+                        <li>
+                        <a href="{% url basic.blog.views.category_detail category.slug %}" title="{{ category.slug }}">
+                            <span class="icon"></span>
+                            <span>
+                                {{ category.title }}
+                            </span>
+                        </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </li>
+            {% endif %}
+            {% endcache %}
+            {% if post.allow_comments %}
+            <li>
+                <div class="count-comment entry-item">
+                    {% get_mptt_comment_count for post as comment_count %}
+                    <a href="{{ post.get_absolute_url }}#comments">
+                        <span class="icon"></span>
+                        <span>
+                        {% blocktrans count comment_count as count %}
+                            {{ count }} comment
+                            {% plural %}
+                            {{ count }} comments
+                        {% endblocktrans %}
+                        </span>
+                    </a>
+                </div>
+            </li>
+            {% endif %}
+            {% cache 300 "blog.post_detail.tag_list" post.pk %}
+            {% tags_for_object post as tag_list %}
+            {% if tag_list %}
+            <li>
+                <div class="entry-meta entry-item">
+                    <span class="icon"></span>
+                    <ul>
+                        {% for tag in tag_list %}
+                        <li>
+                            <a href="{% url blog_tag_detail tag %}" title="{{ tag }}">
+                                <span class="tag-item">{{ tag }}</span>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </li>
+            {% endif %}
+            {% endcache %}
+            <li>
+                {% show_bookmarks_related post.title post.get_absolute_url post %}
+            </li>
+        </ul>
     </header>
 
     <div class="entry-information">
         <h1><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></h1>
-        <div class="datetime">
-            <time datetime="{{ post.publish|date:"Y-m-d" }}">
-                {{ post.publish|date:"d.m.y" }} - {{ post.publish|date:"h:m"}}<span class="icon"></span>
-            </time>
-        </div>
-
-        {% if post.author %}
-        <div class="entry-author">
-            <a href="" title="{{ post.author.username }}">{{ post.author.username }}<span class="icon"></span></a>
-        </div>
-        {% endif %}
-
-        {% cache 3600 "blog.post_detail.categories" post.title %}
-        {% if post.categories %}
-        <div class="entry-category">
-            <ul>
-                {% for category in post.categories.all %}
-                <li>
-                    <a href="{% url basic.blog.views.category_detail category.slug %}" title="{{ category.slug }}">{{ category.title }}<span class="icon"></span></a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-        {% endif %}
-        {% endcache %}
-        <div class="clear"></div>
-
-        {% cache 300 "blog.post_detail.tag_list" post.pk %}
-        {% tags_for_object post as tag_list %}
-        {% if tag_list %}
-        <div class="entry-meta">
-            <ul>
-                {% for tag in tag_list %}
-                <li>
-                    <a href="{% url blog_tag_detail tag %}" title="{{ tag }}">
-                        <span class="icon"></span>
-                        <span class="tag-body">{{ tag }}</span>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-            <div class="clear"></div>
-        </div>
-        {% endif %}
-        {% endcache %}
     </div>
 
     <div class="entry-body">

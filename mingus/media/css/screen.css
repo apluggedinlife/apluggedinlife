@@ -307,71 +307,65 @@ body.contact #content {
 /* @section ARTICLE {{{
  ******************************************************************************/
 
-#content > article {
+.entry {
     margin-bottom: 50px;
 }
 
 #content ol {
     margin-left: 30px;
 }
+
 #content ol li:not(:last-child) {
     margin-bottom: 10px;
-}
-
-#content > article > header {
-    width: 96px;
-    text-align: right;
-    padding-right: 20px;
-    float: left;
-    position: relative;
 }
 
 /* @section SIDEBAR {{{
  ******************************************************************************/
 
+.entry-header {
+    width: 120px;
+    padding-right: 20px;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.entry-header > ul > li {
+    width: 120px;
+    clear: both;
+}
+
+.entry-header > ul > li:not(:last-child), 
+.entry-category ul li:not(:last-child) {
+    min-height: 23px;
+    margin-bottom: 10px;
+}
+
 div.share {
-    background-color: #329A57;
-    padding: 4px 8px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    display: inline-block;
-    float: right;
-}
-
-div.share h1,
-div.share {
-    width: 80px;
-}
-
-div.share h1.share-hide span {
-    background-position: -73px -112px;
-}
-
-div.share h1 {
-    text-align: center;
-    font-size: 0.9em;
-    font-weight: bold;
-    color: #34312E;
-    margin: 6px 0;
-    height: 14px;
-    cursor: pointer;
-    vertical-align: bottom;
-    padding-left: 2px;
-}
-
-div.share h1 span {
-    background-position: -73px -99px;
-    position: absolute;
-    top: 11px;
-    left: 5px;
-    display: inline-block;
-    height: 14px;
-    width: 14px;
+    width: 110px;
+    position: relative;
 }
 
 div.share-items {
-    padding: 4px;
+    padding: 4px 8px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #329A57;
+    padding: 15px 0;
+    margin-top: 25px;
+}
+
+div.share-items::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 13px;
+    left: 40px;
+    border: 15px solid transparent;
+    border-bottom-color: #329A57;
 }
 
 span.count,
@@ -407,12 +401,9 @@ div.share img {
     position: relative;
 }
 
-div.share-left {
-    margin-right: 10px;
-}
-
 div.share-right,
 div.share-left {
+    margin-right: 14px;
     float: right;
     position: relative;
 }
@@ -456,81 +447,78 @@ div.share-wikio div.share-icon {
 
 div.count-comment {
     background-position: -37px -92px;
-    float: right;
-    margin-top: 6px;
 }
 
-div.count-comment,
-div.count-comment a {
-    width: 27px;
-    height: 27px;
-}
-
-div.count-comment a {
+.count-comment a, 
+.entry-author a,
+.entry-category ul li a,
+.datetime time,
+.share a,
+.entry-meta a {
     color: #34312E;
-    font-weight: bold;
-    font-size: 1em;
-    text-align: center;
-    display: block;
+    font-size: 0.8em;
+    text-align: left;
     padding-top: 3px;
 }
 
+.entry-meta ul li {
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+}
+
+.entry-item {
+    padding-top: 2px;
+}
+
+.entry-item span.icon {
+    margin-right: 5px;
+    position: relative;
+    top: -3px;
+    width: 23px;
+    height: 23px;
+    float: left;
+}
+
+.entry-item a:hover {
+    border-bottom: 1px solid #000;
+    color: #000;
+}
+
+.entry-author span.icon {
+    background-position: -415px -271px;
+}
+
+.count-comment span.icon {
+    background-position: -415px -303px;
+}
+
+.entry-category span.icon {
+    background-position: -415px -367px;
+}
+
+.entry-meta span.icon {
+    background-position: -415px -399px;
+}
+
+.datetime span.icon {
+    background-position: -415px -335px;
+}
+
+.share span.icon {
+    background-position: -415px -431px;
+}
 
 /*}}}*/
 
 /* @section ENTRY {{{
  ******************************************************************************/
 
-/* @section INFORMATION {{{
- ******************************************************************************/
-
 div.entry-information {
     float: left;
-    width: 595px;
+    width: 565px;
     margin-bottom: 20px;
 }
-div.entry-author,
-div.datetime,
-div.entry-category ul li {
-    margin-right: 5px;
-    float: left;
-}
-
-div.entry-author a,
-div.datetime time,
-div.entry-category a {
-    border-radius: 7px;
-    height: 22px;
-    padding: 7px 0 0 7px;
-    color: #34312E;
-    font-size: 0.8em;
-    margin-bottom: 8px;
-    padding-left: 35px;
-    position: relative;
-    display: inline-block;
-}
-
-div.entry-author span,
-div.datetime span,
-div.entry-category span {
-    display: inline-block;
-    height: 22px;
-    width: 23px;
-    margin: 5px 3px 0 5px;
-    position: absolute;
-    left: 0;
-    top: -3px;
-}
-
-div.entry-author span {
-    background-position: -23px 0px;
-}
-
-div.datetime span {
-    background-position: -45px 0px;
-}
-
-/*}}}*/
 
 /* @section BODY {{{
  ******************************************************************************/
@@ -674,53 +662,6 @@ a.link:hover {
 
 /*}}}*/
 
-/* @section META {{{
- ******************************************************************************/
-
-div.entry-meta {
-    display: inline-block;
-}
-
-div.entry-meta ul li {
-    display: inline-block;
-    float: left;
-    position: relative;
-    font-size: 73%;
-    margin-right: -5px;
-}
-
-div.entry-meta ul li a {
-    color: #FFFFFF;
-    display: inline-block;
-}
-
-div.entry-meta ul li a span.icon {
-    background-position: 0 -23px;
-    height: 21px;
-    width: 12px;
-    position: relative;
-    display: inline-block;
-    top: 7px;
-}
-
-div.entry-meta ul li a span.tag-body {
-    font: 10px/1.2 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",sans-serif;
-    padding: 2px 8px;
-    display: inline-block;
-    min-width: 70px;
-    -moz-border-radius-topright: 4px;
-    -moz-border-radius-bottomright: 4px;
-    -webkit-border-bottom-right-radius: 4px;
-    -webkit-border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-right-radius: 4px;
-    background-color: #34312E;
-    color: #FFFFFF;
-    text-align: center;
-}
-
-/*}}}*/
-
 /* @section NAVIGATION {{{
  ******************************************************************************/
 
@@ -827,6 +768,7 @@ span.comments-more {
 }
 
 .comment-author {
+    font-size: 0.9em;
     font-weight: bold;
 }
 
