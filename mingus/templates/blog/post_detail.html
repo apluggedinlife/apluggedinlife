@@ -1,5 +1,5 @@
 {% extends "blog/base_blog.html" %}
-{% load blog tagging_tags inlines cache oembed_tags mptt_comments_tags i18n tagging_related %}
+{% load blog tagging_tags inlines cache oembed_tags i18n tagging_related %}
 
 {% block title %}{{ object.title }} | {{ block.super }}{% endblock %}
 
@@ -25,11 +25,6 @@
             color: black;   /* for error messages, etc. */
         }
     </style>
-{% endblock %}
-
-{% block extra_javascript %}
-    {{ block.super }}
-    {% mptt_comments_media %}
 {% endblock %}
 
 {% block body_class %}{{ block.super }} post-detail{% endblock %}

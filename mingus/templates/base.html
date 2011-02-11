@@ -1,4 +1,4 @@
-{% load flatblock_tags mptt_comments_tags profiles cache navbar generic_content blog compress analytics feeds i18n archive tagging_related localeurl_tags %}
+{% load disqus_tags flatblock_tags profiles cache navbar generic_content blog compress analytics feeds i18n archive tagging_related localeurl_tags %}
 <!DOCTYPE html>
 <html lang="fr-fr">
 <head>
@@ -20,7 +20,6 @@
     <link rel="shortcut icon" href="{{ MEDIA_URL }}favicon.ico" type="image/x-icon"/>
     {% compress css %}
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/reset.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="{{ MEDIA_URL }}css/base.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/screen.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/print.css" type="text/css" media="print" />
     {% endcompress %}
@@ -35,6 +34,8 @@
     {% endblock %}
 
     {% block extra_head %}{% endblock %}
+
+    {% disqus_dev %}
 </head>
 <body id="{% block body_id %}{% endblock %}" class="{% block body_class %}blog{% endblock %}">
     <div id="accessibility">
@@ -229,26 +230,6 @@
                     {% endcache %}
                 </li>
                 <li>
-                    <h1>{% trans "Last comments" %}<span class="icon"></span></h1>
-                    {% cache 3600 "base.comment_list" %}
-                    {% get_latest_comments 10 as comment_list %}
-                    {% if comment_list %}
-                    <div>
-                        <ul class="link-list">
-                            {% for comment in comment_list %}
-                            <li>
-                                &laquo;
-                                <a href="{% url comment_detail comment.pk %}#comment-{{ comment.pk }}" title="{{ comment.comment|truncatewords:10 }}">
-                                    {{ comment.comment|truncatewords:10 }}
-                                </a>&raquo;
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    {% endif %}
-                    {% endcache %}
-                </li>
-                <li>
                     <h1>{% trans "Tags" %}<span class="icon"></span></h1>
                     {% cache 3600 "base.tag_list" %}
                     <div id="footer-tag-list">
@@ -313,5 +294,7 @@
     {% cache 7200 "base.analytics" %}
     {% analytics %}
     {% endcache %}
+
+    {% disqus_num_replies %}
 </body>
 </html>

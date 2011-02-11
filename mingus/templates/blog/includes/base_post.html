@@ -1,4 +1,4 @@
-{% load blog i18n mptt_comments_tags tagging_tags cache social_bookmarking_tags %}
+{% load blog i18n tagging_tags cache social_bookmarking_tags %}
 
 <article role="article" class="entry">
 {% block article %}
@@ -50,16 +50,9 @@
             {% if post.allow_comments %}
             <li>
                 <div class="count-comment entry-item">
-                    {% get_mptt_comment_count for post as comment_count %}
-                    <a href="{{ post.get_absolute_url }}#comments">
-                        <span class="icon"></span>
-                        <span>
-                        {% blocktrans count comment_count as count %}
-                            {{ count }} comment
-                            {% plural %}
-                            {{ count }} comments
-                        {% endblocktrans %}
-                        </span>
+                    <span class="icon"></span>
+                    <a href="{{ post.get_absolute_url }}#disqus_thread">
+                        {% trans "comments" %}
                     </a>
                 </div>
             </li>

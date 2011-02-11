@@ -7,7 +7,7 @@
 /* @section GENERIC ELEMENTS {{{
  ******************************************************************************/
 
-p, h1, h2, h3, h4, h5, h6, input[type=text], a, li, span, time, code {
+p, h1, h2, h3, h4, h5, h6, input[type=text], a, li, span, time, code, em {
     font-family: helvetica,arial,freesans,clean,sans-serif;
     font-weight: normal;
     font-style: normal;
@@ -264,6 +264,10 @@ body.contact #content {
 #navigation-inner ul li {
     float: left;
     height: 30px;
+}
+
+#navigation-inner em {
+    color: #34312E;
 }
 
 #navigation-inner ul li:first-child {
@@ -572,6 +576,7 @@ div.entry-body h3,
 div.entry-body h3 a,
 div.entry-information h1,
 div.entry-information h1 a,
+#comments h3,
 footer h2 {
     color: #41281B;
     font-weight: bold;
@@ -582,10 +587,17 @@ footer h2 {
 }
 
 div.entry-body p,
+.dsq-comment-message,
 div.entry-content li {
     line-height: 24px;
     font-size: 15px;
     color: #19161A;
+}
+
+#dsq-num-posts {
+    color: #000;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 div.entry-body p {
@@ -642,7 +654,7 @@ div.related-posts {
 }
 
 div.related-posts a,
-.comment header a {
+#comments a {
     color: #222;
 }
 
@@ -655,6 +667,7 @@ a.link {
 
 div.entry-body p a:hover,
 div.entry-content li a:hover,
+#comments a,
 .comment header a:hover,
 a.link:hover {
     text-decoration: underline;
@@ -698,218 +711,13 @@ a.link:hover {
 
 /*}}}*/
 
-/* @section COMMENTS {{{
- ******************************************************************************/
-
-#mptt-comments-tree {
-    padding: 1em 15px 1em 0;
-}
-
-/* comments at the root of the tree */
-#mptt-comments-tree > .comment,
-.new-comment-form-wrapper > .comment {
-    padding-left: 100px;
-    margin-bottom: 10px;
-}
-
-#mptt-comments-tree > .comment > .comment-whole > .comment-body,
-.new-comment-form-wrapper > .comment > .comment-whole > .comment-body {
-    background: #EDECEB url('/media/img/comment_parent_bg.png') no-repeat left top;
-}
-
-#mptt-comments-tree > .comment > .comment-whole header,
-.new-comment-form-wrapper > .comment > .comment-whole header {
-    position: absolute;
-    left: -100px;
-}
-
-#mptt-comments-tree > .comment > .comment-whole .comment-body-content,
-.new-comment-form-wrapper > .comment > .comment-whole .comment-body-content {
-    padding-left: 38px !important;
-}
-
-.comment {
-    padding-top: 2em;
-}
-
-.comment > .comment-form-wrapper .comment {
-    padding-top: 0 !important;
-    padding-bottom: 1.2em;
-}
-
-.comment,
-.comment p {
-    color: #34312E;
-}
-
-.comment h3 {
-    color: #41281B;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.comment p {
-    font-size: 0.8em;
-    line-height: 18px;
-    font-style: normal;
-    font-weight: normal;
-}
-
-span.comments-more {
-    width: 25px;
-    height: 41px;
-    display: block;
-    background-position: 0 -139px;
-}
-
-.comment-meta time,
-.comment-replies {
-    font-size: 0.8em;
-}
-
-.comment-author {
-    font-size: 12px;
-}
-
-.comment-body-content {
-    padding: 20px 20px 60px;
-    min-height: 60px;
-}
-
-#mptt-comments-tree > .comment > .comment-whole .comment-reply {
-    left: 18px;
-    bottom: 0;
-}
-
-#mptt-comments-tree > .comment > .comment-whole .comment-meta, 
-#comment-preview .comment-meta {
-    text-align: center;
-    margin-top: 5px;
-}
-
-a.comment-reply {
-    position: absolute;
-}
-
-a.comment-reply span {
-    background-position: -58px -50px;
-    height: 28px;
-    width: 28px;
-}
-
-.comment-replies {
-    top: 0;
-    right: -1px;
-    position: absolute;
-    width: 31px;
-    height: 31px;
-}
-
-.comment-replies span.comment-icon {
-    background-position: 0px -110px;
-    height: 28px;
-    width: 28px;
-}
-
-a.comment-no-hidden-replies {
-    opacity: 0.5;
-}
-
-.comment-title {
-    font-size: 0.9em;
-    font-weight: bold;
-    margin-bottom: 2px;
-    background: #eeeeee;
-    padding: 3px;
-}
-
-.comment-whole {
-    position: relative;
-}
-
-.comment-form-wrapper {
-    padding-top: 1.5em;
-}
-
-/* comment which belongs to another */
-.comment > .comment,
-.comment-form-wrapper {
-    padding-left: 1.5em;
-    margin-left: 18px;
-    border-left: solid 1px #ebebeb;
-    background: transparent url('/media/img/comment_comment_bg.png') no-repeat 0 50px;
-}
-
-span.comment-count {
-    background-color: #34312E;
-    -webkit-border-radius: 30px;
-    border-radius: 30px;
-    -moz-border-radius: 30px;
-    -o-border-radius: 30px;
-    color: #FFFFFF;
-    font-size: 1em;
-    font-weight: bold;
-    padding-top: 5px;
-    width: 20px;
-    height: 16px;
-}
-
-.comment > .comment .comment,
-.comment > .comment-form-wrapper > .comment .comment {
-    margin-left: 0 !important;
-}
-
-.comment > .comment .comment-whole header,
-.comment > .comment-form-wrapper > .comment .comment-whole header {
-    position: absolute;
-    z-index: 20;
-    right: 10px;
-    bottom: 10px;
-}
-
-.comment > .comment .comment-whole header > *,
-.comment > .comment-form-wrapper > .comment .comment-whole header > * {
-    float: right;
-}
-
-.comment > .comment .comment-whole .comment-meta,
-.comment > .comment-form-wrapper > .comment .comment-whole .comment-meta {
-    padding-top: 8px;
-    margin-right: 5px;
-    text-align: right;
-}
-
-.comment > .comment .comment-whole header img,
-.comment > .comment-form-wrapper > .comment .comment-whole header img {
-    width: 40px;
-    height: 40px;
-}
-
-.comment > .comment .comment-body,
-.comment > .comment-form-wrapper > .comment .comment-body {
-    background-color: #EDECEB;
-    position: relative;
-}
-
-.comment > .comment > .comment-whole .comment-reply,
-.comment > .comment-form-wrapper > .comment > .comment-whole .comment-reply {
-    bottom: 0;
-    left: 0;
-}
-
-div.new-comment-form-wrapper {
-    margin: 15px 0;
-    width: 725px;
-}
-
-/*}}}*/
-
 /* @section ARCHIVE {{{
  ******************************************************************************/
 
 article.archive {
     padding-right: 20px;
 }
+
 article.archive h3 a {
     border-color: #CCCCCC;
     color: #000000;
@@ -1204,7 +1012,7 @@ span.twitter-container-loader {
 }
 
 #footer-worm-container > ul {
-    width: 1005px;
+    width: 700px;
     margin: 0 auto;
     padding: 25px 0;
 }
@@ -1215,7 +1023,7 @@ span.twitter-container-loader {
 }
 
 #footer-worm-container > ul > li:not(:last-child) {
-    margin-right: 85px;
+    margin-right: 150px;
 }
 
 #footer-worm-container > ul > li h1 {

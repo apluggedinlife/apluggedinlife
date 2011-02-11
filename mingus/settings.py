@@ -122,14 +122,10 @@ INSTALLED_APPS = (
     'paging',
     'sentry',
     'sentry.client',
-    'django.contrib.comments',
     'django.contrib.markup',
-    'mptt',
-    'mptt_comments',
     'disqus',
     'social_bookmarking',
     'basic.profiles',
-    'gravatar',
 )
 
 
