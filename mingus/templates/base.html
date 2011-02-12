@@ -153,7 +153,7 @@
                                     {% get_popular_posts 10 as popular_post_list %}
                                     <ul>
                                     {% for popular_post in popular_post_list %}
-                                    <li><a href="{{ popular_post.get_absolute_url }}" title="{{ popular_post.title }}">{{ popular_post.title }}</a></li>
+                                        <li><a href="/{{ LANGUAGE_CODE }}{{ popular_post.get_absolute_url }}" title="{{ popular_post.title }}">{{ popular_post.title }}</a></li>
                                     {% endfor %}
                                     </ul>
                                     {% endcache %}
@@ -222,7 +222,7 @@
                     <div>
                         <ul class="link-list">
                             {% for post in post_list %}
-                            <li><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+                                <li><a href="/{{ LANGUAGE_CODE }}{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></li>
                             {% endfor %}
                         </ul>
                     </div>

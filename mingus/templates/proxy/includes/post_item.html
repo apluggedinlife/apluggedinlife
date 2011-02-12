@@ -5,5 +5,5 @@
 {% block post_content %}
     {{ post.tease|safe }}
 
-    <p class="more"><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{% trans "Read more" %}→</a></p>
+    <p class="more"><a href="/{{ LANGUAGE_CODE }}{{ post.get_absolute_url }}" title="{{ post.title }}">{% trans "Read more" %}→</a></p>
 {% endblock %}

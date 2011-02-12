@@ -11,13 +11,7 @@ textile==2.1.3
 django-robots==0.6.1
 django-dbtemplates==0.6.1
 django-markup==0.3
-django-memcache-status==1.0.1
-django-localeurl
 sorl-thumbnail
-django-sentry
-South==0.7.2
-
--e git://github.com/thoas/django-social-bookmarking.git@4229fcf0a5541234fed617b92301a1aa6d1f8675#egg=django-social-bookmarking-py2.5
 
 -e git://github.com/django-extensions/django-extensions.git@459276ded0edf1d1cf6d94b4865891a281445b95#egg=django_extensions-0.4.2_pre-py2.5-dev
 -e git://github.com/montylounge/django-basic-apps.git@72ad0a50a464d3dd296a566f749e86b1f9080bac#egg=django_basic_apps-0.6-py2.5-dev
@@ -32,7 +26,6 @@ South==0.7.2
 -e git://github.com/montylounge/django-proxy.git@37f5e24c4426aeec6fc20473d1213fafb6e5c489#egg=django_proxy-0.1.0-py2.5-dev
 -e git://github.com/montylounge/django-quoteme.git@d067a0da1756867250af9d836b8e0d47ff6c7c44#egg=django_quoteme-0.2-py2.5-dev
 -e git://github.com/hbussell/django-slimmer.git@61deecdbc7650664c2a23f36ed806c043c70d65e#egg=django_slimmer-0.0.1-py2.5-dev
--e hg+http://bitbucket.org/jezdez/django-staticfiles/@25e2c314aa665e855c4f242c374b2a27bd895542#egg=django_staticfiles-tip
 -e git://github.com/montylounge/django-sugar.git@fad43351d848da815159837d0a5f548b1fd2ef0f#egg=django_sugar-0.2-py2.5-dev
 -e svn+http://django-tinymce.googlecode.com/svn/trunk@96#egg=django_tinymce-trunk-py2.5-dev_r96
 -e git://github.com/skevy/django-twitter.git@887a017e0436b5e03aab96e5ba650696ab2d9b58#egg=django_twitter-0.1-py2.5-dev
@@ -43,4 +36,11 @@ South==0.7.2
 -e svn+http://django-template-utils.googlecode.com/svn/trunk@109#egg=template_utils-0.4p2-py2.5-dev_r109
 -e git://github.com/montylounge/django_cropper.git@194e3c94b0abcb5ec2a9788ff1fe474779b3f67d#egg=django-cropper-0.1.5a-py2.5-dev
 -e git://github.com/kylef/django-request.git@84cfef56f6eea281a9c382859fb29ef570c7295d#egg=django_request-0.21-py2.5-dev
+
+-e git://github.com/thoas/django-social-bookmarking.git@4229fcf0a5541234fed617b92301a1aa6d1f8675#egg=django-social-bookmarking-py2.5
 -e git://github.com/apluggedinlife/django-disqus.git@263d327af3ddb6a00d0c72eac8c457085c501a04#egg=django_disqus-0.1-py2.5-dev
+django-sentry
+South==0.7.2
+django-memcache-status==1.0.1
+django-localeurl
+django-staticfiles==1.0b1

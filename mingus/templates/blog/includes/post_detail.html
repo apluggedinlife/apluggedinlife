@@ -20,7 +20,7 @@
         <h2 id="related-posts">{% trans "Related posts" %}<a title="{% trans "Permalink to related posts of this post" %}" href="#related-posts" class="permalink">¶</a></h2>
         <ol>
             {% for post in post_list %}
-            <li><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+                <li><a href="/{{ LANGUAGE_CODE }}{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></li>
             {% endfor %}
         </ol>
     </div>

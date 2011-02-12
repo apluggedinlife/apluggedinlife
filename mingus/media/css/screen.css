@@ -238,7 +238,7 @@ body.contact #content {
 
 #content {
     float: left;
-    padding: 10px 20px 0 20px;
+    padding: 10px 20px 0;
 }
 
 #content h1,
@@ -318,10 +318,6 @@ body.contact #content {
     margin-bottom: 50px;
 }
 
-#content ol {
-    margin-left: 30px;
-}
-
 #content ol li:not(:last-child) {
     margin-bottom: 10px;
 }
@@ -382,20 +378,17 @@ span.count {
     z-index: 10;
     float: right;
     top: -10px;
-    right: -7px;
-}
-
-span.count {
-    font-size: 0.6em;
+    right: -10px;
+    font-size: 0.7em;
     font-weight: bold;
     -webkit-border-radius: 20px;
     border-radius: 20px;
     -moz-border-radius: 20px;
     -o-border-radius: 20px;
     background-color: #fff;
-    width: 18px;
-    padding-top: 4px;
-    height: 15px;
+    width: 22px;
+    padding-top: 5px;
+    height: 17px;
     color: #000000;
 }
 
@@ -633,9 +626,18 @@ div.entry-body .right {
     display: inline;
 }
 
-div.entry-content ul {
+div.entry-content ul,
+div.entry-content ol {
     padding-left: 40px;
     list-style-type: disc;
+}
+
+div.entry-content ul {
+    list-style-type: disc;
+}
+
+div.entry-content ol {
+    list-style-type: decimal;
 }
 
 div.entry-body p blockquote {
@@ -651,6 +653,11 @@ div.entry-body p.teaser {
 
 div.related-posts {
     margin-bottom: 40px;
+}
+
+div.related-posts ol {
+    padding-left: 40px;
+    list-style-type: decimal;
 }
 
 div.related-posts a,
@@ -1323,12 +1330,30 @@ ul.chart-list li:hover span.index {
     opacity: 0.5;
 }
 
-.clear { clear: both; }
-.left { float: left; }
-.right { float: right; }
-.height-10 { height: 10px; }
-.center { margin-left: auto; margin-right: auto;}
-.block-20 { padding-top: 20px; }
+.clear {
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.height-10 {
+    height: 10px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block-20 {
+    padding-top: 20px;
+}
 
 .column-50 {
     width: 180px;
@@ -1360,7 +1385,6 @@ ul.chart-list li:hover span.index {
 .grid-2 {
     width: 140px;
 }
-
 
 .btn-style {
     -moz-border-radius: 2px 2px 2px 2px;
