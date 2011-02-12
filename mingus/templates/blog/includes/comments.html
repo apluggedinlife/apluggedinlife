@@ -1,3 +1,5 @@
-{% load disqus_tags %}
+{% load disqus_tags utils_tags %}
 
-{% disqus_show_comments %}
+{% captureas identifier %}post_{{ object.pk }}{% endcaptureas %}
+
+{% disqus_show_comments object.title object.get_absolute_url identifier %}

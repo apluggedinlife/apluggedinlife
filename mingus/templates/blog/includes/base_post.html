@@ -51,7 +51,7 @@
             <li>
                 <div class="count-comment entry-item">
                     <span class="icon"></span>
-                    <a href="{{ post.get_absolute_url }}#disqus_thread">
+                    <a href="{{ post.get_absolute_url }}#disqus_thread" data-disqus-identifier="post_{{ post.pk }}">
                         {% trans "comments" %}
                     </a>
                 </div>
