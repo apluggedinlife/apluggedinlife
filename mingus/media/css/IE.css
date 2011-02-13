@@ -26,10 +26,10 @@ p, h1, h2, h3, h4, h5, h6, input[type=text], a, li, span {
     font-style: normal;
 }
 
+
 h1 {
-    color: #C89D64;
     font-size: 1.2em;
-    font-weight: bold;
+    text-transform: uppercase;
 }
 
 div.article {
@@ -45,6 +45,10 @@ ul {
 }
 
 h2 {
+    font-size: 1em;
+}
+
+h3 {
     font-size: 0.9em;
 }
 
@@ -54,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
     text-decoration: none;
-    color: #C89D64;
+    color: #493213;
     font-weight: bold;
 }
 
@@ -102,7 +106,8 @@ a > img {
 }
 
 #wrapper {
-    width: 1005px;
+    width: 965px;
+    padding: 0 20px;
     margin: 0 auto;
 }
 
@@ -132,6 +137,11 @@ a > img {
 #content ol li {
     position: relative;
     margin-top: 30px;
+}
+
+#content p {
+    max-width: 900px;
+    font-size: 17px;
 }
 
 #quotation {
@@ -183,3 +193,29 @@ p.quotes {
 }
 
 /*}}}*/
+
+#disqus_thread {
+    text-align: left;
+}
+
+#disqus_thread h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#dsq-num-posts {
+    color: #493213;
+    font-weight: bold;
+}
+
+#explanations ul {
+    list-style-type: disc;
+}
+
+#explanations ul li {
+    margin-bottom: 10px;
+}
+
+#explanations ul li.last {
+    margin-bottom: 10px;
+}
