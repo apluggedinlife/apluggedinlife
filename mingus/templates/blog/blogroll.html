@@ -57,13 +57,13 @@ blogroll
 
 {% block content %}
 <div class="entry-body">
-    <h1>{% trans "Map" %}</h1>
+    <h1 class="title">{% trans "Map" %}</h1>
     <div id="map">
         <figure tabindex="1">
             <img src="{{ MEDIA_URL }}img/blogroll.jpg" alt="Blogroll" />
         </figure>
     </div>
-    <h1 class="block-20">{% trans "Links and OPML" %}</h1>
+    <h1>{% trans "Links and OPML" %}</h1>
     {% if tags %}
     <div id="blogroll">
         {% for group in groups %}
