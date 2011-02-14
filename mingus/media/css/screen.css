@@ -246,8 +246,7 @@ body.contact #content {
 #content h3,
 #content h4,
 #content h5,
-#content h6,
-#content p {
+#content h6 {
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
 
@@ -584,7 +583,7 @@ div.entry-body p,
 div.entry-content li {
     line-height: 24px;
     font-size: 15px;
-    color: #19161A;
+    color: #000;
 }
 
 #dsq-num-posts {
@@ -595,15 +594,7 @@ div.entry-content li {
 
 div.entry-body p {
     text-align: justify;
-}
-
-div.entry-body p,
-div.entry-body ul {
-    margin: 15px 0;
-}
-
-div.entry-body p:hover {
-    color: #000;
+    margin: 10px 0;
 }
 
 div.entry-body .left {
@@ -668,7 +659,7 @@ div.related-posts a,
 div.entry-body p a,
 div.entry-content li a,
 a.link {
-    color: #23723C;
+    color: #00652C;
     text-decoration: none;
 }
 
