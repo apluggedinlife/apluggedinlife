@@ -674,6 +674,10 @@ a.link:hover {
     text-decoration: underline;
 }
 
+div.entry-body strong {
+    font-weight: bold;
+}
+
 /*}}}*/
 
 /* @section NAVIGATION {{{
