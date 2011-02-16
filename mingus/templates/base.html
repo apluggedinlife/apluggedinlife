@@ -174,9 +174,10 @@
                                 {% with profile_list|first as profile %}
                                 {% for service in profile.service_set.all %}
                                 <li>
-                                    <div id="{{ service.username }}" class="twitter-container twitter-container-account twitter-container-green-{{ forloop.counter0 }} icon">
+                                    <div id="{{ service.username }}" class="twitter-container twitter-container-account twitter-container-green-{{ forloop.counter0 }}">
                                         <h2>
-                                            @<a href="http://twitter.com/{{ service.username }}" title="{{ service.username }}" class="sidebar-twitter-anywhere-user">
+                                            <span class="icon"></span>
+                                            @<a href="http://twitter.com/{{ service.username }}" title="{{ service.username }}">
                                                 {{ service.username }}
                                             </a>
                                         </h2>
@@ -188,19 +189,6 @@
                                 </li>
                                 {% endfor %}
                                 {% endwith %}
-                                <li>
-                                    <div id="apluggedinlife-hashtag" class="twitter-container twitter-container-hashtag twitter-container-green-3 icon">
-                                        <h2>
-                                            <a href="http://search.twitter.com/search?q=apluggedinlife" title="#apluggedinlife">
-                                                #apluggedinlife
-                                            </a>
-                                        </h2>
-                                        <p class="tweet">
-                                            <span class="twitter-container-loader">
-                                            </span>
-                                        </p>
-                                    </div>
-                                </li>
                             </ul>
                         </section>
                         {% endif %}
@@ -282,7 +270,16 @@
     {% cache 7200 "base.analytics" %}
     {% analytics %}
     {% endcache %}
+    <script type="text/javascript">
+        var disqus_shortname = 'apluggedinlife';
 
-    {% disqus_num_replies %}
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
 </body>
 </html>

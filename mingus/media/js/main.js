@@ -103,8 +103,4 @@ $(document).ready(function(){
             updateTwitterContainer(_this, data.results);
         });
     })
-
-    $.twitter.search.hashtag("apluggedinlife", function(data, textStatus){
-        updateTwitterContainer($("#apluggedinlife-hashtag"), data.results);
-    });
 });

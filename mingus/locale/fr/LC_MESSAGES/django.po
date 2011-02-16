@@ -421,7 +421,7 @@ msgid ""
 "others."
 msgstr ""
 "N'hésitez pas à nous contacter si vous souhaitez des informations à propos "
-"de notre contenu ou quoi ce soit d'autres."
+"de notre contenu ou quoi ce soit d'autre."
 
 #: templates/contact_form/contact_form.html:51
 msgid "Contact us <em>via</em> our email address"

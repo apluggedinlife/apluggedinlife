@@ -924,7 +924,11 @@ ul li.title ul li:hover {
 }
 
 #twitter ul li {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+}
+
+p.tweet {
+    color: #000;
 }
 
 #facebook {
@@ -940,16 +944,38 @@ ul li.title ul li:hover {
 
 div.twitter-container {
     width: 177px;
-    height: 109px;
     margin: 0 auto;
     position: relative;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+div.twitter-container::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -15px;
+    right: 30px;
+    width: 0;
+    height: 0;
+    border-width: 0 0 15px 15px;
+    border-style: solid;
 }
 
 div.twitter-container h2 {
     position: absolute;
     width: 100px;
-    bottom: -11px;
+    bottom: -35px;
     left: -5px;
+}
+
+div.twitter-container h2 span {
+    background-position: 0 -335px;
+    width: 39px;
+    height: 19px;
+    right: -30px;
+    position: absolute;
 }
 
 div.twitter-container h2 a {
@@ -976,19 +1002,35 @@ div.twitter-container p a {
 }
 
 div.twitter-container-green-0 {
-    background-position: 0 -224px;
+    background-color: #88c284;
+}
+
+div.twitter-container-green-0::before {
+    border-color: transparent #88c284;
 }
 
 div.twitter-container-green-1 {
-    background-position: 0px -334px;
+    background-color: #58af69;
+}
+
+div.twitter-container-green-1::before {
+    border-color: transparent #58af69;
 }
 
 div.twitter-container-green-2 {
-    background-position: 0px -444px;
+    background-color: #319a56;
+}
+
+div.twitter-container-green-2::before {
+    border-color: transparent #319a56;
 }
 
 div.twitter-container-green-3 {
-    background-position: 0px -554px;
+    background-color: #22713b;
+}
+
+div.twitter-container-green-3::before {
+    border-color: transparent #22713b;
 }
 
 span.twitter-container-loader {
@@ -1237,21 +1279,27 @@ div.contact {
 }
 
 #business-card ul li {
-    background-image: url('/media/img/business_cards.png');
     float: left;
     height: 250px;
+}
+
+#business-card ul li a {
+    background-image: url('/media/img/business_cards.png');
+    height: 100%;
+    display: block;
+    text-indent: -500em;
 }
 
 #business-card ul li:not(:last-child) {
     margin-right: 50px;
 }
 
-#business-card ul li.business-card-thoas {
+#business-card ul li.business-card-thoas a {
     width: 226px;
     background-position: 0px 0px;
 }
 
-#business-card ul li.business-card-norelijn {
+#business-card ul li.business-card-norelijn a {
     width: 208px;
     background-position: 208px 0;
 }
