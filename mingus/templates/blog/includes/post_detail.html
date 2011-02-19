@@ -12,6 +12,27 @@
 
 {{ block.super }}
 
+{% cache 300 blog.post_detail.get_next_or_previous_by_publish "blog.post" post.pk LANGUAGE_CODE %}
+{% if object.get_previous_by_publish or object.get_next_by_publish %}
+<div class="clear"></div>
+<div id="entry-navigation">
+    {% if object.get_previous_by_publish %}
+        <a class="entry-previous" href="/{{ LANGUAGE_CODE }}{{ object.get_previous_post.get_absolute_url }}" title="{% blocktrans with object.get_previous_post as previous_post %}Previous entry: {{ previous_post }}{% endblocktrans %}">
+        <span class="icon"></span>
+    </a>
+    {% endif %}
+
+    {% if object.get_next_by_publish %}
+        <a class="entry-next" href="/{{ LANGUAGE_CODE }}{{ object.get_next_post.get_absolute_url }}" title="{% blocktrans with object.get_next_post as next_post %}Next entry: {{ next_post }}{% endblocktrans %}">
+        <span class="icon"></span>
+    </a>
+    {% endif %}
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+{% endif %}
+{% endcache %}
+
 <footer id="comments">
     {% cache 1800 "blog.post_detail.related_list" post.pk %}
     {% tagged_get_related object in blog.Post as post_list with num=3 %}
