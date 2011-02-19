@@ -141,7 +141,7 @@ def home_list(request, page=0, template_name='proxy/proxy_list.html', **kwargs):
     counter = 0
     model_map = {}
     for item in items:
-        model_map.setdefault(item.content_type, []).append(item.pk)
+        model_map.setdefault(item.content_type, []).append(item.object_id)
 
     for ct, items_ in model_map.items():
         for o in ct.model_class().objects.select_related() \
