@@ -137,19 +137,20 @@ def home_list(request, page=0, template_name='proxy/proxy_list.html', **kwargs):
     except (EmptyPage, InvalidPage):
         current_page = paginator.page(paginator.num_pages)
 
+    items = list(current_page.object_list)
+    counter = 0
     model_map = {}
-    item_map = {}
-    for item in current_page.object_list:
-        model_map.setdefault(item.content_type, {}) \
-                [item.object_id] = item.id
-        item_map[item.id] = item
+    for item in items:
+        model_map.setdefault(item.content_type, []).append(item.pk)
+
     for ct, items_ in model_map.items():
         for o in ct.model_class().objects.select_related() \
-                .filter(id__in=items_.keys()).all():
-            item_map[items_[o.id]].content_object = o
+                .filter(id__in=items_).all():
+            items[counter].content_object = o
+            counter += 1
 
     return render_to_response(template_name, {
-        'object_list': item_map.items(),
+        'object_list': items,
         'page': page,
         'paginate_by': pagesize,
     }, context_instance=RequestContext(request))
