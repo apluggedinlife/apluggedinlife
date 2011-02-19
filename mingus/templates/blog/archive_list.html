@@ -1,6 +1,6 @@
 {% extends "blog/base_archive.html" %}
 
-{% load i18n archive_tags archive %}
+{% load i18n archive_tags archive cache %}
 
 {% block menu %}archives{% endblock %}
 
@@ -16,6 +16,7 @@
 {% block title %}{% trans "Archives" %} | {{ block.super }}{% endblock %}
 
 {% block content %}
+    {% cache 300 blog.archive_list LANGUAGE_CODE %}
     {% get_post_archive as dates %}
     {% for date in dates %}
     <article class="archive">
@@ -23,4 +24,5 @@
         {% get_posts_for_archive date %}
     </article>
     {% endfor %}
+    {% endcache %}
 {% endblock %}

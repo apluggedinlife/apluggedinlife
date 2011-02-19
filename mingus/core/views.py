@@ -7,6 +7,7 @@ from django import http
 from django.template import loader, Context
 from django_proxy.models import Proxy
 from django.views.generic import list_detail
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from basic.blog.models import Settings
 from view_cache_utils import cache_page_with_prefix
 from contact_form.views import contact_form as django_contact_form
@@ -121,18 +122,37 @@ def home_list(request, page=0, template_name='proxy/proxy_list.html', **kwargs):
 
     '''
 
-    posts = Proxy.objects.published().order_by('-pub_date')
+    posts = Proxy.objects.published().select_related('content_type').order_by('-pub_date')
     pagesize = getattr(Settings.get_current(), 'page_size', 20)
 
-    return list_detail.object_list(
-        request,
-        queryset = posts,
-        paginate_by = pagesize,
-        page = page,
-        template_name = template_name,
-        **kwargs
-    )
+    paginator = Paginator(posts, pagesize)
 
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+
+    try:
+        current_page = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        current_page = paginator.page(paginator.num_pages)
+
+    model_map = {}
+    item_map = {}
+    for item in current_page.object_list:
+        model_map.setdefault(item.content_type, {}) \
+                [item.object_id] = item.id
+        item_map[item.id] = item
+    for ct, items_ in model_map.items():
+        for o in ct.model_class().objects.select_related() \
+                .filter(id__in=items_.keys()).all():
+            item_map[items_[o.id]].content_object = o
+
+    return render_to_response(template_name, {
+        'object_list': item_map.items(),
+        'page': page,
+        'paginate_by': pagesize,
+    }, context_instance=RequestContext(request))
 
 def quote_list(request, template_name='quotes/quote_list.html', **kwargs):
     '''

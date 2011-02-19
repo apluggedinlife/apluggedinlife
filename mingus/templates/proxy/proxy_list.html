@@ -11,7 +11,7 @@
 {% block content_title %}{% endblock %}
 
 {% block content %}
-    {% for object in object_list %}
+    {% for index, object in object_list %}
     {% ifequal object.content_type.name "post" %}
         {% with object.content_object as post %}
           {% include "proxy/includes/post_item.html" %}

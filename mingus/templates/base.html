@@ -128,7 +128,7 @@
                                 <li class="title">
                                     <h2>{% trans "Categories" %}<span class="icon"></span></h2>
                                     <ul>
-                                    {% cache 3600 "base.category_list" %}
+                                    {% cache 3600 base.category_list LANGUAGE_CODE %}
                                       {% get_blog_categories as category_list %}
                                       {% for category in category_list %}
                                       <li><a href="{% url basic.blog.views.category_detail category.slug %}" title="{{ category.title }}">{{ category.title }}</a></li>
@@ -138,7 +138,7 @@
                                 </li>
                                 <li class="title">
                                     <h2>{% trans "Archives"%}<span class="icon"></span></h2>
-                                    {% cache 7200 "base.archive" %}
+                                    {% cache 7200 base.archive LANGUAGE_CODE %}
                                     {% get_post_archive as dates %}
                                     <ul>
                                     {% for date in dates %}
@@ -149,7 +149,7 @@
                                 </li>
                                 <li class="title">
                                     <h2 class="active">{% trans "Popular posts"%}<span class="icon"></span></h2>
-                                    {% cache 7200 "base.popular_posts" %}
+                                    {% cache 7200 base.popular_posts LANGUAGE_CODE %}
                                     {% get_popular_posts 10 as popular_post_list %}
                                     <ul>
                                     {% for popular_post in popular_post_list %}
@@ -204,7 +204,7 @@
             <ul>
                 <li>
                     <h1>{% trans "Last entries" %}<span class="icon"></span></h1>
-                    {% cache 3600 "base.post_list" %}
+                    {% cache 3600 base.post_list LANGUAGE_CODE %}
                     {% get_latest_posts 10 as post_list %}
                     {% if post_list %}
                     <div>
@@ -219,7 +219,7 @@
                 </li>
                 <li>
                     <h1>{% trans "Tags" %}<span class="icon"></span></h1>
-                    {% cache 3600 "base.tag_list" %}
+                    {% cache 3600 base.tag_list LANGUAGE_CODE %}
                     <div id="footer-tag-list">
                         <ul class="footer chart-list">
                             {% get_tag_list_with_percent_for_model blog.Post as tag_list with num=10 %}
