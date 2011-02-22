@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-05 19:28+0100\n"
+"POT-Creation-Date: 2011-02-22 15:48+0100\n"
 "PO-Revision-Date: 2010-02-02 18:44+0100\n"
 "Last-Translator: Pablo Martí <pmargam@gmail.com>\n"
 "Language-Team: Spanish <ES@li.org>\n"
@@ -88,7 +88,7 @@ msgstr "No se encuentra la página solicitada"
 msgid "Internal error"
 msgstr "Error interno del servidor"
 
-#: templates/about.html:8 templates/about.html.py:13 templates/base.html:71
+#: templates/about.html:8 templates/about.html.py:13 templates/base.html:72
 msgid "About"
 msgstr "Acerca"
 
@@ -96,11 +96,12 @@ msgstr "Acerca"
 msgid "Authors"
 msgstr "Autores"
 
-#: templates/about.html:31
+#: templates/about.html:35
 msgid "More about our site"
 msgstr "Más acerca del sitio"
 
-#: templates/about.html:33
+#: templates/about.html:37
+#, fuzzy
 msgid ""
 "\n"
 "        A big thanks to <a href=\"http://montylounge.com/\" title=\"monty "
@@ -111,6 +112,9 @@ msgid ""
 "        <br />\n"
 "        Thanks for the support, for being that receptive and willing to "
 "share.\n"
+"        <br />\n"
+"        Thanks to <a href=\"http://avalonstar.com/\">Bryan Veloso</a> for "
+"its <a href=\"http://djangopony.com/\">djangopony</a>\n"
 "        "
 msgstr ""
 "\n"
@@ -122,9 +126,12 @@ msgstr ""
 "        <br />\n"
 "        Gracias por la ayuda, por haber estado tan abierto y por la voluntad "
 "de compartir.\n"
+"        <br />\n"
+"        Gracias a <a href=\"http://avalonstar.com/\">Bryan Veloso</a> por "
+"su <a href=\"http://djangopony.com/\">djangopony</a>\n"
 "        "
 
-#: templates/about.html:41
+#: templates/about.html:47
 msgid ""
 "\n"
 "        For those who appreciate our website menu design,\n"
@@ -146,7 +153,7 @@ msgstr ""
 "        sobre HTML5/CSS3 ¡muchísimas gracias!\n"
 "        "
 
-#: templates/about.html:48
+#: templates/about.html:54
 msgid ""
 "Thanks again to <a href=\"http://jeffcroft.com/\" title=\"Jeff Croft\">Jeff "
 "Croft</a> for the fancy tags pyramid you can see in our footer."
@@ -155,42 +162,42 @@ msgstr ""
 "\">Jeff Croft</a> por la original pirámide de tags que podéis ver en el pie "
 "de página."
 
-#: templates/base.html:42
+#: templates/base.html:43
 msgid "Go to footer"
 msgstr "Ir al pie de página"
 
-#: templates/base.html:43
+#: templates/base.html:44
 msgid "Go to content"
 msgstr "Ir al contenido"
 
-#: templates/base.html:44
+#: templates/base.html:45
 msgid "Go to navigation"
 msgstr "Ir a la navegación"
 
-#: templates/base.html:46
+#: templates/base.html:48
 msgid "Language:"
 msgstr "Idiomas:"
 
-#: templates/base.html:53
+#: templates/base.html:54
 msgid "Ok"
 msgstr ""
 
-#: templates/base.html:65 templates/base.html.py:93
+#: templates/base.html:66 templates/base.html.py:94
 #: templates/proxy/proxy_list.html:9
 msgid "Home"
 msgstr "Portada"
 
-#: templates/base.html:68 templates/blog/blogroll.html:47
-#: templates/blog/blogroll.html.py:51
+#: templates/base.html:69 templates/blog/blogroll.html:51
+#: templates/blog/blogroll.html.py:55
 msgid "Blogroll"
 msgstr "Blogroll"
 
-#: templates/base.html:74 templates/contact_form/base_contact.html:8
+#: templates/base.html:75 templates/contact_form/base_contact.html:8
 #: templates/contact_form/contact_form.html:5
 msgid "Contact"
 msgstr "Contacto"
 
-#: templates/base.html:77 templates/base.html.py:139
+#: templates/base.html:78 templates/base.html.py:140
 #: templates/blog/archive_list.html:13 templates/blog/archive_list.html:16
 #: templates/blog/post_archive_day.html:12
 #: templates/blog/post_archive_month.html:12
@@ -198,39 +205,35 @@ msgstr "Contacto"
 msgid "Archives"
 msgstr "Archivos"
 
-#: templates/base.html:90
+#: templates/base.html:91
 msgid "You are here:"
 msgstr "Estas ahí:"
 
-#: templates/base.html:93
+#: templates/base.html:94
 msgid "Homepage"
 msgstr "Página principal"
 
-#: templates/base.html:104
+#: templates/base.html:105
 msgid "Syndication"
 msgstr "Sindicación"
 
-#: templates/base.html:122
+#: templates/base.html:123
 msgid "Search on this website via Google"
 msgstr "Buscar en el sitio mediante Google"
 
-#: templates/base.html:128
+#: templates/base.html:129
 msgid "Categories"
 msgstr "Categorías"
 
-#: templates/base.html:150
+#: templates/base.html:151
 msgid "Popular posts"
 msgstr "Entradas populares"
 
-#: templates/base.html:217
+#: templates/base.html:206
 msgid "Last entries"
 msgstr "Últimas entradas"
 
-#: templates/base.html:232
-msgid "Last comments"
-msgstr "Últimos comentarios"
-
-#: templates/base.html:252 templates/blog/tag_list.html:6
+#: templates/base.html:221 templates/blog/tag_list.html:6
 #: templates/blog/tag_list.html.py:14
 msgid "Tags"
 msgstr ""
@@ -260,11 +263,11 @@ msgstr "Entrar"
 msgid "Read more"
 msgstr "Leer más"
 
-#: templates/blog/blogroll.html:56
+#: templates/blog/blogroll.html:60
 msgid "Map"
 msgstr "Mapa"
 
-#: templates/blog/blogroll.html:62
+#: templates/blog/blogroll.html:66
 msgid "Links and OPML"
 msgstr "Enlaces y OPML"
 
@@ -287,19 +290,9 @@ msgstr "Archivos para"
 msgid "Search results for:"
 msgstr "Resultados de búsqueda para:"
 
-#: templates/blog/includes/base_post.html:11
+#: templates/blog/includes/base_post.html:55
 msgid "comments"
 msgstr "comentarios"
-
-#: templates/blog/includes/base_post.html:77
-#, python-format
-msgid "Previous entry: %(previous_post)s"
-msgstr "Entrada precedente: %(previous_post)s"
-
-#: templates/blog/includes/base_post.html:83
-#, python-format
-msgid "Next entry: %(next_post)s"
-msgstr "Entrada siguiente: %(next_post)s"
 
 #: templates/blog/includes/pagination.html:6
 msgid "Older posts"
@@ -310,86 +303,22 @@ msgid "Newer posts"
 msgstr "Entradas recientes"
 
 #: templates/blog/includes/post_detail.html:20
+#, python-format
+msgid "Previous entry: %(previous_post)s"
+msgstr "Entrada precedente: %(previous_post)s"
+
+#: templates/blog/includes/post_detail.html:26
+#, python-format
+msgid "Next entry: %(next_post)s"
+msgstr "Entrada siguiente: %(next_post)s"
+
+#: templates/blog/includes/post_detail.html:41
 msgid "Related posts"
 msgstr "Entradas relacionadas"
 
-#: templates/blog/includes/post_detail.html:20
+#: templates/blog/includes/post_detail.html:41
 msgid "Permalink to related posts of this post"
 msgstr "Enlace permanente hacia entradas relacionadas"
-
-#: templates/comments/comments_media.html:70
-msgid "Your comment has been posted."
-msgstr "Ha sido registrado tu comentario."
-
-#: templates/comments/display_comment.html:7
-#: templates/comments/display_comment_preview.html:7
-#: templates/comments/display_comments_tree.html:11
-msgid "gravatar"
-msgstr ""
-
-#: templates/comments/display_comment.html:11
-#: templates/comments/display_comment_preview.html:11
-#: templates/comments/display_comments_tree.html:15
-msgid "go to "
-msgstr "ir a "
-
-#: templates/comments/display_comment.html:19
-#: templates/comments/display_comments_tree.html:23
-msgid "comment detail"
-msgstr "detalle del comentario"
-
-#: templates/comments/display_comment.html:31
-#: templates/comments/display_comments_tree.html:35
-msgid "Reply to the comment"
-msgstr "Contestar al comentario"
-
-#: templates/comments/display_comment.html:38
-#: templates/comments/display_comments_tree.html:42
-msgid "show hidden replies"
-msgstr "mostrar los comentarios escondidos"
-
-#: templates/comments/display_comments_toplevel.html:8
-#: templates/comments/subtree.html:14
-msgid "Comments"
-msgstr "Comentarios"
-
-#: templates/comments/display_comments_toplevel.html:9
-msgid "Permalink to comments"
-msgstr "Enlace permanente hacia los comentarios"
-
-#: templates/comments/display_comments_toplevel.html:20
-#, python-format
-msgid "Still %(remaining)s comments left"
-msgstr "Todavía quedan %(remaining)s comentarios"
-
-#: templates/comments/display_comments_toplevel.html:28
-msgid "Post a new comment"
-msgstr "Deja un nuevo comentario"
-
-#: templates/comments/display_comments_toplevel.html:29
-msgid "Permalink to post a new comment"
-msgstr "Enlace permanente hacia un nuevo comentario"
-
-#: templates/comments/form.html:25
-msgid "Preview"
-msgstr "Previsualizar"
-
-#: templates/comments/form.html:27 templates/contact_form/contact_form.html:44
-msgid "Post"
-msgstr "Enviar"
-
-#: templates/comments/posted.html:7
-msgid "Thanks for your comment"
-msgstr "Gracias por haber comentado"
-
-#: templates/comments/posted.html:11
-#: templates/contact_form/contact_form_sent.html:18
-msgid "Recent Posts"
-msgstr "Entradas Recientes"
-
-#: templates/comments/preview.html:7
-msgid "Preview of your comment"
-msgstr "Previsualizar mi comentario"
 
 #: templates/contact_form/contact_form.html:10
 #: templates/contact_form/contact_form_sent.html:9
@@ -422,6 +351,10 @@ msgstr ""
 "No dudes en contactarnos si necesitas más informaciones acerca del sitio, "
 "del contenido o lo que sea."
 
+#: templates/contact_form/contact_form.html:44
+msgid "Post"
+msgstr "Enviar"
+
 #: templates/contact_form/contact_form.html:51
 msgid "Contact us <em>via</em> our email address"
 msgstr "Contactarnos <em>via</em> nuestra dirección email"
@@ -451,6 +384,10 @@ msgstr ""
 "un vistazo a algunas de nuestras últimas entradas.\n"
 "        "
 
+#: templates/contact_form/contact_form_sent.html:18
+msgid "Recent Posts"
+msgstr "Entradas Recientes"
+
 #: templates/proxy/tag_detail.html:5 templates/proxy/tag_detail.html.py:13
 #, fuzzy
 msgid "Posts for tag"
@@ -472,14 +409,56 @@ msgstr ""
 msgid "Permalink to related quotes of this quote"
 msgstr ""
 
-#: templates/social_bookmarking/links_related.html:4
+#: templates/social_bookmarking/links_related.html:5
 msgid "share"
 msgstr "compatir"
 
-#: templates/social_bookmarking/links_related.html:14
+#: templates/social_bookmarking/links_related.html:16
 #, python-format
 msgid "Share on %(slug)s"
 msgstr "Compatir en %(slug)s"
+
+#~ msgid "Last comments"
+#~ msgstr "Últimos comentarios"
+
+#~ msgid "Your comment has been posted."
+#~ msgstr "Ha sido registrado tu comentario."
+
+#~ msgid "go to "
+#~ msgstr "ir a "
+
+#~ msgid "comment detail"
+#~ msgstr "detalle del comentario"
+
+#~ msgid "Reply to the comment"
+#~ msgstr "Contestar al comentario"
+
+#~ msgid "show hidden replies"
+#~ msgstr "mostrar los comentarios escondidos"
+
+#~ msgid "Comments"
+#~ msgstr "Comentarios"
+
+#~ msgid "Permalink to comments"
+#~ msgstr "Enlace permanente hacia los comentarios"
+
+#~ msgid "Still %(remaining)s comments left"
+#~ msgstr "Todavía quedan %(remaining)s comentarios"
+
+#~ msgid "Post a new comment"
+#~ msgstr "Deja un nuevo comentario"
+
+#~ msgid "Permalink to post a new comment"
+#~ msgstr "Enlace permanente hacia un nuevo comentario"
+
+#~ msgid "Preview"
+#~ msgstr "Previsualizar"
+
+#~ msgid "Thanks for your comment"
+#~ msgstr "Gracias por haber comentado"
+
+#~ msgid "Preview of your comment"
+#~ msgstr "Previsualizar mi comentario"
 
 #~ msgid "Elsewhere"
 #~ msgstr "En otros sitios"
