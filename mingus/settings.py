@@ -47,7 +47,6 @@ MIDDLEWARE_CLASSES = (
     'slimmer.middleware.CompressHtmlMiddleware',
     'sugar.middleware.debugging.UserBasedExceptionMiddleware',
     'request.middleware.RequestMiddleware',
-    'djangodblog.DBLogMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
@@ -82,7 +81,6 @@ INSTALLED_APPS = (
     'localeurl',
     'django_extensions',
     'tagging',
-    'djangodblog',
     'basic.inlines',
     'basic.blog',
     'basic.bookmarks',
