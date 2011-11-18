@@ -329,10 +329,10 @@ msgid "Want to contact us?"
 msgstr "Envie de nous contacter ?"
 
 #: templates/contact_form/contact_form.html:14
-msgid "Fill in the form below, we will answer you as soon as possible"
+msgid "Fill in the form below, we will answer you as soon as possible."
 msgstr ""
 "Remplissez le formulaire ci-dessous, nous vous répondrons aussi vite que "
-"possible"
+"possible."
 
 #: templates/contact_form/contact_form.html:16
 msgid "This is our primary address, we check it regulary."
@@ -340,12 +340,12 @@ msgstr ""
 "Ceci est notre adresse e-mail principale, nous la consultons régulièrement."
 
 #: templates/contact_form/contact_form.html:18
-msgid "Futher information"
+msgid "Further information"
 msgstr "De plus amples informations"
 
 #: templates/contact_form/contact_form.html:19
 msgid ""
-"Do not hesitate to contact us if you need information about content or "
+"Feel free to contact us if you need information about content or "
 "others."
 msgstr ""
 "N'hésitez pas à nous contacter si vous souhaitez des informations à propos "
