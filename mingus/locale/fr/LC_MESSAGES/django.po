@@ -349,7 +349,7 @@ msgid ""
 "something else."
 msgstr ""
 "N'hésitez pas à nous contacter si vous souhaitez des informations à propos "
-"de notre contenu ou quoi ce soit d'autre."
+"de notre contenu ou quoi que ce soit d'autre."
 
 #: templates/contact_form/contact_form.html:44
 msgid "Post"
