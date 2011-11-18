@@ -346,7 +346,7 @@ msgstr "De plus amples informations"
 #: templates/contact_form/contact_form.html:19
 msgid ""
 "Feel free to contact us if you need information about content or "
-"others."
+"something else."
 msgstr ""
 "N'hésitez pas à nous contacter si vous souhaitez des informations à propos "
 "de notre contenu ou quoi ce soit d'autre."
